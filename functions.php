@@ -8,7 +8,7 @@ function lunare_enqueue_scripts()
     wp_enqueue_style('ui-styles-css', get_template_directory_uri() . '/assets/css/ui-styles.css', ['main-css'], '1.0', 'all');
 
     // Підключення JS
-    
+
 }
 add_action('wp_enqueue_scripts', 'lunare_enqueue_scripts');
 function enqueue_custom_scripts()
@@ -24,13 +24,13 @@ function enqueue_custom_scripts()
         '1.0', // Версия
         true // Подключение в футере
     );
-     // Подключаем JS
-     wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], '1.0', true);
+    // Подключаем JS
+    wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], '1.0', true);
 
-     // Передаём ajaxData в JS
-     wp_localize_script('main-js', 'ajaxData', array(
-         'ajaxurl' => admin_url('admin-ajax.php'), // URL для AJAX
-     ));
+    // Передаём ajaxData в JS
+    wp_localize_script('main-js', 'ajaxData', array(
+        'ajaxurl' => admin_url('admin-ajax.php'), // URL для AJAX
+    ));
 }
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
@@ -143,7 +143,8 @@ function custom_single_product_template($template)
     return $template;
 }
 add_filter('template_include', 'custom_single_product_template');
-function filter_products_by_category() {
+function filter_products_by_category()
+{
     // Получаем переданную категорию
     $category = isset($_POST['category']) ? sanitize_text_field($_POST['category']) : '';
 
@@ -158,8 +159,8 @@ function filter_products_by_category() {
         $args['tax_query'] = array(
             array(
                 'taxonomy' => 'product_category', // Таксономия
-                'field'    => 'slug', // Сравниваем по slug
-                'terms'    => $category, // Указанный slug категории
+                'field' => 'slug', // Сравниваем по slug
+                'terms' => $category, // Указанный slug категории
             ),
         );
     }
@@ -167,14 +168,15 @@ function filter_products_by_category() {
     // Выполняем запрос
     $query = new WP_Query($args);
 
-    if ($query->have_posts()) :
-        while ($query->have_posts()) : $query->the_post(); ?>
+    if ($query->have_posts()):
+        while ($query->have_posts()):
+            $query->the_post(); ?>
             <div class="product-item">
                 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                 <?php the_excerpt(); ?>
             </div>
         <?php endwhile;
-    else :
+    else:
         echo '<p>Товарів не знайдено.</p>';
     endif;
 
@@ -183,4 +185,15 @@ function filter_products_by_category() {
 }
 add_action('wp_ajax_filter_products', 'filter_products_by_category');
 add_action('wp_ajax_nopriv_filter_products', 'filter_products_by_category');
+
+
+
+add_filter('scf_get_groups', 'scf_condition_based_on_post_template', 10, 2);
+// function remove_default_post_fields()
+// {
+//     remove_post_type_support('post', 'title'); // Убираем поле "Имя"
+//     remove_post_type_support('post', 'editor'); // Убираем поле "Описание"
+// }
+// add_action('init', 'remove_default_post_fields');
+
 ?>

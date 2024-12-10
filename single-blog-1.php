@@ -1,1 +1,0 @@
-/* Placeholder content for single-blog-1.php */
