@@ -1,0 +1,1 @@
+/* Placeholder content for page-pilots-academy.php */

@@ -1,0 +1,174 @@
+.headerWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  align-items: center;
+}
+.headerNav {
+  display: flex;
+  border-radius: 20px;
+  background-color: var(--graycards);
+  gap: 32px;
+  align-items: center;
+  padding: 14px 32px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.imageWrapper {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../images/moon-and-field.png") center/cover no-repeat;
+  clip-path: polygon(0 0, 53% 0, 53% 31%, 100% 31%, 100% 100%, 0 100%);
+  border-radius: 40px;
+  z-index: 1;
+}
+.introWrapper {
+  width: 100%;
+  aspect-ratio: 440/217;
+  position: relative;
+  margin-top: 48px;
+}
+
+.introBackground {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 40px;
+}
+.introDrone {
+  position: absolute;
+  left: 24.77%;
+  top: 17.38%;
+  width: 34%;
+
+  transition: all 0.2s ease;
+}
+.introWrapper:hover .introDrone {
+  /* animation: livitation ease-in-out infinite 5s; */
+  transform: scale(1.1);
+}
+.introText1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  padding: 24px;
+  background-color: var(--black);
+  border-bottom-left-radius: 40px;
+}
+.arcv1 {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 40px;
+  height: 40px;
+}
+.arcg1 {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 40px;
+  height: 40px;
+}
+.arcv1 path {
+  fill: var(--black);
+  d: path("M 40 40 c 0 -22 -18 -40 -40 -40 h 40 Z");
+}
+.arcg1 path {
+  fill: var(--black);
+  d: path("M 40 40 c 0 -22 -18 -40 -40 -40 h 40 Z");
+}
+.introParagraph {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  width: 100%;
+  max-width: 265px;
+  color: var(--lightgrey);
+}
+.introItemCard {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+.whiteItemCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: var(--graycards);
+}
+.whiteItemCardInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+.introPilotTeaching {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 100%;
+  max-width: 398px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  color: var(--lightgrey);
+  border-radius: 20px;
+  background-color: var(--graycards);
+}
+.introPilotTeaching p {
+  margin-bottom: 12px;
+}
+.aboutWrapper {
+    padding: 120px 0 ;
+}
+.aboutTextContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+ 
+}
+.aboutTextContainer h2 {
+     font-size: var(--decor-font-size);
+  color: #fff;
+}
+.aboutTextContainer span {
+  color: var(--green);
+}
+.aboutTextContainer img {
+  vertical-align: middle;
+  margin: 0 8px;
+}
+@keyframes livitation {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-9px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-9px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,1 @@
+/* Placeholder content for single-product-other.php */
