@@ -23,18 +23,20 @@ get_header(); // Подключаем header
             </div>
             <p class="introParagraph">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
                 флагманські моделі DJI Agriculture.</p>
-            <div class="whiteItemCard introItemCard">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/djiagrast40small.png"
-                    alt="">
-                <div class="whiteItemCardInfo">
-                    <h3>DJI Agras T40</h3>
-                    <a href="" class="blackButton">Перейти до каталогу</a>
+            <div class="section1IntroCards">
+                <div class="whiteItemCard introItemCard">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/djiagrast40small.png"
+                        alt="">
+                    <div class="whiteItemCardInfo">
+                        <h3>DJI Agras T40</h3>
+                        <a href="" class="blackButton">Перейти до каталогу</a>
+                    </div>
                 </div>
-            </div>
-            <div class="introPilotTeaching">
-                <h3>Навчання пілотів агродронів</h3>
-                <p>Пройдіть курс і отримайте навички управління агродронами для ефективної роботи на полі.</p>
-                <a href="" class="greenButton">Дізнатись більше</a>
+                <div class="introPilotTeaching">
+                    <h3>Навчання пілотів агродронів</h3>
+                    <p>Пройдіть курс і отримайте навички управління агродронами для ефективної роботи на полі.</p>
+                    <a href="" class="greenButton">Дізнатись більше</a>
+                </div>
             </div>
 
         </div>
@@ -98,7 +100,196 @@ get_header(); // Подключаем header
             </div>
         </div>
     </section>
+    <section>
+        <div class="textSeparator wrapper">
+            <h2>
+                Інноваційні </br><span>послуги</span> <img
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/section1TextSeparatorIcon.png"
+                    alt=""> для</br> вашого <span>агробізнесу</span> та розвитку
+            </h2>
+            <p>Наша команда пропонує послуги аграріям збільшити врожайність та внести пестициди вчасно та якісно, а сервісним компаніям мати доступ до інноваційного обладння та запчастин</p>
 
+                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </section>
+    <section>
+        <div class="blogRecommendationWrapper wrapper">
+            <div class="contentProductItem">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/contentCardImage.png"
+                    alt="">
+                <h3>Професійне навчання операторів агродронів</h3>
+                <p>1 день теоретичного і 2 дні практичних навчань допоможуть вам ефективно керувати агродроном та
+                    обробляти поля різної складності.</p>
+                <div class="productItemButton-wrapper">
+                    <a href="" class="transparentButton">Дізнатись більше</a>
+                    <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
+                        <path />
+                    </svg>
+                    <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
+                        <path />
+                    </svg>
+                </div>
+            </div>
+            <div class="contentProductItem">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/contentCardImage.png"
+                    alt="">
+                <h3>Професійне навчання операторів агродронів</h3>
+                <p>1 день теоретичного і 2 дні практичних навчань допоможуть вам ефективно керувати агродроном та
+                    обробляти поля різної складності.</p>
+                <div class="productItemButton-wrapper">
+                    <a href="" class="transparentButton">Дізнатись більше</a>
+                    <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
+                        <path />
+                    </svg>
+                    <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
+                        <path />
+                    </svg>
+                </div>
+            </div>
+            <div class="contentProductItem">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/contentCardImage.png"
+                    alt="">
+                <h3>Професійне навчання операторів агродронів</h3>
+                <p>1 день теоретичного і 2 дні практичних навчань допоможуть вам ефективно керувати агродроном та
+                    обробляти поля різної складності.</p>
+                <div class="productItemButton-wrapper">
+                    <a href="" class="transparentButton">Дізнатись більше</a>
+                    <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
+                        <path />
+                    </svg>
+                    <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
+                        <path />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="aboutTextWrapper wrapper">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/aboutTextImage.png" alt="">
+            <div class="aboutTextContent">
+                <h2>Про нас</h2>
+                <p>
+                    Lunares - це команда професіоналів, що обʼєднує передові технології з агробізнесом. Ми
+                    спеціалізуємось на внесенні засобів захисту рослин агродронами, продажу обладнання та проводимо
+                    навчання
+                    пілотів
+                    <br />
+                    Наша місія – допомагати аграріям впроваджувати інновації для підвищення врожайності та оптимізації
+                    витрат. Спираючись на технології DJI Agriculture, ми створюємо майбутнє сільського господарства вже
+                    сьогодні.
+                </p>
+                <a href="" class="transparentButton">Зв’язатися з нами</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="benefitsWrapper wrapper">
+
+        </div>
+    </section>
+    <section>
+        <div class="faqWrapper wrapper">
+            <h2><span>Відповіді</span> на поширені питання</h2>
+            <div class="accordion">
+                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    <div class="accordion__title">
+
+                        <span class="accordion__title-text"><h3>Як відбувається процес внесення ЗЗР дроном?</h3>
+                        </span>
+                        <div class="accordion__arrow">
+                            <div class="accordion__arrow-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2" stroke-linecap="round"/>
+</svg></div>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <p>Першим кроком узгоджуються всі деталі замовлення. Далі наша команда виїжджає на визначену локацію та робить обмір полів. В залежності від площі, складності форми та площі обмір може відбуватись як пішки так і самим дроном. Наступним кроком команда замішує хімію в спеціальному змішувачі та приступає до обприскування.</p>
+                        
+                    </div>
+                </div>
+                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    <div class="accordion__title">
+
+                        <span class="accordion__title-text"><h3>Яку площу може обробити дрон за зміну?</h3>
+
+                        </span>
+                        <div class="accordion__arrow">
+                            <div class="accordion__arrow-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2" stroke-linecap="round"/>
+</svg></div>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <p>В нашому дронопарку є різні дрони з різною продуктивністю. Dji Agras T30 може обробити до 120 га за зміну, а новіші моделі T40 та T50 до 220 га за зміну. За потреби на одному полі може працювати декілька дронів одночасно, тому за одну зміну наша команда може виконати понад 500 га.</p>
+                        
+                    </div>
+                </div>
+                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    <div class="accordion__title">
+
+                        <span class="accordion__title-text"><h3>Від чого залежить вартість внесення ЗЗР агродроном?</h3>
+
+
+                        </span>
+                        <div class="accordion__arrow">
+                            <div class="accordion__arrow-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2" stroke-linecap="round"/>
+</svg></div>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <p>Вартість внесення залежить від: площі, кількості полів, норми внесення, наявності перешкод та ліній електропередач на полі.</p>
+                        
+                    </div>
+                </div>
+                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    <div class="accordion__title">
+
+                        <span class="accordion__title-text"><h3>Як проходить навчання для пілотів агродронів?</h3>
+
+
+                        </span>
+                        <div class="accordion__arrow">
+                            <div class="accordion__arrow-item"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2" stroke-linecap="round"/>
+</svg></div>
+                        </div>
+                    </div>
+                    <div class="accordion__content">
+                        <p>Навчання відбувається як в групах так і індивідуально. Курс триває 3 дні, складається з теорії та практики та включає в себе 12 блоків та 48 тем. У вартість входить оренда дрона та транспортні витрати. По завершенню курсу кожен студент отримує сертифікат який підтверджує кваліфікацію.</p>
+                        
+                    </div>
+                </div>
+                
+              
+
+             
+
+               
+
+               
+
+               
+            </div>
+        </div>
+
+        
+    </section>
 
 
     <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
@@ -110,10 +301,10 @@ get_header(); // Подключаем header
         <path d="M 160 40 c 22 0 40 -18 40 -40 v 40 Z" fill="white" />
 
         <!-- Нижняя дуга -->
-        <path d="M 160 160 c 0 22 18 40 40 40 h -40 Z" fill="white" />
+        <path d="M 160 160 c 0 22 18 40 40 40 h -40 Z" fill="black" />
 
         <!-- Левая дуга -->
-        <path d="M 40 160 c -22 0 -40 18 -40 40 v -40 Z" fill="white" />
+        <path d="M 40 160 c -22 0 -40 18 -40 40 v -40 Z" fill="black" />
     </svg>
 </div>
 <?php
