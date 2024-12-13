@@ -3,8 +3,12 @@
   padding: 0;
   margin: 0;
   --green: #32d16d;
+  --greenHover: #22e76b;
+  --greenFocus: #25b059;
   --transperent-green: #32d16c2d;
   --lightgrey: #cccccc;
+  --lightgreyHover: #cccccc2b;
+  --lightgreyFocus: #ffffffb1;
   --grey: #353535;
   --graycards: #222222;
   --black: #0e0e0e;
@@ -38,20 +42,30 @@ p {
   font-size: 16px;
   line-height: 130%;
 }
+.decorBig {
+  font-size: 48px;
+  font-weight: 400;
+
+  line-height: 67px;
+}
+
 .mainWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-header {
+
+section,
+header,
+footer {
   width: 100%;
   padding-left: 4.16%;
   padding-right: 4.16%;
 }
-section {
-  width: 100%;
-  padding-left: 4.16%;
-  padding-right: 4.16%;
+footer {
+  margin-top: 120px;
+  border-top: 1px solid;
+  border-color: var(--lightgrey);
 }
 .wrapper {
 }
@@ -59,38 +73,144 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   text-decoration: none;
   border-radius: 16px;
   border: none;
+  font-weight: 500;
   padding: 14px 32px;
   background-color: var(--green);
   color: var(--black);
   cursor: pointer;
   transition: all 0.2s ease;
 }
+.greenButton svg {
+  transition: all 0.2s ease-in-out;
+}
+.greenButton svg path {
+  stroke: var(--black);
+}
+.greenButton:hover {
+  background-color: var(--greenHover);
+}
+.greenButton:focus {
+  background-color: var(--greenFocus);
+}
+.greenButton:hover > svg {
+  transform: rotate(45deg);
+}
 .blackButton {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   text-decoration: none;
   border-radius: 16px;
   border: none;
+  font-weight: 500;
   padding: 14px 32px;
   background-color: var(--graycards);
   color: #fff;
   cursor: pointer;
   transition: all 0.2s ease;
 }
+.blackButton svg {
+  transition: all 0.2s ease-in-out;
+}
+.blackButton svg path {
+  stroke: #fff;
+}
+.blackButton:hover {
+  color: var(--green);
+}
+.blackButton:focus {
+  color: var(--greenFocus);
+}
+.blackButton:hover > svg {
+  transform: rotate(45deg);
+}
+.blackButton:hover > svg path {
+  stroke: var(--green);
+}
+.blackButton:focus > svg {
+  transform: rotate(45deg);
+}
+.blackButton:focus > svg path {
+  stroke: var(--greenFocus);
+}
 .transparentButton {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   text-decoration: none;
   border-radius: 16px;
   border: 1.5px solid var(--lightgrey);
+  font-weight: 500;
   padding: 14px 32px;
   background-color: transparent;
   color: #fff;
   cursor: pointer;
   transition: all 0.2s ease;
+}
+.transparentButton:hover {
+  background-color: var(--lightgreyHover);
+}
+.transparentButton:focus {
+  color: var(--lightgreyFocus);
+  border-color: var(--lightgreyFocus);
+}
+.transparentButton svg {
+  transition: all 0.2s ease-in-out;
+}
+.transparentButton svg path {
+  stroke: #fff;
+}
+.transparentButton:hover > svg {
+  transform: rotate(45deg);
+}
+
+.transparentButton:focus > svg path {
+  stroke: var(--lightgreyFocus);
+}
+.defaultForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--graycards);
+  padding: 24px 32px 32px 32px;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 426px;
+}
+.defaultForm img {
+  width: 126px;
+}
+.defaultForm p {
+  margin-bottom: 12px;
+  color: var(--lightgrey);
+  text-align: center;
+}
+.defaultForm button {
+  margin-top: 12px;
+  width: 100%;
+}
+.defaultInput {
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  background-color: #fff;
+  border: none;
+  width: 100%;
+}
+.defaultInput::placeholder {
+  color: #3535357b;
+  font-size: 16px;
+}
+.defaultInput:hover ::placeholder {
+  color: #353535;
+}
+.defaultInput:focus {
+  outline: none;
 }

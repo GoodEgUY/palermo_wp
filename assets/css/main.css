@@ -259,6 +259,75 @@
   color: var(--lightgrey);
   margin-bottom: 8px;
 }
+.benefitsWrapper {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+}
+.benefitsDashboard {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 56px;
+  column-gap: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+}
+.benefitsDashboard p {
+  color: var(--lightgrey);
+}
+.benefitsItem {
+  width: 100%;
+  max-width: 313px;
+  display: flex;
+
+  gap: 16px;
+  align-items: flex-start;
+}
+.benefitsItemText {
+  display: flex;
+  flex-direction: column;
+}
+.benefitsItem p {
+  font-weight: 500;
+  color: #fff;
+}
+.benefitsItem p span {
+  font-size: 48px;
+}
+.benefitBanner {
+  width: 100%;
+
+  aspect-ratio: 307/227;
+  position: relative;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.benefitBanner img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.benefitBannerAdtitle {
+  background-color: var(--graycards);
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 319px;
+  border-radius: 20px;
+}
+.benefitBannerAdtitle p {
+  color: var(--lightgrey);
+  margin-bottom: 12px;
+}
 .faqWrapper {
   padding: 0 0 120px 0;
   display: flex;
@@ -275,11 +344,10 @@
 }
 .accordion__item {
   border-radius: 20px;
- background: var(--graycards); 
+  background: var(--graycards);
   width: 100%;
 }
 .accordion__title {
-  
   color: #fff;
   padding: 26px 20px;
   cursor: pointer;
@@ -287,13 +355,11 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
- 
+
   transition: all 0.2s ease;
 }
 .accordion__title-text {
-  
 }
-
 
 .accordion__arrow {
   display: flex;
@@ -304,9 +370,9 @@
   min-width: 36px;
   min-height: 36px;
   background: var(--lightgrey);
-  
+
   border-radius: 50%;
-  
+
   font-weight: 700;
   transition: all 0.3s ease;
 }
@@ -329,9 +395,69 @@
   display: none;
   color: var(--lightgrey);
   padding: 0px 20px 24px 20px;
-
 }
-
+.contactWrapper {
+  display: flex;
+  align-items: center;
+  padding: 112px;
+  gap: 20px;
+  position: relative;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.contactBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  z-index: -2;
+  filter: brightness(40%);
+}
+.backgroundMask {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
+  height: 800px;
+  z-index: -1;
+ 
+}
+.contactBlockText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 650px;
+}
+.contactBlockText p {
+  color: var(--lightgrey);
+  margin-bottom: 16px;
+}
+.footerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px 0;
+}
+.footerLogo {
+  width: 170px;
+}
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.footerColumn p {
+  font-weight: 500;
+}
+.footerColumn a {
+  color: var(--lightgrey);
+  text-decoration: none;
+}
 @keyframes livitation {
   0% {
     transform: translateY(0);
