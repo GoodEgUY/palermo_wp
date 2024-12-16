@@ -279,7 +279,7 @@ Template Name: Fertilization
         <path fill-rule="evenodd" clip-rule="evenodd"
             d="M20 0C8.95431 0 0 8.9543 0 20V80C0 91.0457 8.9543 100 20 100H68.7872C69.4371 100 70.0464 100.316 70.4212 100.847L77.3661 110.685C78.1629 111.814 79.8371 111.814 80.6339 110.685L87.5788 100.847C87.9536 100.316 88.5629 100 89.2128 100H110C121.046 100 130 91.0457 130 80V20C130 8.95431 121.046 0 110 0H20Z"
             fill="#353535" />
-        <text id="animated-text" x="65" y="55" text-anchor="middle" font-size="48" font-family="Arial, sans-serif" fill="white">
+        <text id="animated-text-water" x="65" y="55" text-anchor="middle" font-size="48" font-family="Arial, sans-serif" fill="white">
             0
         </text>
         <text x="65" y="75" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="white">
@@ -288,27 +288,30 @@ Template Name: Fertilization
     </g>
 
     <!-- Анимация счетчика -->
-    <script type="application/ecmascript">
-        <![CDATA[
-        let counter = 0;
-        const targetValue = 95;
-        const textElement = document.getElementById('animated-text');
-
-        function animateCounter() {
-            const interval = setInterval(() => {
-                if (counter < targetValue) {
-                    counter++;
-                    textElement.textContent = `${counter}%`;
-                } else {
-                    clearInterval(interval);
-                }
-            }, 10);
-        }
-
-        window.onload = animateCounter;
-        ]]>
-    </script>
+    
 </svg>
+<script>
+    
+    let counterWater = 0;
+    const targetValueWater = 95;
+    const textElementWater = document.getElementById('animated-text-water');
+
+    function animateCounterWater() {
+        const interval = setInterval(() => {
+            console.log(`test ${counterWater}%`);
+            if (counterWater < targetValueWater) {
+                counterWater++;
+                textElementWater.textContent = `${counterWater}%`;
+            } else {
+                clearInterval(interval);
+            }
+        }, 10);
+    }
+
+    window.onload = animateCounterWater;
+    
+</script>
+
 
                     </div>
                 </div>
@@ -481,9 +484,10 @@ Template Name: Fertilization
         stroke-linecap="round" 
         transform="rotate(-90 175 175)" />
     <!-- Капля воды -->
-    <g transform="translate(142, 105)">
-        <path d="M34.3296 0C25.8509 51.7329 0.621582 62.1562 0.621582 98.426C0.621582 116.623 17.7552 130 34.3296 130C51.2763 130 67.3783 117.489 67.3783 100.212C67.3783 65.396 43.0914 51.6351 34.3299 0H34.3296ZM17.7165 64.9719C9.74542 87.5765 16.2613 111.231 33.1808 118.655C37.5094 120.555 42.224 120.964 46.8365 120.535C13.7317 135.435 -6.13741 96.6473 17.7156 64.9716L17.7165 64.9719Z" 
-            fill="#A832D1" />
+    <g transform="translate(125, 115)">
+    <path d="M35.3435 7.41208L28.5935 0.662092C28.1705 0.243594 27.608 -0.00390625 27.0095 -0.00390625C26.078 -0.00390625 26.078 -0.00390625 11.912 14.1621C11.0345 15.0396 11.0345 16.4661 11.912 17.3436L18.662 24.0936C19.103 24.5346 19.679 24.7506 20.255 24.7506C20.831 24.7506 21.407 24.5301 21.848 24.0936L35.348 10.5936C36.221 9.71608 36.221 8.29408 35.3435 7.41208Z" fill="#A832D1"/>
+<path d="M69.75 54.0059H38.25V81.0059H69.75V54.0059Z" fill="#A832D1"/>
+<path d="M85.5 0.00585938H49.5C43.2945 0.00585938 38.25 5.05484 38.25 11.2558C38.25 19.9408 31.185 27.0058 22.5 27.0058C16.2945 27.0058 11.25 32.0548 11.25 38.2558V96.7557C11.25 102.957 16.2945 108.006 22.5 108.006H85.5C91.7055 108.006 96.75 102.957 96.75 96.7557V11.2558C96.75 5.05484 91.7055 0.00585938 85.5 0.00585938ZM83.25 20.2558C83.25 21.4978 82.2375 22.5058 81 22.5058H54C52.7625 22.5058 51.75 21.4978 51.75 20.2558V15.7558C51.75 14.5138 52.7625 13.5058 54 13.5058H81C82.2375 13.5058 83.25 14.5138 83.25 15.7558V20.2558ZM82.593 90.6628C83.4705 91.5402 83.4705 92.9668 82.593 93.8443C82.152 94.2852 81.576 94.5013 81 94.5013C80.424 94.5013 79.848 94.2808 79.407 93.8443L71.064 85.5013H36.927L28.584 93.8443C28.143 94.2852 27.567 94.5013 26.991 94.5013C26.415 94.5013 25.839 94.2808 25.398 93.8443C24.5205 92.9668 24.5205 91.5402 25.398 90.6628L33.741 82.3197V52.6828L25.398 44.3398C24.5205 43.4623 24.5205 42.0358 25.398 41.1583C26.2755 40.2808 27.702 40.2808 28.5795 41.1583L36.9225 49.5013H71.0595L79.4025 41.1583C80.28 40.2808 81.7065 40.2808 82.584 41.1583C83.4615 42.0358 83.4615 43.4623 82.584 44.3398L74.241 52.6828V82.3197L82.593 90.6628Z" fill="#A832D1"/>
     </g>
 
     <!-- Плашка с текстом -->
@@ -491,7 +495,7 @@ Template Name: Fertilization
         <path fill-rule="evenodd" clip-rule="evenodd"
             d="M20 0C8.95431 0 0 8.9543 0 20V80C0 91.0457 8.9543 100 20 100H68.7872C69.4371 100 70.0464 100.316 70.4212 100.847L77.3661 110.685C78.1629 111.814 79.8371 111.814 80.6339 110.685L87.5788 100.847C87.9536 100.316 88.5629 100 89.2128 100H110C121.046 100 130 91.0457 130 80V20C130 8.95431 121.046 0 110 0H20Z"
             fill="#353535" />
-        <text id="animated-text" x="65" y="55" text-anchor="middle" font-size="48" font-family="Arial, sans-serif" fill="white">
+        <text id="animated-text-fuel" x="65" y="55" text-anchor="middle" font-size="48" font-family="Arial, sans-serif" fill="white">
             0
         </text>
         <text x="65" y="75" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="white">
@@ -502,22 +506,22 @@ Template Name: Fertilization
     <!-- Анимация счетчика -->
     <script type="application/ecmascript">
         <![CDATA[
-        let counter = 0;
-        const targetValue = 95;
-        const textElement = document.getElementById('animated-text');
+        let counterFuel = 0;
+        const targetValueFuel = 95;
+        const textElementFuel = document.getElementById('animated-text-fuel');
 
-        function animateCounter() {
+        function animateCounterFuel() {
             const interval = setInterval(() => {
-                if (counter < targetValue) {
-                    counter++;
-                    textElement.textContent = `${counter}%`;
+                if (counterFuel < targetValueFuel) {
+                    counterFuel++;
+                    textElementFuel.textContent = `${counterFuel}%`;
                 } else {
                     clearInterval(interval);
                 }
             }, 10);
         }
 
-        window.onload = animateCounter;
+        window.onload = animateCounterFuel;
         ]]>
     </script>
 </svg>
