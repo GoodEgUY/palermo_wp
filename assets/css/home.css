@@ -1,44 +1,13 @@
-.headerWrapper {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 24px;
-  align-items: center;
-}
-.headerNav {
-  display: flex;
-  border-radius: 20px;
-  background-color: var(--graycards);
-  gap: 32px;
-  align-items: center;
-  padding: 14px 32px;
-}
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
-  margin-top: 20px;
-}
 
-.imageWrapper {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("../images/moon-and-field.png") center/cover no-repeat;
-  clip-path: polygon(0 0, 53% 0, 53% 31%, 100% 31%, 100% 100%, 0 100%);
-  border-radius: 40px;
-  z-index: 1;
-}
 .introWrapper {
   width: 100%;
   aspect-ratio: 440/217;
   position: relative;
   margin-top: 48px;
+  padding-bottom: 120px;
 }
+
 
 .introBackground {
   position: absolute;
@@ -55,6 +24,7 @@
 
   transition: all 0.2s ease;
 }
+
 .introWrapper:hover .introDrone {
   /* animation: livitation ease-in-out infinite 5s; */
   transform: scale(1.1);
@@ -139,7 +109,7 @@
   margin-bottom: 12px;
 }
 .aboutWrapper {
-  padding: 120px 0;
+  padding-bottom: 120px;
 }
 .aboutTextContainer {
   display: flex;
@@ -147,7 +117,7 @@
   align-items: center;
 }
 .aboutTextContainer h2 {
-  font-size: var(--decor-font-size);
+  
   color: #fff;
 }
 .aboutTextContainer span {
@@ -422,7 +392,6 @@
   width: 100%;
   height: 800px;
   z-index: -1;
- 
 }
 .contactBlockText {
   display: flex;
@@ -436,28 +405,8 @@
   color: var(--lightgrey);
   margin-bottom: 16px;
 }
-.footerWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 48px 0;
-}
-.footerLogo {
-  width: 170px;
-}
-.footerColumn {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-.footerColumn p {
-  font-weight: 500;
-}
-.footerColumn a {
-  color: var(--lightgrey);
-  text-decoration: none;
-}
+
+
 @keyframes livitation {
   0% {
     transform: translateY(0);

@@ -9,10 +9,10 @@ get_header(); // Подключаем header
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/drone1.png" class="introDrone"
                 alt="">
             <div class="introText1">
-                <h2><span>Lunares</span> - <i>(Майбутнє агробізнесу)</i> Технології майбутнього: <span>дрони</span> для
+                <h1><span>Lunares</span> - <i>(Майбутнє агробізнесу)</i> Технології майбутнього: <span>дрони</span> для
                     <span>обприскування та
                         захисту</span>
-                </h2>
+                </h1>
                 <svg class="arcv1" xmlns="http://www.w3.org/2000/svg">
                     <path />
                 </svg>
@@ -438,7 +438,56 @@ get_header(); // Подключаем header
             </div>
         </div>
     </section>
-   
+    
+    <svg class="circleDiagramme" width="300" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Фон круга -->
+
+        <circle cx="150" cy="150" r="120" fill="none" stroke="#222222" stroke-width="15" />
+
+        <!-- Заполненная часть (95%) -->
+        <circle cx="150" cy="150" r="120" fill="none" class="circleDiagrammeFill" stroke="#23AAEB" stroke-width="30"
+            stroke-dasharray="717 754" stroke-dashoffset="37" stroke-linecap="round" transform="rotate(-90 150 150)" />
+
+        <g transform="translate(115, 85)">
+            <path
+                d="M34.3296 0C25.8509 51.7329 0.621582 62.1562 0.621582 98.426C0.621582 116.623 17.7552 130 34.3296 130C51.2763 130 67.3783 117.489 67.3783 100.212C67.3783 65.396 43.0914 51.6351 34.3299 0H34.3296ZM17.7165 64.9719C9.74542 87.5765 16.2613 111.231 33.1808 118.655C37.5094 120.555 42.224 120.964 46.8365 120.535C13.7317 135.435 -6.13741 96.6473 17.7156 64.9716L17.7165 64.9719Z"
+                fill="#23AAEB" />
+        </g>
+     
+
+        <g transform="translate(210, 0)">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M20 0C8.95431 0 0 8.9543 0 20V80C0 91.0457 8.9543 100 20 100H68.7872C69.4371 100 70.0464 100.316 70.4212 100.847L77.3661 110.685C78.1629 111.814 79.8371 111.814 80.6339 110.685L87.5788 100.847C87.9536 100.316 88.5629 100 89.2128 100H110C121.046 100 130 91.0457 130 80V20C130 8.95431 121.046 0 110 0H20Z"
+                fill="#353535" />
+            <text id="animated-text" x="65" y="55" text-anchor="middle" font-size="48" font-family="Arial, sans-serif" fill="white">
+                0
+            </text>
+            <text x="65" y="75" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="white">
+                ЕКОНОМІЇ
+            </text>
+        </g>
+           <script type="application/ecmascript">
+    <![CDATA[
+      let counter = 0;
+      const targetValue = 95;
+      const textElement = document.getElementById('animated-text');
+
+      function animateCounter() {
+        const interval = setInterval(() => {
+          if (counter < targetValue) {
+            counter++;
+            textElement.textContent = `${counter}%`;
+          } else {
+            clearInterval(interval);
+          }
+        }, 10);
+      }
+
+      window.onload = animateCounter;
+    ]]>
+  </script>
+    </svg>
+    
 </div>
 <?php
 get_footer(); // Подключаем footer

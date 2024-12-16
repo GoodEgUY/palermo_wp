@@ -1,0 +1,22 @@
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 48px 0;
+  }
+  .footerLogo {
+    width: 170px;
+  }
+  .footerColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .footerColumn p {
+    font-weight: 500;
+  }
+  .footerColumn a {
+    color: var(--lightgrey);
+    text-decoration: none;
+  }

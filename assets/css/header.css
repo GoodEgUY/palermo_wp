@@ -1,0 +1,14 @@
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+    align-items: center;
+  }
+  .headerNav {
+    display: flex;
+    border-radius: 20px;
+    background-color: var(--graycards);
+    gap: 32px;
+    align-items: center;
+    padding: 14px 32px;
+  }
