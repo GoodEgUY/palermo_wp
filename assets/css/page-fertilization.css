@@ -4,7 +4,6 @@
   height: 600px;
   overflow: hidden;
   margin-top: 20px;
-
 }
 
 .introWrapper2 {
@@ -159,29 +158,64 @@
   border-radius: 40px;
   background-color: var(--graycards);
 }
+.dashboardItem h3 {
+  margin-bottom: 24px;
+}
 .chartItem {
   display: flex;
   gap: 12px;
 }
+
 .chartItemColumn {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
 }
-.circleDiagramme .circleDiagrammeFill {
-  animation: fillAnimation 1s forwards ease-in-out;
+.circleDiagramme .circleDiagrammeFillWater {
+  animation: fillAnimationWater 1s forwards ease-in-out;
 }
-@keyframes fillAnimation {
+.circleDiagramme .circleDiagrammeFillFuel {
+  animation: fillAnimationFuel 1s forwards ease-in-out;
+}
+.chart-fill {
+  transform-origin: bottom; /* Анимация начинается снизу */
+  transition: height 1s ease-in-out, y 2s ease;
+}
+
+/* Анимация для подъема графиков */
+.animate-bar {
+  animation: raiseBar 2s forwards ease-in-out;
+}
+@keyframes fillAnimationWater {
   from {
     stroke-dashoffset: 954;
   }
 
   to {
-    stroke-dashoffset: 100;
+    stroke-dashoffset: 99;
+  }
+}
+@keyframes fillAnimationFuel {
+  from {
+    stroke-dashoffset: 954;
+  }
+
+  to {
+    stroke-dashoffset: 184;
   }
 }
 
+@keyframes raiseBar {
+  from {
+    height: 50;
+    y: 270;
+  }
+  to {
+    height: var(--final-height); /* Высота из переменной */
+    y: var(--final-y); /* Координата y из переменной */
+  }
+}
 @keyframes livitation {
   0% {
     transform: translateY(0);
