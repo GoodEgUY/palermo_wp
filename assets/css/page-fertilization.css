@@ -172,6 +172,7 @@
   align-items: center;
   gap: 12px;
 }
+
 .circleDiagramme .circleDiagrammeFillWater {
   animation: fillAnimationWater 1s forwards ease-in-out;
 }
@@ -186,6 +187,12 @@
 /* Анимация для подъема графиков */
 .animate-bar {
   animation: raiseBar 2s forwards ease-in-out;
+}
+.chartItemColumn p {
+  color: var(--lightgrey);
+}
+.chartItemColumn p span {
+  color: var(--green);
 }
 @keyframes fillAnimationWater {
   from {
