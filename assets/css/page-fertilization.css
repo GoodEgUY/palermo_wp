@@ -50,6 +50,7 @@
 .introText2 h1:nth-child(1) {
   padding: 0 24px 0 0;
   border-bottom-right-radius: 40px;
+  max-width: 625px;
 }
 .introText2 h1:nth-child(1) svg {
   position: absolute;
