@@ -1,0 +1,290 @@
+.introWrapper3 {
+  width: 100%;
+  aspect-ratio: 440/217;
+  position: relative;
+  margin-top: 48px;
+  margin-bottom: 120px;
+  overflow: hidden;
+}
+.introWrapper3 .borderRadius1,
+.introWrapper3 .borderRadius2,
+.introWrapper3 .borderRadius3,
+.introWrapper3 .borderRadius4,
+.introWrapper3 .borderRadius5 {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+}
+
+.introWrapper3 .borderRadius1 path,
+.introWrapper3 .borderRadius2 path,
+.introWrapper3 .borderRadius3 path,
+.introWrapper3 .borderRadius4 path,
+.introWrapper3 .borderRadius5 path {
+  fill: var(--black);
+}
+.introBackground3 {
+  position: absolute;
+  width: 75.13%;
+  top: 0;
+  right: 0;
+  border-radius: 40px;
+}
+.intro3LeftBlock {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  max-width: 672px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.introParagraph3 {
+  position: absolute;
+  right: 32px;
+  top: 32px;
+  color: var(--lightgrey);
+  width: 100%;
+  max-width: 265px;
+}
+.intro3LeftBlock h1 {
+  display: inline-block;
+  background-color: var(--black);
+  width: fit-content;
+  position: relative;
+  padding: 0 18px 18px 0;
+  border-bottom-right-radius: 40px;
+  font-weight: 400;
+}
+.intro3LeftBlock h1 .borderRadius1 {
+  position: absolute;
+}
+.intro3LeftBlock h1 .borderRadius2 {
+  position: absolute;
+}
+
+.leftBlockBackground {
+  position: relative;
+  background-color: var(--black);
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+
+  max-width: 427px;
+  border-radius: 40px 0 0 40px;
+  padding: 0 20px 0 0;
+}
+.leftBlockBackgroundImage {
+  background-image: url(../images/screen3/leftBlockBackground3.png);
+  background-size: cover;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 40px 0 0 40px;
+}
+.leftBlockBackground .borderRadius3 {
+  right: 20px;
+  top: 0;
+}
+.leftBlockBackground .borderRadius4 {
+  left: 100%;
+  top: 0;
+}
+.leftBlockBackground .borderRadius5 {
+  bottom: 0;
+  left: 100%;
+}
+.leftBlockBackground .borderRadius3 path {
+  d: path("M 40 40 c 0 -22 -18 -40 -40 -40 h 40 Z");
+}
+.leftBlockBackground .borderRadius4 path {
+  d: path("M 40 0 c -22 0 -40 18 -40 40 v -40 Z");
+}
+.leftBlockBackground .borderRadius5 path {
+  d: path("M 0 0 c 0 22 18 40 40 40 h -40 Z");
+}
+.leftIntroBackground3 {
+  width: 100%;
+}
+.leftBlockRCcontrol {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 244px;
+  height: 224px;
+  padding: 20px 20px 0 20px;
+  background-color: var(--black);
+  border-top-left-radius: 40px;
+}
+.leftBlockRCcontrol a {
+  width: calc(100% - 64px);
+  padding: 12px 12px;
+}
+.leftBlockRCcontrol .borderRadius1 {
+  bottom: 0;
+  right: 100%;
+}
+.leftBlockRCcontrol .borderRadius2 {
+  bottom: 100%;
+  right: 20px;
+}
+
+.leftBlockRCcontrol .borderRadius1 path,
+.leftBlockRCcontrol .borderRadius2 path {
+  d: path("M 0 40 c 22 0 40 -18 40 -40 v 40 Z ");
+}
+
+.leftBlockRCcontrol img {
+  width: 100%;
+}
+.leftBlockRCcontrol a {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+}
+.introDrone3 {
+  position: absolute;
+  right: 25%;
+  top: 10.38%;
+  width: 34%;
+
+  transition: all 0.2s ease;
+}
+.introWrapper3:hover .introDrone2 {
+  /* animation: livitation ease-in-out infinite 5s; */
+  transform: scale(1.1);
+}
+.advantageWrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 56px;
+  padding-bottom: 120px;
+}
+.advantageTextContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+  max-width: 427px;
+}
+.advantageTextContent p {
+  color: var(--lightgrey);
+  margin-bottom: 8px;
+}
+.advantageDashboard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.advantageItem {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+.advantageItem p {
+  color: var(--lightgrey);
+  margin-bottom: 0;
+  max-width: 400px;
+}
+.advantageItemName {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.sellaryWrapper {
+  display: flex;
+  gap: 56px;
+  align-items: flex-start;
+}
+.sallaryDashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 650px;
+  background-color: var(--graycards);
+  padding: 32px;
+  border-radius: 40px;
+}
+.sallaryDigits {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.sallaryDigits p {
+  color: var(--lightgrey);
+}
+.sallaryDigits h1 {
+  margin-right: 16px;
+
+}
+.sallaryDigitsPercent {
+  display: flex;
+  background-color: var(--grey);
+  border-radius: 20px;
+  gap: 4px;
+  align-items: center;
+  padding: 8px 12px;
+}
+
+.sallaryChart {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.sallaryChartItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  color: var(--lightgrey);
+}
+.animate-sallary-bar {
+  animation: sallaryRaiseBar 2s forwards ease-in-out;
+}
+.sallaryTextContent {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 16px;
+}
+.sallaryTextContent p {
+  margin-bottom: 8px;
+}
+@keyframes sallaryRaiseBar {
+  from {
+    height: 50;
+    y: 203;
+  }
+  to {
+    height: var(--final-height); /* Высота из переменной */
+    y: var(--final-y); /* Координата y из переменной */
+  }
+}
+@keyframes livitation {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-9px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-9px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -37,7 +37,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 48%;
+  width: 650px;
 
   border-bottom-right-radius: 40px;
 }
@@ -100,8 +100,9 @@
   bottom: 0;
   right: 0;
   padding: 20px 0 0 20px;
-  background-color: black;
+  background-color: var(--black);
   border-top-left-radius: 40px;
+  color: #32d16c36;
 }
 
 .introItemCard2 {
@@ -151,6 +152,49 @@
   display: flex;
   gap: 16px;
 }
+.ratingElementsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 120px;
+  border-top: 1px solid var(--grey);
+}
+.ratinItem {
+  width: 100%;
+  padding: 43px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey);
+}
+.ratinItem div {
+  display: flex;
+  align-items: center;
+  width: 70%;
+}
+.ratinItem h1 {
+  width: 100%;
+  max-width: 316px;
+}
+.ratinItem h1 span {
+  color: var(--green);
+  font-size: var(--decor-font-size);
+  
+}
+.ratinItem h3 {
+  text-align: left;
+}
+.ratinItem p {
+  color: var(--lightgrey);
+}
+
+.сhartsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 120px;
+}
 .chartDashboard {
   display: flex;
   align-items: flex-start;
@@ -158,6 +202,14 @@
   padding: 56px;
   border-radius: 40px;
   background-color: var(--graycards);
+  width: 100%;
+}
+.dashboardItem {
+  width: 32%;
+}
+.dashboardItem svg {
+  width: 100%;
+  height: auto;
 }
 .dashboardItem h3 {
   margin-bottom: 24px;
@@ -172,12 +224,14 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  width: 100%;
+  color: var(--lightgrey);
 }
 
-.circleDiagramme .circleDiagrammeFillWater {
+.animatedWaterElement {
   animation: fillAnimationWater 1s forwards ease-in-out;
 }
-.circleDiagramme .circleDiagrammeFillFuel {
+.animatedFuelElement {
   animation: fillAnimationFuel 1s forwards ease-in-out;
 }
 .chart-fill {
@@ -192,8 +246,59 @@
 .chartItemColumn p {
   color: var(--lightgrey);
 }
+.benefitsContent {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 40px;
+  background-color: var(--graycards);
+  width: 100%;
+}
+.benefitItem {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border-radius: 20px;
+  background-color: var(--grey);
+  gap: 16px;
+  color: var(--lightgrey);
+  width: 24%;
+}
 .chartItemColumn p span {
   color: var(--green);
+}
+
+.jobStepsWrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 120px;
+}
+.jobStepSwiperBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.jobStepSwiperBlock h2 {
+  margin-bottom: 80px;
+}
+.jobStepSvgAnimationBlock {
+  padding: 32px;
+  border-radius: 40px;
+  background-color: var(--graycards);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.jobStepSvgAnimationBlock svg {
+  width: 100%;
+}
+.jobStepSvgAnimationBlock .p {
+  color: var(--lightgrey);
+  margin-bottom: 12px;
 }
 @keyframes fillAnimationWater {
   from {

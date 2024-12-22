@@ -1,0 +1,39 @@
+ <svg id="mySvg" width="702" height="223" viewBox="0 0 702 223" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+
+                <!-- Видимые линии -->
+                <path d="M238 24L335 24" stroke="#353535" stroke-width="4" stroke-linecap="round" id="line1to2" />
+                <path d="M587 24L656 24C680.301 24 700 43.6995 700 68V68C700 92.3005 680.301 112 656 112L481 112"
+                    stroke="#353535" stroke-width="4" stroke-linecap="round" id="line2to3" />
+                <path d="M225 112H46C21.6995 112 2 131.699 2 156V156C2 180.301 21.6995 200 46 200H96" stroke="#353535"
+                    stroke-width="4" stroke-linecap="round" id="line3to4" />
+                <path d="M348 200H445" stroke="#353535" stroke-width="4" stroke-linecap="round" id="line4to5" />
+                <!-- Шарик. Поставим в начало первого пути (238,24) -->
+                <circle id="ball" cx="238" cy="24" r="8" fill="#32D16D" />
+
+                <rect id="rect5" x="461" y="176" width="220" height="47" rx="20" fill="#353535" />
+                <rect id="rect4" x="112" y="176" width="220" height="47" rx="20" fill="#353535" />
+                <rect id="rect3" x="241" y="88" width="220" height="47" rx="20" fill="#353535" />
+                <rect id="rect2" x="351" y="0" width="220" height="47" rx="20" fill="#353535" />
+                <rect id="rect1" x="2" y="0" width="220" height="47" rx="20" fill="#32D16D" />
+
+                <!-- Подписи для плашек -->
+                <text id="text1" x="112" y="24" text-anchor="middle" fill="white" font-size="16"
+                    dy=".35em">Заявка</text>
+                <text id="text2" x="461" y="24" text-anchor="middle" fill="white" font-size="16" dy=".35em">Узгодження
+                    та договір</text>
+                <text id="text3" x="351" y="111" text-anchor="middle" fill="white" font-size="16" dy=".35em">Огляд
+                    поля</text>
+                <text id="text4" x="222" y="200" text-anchor="middle" fill="white" font-size="16"
+                    dy=".35em">Обприскування поля</text>
+                <text id="text5" x="571" y="200" text-anchor="middle" fill="white" font-size="16" dy=".35em">Акт
+                    виконаних робіт</text>
+
+
+
+                <path id="fullPath" d="M238 24L335 24
+     L587 24
+     L656 24C680.301 24 700 43.6995 700 68V68C700 92.3005 680.301 112 656 112L481 112
+     L225 112H46C21.6995 112 2 131.699 2 156V156C2 180.301 21.6995 200 46 200H96
+     L348 200H445" fill="none" stroke="transparent" />
+            </svg>
