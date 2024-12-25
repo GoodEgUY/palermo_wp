@@ -374,6 +374,7 @@
   position: relative;
   justify-content: space-between;
   overflow: hidden;
+  border-radius: 40px;
 }
 .contactBackground {
   position: absolute;

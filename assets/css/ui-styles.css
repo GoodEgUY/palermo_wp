@@ -38,6 +38,9 @@ h2 {
 h3 {
   font-size: 24px;
 }
+h3 small {
+  font-size: 16px;
+}
 p {
   font-size: 16px;
   line-height: 130%;
@@ -54,6 +57,9 @@ p span {
 .decorBig span {
   color: var(--green);
 }
+.decoBig small {
+  font-size: 16px;
+}
 .mainWrapper {
   display: flex;
   flex-direction: column;
@@ -66,12 +72,11 @@ footer {
   width: 100%;
   padding-left: 4.16%;
   padding-right: 4.16%;
-  
-}
-section {
   display: flex;
   justify-content: center;
+  
 }
+
 footer {
   margin-top: 120px;
   border-top: 1px solid;
@@ -238,8 +243,14 @@ footer {
   overflow: hidden;
   position: relative;
 }
+.productsSwiper {
+  width: 100%;
+}
 .sliderWrapperDefault {
   width: 100%;
+}
+.productsSwiperWrapper {
+  
 }
 .swiperSlideContent {
   padding: 32px 32px 104px 32px;

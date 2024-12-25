@@ -203,6 +203,7 @@
   display: flex;
   gap: 56px;
   align-items: flex-start;
+  padding-bottom: 120px;
 }
 .sallaryDashboard {
   display: flex;
@@ -225,7 +226,6 @@
 }
 .sallaryDigits h1 {
   margin-right: 16px;
-
 }
 .sallaryDigitsPercent {
   display: flex;
@@ -252,6 +252,9 @@
 .animate-sallary-bar {
   animation: sallaryRaiseBar 2s forwards ease-in-out;
 }
+.animate-text-fade {
+  animation: textShadowFade 1s forwards ease-in-out;
+}
 .sallaryTextContent {
   display: flex;
   align-items: flex-start;
@@ -260,6 +263,134 @@
 }
 .sallaryTextContent p {
   margin-bottom: 8px;
+}
+.learningWrapper {
+  padding-bottom: 120px;
+}
+.learningPlans {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.learningPlanItem {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px 95px 32px;
+  position: relative;
+  background-color: var(--graycards);
+  border-radius: 40px;
+  gap: 12px;
+}
+.learningPlanName {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.learningPlanItem p {
+  margin-bottom: 12px;
+  color: var(--lightgrey);
+}
+.learningTable {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: var(--lightgrey);
+  margin-bottom: 24px;
+}
+
+.learningTableRow {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey);
+  padding: 16px 0;
+}
+
+.learningTableRow.header {
+  border-bottom: 2px solid var(--grey);
+}
+
+.cell {
+  flex: 1;
+  text-align: left;
+}
+
+.cell:first-child {
+  text-align: left;
+  flex: 2;
+}
+.checkMarkIcon {
+  width: 16px;
+  height: 16px;
+  background-image: url(../images/icons/checkMark.svg);
+}
+.learningStepsWrapper {
+  display: flex;
+  gap: 56px;
+  padding-bottom: 120px;
+}
+.learningStepsImage {
+  background-color: var(--grey);
+  width: 100%;
+  max-width: 650px;
+  position: relative;
+}
+.learningStepsImage img {
+  width: 100%;
+}
+.learningStepsImage h2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.learningStepsTable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.learningItem {
+  border-radius: 40px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 614px;
+  background-color: var(--graycards);
+}
+.learningItemName {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.learningItem p {
+  color: var(--lightgrey);
+}
+.contactMarkedList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 8px;
+}
+.markListItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.markListItem p {
+  margin-bottom: 0;
+}
+@keyframes textShadowFade {
+  0% {
+    text-shadow: 2px 1px 10px #06f943;
+  }
+  100% {
+    text-shadow: 0px 0px 0px #06f943;
+  }
 }
 @keyframes sallaryRaiseBar {
   from {
