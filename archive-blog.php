@@ -1,1 +1,0 @@
-/* Placeholder content for archive-blog.php */

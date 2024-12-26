@@ -245,6 +245,7 @@ footer {
 }
 .productsSwiper {
   width: 100%;
+  overflow: hidden;
 }
 .sliderWrapperDefault {
   width: 100%;
@@ -269,6 +270,22 @@ footer {
 .swiperSlideContent p {
   color: var(--lightgrey);
 }
+.swiperSlideProductContent {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.swiperSlideProductContent .steps {
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.swiperSlideProductContent .steps span {
+  color: var(--green);
+}
+.swiperSlideProductContent p {
+  color: var(--lightgrey);
+}
 .swiperNavigationDefault {
   position: absolute;
   bottom: 0;
@@ -279,6 +296,7 @@ footer {
   gap: 16px;
   padding: 24px 24px 0 0;
   z-index: 6;
+  user-select: none;
 }
 .swiperNavigationDefault .borderRadius1 {
   position: absolute;
