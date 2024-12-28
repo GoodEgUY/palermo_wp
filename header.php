@@ -20,7 +20,7 @@
     <header>
 
         <div class="headerWrapper wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="" class="logo">
             <div class="headerNav">
                 <div class="headerItem">Каталог</div>
                 <div class="headerItem">Внесення ЗЗР</div>
@@ -33,5 +33,14 @@
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg></button>
+            <div class="burger">
+                <svg class="burger-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <rect class="line top" y="4" width="32" height="2" rx="1" fill="white" />
+                    <rect class="line middle" x="6" y="15" width="26" height="2" rx="1" fill="white" />
+                    <rect class="line bottom" y="26" width="32" height="2" rx="1" fill="white" />
+                </svg>
+            </div>
+
         </div>
     </header>

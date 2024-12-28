@@ -3,15 +3,16 @@
 function lunare_enqueue_scripts()
 {
     // Підключення CSS
-    wp_enqueue_style('header', get_template_directory_uri() . '/assets/css/header.css', [], '1.0.0');
-    wp_enqueue_style('footer', get_template_directory_uri() . '/assets/css/footer.css', [], '1.0.0');
-    wp_enqueue_style('home', get_template_directory_uri() . '/assets/css/home.css', [], '1.0.0');
-    wp_enqueue_style('page-pilots-academy', get_template_directory_uri() . '/assets/css/page-pilots-academy.css', [], '1.0.0');
-    wp_enqueue_style('page-single-product-other', get_template_directory_uri() . '/assets/css/products.css', [], '1.0.0');
+    wp_enqueue_style('header', get_template_directory_uri() . '/assets/css/header.css', [], '1.0.0', 'all');
+    wp_enqueue_style('footer', get_template_directory_uri() . '/assets/css/footer.css', [], '1.0.0', 'all');
+    wp_enqueue_style('home', get_template_directory_uri() . '/assets/css/home.css', [], '1.0.0', 'all');
+    wp_enqueue_style('page-pilots-academy', get_template_directory_uri() . '/assets/css/page-pilots-academy.css', [], '1.0.0', 'all');
+    wp_enqueue_style('page-single-product-other', get_template_directory_uri() . '/assets/css/products.css', [], '1.0.0', 'all');
+    wp_enqueue_style('page-single-small-template', get_template_directory_uri() . '/assets/css/blog.css', [], '1.0.0', 'all');
 
-    wp_enqueue_style('page-fertilization', get_template_directory_uri() . '/assets/css/page-fertilization.css', [], '1.0.0');
-    wp_enqueue_style('responsive-css', get_template_directory_uri() . '/assets/css/responsive.css', ['main-css'], '1.0', 'all');
-    wp_enqueue_style('ui-styles-css', get_template_directory_uri() . '/assets/css/ui-styles.css', [], '1.0', 'all');
+
+    wp_enqueue_style('page-fertilization', get_template_directory_uri() . '/assets/css/page-fertilization.css', [], '1.0.0', 'all');
+    wp_enqueue_style('ui', get_template_directory_uri() . '/assets/css/ui-styles.css', [], '1.0', 'all');
 
     // Підключення JS
 
@@ -23,13 +24,7 @@ function enqueue_custom_scripts()
     wp_enqueue_script('jquery');
 
     // Подключаем ваш кастомный JS
-    wp_enqueue_script(
-        'custom-scripts', // Уникальное имя скрипта
-        get_template_directory_uri() . '/assets/js/main.js', // Путь к вашему файлу main.js
-        array('jquery'), // Указываем зависимости, чтобы jQuery загружался первым
-        '1.0', // Версия
-        true // Подключение в футере
-    );
+    
     // Подключаем JS
     wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], '1.0', true);
 

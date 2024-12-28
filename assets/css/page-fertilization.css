@@ -11,7 +11,7 @@
   aspect-ratio: 440/217;
   position: relative;
   margin-top: 48px;
-  margin-bottom: 120px;
+  margin-bottom: var(--block-padding);
 }
 
 .introBackground2 {
@@ -19,7 +19,7 @@
   width: 100%;
   top: 0;
   left: 0;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
 }
 .introDrone2 {
   position: absolute;
@@ -39,7 +39,7 @@
   top: 0;
   width: 650px;
 
-  border-bottom-right-radius: 40px;
+  border-bottom-right-radius: var(--big-border-radius);
 }
 .introText2 h1 {
   display: inline-block;
@@ -49,7 +49,7 @@
 }
 .introText2 h1:nth-child(1) {
   padding: 0 24px 0 0;
-  border-bottom-right-radius: 40px;
+  border-bottom-right-radius: var(--big-border-radius);
   max-width: 625px;
 }
 .introText2 h1:nth-child(1) svg {
@@ -66,7 +66,7 @@
 .introText2 h1:nth-child(2) {
   max-width: 80%;
   padding: 0 24px 24px 0;
-  border-bottom-right-radius: 40px;
+  border-bottom-right-radius: var(--big-border-radius);
 }
 .introText2 h1:nth-child(2) svg {
   position: absolute;
@@ -101,7 +101,7 @@
   right: 0;
   padding: 20px 0 0 20px;
   background-color: var(--black);
-  border-top-left-radius: 40px;
+  border-top-left-radius: var(--big-border-radius);
   color: #32d16c36;
 }
 
@@ -135,7 +135,7 @@
   align-items: center;
   gap: 16px;
   padding: 12px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   background-color: var(--graycards);
   color: #fff;
 }
@@ -156,7 +156,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
   border-top: 1px solid var(--grey);
 }
 .ratinItem {
@@ -179,7 +179,6 @@
 .ratinItem h1 span {
   color: var(--green);
   font-size: var(--decor-font-size);
-  
 }
 .ratinItem h3 {
   text-align: left;
@@ -193,14 +192,14 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .chartDashboard {
   display: flex;
   align-items: flex-start;
   gap: 56px;
   padding: 56px;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   background-color: var(--graycards);
   width: 100%;
 }
@@ -252,7 +251,7 @@
   gap: 20px;
   width: 100%;
   padding: 32px;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   background-color: var(--graycards);
   width: 100%;
 }
@@ -260,7 +259,7 @@
   display: flex;
   align-items: center;
   padding: 12px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   background-color: var(--grey);
   gap: 16px;
   color: var(--lightgrey);
@@ -274,7 +273,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .jobStepSwiperBlock {
   display: flex;
@@ -283,11 +282,11 @@
   height: 100%;
 }
 .jobStepSwiperBlock h2 {
-  margin-bottom: 80px;
+  margin-bottom: var(--chapter-padding);
 }
 .jobStepSvgAnimationBlock {
   padding: 32px;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   background-color: var(--graycards);
   display: flex;
   flex-direction: column;
@@ -299,6 +298,56 @@
 .jobStepSvgAnimationBlock .p {
   color: var(--lightgrey);
   margin-bottom: 12px;
+}
+.substancesListWrapper {
+  padding-bottom: var(--block-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.substancesListWrapper h2 {
+  max-width: 940px;
+}
+.substanceList {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.substanceListItem {
+  width: 23.4%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: var(--big-border-radius);
+  height: 100%;
+  max-height: 315px;
+  position: relative;
+}
+.substanceListItem.grey {
+  background-color: var(--graycards);
+}
+.substanceListItem .markedlistDefault {
+  max-height: 220px;
+}
+.substanceListItem .inseract1 {
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  transform: translateX(-40%) translateY(-40%);
+}
+.substanceListItem button {
+  width: fit-content;
+}
+.substanceListItem .borderRadius1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.substanceList p {
+  margin-bottom: 8px;
+  color: var(--lightgrey);
 }
 @keyframes fillAnimationWater {
   from {

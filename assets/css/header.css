@@ -1,14 +1,63 @@
 .headerWrapper {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 24px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 24px;
+  align-items: center;
+}
+.headerNav {
+  display: flex;
+  border-radius: var(--small-border-radius);
+  background-color: var(--graycards);
+  gap: 32px;
+  align-items: center;
+  padding: 14px 32px;
+}
+.burger {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.burger-icon {
+  transition: transform 0.3s ease;
+  pointer-events: none; 
+}
+
+.line {
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* Анимация при активации */
+.burger.active .top {
+  transform: translateY(8px) translateX(-4px) rotate(45deg);
+  transform-origin: 50% 50%;
+}
+
+.burger.active .middle {
+  opacity: 0;
+}
+
+.burger.active .bottom {
+  transform: translateY(-8px) translateX(-4px) rotate(-45deg);
+  transform-origin: 50% 50%;
+}
+@media (max-width: 1100px) {
+  .headerWrapper button {
+    display: none;
   }
+}
+@media (max-width: 900px) {
   .headerNav {
-    display: flex;
-    border-radius: 20px;
-    background-color: var(--graycards);
-    gap: 32px;
-    align-items: center;
-    padding: 14px 32px;
+    display: none;
   }
+  .burger {
+    display: flex;
+  }
+  .headerWrapper .logo {
+    width: 147px;
+  }
+}

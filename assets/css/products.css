@@ -14,7 +14,7 @@
 
 .productGallery-big {
   width: 100%;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@
   justify-content: center;
   width: 100%;
   max-width: 114px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   background-color: var(--graycards);
 }
 .productGallery-small img {
@@ -41,7 +41,7 @@
 }
 .productGalleryBlack-big {
   width: 100%;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,7 +59,7 @@
   justify-content: center;
   width: 100%;
   max-width: 114px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   background-color: #010101;
 }
 .productGalleryBlack-small img {
@@ -71,7 +71,7 @@
   display: flex;
   gap: 56px;
   padding-top: 48px;
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .productMain-info {
   display: flex;
@@ -92,7 +92,7 @@
 }
 .mainPropertiesItem {
   padding: 12px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -127,15 +127,15 @@
 .productTechnologyWrapper {
   display: flex;
   gap: 25px;
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .technologyList h2 {
-  margin-bottom: 80px;
+  margin-bottom: var(--chapter-padding);
 }
 .technologyGallery {
   width: 100%;
   aspect-ratio: 381/247;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   overflow: hidden;
   user-select: none;
   background-color: #010101;
@@ -146,19 +146,19 @@
 .productBigPhotoWrapper {
   aspect-ratio: 22/13;
   width: 100%;
-  border-radius: 40px;
-  padding-bottom: 120px;
+  border-radius: var(--big-border-radius);
+  padding-bottom: var(--block-padding);
 }
 .productBigPhotoWrapper img {
   width: 100%;
 }
 .productKitWrapper {
   background: var(--graycards);
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   padding: 112px;
   display: flex;
   gap: 56px;
-  margin-bottom: 120px;
+  margin-bottom: var(--block-padding);
 }
 .productKitInfo {
   display: flex;
@@ -199,7 +199,7 @@
 }
 .gallery-item {
   background-color: black;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -215,7 +215,7 @@
   display: flex;
   gap: 56px;
   align-items: flex-start;
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .productTechAdventages-name {
   width: 100%;
@@ -296,15 +296,15 @@
   color: var(--lightgrey);
 }
 .productEquipmentWrapper {
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .swiperProductsDashboard {
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .productCardItem {
   width: 100%;
 
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   padding: 20px 20px 90px 20px;
   background-color: var(--graycards);
   position: relative;
@@ -320,7 +320,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   overflow: hidden;
 }
 .productCardItemImage img {
@@ -339,12 +339,12 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 80px;
+  margin-bottom: var(--chapter-padding);
 }
 .categoryHeaderItem {
   color: var(--lightgrey);
   padding: 8px 16px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   background-color: var(--graycards);
 }
 .activeCategory {
@@ -379,7 +379,7 @@
   color: var(--lightgrey);
   background-color: var(--grey);
   padding: 2px 8px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
 }
 .contentProductItem-category .date {
   color: #fff;

@@ -3,15 +3,21 @@
   aspect-ratio: 440/217;
   position: relative;
   margin-top: 48px;
-  padding-bottom: 120px;
+  margin-bottom: var(--block-padding);
 }
-
+.introApplication {
+  width: 100%;
+  aspect-ratio: 440/217;
+  position: relative;
+  border-radius: var(--big-border-radius);
+  overflow: hidden;
+}
 .introBackground {
   position: absolute;
   width: 100%;
   top: 0;
   left: 0;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
 }
 .introDrone {
   position: absolute;
@@ -28,12 +34,14 @@
 }
 .introText1 {
   position: absolute;
+  z-index: 3;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 100%;
+  max-width: 770px;
   padding: 24px;
   background-color: var(--black);
-  border-bottom-left-radius: 40px;
+  border-bottom-left-radius: var(--big-border-radius);
 }
 .arcv1 {
   position: absolute;
@@ -51,11 +59,9 @@
 }
 .arcv1 path {
   fill: var(--black);
-  d: path("M 40 40 c 0 -22 -18 -40 -40 -40 h 40 Z");
 }
 .arcg1 path {
   fill: var(--black);
-  d: path("M 40 40 c 0 -22 -18 -40 -40 -40 h 40 Z");
 }
 .introParagraph {
   position: absolute;
@@ -81,7 +87,7 @@
   align-items: center;
   gap: 16px;
   padding: 12px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   background-color: #fff;
   color: var(--graycards);
 }
@@ -91,6 +97,9 @@
   align-items: flex-start;
   gap: 24px;
 }
+.introItemCard img {
+  width: 40.49%;
+}
 .introPilotTeaching {
   width: 100%;
   max-width: 398px;
@@ -99,22 +108,25 @@
   gap: 12px;
   padding: 20px;
   color: var(--lightgrey);
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   background-color: var(--graycards);
 }
 .introPilotTeaching p {
   margin-bottom: 12px;
 }
 .aboutWrapper {
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .aboutTextContainer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  gap: 16px;
 }
 .aboutTextContainer h2 {
   color: #fff;
+  text-align: right;
+  
 }
 .aboutTextContainer span {
   color: var(--green);
@@ -122,17 +134,30 @@
 .aboutTextContainer img {
   vertical-align: middle;
   margin: 0 8px;
+  max-height: 1em;
+}
+.aboutTextContainer svg {
+  vertical-align: middle;
+  margin: 0 8px;
+  max-height: 1em;
+  max-width: 1em;
+  aspect-ratio: 1/1;
 }
 .textSeparator {
-  padding: 0 0 80px 0;
+  padding-bottom: var(--chapter-padding);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  gap: 16px;
 }
 .textSeparator p {
   color: var(--lightgrey);
   max-width: 540px;
   padding-left: 110px;
+}
+.textSeparator img {
+  max-height: 1em;
+  vertical-align: middle;
 }
 .blogRecommendationWrapper {
   display: flex;
@@ -140,12 +165,12 @@
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 120px;
+  padding-bottom: var(--block-padding);
 }
 .contentProductItem {
   width: 100%;
 
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   padding: 20px 20px 90px 20px;
   background-color: var(--graycards);
   position: relative;
@@ -168,7 +193,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  border-top-right-radius: 40px;
+  border-top-right-radius: var(--big-border-radius);
   background-color: var(--black);
   padding: 20px 20px 0 0;
 }
@@ -190,11 +215,9 @@
 }
 .productItemButton-wrapperFigure1 path {
   fill: var(--black);
-  d: path("M 0 0 c 0 22 18 40 40 40 h -40 Z");
 }
 .productItemButton-wrapperFigure2 path {
   fill: var(--black);
-  d: path("M 0 0 c 0 22 18 40 40 40 h -40 Z");
 }
 .aboutTextWrapper {
   display: flex;
@@ -205,12 +228,14 @@
 }
 .aboutTextImage {
   position: relative;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   overflow: hidden;
   width: 100%;
   height: 100%;
-  min-height: 100%;
+  max-height: 294px;
   max-width: 650px;
+  min-width: 500px;
+  aspect-ratio: 325/147;
 }
 .aboutTextImage img {
   position: absolute;
@@ -223,7 +248,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
+ gap: 16px;
 }
 .aboutTextContent p {
   color: var(--lightgrey);
@@ -233,6 +258,7 @@
   display: flex;
   gap: 56px;
   align-items: center;
+  padding-bottom: var(--block-padding);
 }
 .benefitsDashboard {
   display: flex;
@@ -270,7 +296,7 @@
 
   aspect-ratio: 307/227;
   position: relative;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   position: relative;
   overflow: hidden;
 }
@@ -292,7 +318,7 @@
   padding: 20px;
   width: 100%;
   max-width: 319px;
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
 }
 .benefitBannerAdtitle p {
   color: var(--lightgrey);
@@ -313,7 +339,7 @@
   gap: 12px;
 }
 .accordion__item {
-  border-radius: 20px;
+  border-radius: var(--small-border-radius);
   background: var(--graycards);
   width: 100%;
 }
@@ -374,8 +400,9 @@
   position: relative;
   justify-content: space-between;
   overflow: hidden;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
 }
+
 .contactBackground {
   position: absolute;
   top: 50%;
@@ -406,8 +433,146 @@
   color: var(--lightgrey);
   margin-bottom: 16px;
 }
+.contactBlockForm {
+  width: 100%;
+  max-width: 426px;
+}
+@media (max-width: 1100px) {
+.section1IntroCards {
+  position: static;
+  padding: 20px 0 0 0;
+  
+  gap: 20px;
+  align-items: flex-start;
+}
+.introText1 {
+  max-width: 550px;
+}
+.introItemCard {
+  flex: 1;
+  height: 100%;
+}
+.introPilotTeaching {
+  flex: 1;
+  max-width: unset;
+}
+}
+@media(max-width:900px) {
+  .aboutTextWrapper {
+    flex-direction: column;
 
+  }
+  .aboutTextImage {
+    order: 2;
+    min-width: unset;
+  }
+  .aboutTextContent {
+    order: 1;
+  }
+  .benefitsWrapper {
+    flex-direction: column;
 
+  }
+  .introText1 {
+    position: static;
+  }
+  .textSeparator {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .textSeparator p {
+    max-width: unset;
+    padding-left: 0;
+  }
+  .contactSection {
+    padding: 0;
+  }
+  .contactWrapper {
+    flex-direction: column;
+    gap: 48px;
+    padding: 56px 16px;
+    border-radius: 0!important;
+  }
+  .contactBackground {
+    height: 100%;
+    width: auto;
+  }
+  .contactBlockText {
+    align-items: center;
+  }
+  .contactBlockText p {
+    text-align: center;
+    margin-bottom:0 ;
+  }
+  
+}
+@media(max-width:800px) {
+  .introWrapper {
+    aspect-ratio: unset;
+  }
+  .section1IntroCards {
+    flex-direction: column;
+  }
+  .introApplication {
+    aspect-ratio: 388/349;
+  }
+  .introBackground {
+    height: 100%;
+    width: auto;
+  }
+  .introText1 {
+    padding: 0 0 24px 0;
+  }
+  .whiteItemCard {
+    gap: 12px;
+    padding: 8px;
+  }
+  .whiteItemCardInfo {
+    gap: 16px;
+  }
+  .productItemButton-wrapperFigure1 {
+    width: 24px;
+    height: 24px;
+  }
+  .productItemButton-wrapperFigure2 {
+    width: 24px;
+    height: 24px;
+  }
+  .accordion__title {
+    padding: 16px;
+  }
+  .accordion__content {
+    padding: 0 0 16px 16px
+  }
+  .benefitsWrapper {
+    gap: 32px;
+  }
+  .benefitsDashboard {
+    row-gap: 20px;
+  }
+  .benefitsItem {
+    align-items: flex-start;
+  }
+  .benefitsItem svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media(max-width:600px) {
+  .benefitBanner {
+    aspect-ratio: 97/106;
+  }
+  .benefitBanner img {
+    height: 100%;
+    width: auto;
+  }
+  .benefitBannerAdtitle {
+    left: 12px;
+    bottom: 12px;
+    width: calc(100% - 24px);
+    max-width: unset;
+  }
+}
 @keyframes livitation {
   0% {
     transform: translateY(0);

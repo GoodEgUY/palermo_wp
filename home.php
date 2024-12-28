@@ -4,32 +4,37 @@ get_header(); // Подключаем header
 <div class="mainWrapper">
     <section>
         <div class="introWrapper wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/moon-and-field.png"
-                class="introBackground" alt="">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/drone1.png" class="introDrone"
-                alt="">
             <div class="introText1">
-                <h1><span>Lunares</span> - <i>(Майбутнє агробізнесу)</i> Технології майбутнього: <span>дрони</span> для
-                    <span>обприскування та
-                        захисту</span>
-                </h1>
-                <svg class="arcv1" xmlns="http://www.w3.org/2000/svg">
-                    <path />
-                </svg>
-                <svg class="arcg1" xmlns="http://www.w3.org/2000/svg">
-                    <path />
-                </svg>
+                    <h1><span>Lunares</span> - <i>(Майбутнє агробізнесу)</i> Технології майбутнього: <span>дрони</span>
+                        для
+                        <span>обприскування та
+                            захисту</span>
+                    </h1>
+                    <svg class="arcv1" xmlns="http://www.w3.org/2000/svg">
+                        <path class="leftBottom"/>
+                    </svg>
+                    <svg class="arcg1" xmlns="http://www.w3.org/2000/svg">
+                        <path class="leftBottom"/>
+                    </svg>
+                </div>
+            <div class="introApplication">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/moon-and-field.png"
+                    class="introBackground" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/drone1.png"
+                    class="introDrone" alt="">
+                
+                <p class="introParagraph">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
+                    флагманські моделі DJI Agriculture.
+                </p>
+
             </div>
-            <p class="introParagraph">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
-                флагманські моделі DJI Agriculture.
-            </p>
             <div class="section1IntroCards">
                 <div class="whiteItemCard introItemCard">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/djiagrast40small.png"
                         alt="">
                     <div class="whiteItemCardInfo">
                         <h3>DJI Agras T40</h3>
-                        <a href="" class="blackButton">Перейти до каталогу <svg width="16" height="17"
+                        <a href="" class="blackButton">Дізнатись більше <svg width="16" height="17"
                                 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -130,10 +135,10 @@ get_header(); // Подключаем header
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a>
                     <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="topRight"/>
                     </svg>
                     <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="topRight"/>
                     </svg>
                 </div>
             </div>
@@ -151,10 +156,10 @@ get_header(); // Подключаем header
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a>
                     <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="topRight"/>
                     </svg>
                     <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="topRight"/>
                     </svg>
                 </div>
             </div>
@@ -172,10 +177,10 @@ get_header(); // Подключаем header
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a>
                     <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="topRight"/>
                     </svg>
                     <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="topRight"/>
                     </svg>
                 </div>
             </div>
@@ -183,7 +188,9 @@ get_header(); // Подключаем header
     </section>
     <section>
         <div class="aboutTextWrapper wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/aboutTextImage.png" alt="">
+            <div class="aboutTextImage">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/aboutTextImage.png" alt="">
+            </div>
             <div class="aboutTextContent">
                 <h2>Про нас</h2>
                 <p>
@@ -411,7 +418,7 @@ get_header(); // Подключаем header
             </div>
         </div>
     </section>
-    <section>
+    <section class="contactSection">
         <div class="contactWrapper wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/screen1contactBackground.jpeg"
                 alt="" class="contactBackground">
@@ -438,9 +445,9 @@ get_header(); // Подключаем header
             </div>
         </div>
     </section>
-    
-  
-    
+
+
+
 </div>
 <?php
 get_footer(); // Подключаем footer

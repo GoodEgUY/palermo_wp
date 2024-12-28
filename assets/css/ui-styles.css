@@ -15,6 +15,10 @@
   --purple: #a832d1;
   --blue: #23aaeb;
   --decor-font-size: 48px;
+  --block-padding: 120px;
+  --chapter-padding: 80px;
+  --big-border-radius: 40px;
+  --small-border-radius: 20px;
 }
 body {
   background-color: var(--black);
@@ -24,6 +28,7 @@ body {
 h1 {
   font-size: 42px;
   line-height: 140%;
+  font-weight: 400;
 }
 h1 span,
 h2 span {
@@ -74,7 +79,6 @@ footer {
   padding-right: 4.16%;
   display: flex;
   justify-content: center;
-  
 }
 
 footer {
@@ -197,7 +201,7 @@ footer {
   gap: 12px;
   background-color: var(--graycards);
   padding: 24px 32px 32px 32px;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   width: 100%;
   max-width: 426px;
 }
@@ -238,7 +242,7 @@ footer {
   width: 100%;
   height: fit-content;
   max-width: 538px;
-  border-radius: 40px;
+  border-radius: var(--big-border-radius);
   background-color: var(--graycards);
   overflow: hidden;
   position: relative;
@@ -251,7 +255,6 @@ footer {
   width: 100%;
 }
 .productsSwiperWrapper {
-  
 }
 .swiperSlideContent {
   padding: 32px 32px 104px 32px;
@@ -290,7 +293,7 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  border-top-right-radius: 40px;
+  border-top-right-radius: var(--big-border-radius);
   background-color: var(--black);
   display: flex;
   gap: 16px;
@@ -345,15 +348,63 @@ footer {
 .swiperButtonNext:hover svg path {
   stroke: var(--green);
 }
-
-
-@media(max-width:1400px) {
+.markedlistDefault {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 12px;
+  column-gap: 24px;
+  list-style-image: url("../images/icons/marker.svg");
+  color: var(--lightgrey);
+  padding-left: 10px;
+}
+.markedlistDefault li {
+  padding-left: 8px;
+}
+@media (max-width: 1400px) {
   section,
-header,
-footer {
-  
-  padding-left: 32px;
-  padding-right: 32px;
+  header,
+  footer {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .decorBig {
+    font-size: 24px;
+    line-height: normal;
+  }
+}
+@media (max-width: 1100px) {
+  * {
+    --block-padding:64px;
+    --chapter-padding:32px;
+    --big-border-radius: 24px;
+  }
+  .greenButton,
+  .blackButton,
+  .transparentButton {
+    padding: 12px 24px;
+  }
   
 }
-} 
+@media (max-width: 800px) {
+  section,
+  header,
+  footer {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  footer {
+    margin-top: 48px;
+  }
+}

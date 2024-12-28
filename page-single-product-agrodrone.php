@@ -323,7 +323,7 @@ Template Name: Single Product Agrodrone
                 </div>
                 <div class="techAdventages-propertiesItem">
                     <p class="property">Багатоспрямоване запобігання перешкодам:</p>
-                    <p class="value">✔️</p>
+                    <div class="checkMarkIcon"></div>
                 </div>
                 <div class="techAdventages-propertiesItem">
                     <p class="property">4-х спринклерне обприскування:</p>
