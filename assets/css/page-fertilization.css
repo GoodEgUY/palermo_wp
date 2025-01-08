@@ -13,7 +13,13 @@
   margin-top: 48px;
   margin-bottom: var(--block-padding);
 }
-
+.intro2Application {
+  width: 100%;
+  aspect-ratio: 440/217;
+  position: relative;
+  border-radius: var(--big-border-radius);
+  overflow: hidden;
+}
 .introBackground2 {
   position: absolute;
   width: 100%;
@@ -38,6 +44,7 @@
   left: 0;
   top: 0;
   width: 650px;
+  z-index: 4;
 
   border-bottom-right-radius: var(--big-border-radius);
 }
@@ -194,6 +201,12 @@
   align-items: center;
   padding-bottom: var(--block-padding);
 }
+.chartsContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
 .chartDashboard {
   display: flex;
   align-items: flex-start;
@@ -223,10 +236,17 @@
   flex-direction: column;
   align-items: center;
   gap: 12px;
+  width: 24%;
+  color: var(--lightgrey);
+}
+.diagrameItemColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   width: 100%;
   color: var(--lightgrey);
 }
-
 .animatedWaterElement {
   animation: fillAnimationWater 1s forwards ease-in-out;
 }
@@ -314,14 +334,23 @@
   flex-wrap: wrap;
   gap: 20px;
 }
+.substanceListBlock {
+  display: flex;
+  align-items: center;
+  width: calc((100% - 20px) / 2);
+  flex-wrap: wrap;
+  gap: 20px;
+}
 .substanceListItem {
-  width: 23.4%;
+  flex-grow: 1;
+  width: calc((100% - 20px) / 2);
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
   border-radius: var(--big-border-radius);
-  height: 100%;
+  
+  height: 315px;
   max-height: 315px;
   position: relative;
 }
@@ -348,6 +377,183 @@
 .substanceList p {
   margin-bottom: 8px;
   color: var(--lightgrey);
+}
+.substanceListSwiper {
+  display: none;
+}
+@media (max-width: 1300px) {
+  .chartDashboard {
+    gap: 30px;
+  }
+}
+@media (max-width: 1200px) {
+  .chartItemColumn p {
+    font-size: 14px;
+  }
+  .diagrameItemColumn p {
+    font-size: 14px;
+  }
+  .introText2 h1:first-child {
+    max-width: 420px;
+  }
+  .introIcons2 {
+    gap: 12px;
+  }
+  .introIcons2 img {
+    width: 64px;
+  }
+  .substanceList {
+    flex-direction: column;
+  }
+  .substanceListBlock{
+    width: 100%;
+    max-width: 720px;
+    height: fit-content;
+  }
+  .substanceListItem {
+    
+  }
+}
+@media (max-width: 1100px) {
+  .chartsContentWrapper {
+    flex-direction: row;
+    max-width: 900px;
+    align-items: center;
+  }
+  .chartDashboard {
+    flex-direction: column;
+    padding: 24px 16px;
+  }
+  .сhartsWrapper {
+  }
+  .dashboardItem {
+    width: 100%;
+  }
+  .benefitsContent {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 12px;
+    max-width: 900px;
+  }
+  .benefitItem {
+    width: 49.1%;
+  }
+  .jobStepsWrapper {
+    flex-direction: column;
+  }
+  .jobStepSwiperBlock {
+    order: 2;
+  }
+  .jobStepSvgAnimationBlock {
+    order: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .introText2 {
+    position: static;
+    margin-bottom: 24px;
+    width: 100%;
+  }
+  .introText2 h1 {
+    max-width: unset !important;
+    padding: 0 !important;
+  }
+  .introWrapper2 {
+    aspect-ratio: unset;
+  }
+  .introText2 .borderRadius1 {
+    display: none;
+  }
+  .introProductBlock2 {
+    position: static;
+    padding-left: 0;
+  }
+  .ratinItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .ratinItem div {
+    gap: 16px;
+  }
+  .ratinItem div h1 {
+    width: auto;
+  }
+}
+@media (max-width: 800px) {
+  .jobStepSvgAnimationBlock {
+    padding: 16px;
+  }
+  .jobStepSwiperBlock {
+    padding: 16px;
+  }
+ 
+    .blackItemCard {
+      gap: 12px;
+      padding: 8px;
+    }
+    .blackItemCardInfo {
+      gap: 16px;
+    }
+  .substanceListItem {
+    height: 380px;
+  }
+  
+}
+@media (max-width: 670px) {
+  .chartsContentWrapper {
+    flex-direction: column;
+  }
+  .aboutButtonGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+  .aboutButtonGroup a {
+    width: 100%;
+  }
+}
+@media(max-width:600px) {
+  .substanceList {
+    display: none;
+  }
+  .substanceListItem {
+    width: 100%;
+    min-height: 380px;
+    padding: 0 0 10px 0;
+  }
+  .substanceListSwiper {
+    display: block;
+    
+  }
+  .substanceListItem .markedlistDefault {
+    max-height: 100%;
+  }
+  .jobStepSwiperBlock {
+    padding: 0;
+  }
+}
+@media (max-width: 550px) {
+  .introBackground2 {
+    height: 100%;
+
+    left: -40%;
+    width: auto;
+  }
+  .intro2Application {
+    aspect-ratio: 388 /349;
+  }
+  .intro2ItemCard img {
+    width: 30%;
+    min-width: 151px;
+  }
+}
+@media (max-width: 500px) {
+  .benefitItem {
+    width: 100%;
+  }
 }
 @keyframes fillAnimationWater {
   from {

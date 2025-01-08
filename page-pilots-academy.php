@@ -7,9 +7,18 @@ Template Name: Pilots Academy
 <div class="mainWrapper">
     <section>
         <div class="introWrapper3 wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introBackground3.png"
-                class="introBackground3" alt="">
-            <img src="" class="introDrone3" alt="">
+            <h1 class="intro3Heading">
+                Навчайтеся <span>керувати</span> дронами <span>DJI Agras</span> та відкривайте нові
+                <span>можливості</span><img
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introTextIcon1.svg" alt="">
+                агроіндустрії
+                <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
+                    <path />
+                </svg>
+                <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
+                    <path />
+                </svg>
+            </h1>
             <div class="intro3LeftBlock">
                 <h1>
                     Навчайтеся <span>керувати</span> дронами <span>DJI Agras</span> та відкривайте нові
@@ -55,10 +64,17 @@ Template Name: Pilots Academy
                     </svg>
                 </div>
             </div>
-            <p class="introParagraph3">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
-                флагманські моделі DJI Agriculture.
-            </p>
-            <div class="introProductBlock2">
+            <div class="intro3Application">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introBackground3.png"
+                    class="introBackground3" alt="">
+                <img src="" class="introDrone3" alt="">
+                <p class="introParagraph3">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
+                    флагманські моделі DJI Agriculture.
+                </p>
+            </div>
+
+
+            <div class="introProductBlock3">
                 <div class="blackItemCard">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone.png"
                         alt="">
@@ -81,6 +97,30 @@ Template Name: Pilots Academy
                     <path />
                 </svg>
             </div>
+            <div class="pilotsAcademyTablet">
+                <div class="pilotsAcademyTablet-Control">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/rcControlPhotoBig.png"
+                        alt="">
+                    <a href="" class="transparentButton">
+                        Стати пілотом
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
+                        <path />
+                    </svg>
+                    <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
+                        <path />
+                    </svg>
+                </div>
+                <div class="pilotsAcademyTablet-Image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/leftBlockBackground3.png"
+                        alt="">
+                </div>
+
+            </div>
         </div>
     </section>
     <section>
@@ -90,13 +130,13 @@ Template Name: Pilots Academy
                 <p> Професія пілота агродрона стала однією з найбільш затребуваних у сучасному агробізнесі. Попит на
                     спеціалістів, які вміють керувати передовими технологіями, зростає з кожним роком.
                 </p>
-                <a href="" class="transparentButton">
+                <button href="" class="transparentButton">
                     Безкоштовна консультація
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                </a>
+                </button>
             </div>
             <div class="advantageDashboard">
                 <div class="advantageItem">
@@ -132,10 +172,17 @@ Template Name: Pilots Academy
                     <p>Курс створений відповідно до вимог та тенденцій агроіндустрії, що робить його практичним.</p>
                 </div>
             </div>
+            <button href="" class="transparentButton consultationButton">
+                Безкоштовна консультація
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
         </div>
     </section>
     <section>
-        <div class=" sellaryWrapper wrapper">
+        <div class="sellaryWrapper wrapper">
             <div class="sallaryDashboard">
                 <p style="font-weight: 500;">Оператор агро дрону, зарплата:</p>
                 <div class="sallaryDigits">
@@ -233,7 +280,7 @@ Template Name: Pilots Academy
                             const observer = new IntersectionObserver((entries, obs) => {
                                 entries.forEach(entry => {
                                     if (entry.isIntersecting) {
-                                       const textFade = document.querySelector(".textFade")
+                                        const textFade = document.querySelector(".textFade")
                                         const chartFills = entry.target.querySelectorAll('.chart-fill');
                                         chartFills.forEach(el => el.classList.add('animate-sallary-bar'));
                                         textFade.classList.add('animate-text-fade')
@@ -257,6 +304,13 @@ Template Name: Pilots Academy
                     </script>
                 </div>
             </div>
+            <button  class="transparentButton sallaryButton">
+                    Безкоштовна консультація
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
             <div class="sallaryTextContent">
                 <h2>Злітаємо в <span>майбутнє!</span> Кар'єра <span>пілота</span> агродрона — <span>професія</span>
                     нового покоління!
@@ -268,13 +322,13 @@ Template Name: Pilots Academy
                     роботу, але й зробити вагомий внесок у розвиток аграрного сектору. Подивіться, як змінювалися
                     перспективи пілотів із 2020 року!
                 </p>
-                <a href="" class="transparentButton">
+                <button  class="transparentButton">
                     Безкоштовна консультація
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
-                </a>
+                </button>
             </div>
             </di>
     </section>
@@ -393,7 +447,7 @@ Template Name: Pilots Academy
                     <div class="cell">
                         <p>Локація</p>
                     </div>
-                    <div class="cell">
+                    <div class="cell pc">
                         <p>м. Хмельницький</p>
                     </div>
                     <div class="cell">
@@ -672,9 +726,10 @@ Template Name: Pilots Academy
     <section>
         <div class="learningStepsWrapper wrapper">
             <div class="learningStepsImage">
+                <h2>Як відбувається <span>навчання?</span></h2>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learningStepsImage.png"
                     alt="">
-                <h2>Як відбувається <span>навчання?</span></h2>
+                
                 <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
                     <path />
                 </svg>
@@ -808,17 +863,26 @@ Template Name: Pilots Academy
             </div>
         </div>
     </section>
-    <section>
+    <section class="contactSection">
         <div class="contactWrapper wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/screen3contactBackground.png"
                 alt="" class="contactBackground">
 
             <div class="contactBlockText">
-                <h2 class="decorBig">Чи є ще вільні місця?<br /> Як  <span>отримати знижку?</span></h2>
+                <h2 class="decorBig">Чи є ще вільні місця?<br /> Як <span>отримати знижку?</span></h2>
                 <div class="contactMarkedList">
-                    <div class="markListItem"><div class="checkMarkIcon"></div><p>Отримай відповіді на всі запитання</p></div>
-                    <div class="markListItem"><div class="checkMarkIcon"></div><p>З'ясуй, який формат навчання тобі підійде</p></div>
-                    <div class="markListItem"><div class="checkMarkIcon"></div><p>Дізнайся про наші ексклюзивні пропозиції</p></div>
+                    <div class="markListItem">
+                        <div class="checkMarkIcon"></div>
+                        <p>Отримай відповіді на всі запитання</p>
+                    </div>
+                    <div class="markListItem">
+                        <div class="checkMarkIcon"></div>
+                        <p>З'ясуй, який формат навчання тобі підійде</p>
+                    </div>
+                    <div class="markListItem">
+                        <div class="checkMarkIcon"></div>
+                        <p>Дізнайся про наші ексклюзивні пропозиції</p>
+                    </div>
                 </div>
                 <h2 class="decorBig"><i>+38 (093)969 46 42</i></h2>
             </div>

@@ -93,8 +93,10 @@ Template Name: Single Product Agrodrone
     </section>
     <section>
         <div class="productTechnologyWrapper wrapper">
+            <h2 class="mobileChapter"> <span> Технології</span>, що підсилюють кожен етап <span>обробки полів</span></h2>
             <div class="technologyList">
-                <h2> <span> Технології</span>, що підсилюють кожен етап <span>обробки полів</span></h2>
+                <h2 > <span> Технології</span>, що підсилюють кожен етап <span>обробки полів</span></h2>
+
                 <div class="mainSwiperContainer">
                     <div class="swiperDefault swiperProductTechnology">
 
@@ -200,17 +202,11 @@ Template Name: Single Product Agrodrone
     <section>
         <div class="textSeparator wrapper">
             <h2>
-                <span>Економія</span> ресурсів <br />завдяки контролю
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon1.svg"
-                    alt="Icon 2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon2.svg"
-                    alt="Icon 2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon3.svg"
-                    alt="Icon 2">
-                <br />
-                витрат <span>води, коштів</span> і <span>пального</span>
+            <span>Бінокулярне</span> <br/>виявлення перешкод із<br/> <span>подвійним  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/binocular.png" alt="Icon2">радаром</span> 
+                
+                
             </h2>
-            <p>Наша команда пропонує послуги аграріям збільшитиврожайність та внести пестициди вчасно та якісно,
+            <p>DJI AGRAS T50 має передній і задній радари з подвоєною кількістю радіоканалів для точного виявлення. Вони забезпечують багатовекторне уникнення перешкод, підвищуючи безпеку. Два комплекти бінокулярних датчиків розпізнають рельєф і перешкоди для автоматичного обльоту та слідування рельєфу.</p>
         </div>
     </section>
     <section>

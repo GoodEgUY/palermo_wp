@@ -6,6 +6,14 @@
   margin-bottom: var(--block-padding);
   overflow: hidden;
 }
+.intro3Application {
+  width: 100%;
+  aspect-ratio: 440/217;
+  position: relative;
+
+
+  overflow: hidden;
+}
 .introWrapper3 .borderRadius1,
 .introWrapper3 .borderRadius2,
 .introWrapper3 .borderRadius3,
@@ -40,6 +48,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  z-index: 3;
+}
+.intro3LeftBlock h1 img {
+  vertical-align: middle;
+  margin: 0 8px;
+  max-height: 1em;
 }
 .introParagraph3 {
   position: absolute;
@@ -60,11 +74,15 @@
 }
 .intro3LeftBlock h1 .borderRadius1 {
   position: absolute;
+  top: 0;
+  left: 100%;
 }
 .intro3LeftBlock h1 .borderRadius2 {
   position: absolute;
 }
-
+.intro3LeftBlock h1 .borderRadius1 path {
+  d: path("M 40 0 c -22 0 -40 18 -40 40 v -40 Z")
+}
 .leftBlockBackground {
   position: relative;
   background-color: var(--black);
@@ -157,6 +175,61 @@
   /* animation: livitation ease-in-out infinite 5s; */
   transform: scale(1.1);
 }
+.introProductBlock3 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px 0 0 20px;
+  background-color: var(--black);
+  border-top-left-radius: var(--big-border-radius);
+  color: #32d16c36;
+}
+
+.introItemCard3 {
+  position: absolute;
+}
+.introProductBlock3 .borderRadius1 {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  width: 40px;
+  height: 40px;
+}
+.introProductBlock3 .borderRadius2 {
+  position: absolute;
+  right: 100%;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+}
+.introProductBlock3 .borderRadius1 path {
+  fill: var(--black);
+  d: path("M 0 40 c 22 0 40 -18 40 -40 v 40 Z");
+}
+.introProductBlock3 .borderRadius2 path {
+  fill: var(--black);
+  d: path("M 0 40 c 22 0 40 -18 40 -40 v 40 Z");
+}
+.pilotsAcademyTablet {
+  display: flex;
+  align-items: center;
+}
+.pilotsAcademyTablet-Image {
+  flex-grow: 1;
+}
+.pilotsAcademyTablet-Control {
+  flex-grow: 1;
+}
+
+.pilotsAcademyTablet-Control img {
+  width: 100%;
+}
+.pilotsAcademyTablet-Control a {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+}
 .advantageWrapper {
   display: flex;
   align-items: flex-start;
@@ -186,6 +259,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+gap: 12px;
 
   width: 100%;
 }
@@ -198,6 +273,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  min-width: fit-content;
 }
 .sellaryWrapper {
   display: flex;
@@ -283,6 +359,7 @@
   background-color: var(--graycards);
   border-radius: var(--big-border-radius);
   gap: 12px;
+  width: 33%;
 }
 .learningPlanName {
   display: flex;
@@ -332,7 +409,7 @@
   padding-bottom: var(--block-padding);
 }
 .learningStepsImage {
-  background-color: var(--grey);
+  
   width: 100%;
   max-width: 650px;
   position: relative;
@@ -383,6 +460,196 @@
 }
 .markListItem p {
   margin-bottom: 0;
+}
+.intro3Heading {
+  display: none;
+  z-index: 100;
+}
+.consultationButton {
+  display: none!important;
+}
+.sallaryButton {
+  display: none!important;
+}
+@media (max-width: 1200px) {
+  .intro3LeftBlock {
+    max-width: 550px;
+    position: relative;
+  }
+  .leftBlockBackground {
+    max-width: 244px;
+    padding-right: 16px;
+  }
+  .leftBlockBackgroundImage {
+    width: 100%;
+    background-repeat: no-repeat;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    position: static;
+    flex-grow: 1;
+  }
+  .intro3Application {
+    position: absolute;
+    top: 0;
+    right: 0;
+    aspect-ratio: unset;
+    height: 100%;
+  }
+  .introWrapper3 {
+    height: fit-content;
+    aspect-ratio: unset;
+  }
+  .introBackground3 {
+    height: 100%;
+    width: auto;
+    z-index: -1;
+  }
+  .introProductBlock3 {
+    padding: 16px 0 0 16px;
+  }
+  .leftBlockRCcontrol{
+    position: static;
+    padding-right: 16px;
+    aspect-ratio: 1/1;
+    flex-grow: 1;
+  }
+  .leftBlockBackground .borderRadius3 {
+    right: 0;
+    display: none;
+  }
+  .leftBlockRCcontrol .borderRadius2 {
+    right: 0;
+    display: none;
+  }
+  .leftBlockBackground {
+    display: flex;
+    flex-direction: column;
+
+  }
+  .advantageItem p {
+    max-width: unset;
+  }
+  .sallaryDashboard {
+    width: 100%;
+    min-width: 500px
+  }
+
+  .sallaryChartItem {
+    flex-grow: 1;
+   
+  }
+  .sallaryChartItem svg {
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-width: 1100px) {
+}
+@media (max-width: 1000px) {
+  .sallaryDashboard {
+    min-width: 400px;
+  }
+  .learningPlanItem {
+    min-height: 300px;
+    width: 100%;
+  }
+  .learningPlans {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .learningStepsImage {
+   
+    flex-grow: 1;
+  }
+  .learningStepsTable {
+    width: 100%;
+    flex-grow: 1;
+
+  }
+
+}
+@media (max-width: 800px) {
+  .introWrapper3 {
+    display: none;
+  }
+  .advantageWrapper {
+    flex-direction: column;
+gap: 20px;
+  }
+  .advantageItem:first-child {
+    padding: 0 0 16px 0;
+  }
+  .advantageItem {
+    padding: 16px 0;
+  }
+  .advantageItemName {
+    gap: 16px;
+  }
+  .advantageTextContent button {
+    display: none;
+  }
+  .consultationButton {
+    display: flex!important;
+    margin-top: 16px;
+    width: 100%;
+  }
+  .sellaryWrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .sallaryTextContent {
+    order: 1;
+  }
+  .sallaryTextContent button {
+    display: none;
+  }
+  .sallaryDashboard {
+    order: 2;
+    max-width: unset;
+  }
+  .sallaryButton {
+    display: flex!important;
+    order: 3;
+    margin-top: 16px;
+    width: 100%;
+  }
+  .learningStepsImage {
+    max-width: unset;
+    height: fit-content;
+    flex-grow: unset;
+  }
+  .learningStepsWrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .learningStepsImage h2 {
+    position: static;
+    margin-bottom: 32px;
+    max-width: 180px;
+  }
+  .learningStepsImage .borderRadius1,
+  .learningStepsImage .borderRadius2 {
+    display: none;
+  }
+ .learningPlans {
+  margin-top: 24px;
+ }
+}
+@media (max-width: 600px) {
+  .sallaryDashboard{
+    min-width: unset;
+    padding: 16px;
+  }
+  .sallaryDigits {
+    flex-wrap: wrap;
+  }
+  .sallaryDigits p {
+    width: 100%;
+  }
+  .learningTable p {
+    font-size: 12px;
+  }
 }
 @keyframes textShadowFade {
   0% {

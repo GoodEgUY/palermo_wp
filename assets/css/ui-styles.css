@@ -54,7 +54,7 @@ p span {
   color: var(--green);
 }
 .decorBig {
-  font-size: 48px;
+  font-size: var(--decor-font-size);
   font-weight: 400;
 
   line-height: 67px;
@@ -361,6 +361,19 @@ footer {
 .markedlistDefault li {
   padding-left: 8px;
 }
+.pc {
+  display: flex;
+
+}
+.mobile {
+  display: none;
+}
+.mobile-inline {
+  display: none;
+    }
+    .pc-inline {
+      display: inline-block;
+    }
 @media (max-width: 1400px) {
   section,
   header,
@@ -379,6 +392,9 @@ footer {
   h3 {
     font-size: 20px;
   }
+  *{
+    --decor-font-size:24px;
+  }
   .decorBig {
     font-size: 24px;
     line-height: normal;
@@ -386,8 +402,8 @@ footer {
 }
 @media (max-width: 1100px) {
   * {
-    --block-padding:64px;
-    --chapter-padding:32px;
+    --block-padding: 64px;
+    --chapter-padding: 32px;
     --big-border-radius: 24px;
   }
   .greenButton,
@@ -395,9 +411,27 @@ footer {
   .transparentButton {
     padding: 12px 24px;
   }
-  
 }
 @media (max-width: 800px) {
+  .jobStepSwiperBlock {
+    width: 100%;
+
+  }
+  .swiperDefault {
+    max-width: 100%;
+  }
+  .pc {
+    display: none;
+  }
+  .mobile {
+    display: flex;
+  }
+  .mobile-inline {
+display: inline-block;
+  }
+  .pc-inline {
+    display: none;
+  }
   section,
   header,
   footer {
@@ -407,4 +441,17 @@ footer {
   footer {
     margin-top: 48px;
   }
+  .swiperSlideContent {
+    padding: 16px 16px 90px 16px;
+  }
+  .swiperSlideContent .steps {
+    margin-bottom: 4px;
+  }
+  .markedlistDefault {
+    row-gap: 4px;
+  }
+  .defaultForm {
+    padding: 16px 20px 20px 20px;
+  }
 }
+

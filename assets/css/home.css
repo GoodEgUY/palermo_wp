@@ -557,6 +557,9 @@
     width: 32px;
     height: 32px;
   }
+  .faqWrapper {
+    padding-bottom: 80px;
+  }
 }
 @media(max-width:600px) {
   .benefitBanner {

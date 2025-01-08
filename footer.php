@@ -20,7 +20,6 @@
                 <p>Інформація</p>
                 <a href="">lunares.agro@gmail.com</a>
                 <a href="">+380939694642</a>
-
             </div>
             <div class="footerSocials">
                 <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/footerTikTok.svg"
