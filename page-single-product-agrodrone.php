@@ -93,9 +93,10 @@ Template Name: Single Product Agrodrone
     </section>
     <section>
         <div class="productTechnologyWrapper wrapper">
-            <h2 class="mobileChapter"> <span> Технології</span>, що підсилюють кожен етап <span>обробки полів</span></h2>
+            <h2 class="mobileChapter"> <span> Технології</span>, що підсилюють кожен етап <span>обробки полів</span>
+            </h2>
             <div class="technologyList">
-                <h2 > <span> Технології</span>, що підсилюють кожен етап <span>обробки полів</span></h2>
+                <h2> <span> Технології</span>, що підсилюють кожен етап <span>обробки полів</span></h2>
 
                 <div class="mainSwiperContainer">
                     <div class="swiperDefault swiperProductTechnology">
@@ -202,11 +203,15 @@ Template Name: Single Product Agrodrone
     <section>
         <div class="textSeparator wrapper">
             <h2>
-            <span>Бінокулярне</span> <br/>виявлення перешкод із<br/> <span>подвійним  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/binocular.png" alt="Icon2">радаром</span> 
-                
-                
+                <span>Бінокулярне</span> <br />виявлення перешкод із<br /> <span>подвійним <img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/binocular.png"
+                        alt="Icon2">радаром</span>
+
+
             </h2>
-            <p>DJI AGRAS T50 має передній і задній радари з подвоєною кількістю радіоканалів для точного виявлення. Вони забезпечують багатовекторне уникнення перешкод, підвищуючи безпеку. Два комплекти бінокулярних датчиків розпізнають рельєф і перешкоди для автоматичного обльоту та слідування рельєфу.</p>
+            <p>DJI AGRAS T50 має передній і задній радари з подвоєною кількістю радіоканалів для точного виявлення. Вони
+                забезпечують багатовекторне уникнення перешкод, підвищуючи безпеку. Два комплекти бінокулярних датчиків
+                розпізнають рельєф і перешкоди для автоматичного обльоту та слідування рельєфу.</p>
         </div>
     </section>
     <section>
@@ -217,6 +222,7 @@ Template Name: Single Product Agrodrone
 
     <section>
         <div class="productKitWrapper wrapper">
+            <h2 class="mobileChapter"><span>Дрон-комплект</span> DJI AGRAS Т50</h2>
             <div class="productKitInfo">
                 <h2><span>Дрон-комплект</span> DJI AGRAS Т50</h2>
                 <div class="productKit-list">
@@ -522,6 +528,22 @@ Template Name: Single Product Agrodrone
                             delay: 5000,
                             disableOnInteraction: false,
                         },
+                        breakpoints: {
+                           
+                            900: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
+                            },
+                            // 600px и меньше (например, 1 слайд для мобильных)
+                            600: {
+                                slidesPerView: 2,
+                                spaceBetween: 15,
+                            },
+                            0: {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                            }
+                        },
                         navigation: {
                             nextEl: '#swiperButtonNext-productTechnology',
                             prevEl: '#swiperButtonPrev-productTechnology',
@@ -641,7 +663,7 @@ Template Name: Single Product Agrodrone
                 <h2 class="decorBig">Залишились питання?<br /> <span>Ми</span> завжди <span>на зв'язку!</span></h2>
                 <p>Заповніть форму, і наші спеціалісти зв'яжуться з вами найближчим часом, щоб відповісти на всі ваші
                     запитання. Або телефонуйте за номером:</p>
-                <h2 class="decorBig"><i>+38 (093)969 46 42</i></h2>
+                <h2 class="decorBig"><a href="tel:+380939694642"><i>+38 (093)969 46 42</i></a></h2>
             </div>
             <div class="contactBlockForm">
                 <form action="" class="defaultForm">

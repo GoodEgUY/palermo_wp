@@ -433,6 +433,10 @@
   color: var(--lightgrey);
   margin-bottom: 16px;
 }
+.contactBlockText .decorBig a {
+  text-decoration: none;
+  color: #fff;
+}
 .contactBlockForm {
   width: 100%;
   max-width: 426px;

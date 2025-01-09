@@ -1257,7 +1257,7 @@ Template Name: Fertilization
                 <p>Заповніть форму, і наші спеціалісти зв'яжуться з вами найближчим часом, щоб відповісти на всі ваші
                     запитання. Або телефонуйте за номером:
                 </p>
-                <h2 class="decorBig"><i>+38 (093)969 46 42</i></h2>
+                <h2 class="decorBig"><a href="tel:+380939694642"><i>+38 (093)969 46 42</i></a></h2>
             </div>
             <div class="contactBlockForm">
                 <form action="" class="defaultForm">

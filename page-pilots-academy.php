@@ -884,7 +884,7 @@ Template Name: Pilots Academy
                         <p>Дізнайся про наші ексклюзивні пропозиції</p>
                     </div>
                 </div>
-                <h2 class="decorBig"><i>+38 (093)969 46 42</i></h2>
+                <h2 class="decorBig"><a href="tel:+380939694642"><i>+38 (093)969 46 42</i></a></h2>
             </div>
             <div class="contactBlockForm">
                 <form action="" class="defaultForm">

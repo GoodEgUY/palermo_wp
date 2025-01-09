@@ -475,6 +475,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    padding: 8px 0;
   }
   .ratinItem div {
     gap: 16px;

@@ -167,6 +167,9 @@
   gap: 56px;
   margin-bottom: var(--block-padding);
 }
+.productKitWrapper .mobileChapter {
+  display: none;
+}
 .productKitInfo {
   display: flex;
   flex-direction: column;
@@ -305,6 +308,9 @@
 .productEquipmentWrapper {
   padding-bottom: var(--block-padding);
 }
+.productEquipmentWrapper .swiperNavigationDefault {
+  position: static;
+}
 .swiperProductsDashboard {
   padding-bottom: var(--block-padding);
 }
@@ -427,6 +433,15 @@
   .technologyList {
     max-width: 100%;
   }
+  .productKitWrapper {
+    padding: 32px;
+  }
+  .productOtherInfo {
+    width: 100%;
+  }
+  .productOtherWrapper {
+    gap: 32px;
+  }
  }
  @media (max-width:800px)  {
   .productMainInfoWrapper {
@@ -455,6 +470,38 @@
   .technologyGallery {
     order: 1;
   }
+  .productKitWrapper {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .productKitWrapper .mobileChapter {
+    display: inline;
+  }
+  .productKitInfo h2 {
+    display: none;
+  }
+  .productKitInfo {
+    order: 2;
+  }
+  .productKitGallery {
+    order: 1;
+  }
+  .productTechAdventagesWrapper {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .productTechAdventages-name {
+    width: 100%;
+    align-items: center;
+    max-width: unset;
+  }
+  .productTechAdventages-name img {
+    width: 100%;
+    max-width: 400px;
+  }
+  .productOtherWrapper {
+    flex-direction: column;
+  }
  }
  @media (max-width:550px) {
   .productCardButtonGroup {
@@ -466,5 +513,15 @@
   .productCardButtonGroup button,
   .productCardButtonGroup a {
     width: 100%;
+  }
+  .techAdventages-propertiesItem {
+    gap: 12px;
+  }
+  .techAdventages-propertiesItem p {
+    font-size: 12px;
+    width: 48%;
+  }
+  .productOtherPropertiesItem p {
+    font-size: 12px;
   }
  }
