@@ -8,7 +8,8 @@ Template Name:  Blog Small
     <section>
         <div class="smallTemplateWrapper wrapper">
             <div class="smallContentCollumn">
-                <h1 class="blogPageName">Потенційний дохід на відсутності витоптування. Період окупності інвестиції в агродрон та додаткове
+                <h1 class="blogPageName">Потенційний дохід на відсутності витоптування. Період окупності інвестиції в
+                    агродрон та додаткове
                     обладнання.
                 </h1>
                 <div class="blogContentInfo">
@@ -19,7 +20,8 @@ Template Name:  Blog Small
                     class="smallContent-mainImage">
                 <div class="smallTemplateChapter">
                     <h2 class="chapterName">У випадку повного циклу внесення ЗЗР</h2>
-                    <p class="chapterParagraph">У випадку повного циклу внесення ЗЗР агродронами впродовж всього сезону, чи, як мінімум, на
+                    <p class="chapterParagraph">У випадку повного циклу внесення ЗЗР агродронами впродовж всього сезону,
+                        чи, як мінімум, на
                         завершальних етапах розвитку рослин (щоб не травмувати рослини колісною технікою безповоротно),
                         крім
                         зрозуміло нижчих затрат на воді (8…12 л/га замість 100...200 л/га у колісних обприскувачів),
@@ -54,7 +56,8 @@ Template Name:  Blog Small
                             <p>Дізнайся про наші ексклюзивні пропозиції</p>
                         </div>
                     </div>
-                    <p class="chapterParagraph">ДОВІДКОВО: У наведених розрахунках взято основні найпопулярніші культури суцільного посіву,
+                    <p class="chapterParagraph">ДОВІДКОВО: У наведених розрахунках взято основні найпопулярніші культури
+                        суцільного посіву,
                         середньо-статистичну урожайність та вартість зерна станом на квітень 2024 року. Якщо у когось в
                         господарстві урожайність відрізняється, то можна, до відповідного значення «ВТРАТИ ДОХОДУ»,
                         додати/відняти відсоток, в залежності від показника урожайності, який ви маєте у своїх умовах і
@@ -71,14 +74,16 @@ Template Name:  Blog Small
                 </div>
                 <div class="smallTemplateChapter">
                     <h2 class="chapterName">«ДОДАТКОВИЙ ДОХІД ВІД 33 000 ДО 78 000 ДОЛАРІВ НА 1000 га».</h2>
-                    <p class="chapterParagraph">Запам'ятали ці цифри? Добре, рухаємося далі і розглянемо їх більш детально.
+                    <p class="chapterParagraph">Запам'ятали ці цифри? Добре, рухаємося далі і розглянемо їх більш
+                        детально.
                         Середньостатистична площа втрат, за рахунок технологічних колій, сягає від 3 до 10% (в
                         залежності від ширини захвату обприскувача, ширини коліс, конфігурації поля та технологічних
                         підходів до розворотів і культури землеробства в цілому). Якщо врахувати, що у господарстві
                         культура землеробства на нормальному рівні, механізатори керують обприскувачами достатньо
                         професійно, а поля за своєю конфігурацією відносно рівні, то для розрахунків реальної площі
                         витоптування візьмемо значення 3, 5 та 7%
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blogPhoto.png" alt="" class="smallContent-chapterImage">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/blogPhoto.png" alt=""
+                            class="smallContent-chapterImage">
                     <div class="chapterFactItem">
                         <h3>У випадку повного циклу внесення ЗЗР </h3>
                         <p>Середньостатистична площа втрат, за рахунок технологічних колій, сягає від 3 до 10% (в
@@ -125,6 +130,73 @@ Template Name:  Blog Small
                         здивувати.
                         Але це вже історія для наступної статті!
                     </p>
+                </div>
+                <div class="blogArticleFooter">
+                    <div class="blogShareWrapper">
+                        <h2>Поділитись</h2>
+                        <div class="shareSocials">
+
+                            <a href="https://www.tiktok.com/@yourprofile" target="_blank" rel="noopener noreferrer"
+                                class="shareItem">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/footerTikTok.svg"
+                                    alt="TikTok">
+                            </a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>"
+                                target="_blank" rel="noopener noreferrer" class="shareItem">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/footerFacebook.svg"
+                                    alt="Facebook">
+                            </a>
+                            <a href="https://t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>"
+                                target="_blank" rel="noopener noreferrer" class="shareItem">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/footerTelegram.svg"
+                                    alt="Telegram">
+                            </a>
+                            <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer"
+                                class="shareItem">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/footerInstagram.svg"
+                                    alt="Instagram">
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="recentArticlesWrapper">
+                        <div class="recentArticleItem">
+
+                            <div class="recentArticleButton">
+
+
+                                <a href="" class="swiperButtonPrev"><svg width="16" height="17" viewBox="0 0 16 17"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+
+                                </a>
+
+                                <p>Попередня стаття</p>
+                            </div>
+                            <p>УКАБ Агротехнології 2024</p>
+
+                        </div>
+                        <div class="recentArticleItem">
+
+                            <div class="recentArticleButton">
+                                <p>Наступна стаття</p>
+                                <a href="" class="swiperButtonNext">
+
+                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <p>Як українському аграрію потрапити в світовий ТОП по врожайності сої?</p>
+
+
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="smallContentLatestNews">

@@ -20,7 +20,9 @@
     <header>
 
         <div class="headerWrapper wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="" class="logo">
+            <a href="<?php echo home_url('/'); ?>">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="" class="logo">
+            </a>
             <div class="headerNav">
                 <div class="headerItem" id="dropdown-menu">
 
@@ -49,8 +51,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="headerItem">Внесення ЗЗР</div>
-                <div class="headerItem">Центр пілотів</div>
+                <a href="<?php echo home_url('/fertilization/'); ?>" class="headerItem">Внесення ЗЗР</a>
+                <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem">Центр пілотів</a>
                 <div class="headerItem">Блог</div>
 
             </div>
@@ -98,8 +100,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="headerItem">Внесення ЗЗР</div>
-                <div class="headerItem">Центр пілотів</div>
+                <a href="<?php echo home_url('/fertilization/'); ?>" class="headerItem">Внесення ЗЗР</a>
+                <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem">Центр пілотів</a>
                 <div class="headerItem">Блог</div>
             </div>
             <button class="transparentButton burgerMenuButton">Зв’язатись з нами <svg width="16" height="17"

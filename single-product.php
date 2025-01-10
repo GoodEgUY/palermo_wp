@@ -1,8 +1,6 @@
 <?php
 get_header(); // Подключаем header
-/*
-Template Name: Single Product Additional 
-*/
+
 ?>
 <div class="mainWrapper">
     <section>
@@ -10,7 +8,8 @@ Template Name: Single Product Additional
             <div class="productGallery">
                 <a href="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (1).png"
                     class="productGalleryBlack-big" data-fancybox="productMain">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (1).png" alt="Генератор">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (1).png"
+                        alt="Генератор">
                 </a>
                 <!-- Галерея миниатюр -->
                 <div class="productGalleryThumbs">
@@ -27,26 +26,37 @@ Template Name: Single Product Additional
                 </div>
             </div>
             <div class="productMain-info">
-                <h1>Бак: 400 л
+                <h1><?php the_title(); ?>
                 </h1>
-                <p class="productMain-title">Lorem ipsum dolor sit amet consectetur. Pulvinar ultrices pretium lectus et non. Dictum consectetur dui sollicitudin pulvinar. Neque netus purus lacus duis rhoncus fermentum proin egestas at. Luctus faucibus sit integer et.</p>
+                <p class="productMain-title"><?php the_content(); ?></p>
                 <div class="productMain-mainProperties">
-                    <div class="mainPropertiesItem">
-                        <p class="propertieName">Продуктивність
-                        </p>
-                        <p class="propertieValue">75 л/хв</p>
-                    </div>
-                    <div class="mainPropertiesItem">
-                        <p class="propertieName">Об’єм бака
-                        </p>
-                        <p class="propertieValue">400 л</p>
-                    </div>
-                    <div class="mainPropertiesItem">
-                        <p class="propertieName">Потужність
-                        </p>
-                        <p class="propertieValue">650w
-</p>
-                    </div>
+                    <?php if (have_rows('main_properties')): ?>
+                        <?php while (have_rows('main_properties')):
+                            the_row(); ?>
+                            <div class="mainPropertiesItem">
+                                <?php if ($name = get_sub_field('name')): ?>
+                                    <p class="propertieName">
+                                        <?php echo esc_html($name); ?>
+                                    </p>
+                                <?php endif; ?>
+                                <?php if ( $value = get_sub_field( 'value' ) ) : ?>
+	<p class="propertieValue"><?php echo esc_html( $value ); ?></p>
+<?php endif; ?>
+                                
+                            </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                    <!-- <div class="mainPropertiesItem">
+                  <p class="propertieName">Об’єм бака
+                  </p>
+                  <p class="propertieValue">400 л</p>
+                  </div>
+                  <div class="mainPropertiesItem">
+                  <p class="propertieName">Потужність
+                  </p>
+                  <p class="propertieValue">650w
+                  </p>
+                  </div> -->
                 </div>
                 <div class="productMain-advantages">
                     <div class="markListItem">
@@ -102,7 +112,6 @@ Template Name: Single Product Additional
                 <h2>Особливості та <span> переваги</span><br />нашого<span> змішувача</span></h2>
                 <div class="mainSwiperContainer">
                     <div class="swiperDefault swiperProductTechnology">
-
                         <div class="swiper-wrapper sliderWrapperDefault">
                             <div class="swiper-slide swiperSlideDefault">
                                 <div class="swiperSlideContent">
@@ -110,7 +119,8 @@ Template Name: Single Product Additional
                                     <h3>Насос з корпусом з нержавіючої сталі</h3>
                                     <p>Продуктивність подвійного насоса до 24 л/хв. Це на 100% більше порівняно з
                                         попереднім поколінням, щоб закрити потреби полів, садів і високотемпературних
-                                        середовищ.</p>
+                                        середовищ.
+                                    </p>
                                 </div>
                             </div>
                             <div class="swiper-slide swiperSlideDefault">
@@ -118,9 +128,8 @@ Template Name: Single Product Additional
                                     <p class="steps"><span>Перевага 2/6</span></p>
                                     <h3>Фільтр великого об’єму з клапаном</h3>
                                     <p>Розмір крапель можна регулювати в діапазоні 50-500 мкм, залежно від
-                                        використовуваних хімічних речовин.</p>
-
-
+                                        використовуваних хімічних речовин.
+                                    </p>
                                 </div>
                             </div>
                             <div class="swiper-slide swiperSlideDefault">
@@ -128,7 +137,8 @@ Template Name: Single Product Additional
                                     <p class="steps"><span>Перевага 3/6</span></p>
                                     <h3>Електронний лічильник для точності</h3>
                                     <p>DJI Relay забезпечує безперебійну передачу відео в реальному часі для безпечних
-                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.</p>
+                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.
+                                    </p>
                                 </div>
                             </div>
                             <div class="swiper-slide swiperSlideDefault">
@@ -136,7 +146,8 @@ Template Name: Single Product Additional
                                     <p class="steps"><span>Перевага 4/6</span></p>
                                     <h3>Алюмінієвий пістолет</h3>
                                     <p>DJI Relay забезпечує безперебійну передачу відео в реальному часі для безпечних
-                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.</p>
+                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.
+                                    </p>
                                 </div>
                             </div>
                             <div class="swiper-slide swiperSlideDefault">
@@ -144,7 +155,8 @@ Template Name: Single Product Additional
                                     <p class="steps"><span>Перевага 5/6</span></p>
                                     <h3>Посилені шланги для роботи з хімією</h3>
                                     <p>DJI Relay забезпечує безперебійну передачу відео в реальному часі для безпечних
-                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.</p>
+                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.
+                                    </p>
                                 </div>
                             </div>
                             <div class="swiper-slide swiperSlideDefault">
@@ -152,21 +164,20 @@ Template Name: Single Product Additional
                                     <p class="steps"><span>Перевага 6/6</span></p>
                                     <h3>Кришка баку з автоматичним клапаном</h3>
                                     <p>DJI Relay забезпечує безперебійну передачу відео в реальному часі для безпечних
-                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.</p>
+                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.
+                                    </p>
                                 </div>
                             </div>
-
-
                         </div>
-
-
                     </div>
                     <div class="swiperNavigationDefault">
-                        <div class="swiperButtonPrev" id="swiperButtonPrev-productTechnology"><svg width="16"
-                                height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <div class="swiperButtonPrev" id="swiperButtonPrev-productTechnology">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
-                            </svg></div>
+                            </svg>
+                        </div>
                         <div class="swiperButtonNext " id="swiperButtonNext-productTechnology">
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -229,9 +240,6 @@ Template Name: Single Product Additional
             <div class="technologyGallery" id="technologyPhotoWrapper"></div>
         </div>
     </section>
-
-
-
     <section>
         <div class="productKitWrapper wrapper">
             <div class="productKitInfo">
@@ -255,19 +263,16 @@ Template Name: Single Product Additional
                     <div class="markListItem">
                         <div class="checkMarkIcon"></div>
                         <p>x3 інтелектуальні батареї BAX601
-
                         </p>
                     </div>
                     <div class="markListItem">
                         <div class="checkMarkIcon"></div>
                         <p>Зарядний пристрій
-
                         </p>
                     </div>
                     <div class="markListItem">
                         <div class="checkMarkIcon"></div>
                         <p>Кейс для охолодження батарей
-
                         </p>
                     </div>
                 </div>
@@ -290,7 +295,6 @@ Template Name: Single Product Additional
                     </div>
                     <div class="gallery-item">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/kitPhoto.png" alt="Кейс">
-
                     </div>
                 </div>
                 <div class="right-column">
@@ -332,7 +336,8 @@ Template Name: Single Product Additional
                 <div class="techAdventages-propertiesItem">
                     <p class="property">Адаптивність усіх сценаріїв:</p>
                     <p class="value">повністю автоматична робота, режим «Фруктовий сад», застосування диференційного
-                        внесення</p>
+                        внесення
+                    </p>
                 </div>
                 <div class="techAdventages-propertiesItem">
                     <p class="property">Багатоспрямоване запобігання перешкодам:</p>
@@ -354,7 +359,6 @@ Template Name: Single Product Additional
             <h2></h2>
             <div class="mainSwiperContainer">
                 <div class="productsSwiper swiperProductsDashboard">
-
                     <div class="swiper-wrapper sliderWrapperDefault">
                         <div class="swiper-slide swiperSlideDefault">
                             <div class="swiperSlideProductContent">
@@ -369,12 +373,14 @@ Template Name: Single Product Additional
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -400,12 +406,14 @@ Template Name: Single Product Additional
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -431,12 +439,14 @@ Template Name: Single Product Additional
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -462,12 +472,14 @@ Template Name: Single Product Additional
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -493,12 +505,14 @@ Template Name: Single Product Additional
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -511,18 +525,15 @@ Template Name: Single Product Additional
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
-
                 </div>
                 <div class="swiperNavigationDefault">
-                    <div class="swiperButtonPrev" id="swiperButtonPrev-productTechnology"><svg width="16" height="17"
-                            viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="swiperButtonPrev" id="swiperButtonPrev-productTechnology">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></div>
+                        </svg>
+                    </div>
                     <div class="swiperButtonNext " id="swiperButtonNext-productTechnology">
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -579,7 +590,8 @@ Template Name: Single Product Additional
                         <p>Першим кроком узгоджуються всі деталі замовлення. Далі наша команда виїжджає на визначену
                             локацію та робить обмір полів. В залежності від площі, складності форми та площі обмір може
                             відбуватись як пішки так і самим дроном. Наступним кроком команда замішує хімію в
-                            спеціальному змішувачі та приступає до обприскування.</p>
+                            спеціальному змішувачі та приступає до обприскування.
+                        </p>
                     </div>
                 </div>
                 <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
@@ -601,7 +613,8 @@ Template Name: Single Product Additional
                         <p>В нашому дронопарку є різні дрони з різною продуктивністю. Dji Agras T30 може обробити до 120
                             га за зміну, а новіші моделі T40 та T50 до 220 га за зміну. За потреби на одному полі може
                             працювати декілька дронів одночасно, тому за одну зміну наша команда може виконати понад 500
-                            га.</p>
+                            га.
+                        </p>
                     </div>
                 </div>
                 <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
@@ -621,7 +634,8 @@ Template Name: Single Product Additional
                     </div>
                     <div class="accordion__content">
                         <p>Вартість внесення залежить від: площі, кількості полів, норми внесення, наявності перешкод та
-                            ліній електропередач на полі.</p>
+                            ліній електропередач на полі.
+                        </p>
                     </div>
                 </div>
                 <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
@@ -643,7 +657,8 @@ Template Name: Single Product Additional
                         <p>Навчання відбувається як в групах так і індивідуально. Курс триває 3 дні, складається з
                             теорії та практики та включає в себе 12 блоків та 48 тем. У вартість входить оренда дрона та
                             транспортні витрати. По завершенню курсу кожен студент отримує сертифікат який підтверджує
-                            кваліфікацію.</p>
+                            кваліфікацію.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -653,11 +668,11 @@ Template Name: Single Product Additional
         <div class="contactWrapper wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/screen1contactBackground.jpeg"
                 alt="" class="contactBackground">
-
             <div class="contactBlockText">
                 <h2 class="decorBig">Залишились питання?<br /> <span>Ми</span> завжди <span>на зв'язку!</span></h2>
                 <p>Заповніть форму, і наші спеціалісти зв'яжуться з вами найближчим часом, щоб відповісти на всі ваші
-                    запитання. Або телефонуйте за номером:</p>
+                    запитання. Або телефонуйте за номером:
+                </p>
                 <h2 class="decorBig"><i>+38 (093)969 46 42</i></h2>
             </div>
             <div class="contactBlockForm">
@@ -666,12 +681,13 @@ Template Name: Single Product Additional
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
                     <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
-                    <button class="greenButton">Безкоштовна консультація <svg width="16" height="17" viewBox="0 0 16 17"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button class="greenButton">
+                        Безкоштовна консультація
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></button>
-
+                        </svg>
+                    </button>
                 </form>
             </div>
         </div>
@@ -683,7 +699,6 @@ Template Name: Single Product Additional
             }
         });
     </script>
-
 </div>
 <?php
 get_footer(); // Подключаем footer

@@ -24,7 +24,7 @@ function enqueue_custom_scripts()
     wp_enqueue_script('jquery');
 
     // Подключаем ваш кастомный JS
-    
+
     // Подключаем JS
     wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', ['jquery'], '1.0', true);
 
@@ -62,7 +62,7 @@ function register_product_post_type()
         'menu_icon' => 'dashicons-cart', // Іконка у вигляді кошика
         'supports' => array('title', 'editor', 'thumbnail'),
         'has_archive' => true,
-        'rewrite' => array('slug' => 'products'), // URL для записів
+        'rewrite' => array('slug' => 'product'),// URL для записів
         'show_in_rest' => true, // Для підтримки редактора Gutenberg
     );
 
@@ -123,27 +123,27 @@ function disable_gutenberg_for_product($is_enabled, $post_type)
     return $is_enabled;
 }
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_product', 10, 2);
-function custom_single_product_template($template)
-{
-    if (is_singular('product')) {
-        // Проверяем, принадлежит ли товар категории "Дроны"
-        $terms = get_the_terms(get_the_ID(), 'product_category');
-        if ($terms) {
-            foreach ($terms as $term) {
-                if ($term->slug === 'agrodrones') { // Замените 'drony' на slug вашей категории
-                    $template = get_template_directory() . '/single-product-agrodrone.php';
-                    break;
-                }
-            }
-        }
+// function custom_single_product_template($template)
+// {
+//     if (is_singular('product')) {
+//         // Проверяем, принадлежит ли товар категории "Дроны"
+//         $terms = get_the_terms(get_the_ID(), 'product_category');
+//         if ($terms) {
+//             foreach ($terms as $term) {
+//                 if ($term->slug === 'agrodrones') { // Замените 'drony' на slug вашей категории
+//                     $template = get_template_directory() . '/single-product-agrodrone.php';
+//                     break;
+//                 }
+//             }
+//         }
 
-        // Если категория не "Дроны", используем другой шаблон
-        // Если категория не "Агродрони", используем шаблон по умолчанию
-        return get_template_directory() . '/single-product-other.php';
-    }
-    return $template;
-}
-add_filter('template_include', 'custom_single_product_template');
+//         // Если категория не "Дроны", используем другой шаблон
+//         // Если категория не "Агродрони", используем шаблон по умолчанию
+//         return get_template_directory() . '/single-product-other.php';
+//     }
+//     return $template;
+// }
+// add_filter('template_include', 'custom_single_product_template');
 function filter_products_by_category()
 {
     // Получаем переданную категорию
@@ -196,5 +196,11 @@ add_filter('scf_get_groups', 'scf_condition_based_on_post_template', 10, 2);
 //     remove_post_type_support('post', 'editor'); // Убираем поле "Описание"
 // }
 // add_action('init', 'remove_default_post_fields');
+
+
+// Добавляем страницу настроек
+
+
+
 
 ?>

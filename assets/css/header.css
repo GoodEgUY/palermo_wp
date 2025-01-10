@@ -25,6 +25,10 @@ header {
   align-items: center;
   padding: 0 48px;
 }
+.headerItem {
+  color: var(--lightgrey);
+  text-decoration: none;
+}
 .burger {
   width: 32px;
   height: 32px;

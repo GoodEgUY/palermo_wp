@@ -2,7 +2,7 @@
   width: 100%;
   aspect-ratio: 440/217;
   position: relative;
-  margin-top: 48px;
+  
   margin-bottom: var(--block-padding);
 }
 .introApplication {
