@@ -66,10 +66,7 @@
   width: 40px;
   height: 40px;
 }
-.introText2 h1:nth-child(1) svg path {
-  d: path("M 40 0 c -22 0 -40 18 -40 40 v -40 Z");
-  fill: var(--black);
-}
+
 .introText2 h1:nth-child(2) {
   max-width: 80%;
   padding: 0 24px 24px 0;
@@ -82,10 +79,7 @@
   width: 40px;
   height: 40px;
 }
-.introText2 h1:nth-child(2) svg path {
-  d: path("M 40 0 c -22 0 -40 18 -40 40 v -40 Z");
-  fill: var(--black);
-}
+
 .introIcons2 {
   position: absolute;
   right: 32px;
@@ -129,14 +123,7 @@
   width: 40px;
   height: 40px;
 }
-.introProductBlock2 .borderRadius1 path {
-  fill: var(--black);
-  d: path("M 0 40 c 22 0 40 -18 40 -40 v 40 Z");
-}
-.introProductBlock2 .borderRadius2 path {
-  fill: var(--black);
-  d: path("M 0 40 c 22 0 40 -18 40 -40 v 40 Z");
-}
+
 .blackItemCard {
   display: flex;
   align-items: center;

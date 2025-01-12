@@ -11,13 +11,13 @@ Template Name: Fertilization
                 <h1>
                     <span>Внесення ЗЗР</span> із точністю до 2 сантиметрів за <span> допомогою </span>
                     <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="bottomRight" />
                     </svg>
                 </h1>
                 <h1>
                     <span>Dji Agras</span> T30, T40, T50
                     <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="bottomRight" />
                     </svg>
                 </h1>
             </div>
@@ -711,10 +711,10 @@ Template Name: Fertilization
                             </svg>
                         </div>
                         <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight" />
                         </svg>
                         <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight" />
                         </svg>
                     </div>
                 </div>
@@ -726,7 +726,7 @@ Template Name: Fertilization
                     якісний результат на кожному етапі роботи завдяки чіткій структурі. Кожен ваш запит обробляється
                     швидко, з увагою до деталей та потреб вашого поля.
                 </p>
-                <svg id="mySvg" width="702" height="223" viewBox="0 0 702 223" fill="none"
+                <svg id="mySvg" viewBox="0 0 702 223" fill="none" preserveAspectRatio="xMidYMid meet"
                     xmlns="http://www.w3.org/2000/svg">
                     <!-- Видимые линии -->
                     <path d="M238 24L335 24" stroke="#353535" stroke-width="4" stroke-linecap="round" id="line1to2" />
@@ -815,13 +815,18 @@ Template Name: Fertilization
                     const prevSlide = currentSlide;
                     currentSlide = targetSlide;
 
+                    // Сначала сбрасываем цвета для всех плашек
                     resetRectColors();
-                    gsap.to("#rect" + targetSlide, { duration: 0.5, fill: "#32D16D" });
-
                     resetTextColors();
-                    gsap.to("#text" + targetSlide, { duration: 0.5, fill: "#0E0E0E" });
 
-                    // Определяем start/end на fullPath
+                    // Подсвечиваем только текущий слайд
+                    gsap.to(`#rect${targetSlide}`, { duration: 0.5, fill: "#32D16D" });
+                    gsap.to(`#text${targetSlide}`, { duration: 0.5, fill: "#0E0E0E" });
+
+                    // Подсветка линии
+                    highlightLine(targetSlide);
+
+                    // Определяем start/end для анимации пути
                     let startValue = slidePositions[prevSlide - 1];
                     let endValue = slidePositions[targetSlide - 1];
 
@@ -837,11 +842,10 @@ Template Name: Fertilization
                             end: endValue
                         },
                         onComplete: () => {
-                            highlightLine(targetSlide);
+                            highlightLine(targetSlide); // Обновляем подсветку линии после завершения анимации
                         }
                     });
                 }
-
                 // Инициализация Swiper
                 const swiper = new Swiper('.swiperJobsSteps', {
                     loop: false,
@@ -1121,10 +1125,10 @@ Template Name: Fertilization
                         </svg>
                     </div>
                     <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="topRight" />
                     </svg>
                     <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="topRight" />
                     </svg>
                 </div>
             </div>
@@ -1263,8 +1267,12 @@ Template Name: Fertilization
                 <form action="" class="defaultForm">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
-                    <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
-                    <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    <div class="inputWrapper">
+                        <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
+                    </div>
+                    <div class="inputWrapper">
+                        <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    </div>
                     <button class="greenButton">
                         Безкоштовна консультація
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -18,8 +18,21 @@
             </div>
             <div class="footerColumn">
                 <p>Інформація</p>
-                <a href="">lunares.agro@gmail.com</a>
-                <a href="">+380939694642</a>
+                <?php if ( $email = get_field( 'email', 'options' ) ) : ?>
+	<a href="mailto:<?php echo esc_html( $email ); ?>"><?php echo esc_html( $email ); ?></a>
+<?php endif; ?>
+                
+                <?php if ( have_rows( 'phone_number', 'options' ) ) : ?>
+	<?php while ( have_rows( 'phone_number', 'options' ) ) :
+		the_row(); ?>
+		<a href="<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
+	<?php echo esc_html( $number ); ?>
+<?php endif; ?>"><?php if ( $label = get_sub_field( 'label', 'options' ) ) : ?>
+	<?php echo esc_html( $label ); ?>
+<?php endif; ?></a>
+	<?php endwhile; ?>
+<?php endif; ?>
+                
             </div>
             <div class="footerSocials">
                 <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/footerTikTok.svg"
@@ -49,7 +62,8 @@
         </div>
     </div>
 </footer>
-<?php wp_footer(); ?>
+
+        <?php wp_footer(); ?>
 </body>
 
 </html>

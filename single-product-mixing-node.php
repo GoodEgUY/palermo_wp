@@ -186,10 +186,10 @@ get_header(); // Подключаем header
                             </svg>
                         </div>
                         <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight" />
                         </svg>
                         <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path   class="topRight"/>
                         </svg>
                     </div>
                 </div>
@@ -679,8 +679,12 @@ get_header(); // Подключаем header
                 <form action="" class="defaultForm">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
-                    <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
-                    <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    <div class="inputWrapper">
+                        <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
+                    </div>
+                    <div class="inputWrapper">
+<input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">  
+                  </div>
                     <button class="greenButton">
                         Безкоштовна консультація
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">

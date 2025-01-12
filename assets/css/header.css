@@ -29,6 +29,9 @@ header {
   color: var(--lightgrey);
   text-decoration: none;
 }
+.headerItem.active {
+  color: var(--green);
+}
 .burger {
   width: 32px;
   height: 32px;

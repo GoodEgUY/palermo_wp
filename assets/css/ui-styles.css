@@ -20,6 +20,7 @@
   --big-border-radius: 40px;
   --small-border-radius: 20px;
 }
+html
 body {
   background-color: var(--black);
   color: #fff;
@@ -317,11 +318,11 @@ footer {
 }
 .swiperNavigationDefault .borderRadius1 path {
   fill: var(--black);
-  d: path("M 0 0 c 0 22 18 40 40 40 h -40 Z");
+ 
 }
 .swiperNavigationDefault .borderRadius2 path {
   fill: var(--black);
-  d: path("M 0 0 c 0 22 18 40 40 40 h -40 Z");
+  
 }
 .swiperButtonPrev,
 .swiperButtonNext {
@@ -363,17 +364,45 @@ footer {
 }
 .pc {
   display: flex;
-
 }
 .mobile {
   display: none;
 }
 .mobile-inline {
   display: none;
-    }
-    .pc-inline {
-      display: inline-block;
-    }
+}
+.pc-inline {
+  display: inline-block;
+}
+.iti {
+  width: 100%;
+}
+.iti__selected-dial-code {
+  color: var(--black);
+}
+.iti__country-name {
+  color: var(--black);
+}
+.inputWrapper {
+  position: relative;
+  width: 100%;
+}
+.error-input {
+ 
+}
+.inputWrapper label {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  background: crimson;
+  text-align: center;
+  color: white;
+  width: 100%;
+  z-index: 1;
+  font-size: 12px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
 @media (max-width: 1400px) {
   section,
   header,
@@ -392,8 +421,8 @@ footer {
   h3 {
     font-size: 20px;
   }
-  *{
-    --decor-font-size:24px;
+  * {
+    --decor-font-size: 24px;
   }
   .decorBig {
     font-size: 24px;
@@ -415,7 +444,6 @@ footer {
 @media (max-width: 800px) {
   .jobStepSwiperBlock {
     width: 100%;
-
   }
   .swiperDefault {
     max-width: 100%;
@@ -427,7 +455,7 @@ footer {
     display: flex;
   }
   .mobile-inline {
-display: inline-block;
+    display: inline-block;
   }
   .pc-inline {
     display: none;
@@ -453,5 +481,19 @@ display: inline-block;
   .defaultForm {
     padding: 16px 20px 20px 20px;
   }
+  .swiperNavigationDefault .borderRadius1 {
+   
+    width: 24px;
+    height: 24px;
+  }
+  .swiperNavigationDefault .borderRadius2 {
+  
+    width: 24px;
+    height: 24px;
+  }
+  .borderRadius1,
+  .borderRadius2 {
+    width: 24px!important;
+    height: 24px!important;
+  }
 }
-

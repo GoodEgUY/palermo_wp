@@ -13,57 +13,12 @@ Template Name: Pilots Academy
                     src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introTextIcon1.svg" alt="">
                 агроіндустрії
                 <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                    <path />
+                    <path class="bottomRight" />
                 </svg>
                 <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                    <path />
+                    <path class="bottomRight" />
                 </svg>
             </h1>
-            <div class="intro3LeftBlock">
-                <h1>
-                    Навчайтеся <span>керувати</span> дронами <span>DJI Agras</span> та відкривайте нові
-                    <span>можливості</span><img
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introTextIcon1.svg"
-                        alt=""> агроіндустрії
-                    <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                    </svg>
-                    <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                    </svg>
-                </h1>
-                <div class="leftBlockBackground">
-                    <div class="leftBlockBackgroundImage">
-                    </div>
-                    <div class="leftBlockRCcontrol">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/rcControlPhoto.png"
-                            alt="">
-                        <a href="" class="transparentButton">
-                            Стати пілотом
-                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </a>
-                        <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                            <path />
-                        </svg>
-                        <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                            <path />
-                        </svg>
-                    </div>
-                    <svg class="borderRadius3" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                    </svg>
-                    <svg class="borderRadius4" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                    </svg>
-                    <svg class="borderRadius5" xmlns="http://www.w3.org/2000/svg">
-                        <path />
-                    </svg>
-                </div>
-            </div>
             <div class="intro3Application">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introBackground3.png"
                     class="introBackground3" alt="">
@@ -72,8 +27,6 @@ Template Name: Pilots Academy
                     флагманські моделі DJI Agriculture.
                 </p>
             </div>
-
-
             <div class="introProductBlock3">
                 <div class="blackItemCard">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone.png"
@@ -91,36 +44,60 @@ Template Name: Pilots Academy
                     </div>
                 </div>
                 <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                    <path />
+                    <path class="leftTop" />
                 </svg>
                 <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                    <path />
+                    <path class="leftTop" />
                 </svg>
             </div>
-            <div class="pilotsAcademyTablet">
-                <div class="pilotsAcademyTablet-Control">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/rcControlPhotoBig.png"
-                        alt="">
-                    <a href="" class="transparentButton">
-                        Стати пілотом
-                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
+            <div class="intro3LeftBlock">
+                <h1>
+                    Навчайтеся <span>керувати</span> дронами <span>DJI Agras</span> та відкривайте нові
+                    <span>можливості</span><img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introTextIcon1.svg"
+                        alt=""> агроіндустрії
                     <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="bottomRight" />
                     </svg>
                     <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                        <path />
+                        <path class="bottomRight" />
+                    </svg>
+                </h1>
+                <div class="leftBlockBackground">
+                    <div class="leftBlockBackgroundImage">
+                    </div>
+                    <div class="leftBlockRCcontrol">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/rcControlPhoto.png"
+                            alt="">
+                        <a href="" class="transparentButton">
+                            Стати пілотом
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
+                            <path class="leftTop" />
+                        </svg>
+                        <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
+                            <path class="leftTop" />
+                        </svg>
+                    </div>
+                    <svg class="borderRadius3" xmlns="http://www.w3.org/2000/svg">
+                        <path class="leftBottom" />
+                    </svg>
+                    <svg class="borderRadius4" xmlns="http://www.w3.org/2000/svg">
+                        <path class="bottomRight" />
+                    </svg>
+                    <svg class="borderRadius5" xmlns="http://www.w3.org/2000/svg">
+                        <path class="topRight" />
                     </svg>
                 </div>
-                <div class="pilotsAcademyTablet-Image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/leftBlockBackground3.png"
-                        alt="">
-                </div>
-
             </div>
+
+            
+
         </div>
     </section>
     <section>
@@ -304,13 +281,13 @@ Template Name: Pilots Academy
                     </script>
                 </div>
             </div>
-            <button  class="transparentButton sallaryButton">
-                    Безкоштовна консультація
-                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
+            <button class="transparentButton sallaryButton">
+                Безкоштовна консультація
+                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
             <div class="sallaryTextContent">
                 <h2>Злітаємо в <span>майбутнє!</span> Кар'єра <span>пілота</span> агродрона — <span>професія</span>
                     нового покоління!
@@ -322,7 +299,7 @@ Template Name: Pilots Academy
                     роботу, але й зробити вагомий внесок у розвиток аграрного сектору. Подивіться, як змінювалися
                     перспективи пілотів із 2020 року!
                 </p>
-                <button  class="transparentButton">
+                <button class="transparentButton">
                     Безкоштовна консультація
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -729,13 +706,7 @@ Template Name: Pilots Academy
                 <h2>Як відбувається <span>навчання?</span></h2>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learningStepsImage.png"
                     alt="">
-                
-                <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                    <path />
-                </svg>
-                <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                    <path />
-                </svg>
+
             </div>
             <div class="learningStepsTable">
                 <div class="learningItem">
@@ -867,7 +838,6 @@ Template Name: Pilots Academy
         <div class="contactWrapper wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/screen3contactBackground.png"
                 alt="" class="contactBackground">
-
             <div class="contactBlockText">
                 <h2 class="decorBig">Чи є ще вільні місця?<br /> Як <span>отримати знижку?</span></h2>
                 <div class="contactMarkedList">
@@ -884,35 +854,37 @@ Template Name: Pilots Academy
                         <p>Дізнайся про наші ексклюзивні пропозиції</p>
                     </div>
                 </div>
-                <h2 class="decorBig"><a href="tel:+380939694642"><i>+38 (093)969 46 42</i></a></h2>
+                <?php if (have_rows('phone_number', 'options')): ?>
+                    <?php while (have_rows('phone_number', 'options')):
+                        the_row(); ?>
+                        <h2 class="decorBig"><a href="tel:<?php if ($number = get_sub_field('number', 'options')): ?>
+   <?php echo esc_html($number); ?>
+   <?php endif; ?>"><i><?php if ($label = get_sub_field('label', 'options')): ?>
+                                        <?php echo esc_html($label); ?>
+                                    <?php endif; ?></i></a></h2>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
             <div class="contactBlockForm">
                 <form action="" class="defaultForm">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
-                    <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
-                    <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    <div class="inputWrapper">
+                        <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
+                    </div>
+                    <div class="inputWrapper">
+                        <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    </div>
                     <button class="greenButton">Безкоштовна консультація <svg width="16" height="17" viewBox="0 0 16 17"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></button>
-
                 </form>
             </div>
         </div>
     </section>
-    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-        <!-- Верхняя дуга -->
-        <path d="M 40 40 c 0 -22 -18 -40 -40 -40 h 40 Z" fill="white" />
-        <!-- Правая дуга -->
-        <!-- Правая дуга -->
-        <path d="M 160 40 c 22 0 40 -18 40 -40 v 40 Z" fill="white" />
-        <!-- Нижняя дуга -->
-        <path d="M 160 160 c 0 22 18 40 40 40 h -40 Z" fill="white" />
-        <!-- Левая дуга -->
-        <path d="M 40 160 c -22 0 -40 18 -40 40 v -40 Z" fill="white" />
-    </svg>
+    
 </div>
 <?php
 get_footer(); // Подключаем footer

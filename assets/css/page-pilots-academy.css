@@ -81,7 +81,7 @@
   position: absolute;
 }
 .intro3LeftBlock h1 .borderRadius1 path {
-  d: path("M 40 0 c -22 0 -40 18 -40 40 v -40 Z")
+
 }
 .leftBlockBackground {
   position: relative;
@@ -114,15 +114,7 @@
   bottom: 0;
   left: 100%;
 }
-.leftBlockBackground .borderRadius3 path {
-  d: path("M 40 40 c 0 -22 -18 -40 -40 -40 h 40 Z");
-}
-.leftBlockBackground .borderRadius4 path {
-  d: path("M 40 0 c -22 0 -40 18 -40 40 v -40 Z");
-}
-.leftBlockBackground .borderRadius5 path {
-  d: path("M 0 0 c 0 22 18 40 40 40 h -40 Z");
-}
+
 .leftIntroBackground3 {
   width: 100%;
 }
@@ -149,10 +141,7 @@
   right: 20px;
 }
 
-.leftBlockRCcontrol .borderRadius1 path,
-.leftBlockRCcontrol .borderRadius2 path {
-  d: path("M 0 40 c 22 0 40 -18 40 -40 v 40 Z ");
-}
+
 
 .leftBlockRCcontrol img {
   width: 100%;
@@ -204,11 +193,11 @@
 }
 .introProductBlock3 .borderRadius1 path {
   fill: var(--black);
-  d: path("M 0 40 c 22 0 40 -18 40 -40 v 40 Z");
+ 
 }
 .introProductBlock3 .borderRadius2 path {
   fill: var(--black);
-  d: path("M 0 40 c 22 0 40 -18 40 -40 v 40 Z");
+  
 }
 .pilotsAcademyTablet {
   display: flex;
@@ -421,6 +410,7 @@ gap: 12px;
   position: absolute;
   left: 0;
   top: 0;
+  max-width: 400px;
 }
 .learningStepsTable {
   display: flex;
@@ -464,6 +454,11 @@ gap: 12px;
 .intro3Heading {
   display: none;
   z-index: 100;
+}
+.intro3Heading img {
+  vertical-align: middle;
+    margin: 0 8px;
+    max-height: 1em;
 }
 .consultationButton {
   display: none!important;
@@ -512,6 +507,7 @@ gap: 12px;
     padding-right: 16px;
     aspect-ratio: 1/1;
     flex-grow: 1;
+    padding-left: 0;
   }
   .leftBlockBackground .borderRadius3 {
     right: 0;
@@ -566,12 +562,72 @@ gap: 12px;
     flex-grow: 1;
 
   }
+  .intro3LeftBlock h1 {
+    max-width: 400px;
+  }
 
 }
+@media (max-width: 900px) {
+.intro3Heading {
+  display: inline;
+}
+.intro3Application {
+  position: relative;
+  aspect-ratio: 388/349;
+  border-radius: 24px;
+}
+.introProductBlock3 {
+  position: relative;
+  padding: 0;
+}
+.intro3LeftBlock h1 {
+  display: none;
+}
+.intro3LeftBlock {
+  width: 100%;
+  max-width: unset;
+}
+.leftBlockBackground {
+  width: 100%;
+  max-width: unset;
+  padding-right: 0;
+}
+.leftBlockRCcontrol {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  max-width: 270px;
+  height: auto;
+  aspect-ratio: 184/194;
+  padding: 16px 0 0 16px;
+  background-color: var(--black);
+  border-top-left-radius: var(--big-border-radius);
+}
+.leftBlockRCcontrol .borderRadius2 {
+  display: block;
+}
+.leftBlockRCcontrol img {
+  border-radius: var(--big-border-radius);
+}
+.leftBlockRCcontrol a {
+  width: calc(100% - 32px);
+  padding: 12px 12px;
+  left: 28px;
+  transform: unset;
+}
+.introParagraph3 {
+  top: 16px;
+  right: 16px;
+}
+.introWrapper3 {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+}
 @media (max-width: 800px) {
-  .introWrapper3 {
-    display: none;
-  }
+ 
   .advantageWrapper {
     flex-direction: column;
 gap: 20px;
@@ -635,6 +691,7 @@ gap: 20px;
  .learningPlans {
   margin-top: 24px;
  }
+ 
 }
 @media (max-width: 600px) {
   .sallaryDashboard{

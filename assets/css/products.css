@@ -126,14 +126,13 @@
 }
 .productTechnologyWrapper {
   display: flex;
- 
+
   gap: 25px;
   padding-bottom: var(--block-padding);
 }
 .productTechnologyWrapper .mobileChapter {
   display: none;
   margin-bottom: var(--chapter-padding);
-
 }
 .technologyList h2 {
   width: 100%;
@@ -360,9 +359,17 @@
   border-radius: var(--small-border-radius);
   background-color: var(--graycards);
 }
-.activeCategory {
-  color: var(--black) !important;
+.categoryHeaderItem a {
+  color: var(--lightgrey);
+  text-decoration: none;
+}
+.activeCategory  {
+ 
   background-color: var(--green) !important;
+}
+.activeCategory a  {
+  color: var(--black) !important;
+  
 }
 .productCardDashboard {
   display: flex;
@@ -399,12 +406,12 @@
 }
 .contentProductItem .title {
   display: -webkit-box;
-  -webkit-line-clamp: 6; /* Количество строк */
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
-@media (max-width:1100px) {
+@media (max-width: 1100px) {
   .productMain-mainProperties {
     flex-direction: column;
   }
@@ -414,10 +421,8 @@
     justify-content: space-between;
     width: 100%;
   }
-
-} 
- @media (max-width:1000px) {
-
+}
+@media (max-width: 1000px) {
   .productGallery {
     width: 100%;
     max-width: 370px;
@@ -442,8 +447,8 @@
   .productOtherWrapper {
     gap: 32px;
   }
- }
- @media (max-width:800px)  {
+}
+@media (max-width: 800px) {
   .productMainInfoWrapper {
     flex-direction: column;
     align-items: center;
@@ -502,14 +507,13 @@
   .productOtherWrapper {
     flex-direction: column;
   }
- }
+}
 
- @media (max-width:550px) {
+@media (max-width: 550px) {
   .productCardButtonGroup {
     flex-direction: column;
     width: 100%;
     margin-bottom: 0;
-
   }
   .productCardButtonGroup button,
   .productCardButtonGroup a {
@@ -525,4 +529,4 @@
   .productOtherPropertiesItem px {
     font-size: 12px;
   }
- }
+}

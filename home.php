@@ -5,24 +5,24 @@ get_header(); // Подключаем header
     <section>
         <div class="introWrapper wrapper">
             <div class="introText1">
-                    <h1><span>Lunares</span> - <i>(Майбутнє агробізнесу)</i> Технології майбутнього: <span>дрони</span>
-                        для
-                        <span>обприскування та
-                            захисту</span>
-                    </h1>
-                    <svg class="arcv1" xmlns="http://www.w3.org/2000/svg">
-                        <path class="leftBottom"/>
-                    </svg>
-                    <svg class="arcg1" xmlns="http://www.w3.org/2000/svg">
-                        <path class="leftBottom"/>
-                    </svg>
-                </div>
+                <h1><span>Lunares</span> - <i>(Майбутнє агробізнесу)</i> Технології майбутнього: <span>дрони</span>
+                    для
+                    <span>обприскування та
+                        захисту</span>
+                </h1>
+                <svg class="arcv1" xmlns="http://www.w3.org/2000/svg">
+                    <path class="leftBottom" />
+                </svg>
+                <svg class="arcg1" xmlns="http://www.w3.org/2000/svg">
+                    <path class="leftBottom" />
+                </svg>
+            </div>
             <div class="introApplication">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/moon-and-field.png"
                     class="introBackground" alt="">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/drone1.png"
                     class="introDrone" alt="">
-                
+
                 <p class="introParagraph">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
                     флагманські моделі DJI Agriculture.
                 </p>
@@ -34,8 +34,8 @@ get_header(); // Подключаем header
                         alt="">
                     <div class="whiteItemCardInfo">
                         <h3>DJI Agras T40</h3>
-                        <a href="" class="blackButton">Дізнатись більше <svg width="16" height="17"
-                                viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <a href="" class="blackButton">Дізнатись більше <svg width="16" height="17" viewBox="0 0 16 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg></a>
@@ -135,10 +135,10 @@ get_header(); // Подключаем header
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a>
                     <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                        <path class="topRight"/>
+                        <path class="topRight" />
                     </svg>
                     <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                        <path class="topRight"/>
+                        <path class="topRight" />
                     </svg>
                 </div>
             </div>
@@ -156,10 +156,10 @@ get_header(); // Подключаем header
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a>
                     <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                        <path class="topRight"/>
+                        <path class="topRight" />
                     </svg>
                     <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                        <path class="topRight"/>
+                        <path class="topRight" />
                     </svg>
                 </div>
             </div>
@@ -177,10 +177,10 @@ get_header(); // Подключаем header
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a>
                     <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                        <path class="topRight"/>
+                        <path class="topRight" />
                     </svg>
                     <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                        <path class="topRight"/>
+                        <path class="topRight" />
                     </svg>
                 </div>
             </div>
@@ -430,11 +430,15 @@ get_header(); // Подключаем header
                 <h2 class="decorBig"><a href="tel:+380939694642"><i>+38 (093)969 46 42</i></a></h2>
             </div>
             <div class="contactBlockForm">
-                <form action="" class="defaultForm">
+                <form class="defaultForm contactForm">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
-                    <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
-                    <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    <div class="inputWrapper">
+                        <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
+                    </div>
+                    <div class="inputWrapper">
+                        <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    </div>
                     <button class="greenButton">Безкоштовна консультація <svg width="16" height="17" viewBox="0 0 16 17"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"

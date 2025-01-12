@@ -529,7 +529,7 @@ Template Name: Single Product Agrodrone
                             disableOnInteraction: false,
                         },
                         breakpoints: {
-                           
+
                             900: {
                                 slidesPerView: 3,
                                 spaceBetween: 20,
@@ -669,8 +669,12 @@ Template Name: Single Product Agrodrone
                 <form action="" class="defaultForm">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
-                    <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
-                    <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    <div class="inputWrapper">
+                        <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
+                    </div>
+                    <div class="inputWrapper">
+                        <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
+                    </div>
                     <button class="greenButton">Безкоштовна консультація <svg width="16" height="17" viewBox="0 0 16 17"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
