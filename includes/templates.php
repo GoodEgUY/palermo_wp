@@ -27,7 +27,7 @@ function custom_single_product_template($template)
 add_filter('template_include', 'custom_single_product_template');
 
 function custom_blog_template($template) {
-    if (is_singular('post')) {
+    if (is_singular('blog')) {
         // Получаем значение пользовательского поля 'blog_template'
         $blog_template = get_field('blog_template');
        

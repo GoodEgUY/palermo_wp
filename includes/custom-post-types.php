@@ -33,3 +33,38 @@ function register_product_post_type()
     register_post_type('product', $args);
 }
 add_action('init', 'register_product_post_type');
+
+
+// Реєстрація кастомного типу запису "Блоги"
+function register_blog_post_type()
+{
+    $labels = array(
+        'name' => 'Блоги',
+        'singular_name' => 'Блог',
+        'menu_name' => 'Блоги',
+        'add_new' => 'Додати новий',
+        'add_new_item' => 'Додати новий блог',
+        'edit_item' => 'Редагувати блог',
+        'new_item' => 'Новий блог',
+        'view_item' => 'Переглянути блог',
+        'search_items' => 'Шукати блоги',
+        'not_found' => 'Блоги не знайдено',
+        'not_found_in_trash' => 'У кошику блоги не знайдено',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-edit-page', // Іконка у вигляді сторінки
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'), // Додано підтримку excerpt і comments
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'blogs'), // URL для записів
+        'show_in_rest' => true, // Для підтримки редактора Gutenberg
+    );
+
+    register_post_type('blog', $args);
+}
+add_action('init', 'register_blog_post_type');

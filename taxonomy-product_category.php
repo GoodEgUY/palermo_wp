@@ -4,7 +4,9 @@ get_header(); // Подключаем header
 Template Name: Archive Product
 */
 ?>
-
+ <script>
+  AOS.init();
+</script>
 <div class="mainWrapper">
     <section>
         <div class="archiveProductWrapper wrapper">
@@ -41,7 +43,7 @@ Template Name: Archive Product
                     while (have_posts()):
                         the_post();
                         ?>
-                        <div class="productCardItem">
+                        <div class="productCardItem" data-aos="fade-up">
                             <div class="productCardItemImage">
                                 <?php
                                 $gallery = get_field('gallery'); // Получаем галерею из ACF
@@ -69,10 +71,10 @@ Template Name: Archive Product
                                     </svg>
                                 </a>
                                 <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                                    <path />
+                                    <path class="topRight"/>
                                 </svg>
                                 <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                                    <path />
+                                    <path class="topRight"/>
                                 </svg>
                             </div>
                         </div>

@@ -53,3 +53,51 @@ function disable_gutenberg_for_product($is_enabled, $post_type)
     return $is_enabled;
 }
 add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_product', 10, 2);
+
+
+// Реєстрація таксономії "Категорії блогів"
+function register_blog_categories_taxonomy()
+{
+    $labels = array(
+        'name' => 'Категорії блогів',
+        'singular_name' => 'Категорія блогу',
+        'search_items' => 'Шукати категорії',
+        'all_items' => 'Всі категорії',
+        'parent_item' => 'Батьківська категорія',
+        'parent_item_colon' => 'Батьківська категорія:',
+        'edit_item' => 'Редагувати категорію',
+        'update_item' => 'Оновити категорію',
+        'add_new_item' => 'Додати нову категорію',
+        'new_item_name' => 'Назва нової категорії',
+        'menu_name' => 'Категорії блогів',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'hierarchical' => true,
+        'public' => true,
+        'show_ui' => true,
+        'show_admin_column' => true,
+        'show_in_rest' => true, // Для підтримки Gutenberg
+        'rewrite' => array('slug' => 'blog-category'),
+    );
+
+    // Прив'язуємо таксономію до типу запису "Блоги"
+    register_taxonomy('blog_category', array('blog'), $args);
+
+    // Додаємо категорії за замовчуванням
+    
+
+   
+}
+add_action('init', 'register_blog_categories_taxonomy');
+
+// Отключення редактора Gutenberg для посттайпа "Блоги"
+function disable_gutenberg_for_blog($is_enabled, $post_type)
+{
+    if ($post_type === 'blog') { // Указываем slug вашего посттайпа
+        return false; // Отключить Gutenberg
+    }
+    return $is_enabled;
+}
+add_filter('use_block_editor_for_post_type', 'disable_gutenberg_for_blog', 10, 2);
