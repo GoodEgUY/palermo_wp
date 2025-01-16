@@ -411,12 +411,224 @@
   overflow: hidden;
 }
 .productCardItem p {
- 
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+/* Пример CSS */
+.radio-group {
+  /* Если фон страницы уже чёрный, этот бэкграунд не обязателен */
+  background-color: #111;
+  padding: 20px;
+  width: 300px; /* для примера */
+  border-radius: 8px;
+}
+
+/* Обёртка для каждого radio + текста */
+.radio-wrapper {
+  display: flex;
+  align-items: center;
   
+  cursor: pointer; /* чтобы было понятно, что это кликабельно */
+}
+
+/* Скрываем стандартный вид радио */
+.radio-wrapper input[type="radio"] {
+  appearance: none; /* для современных браузеров */
+  -webkit-appearance: none; /* для Safari */
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0; /* прячем сам input */
+  position: absolute; /* можно так, если хотим позиционировать псевдокнопку */
+}
+
+/* Кастомный кружок */
+.radio-checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--green); /* зелёная обводка */
+  border-radius: 50%;
+  box-sizing: border-box;
+  position: relative;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* Внутренний кружок, который появляется при :checked */
+.radio-wrapper input[type="radio"]:checked + .chckerWrapper .radio-checkmark::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  
+  top: 5px;
+
+  width: 7px;
+  height: 7px;
+  background: var(--green); /* зелёное заполнение */
+  border-radius: 50%;
+}
+
+/* Подпись */
+.radio-label {
+  font-size: 16px;
+  color: #ccc; /* серовато-белый текст */
+  user-select: none; /* чтобы не выделялось случайно */
+}
+
+/* Добавим ховер-эффект (не обязательно) */
+.radio-wrapper:hover .radio-checkmark {
+  border-color: var(--green);
+}
+
+.radio-wrapper input[type="radio"]:focus + .chckerWrapper .radio-checkmark {
+  outline: 2px solid rgba(57, 210, 125, 0.4); /* небольшая подсветка при фокусе с клавиатуры */
+  outline-offset: 2px;
+}
+/* Обёртка для каждого чекбокса */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+/* Скрываем нативный чекбокс */
+.checkbox-wrapper input[type="checkbox"] {
+  appearance: none;        /* для современных браузеров */
+  -webkit-appearance: none;/* для Safari */
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  opacity: 0;              /* скрываем сам input */
+  position: absolute; 
+}
+
+/* Кастомная «коробка» */
+.checkbox-checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--green);
+  border-radius: 4px; /* небольший скруглённый угол, на вкус */
+  box-sizing: border-box;
+  position: relative;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+/* Сама «галочка» (или крестик) */
+.checkbox-wrapper input[type="checkbox"]:checked + .chckerWrapper .checkbox-checkmark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid var(--green);
+  border-bottom: 2px solid var(--green);
+  transform: rotate(45deg);
+}
+
+/* Подпись */
+.checkbox-label {
+  font-size: 16px;
+  color: #ccc;
+  user-select: none;
+}
+
+/* Ховер-эффект при наведении мыши */
+.checkbox-wrapper:hover .checkbox-checkmark {
+  border-color: rgba(255,255,255, 0.8); /* или другой цвет при hover */
+}
+
+/* Подсветка при фокусе с клавиатуры */
+.checkbox-wrapper input[type="checkbox"]:focus + .chckerWrapper .checkbox-checkmark {
+  outline: 2px solid rgba(57, 210, 125, 0.4);
+  outline-offset: 2px;
+}
+.additionalEquipmentWrapper {
+margin-bottom: var(--block-padding);
+}
+.additionalEquipmentWrapper h2 {
+  max-width: 650px;
+
+}
+.additionalEquipmentDashboard {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: var(--chapter-padding);
+}
+.additionalCategoryItem h2{
+  margin-bottom: 8px;
+}
+.additionalCategories {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 100%;
+  max-width: 538px;
+}
+.chckerWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.radio-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--grey);
+}
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--grey);
+}
+.additionalSummary {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 650px;
+  border-radius: var(--big-border-radius);
+  background-color: var(--graycards);
+}
+.choosenExtras div {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.additionalSummaryBLock h3 {
+  margin-bottom: 12px;
+}
+.additionalSummaryBLock .title {
+  margin-bottom: 16px;
+}
+.additionalSummaryTotal {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.additionalSummaryTotal button {
+  width: fit-content;
+}
+.totalPriceRow {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
 }
 @media (max-width: 1100px) {
   .productMain-mainProperties {
@@ -526,10 +738,10 @@
 }
 @media (max-width: 600px) {
   .productCardDashboard .productCardItem {
-    width: 100%!important;
+    width: 100% !important;
   }
   .productCardDashboard .contentProductItem {
-    width: 100%!important;
+    width: 100% !important;
   }
   .contentProductItem {
     padding: 12px 12px 90px 12px;

@@ -1,4 +1,4 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -24,7 +24,7 @@ html
 body {
   background-color: var(--black);
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", serif;
 }
 h1 {
   font-size: 42px;
@@ -135,6 +135,7 @@ footer {
   color: #fff;
   cursor: pointer;
   transition: all 0.2s ease;
+  min-width: max-content;
 }
 .blackButton svg {
   transition: all 0.2s ease-in-out;
@@ -440,13 +441,23 @@ footer {
   .transparentButton {
     padding: 12px 24px;
   }
+  .swiperNavigationDefault .borderRadius1 {
+   
+    width: 24px;
+    height: 24px;
+  }
+  .swiperNavigationDefault .borderRadius2 {
+  
+    width: 24px;
+    height: 24px;
+  }
 }
 @media (max-width: 800px) {
   .jobStepSwiperBlock {
     width: 100%;
   }
   .swiperDefault {
-    max-width: 100%;
+    max-width: 100%!important;
   }
   .pc {
     display: none;
@@ -481,16 +492,7 @@ footer {
   .defaultForm {
     padding: 16px 20px 20px 20px;
   }
-  .swiperNavigationDefault .borderRadius1 {
-   
-    width: 24px;
-    height: 24px;
-  }
-  .swiperNavigationDefault .borderRadius2 {
   
-    width: 24px;
-    height: 24px;
-  }
   .borderRadius1,
   .borderRadius2 {
     width: 24px!important;

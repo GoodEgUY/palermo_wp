@@ -20,6 +20,9 @@ Template Name: Fertilization
                         <path class="bottomRight" />
                     </svg>
                 </h1>
+                <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
+                    <path class="bottomRight" />
+                </svg>
             </div>
             <div class="intro2Application">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/moonAndDrone.png"
@@ -43,10 +46,12 @@ Template Name: Fertilization
 
             <div class="introProductBlock2">
                 <div class="blackItemCard intro2ItemCard">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone.png"
-                        alt="">
+                    <div class="itemCard-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone.png"
+                            alt="">
+                    </div>
                     <div class="blackItemCardInfo">
-                        <h3>DJI Agras T40</h3>
+                        <h3>DJI Agras T50</h3>
                         <a href="" class="transparentButton">
                             Перейти до каталогу
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
@@ -58,10 +63,10 @@ Template Name: Fertilization
                     </div>
                 </div>
                 <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                    <path />
+                    <path d="M24 24V0C24 13.2549 13.2549 24 0 24H24Z" />
                 </svg>
                 <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                    <path />
+                    <path d="M24 24V0C24 13.2549 13.2549 24 0 24H24Z" />
                 </svg>
             </div>
         </div>
@@ -141,16 +146,18 @@ Template Name: Fertilization
         <div class="textSeparator wrapper">
             <h2>
                 <span>Економія</span> ресурсів <br />завдяки контролю
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon1.svg"
-                    alt="Icon 2">
+
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon2.svg"
+                    alt="Icon 2">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon1.svg"
                     alt="Icon 2">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon3.svg"
                     alt="Icon 2">
                 <br />
                 витрат <span>води, коштів</span> і <span>пального</span>
             </h2>
-            <p>Наша команда пропонує послуги аграріям збільшитиврожайність та внести пестициди вчасно та якісно,
+            <p>Наша команда пропонує послуги аграріям збільшити врожайність та внести пестициди вчасно та якісно,<br />
+                
         </div>
     </section>
     <section>
@@ -303,7 +310,7 @@ Template Name: Fertilization
                         <h3>Єкономія води на 1000 га</h3>
                         <div class="chartItem">
                             <div class="diagrameItemColumn">
-                                <svg class="circleDiagramme" width="349" height="320" viewBox="0 0 349 349"
+                                <svg class="circleDiagramme" width="349" height="286" viewBox="0 0 349 325"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <!-- Фон круга -->
                                     <circle cx="175" cy="160" r="140" fill="none" stroke="#353535" stroke-width="25" />
@@ -474,7 +481,7 @@ Template Name: Fertilization
                         <h3>Єкономія палива на 1000 га</h3>
                         <div class="chartItem">
                             <div class="diagrameItemColumn">
-                                <svg class="circleDiagramme" width="349" height="320" viewBox="0 0 349 349"
+                                <svg class="circleDiagramme" width="349" height="286" viewBox="0 0 349 325"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="175" cy="160" r="140" fill="none" stroke="#353535" stroke-width="25" />
                                     <!-- Заполненная часть (95%) -->
@@ -874,7 +881,7 @@ Template Name: Fertilization
     <section>
         <div class="substancesListWrapper wrapper">
             <h2>Список дієвих <span>препаратів</span>, які ми використовуємо. <span>Ефективність</span> кожного з них
-                <span>підтверджена</span> нашим практичним <span>досвідом.</span>
+                <span>підтверджена</span><br/> нашим<img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/textBlockImage.png" alt="">практичним <span>досвідом.</span>
             </h2>
             <div class="substanceList">
                 <div class="substanceListBlock">
@@ -913,29 +920,6 @@ Template Name: Fertilization
                             <li>Форс</li>
                         </ul>
                     </div>
-                    <div class="substanceListItem">
-
-                    </div>
-                    <div class="substanceListItem grey">
-                        <ul class="markedlistDefault">
-                            <li>Ретенго</li>
-                            <li>Штефстробін</li>
-                            <li>Талер</li>
-                            <li>Амікон</li>
-                            <li>Фенікс Дуо</li>
-                            <li>Сальдо</li>
-                            <li>Флутривіт</li>
-                            <li>Парацельс</li>
-                            <li>Фунгісил</li>
-                            <li>Дот</li>
-                            <li>Фунгімакс</li>
-                            <li>Фолікур</li>
-                            <li>Штефозал</li>
-                        </ul>
-
-                    </div>
-                </div>
-                <div class="substanceListBlock">
                     <div class="substanceListItem grey">
                         <h3>Гербіциди</h3>
                         <ul class="markedlistDefault">
@@ -964,6 +948,29 @@ Template Name: Fertilization
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg></button>
                     </div>
+                    <div class="substanceListItem">
+
+                    </div>
+                    <div class="substanceListItem grey">
+                        <ul class="markedlistDefault">
+                            <li>Ретенго</li>
+                            <li>Штефстробін</li>
+                            <li>Талер</li>
+                            <li>Амікон</li>
+                            <li>Фенікс Дуо</li>
+                            <li>Сальдо</li>
+                            <li>Флутривіт</li>
+                            <li>Парацельс</li>
+                            <li>Фунгісил</li>
+                            <li>Дот</li>
+                            <li>Фунгімакс</li>
+                            <li>Фолікур</li>
+                            <li>Штефозал</li>
+                        </ul>
+
+                    </div>
+                    
+                    
 
                     <div class="substanceListItem ">
                         <h3>Десиканти</h3>
@@ -992,6 +999,41 @@ Template Name: Fertilization
                         </svg>
                     </div>
                 </div>
+                <!-- <div class="substanceListBlock">
+                    
+                </div>
+                <div class="substanceListBlockFull">
+                    
+                    <div class="substanceListItem">
+                        <h3>Перевірено на полі</h3>
+                        <p>Ми протестували ефективність препаратів з різними діючими речовинами від багатьох виробників,
+                            на
+                            особистому досвіді.</p>
+                        <button class="transparentButton">Консультація<svg width="16" height="17" viewBox="0 0 16 17"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg></button>
+                    </div>
+
+                    
+                    <div class="substanceListItem grey">
+                        <h3>Інше</h3>
+                        <ul class="markedlistDefault">
+                            <li>Defenda Бор</li>
+                            <li>Гуміфілд Бор</li>
+                            <li>Вітамін Бор</li>
+                            <li>КАС 28</li>
+                            <li>Карбамід</li>
+                        </ul>
+                        <svg width="100" height="80" class="borderRadius1" viewBox="0 0 100 80" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 0C11.0457 0 20 8.95431 20 20C20 31.0457 28.9543 40 40 40H60C82.0914 40 100 57.9086 100 80V0H0Z"
+                                fill="#0e0e0e" />
+                        </svg>
+                    </div>
+                </div> -->
             </div>
 
 
@@ -1159,8 +1201,7 @@ Template Name: Fertilization
         <div class="faqWrapper wrapper">
             <h2><span>Відповіді</span> на поширені питання</h2>
             <div class="accordion">
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="accordion__title">
+                <div class="accordion__item" >                  <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Як відбувається процес внесення ЗЗР дроном?</h3>
                         </span>
@@ -1182,7 +1223,7 @@ Template Name: Fertilization
                         </p>
                     </div>
                 </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item"  data-aos-anchor-placement="bottom-bottom">
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Яку площу може обробити дрон за зміну?</h3>
@@ -1205,7 +1246,7 @@ Template Name: Fertilization
                         </p>
                     </div>
                 </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item"  data-aos-anchor-placement="bottom-bottom">
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Від чого залежить вартість внесення ЗЗР агродроном?</h3>
@@ -1226,7 +1267,7 @@ Template Name: Fertilization
                         </p>
                     </div>
                 </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item"  data-aos-anchor-placement="bottom-bottom">
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Як проходить навчання для пілотів агродронів?</h3>
@@ -1258,7 +1299,8 @@ Template Name: Fertilization
                 alt="" class="contactBackground">
             <div class="contactBlockText">
                 <h2 class="decorBig">Залишились питання?<br /> <span>Ми</span> завжди <span>на зв'язку!</span></h2>
-                <p>Заповніть форму, і наші спеціалісти зв'яжуться з вами найближчим часом, щоб відповісти на всі ваші
+
+                               <p>Заповніть форму, і наші спеціалісти зв'яжуться з вами найближчим часом, щоб відповісти на всі ваші
                     запитання. Або телефонуйте за номером:
                 </p>
                 <h2 class="decorBig"><a href="tel:+380939694642"><i>+38 (093)969 46 42</i></a></h2>
@@ -1268,7 +1310,8 @@ Template Name: Fertilization
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <div class="inputWrapper">
-                        <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
+                        <input type="text" name="name" placeholder="Ім'я " class="defaultInput"
+                        id="">
                     </div>
                     <div class="inputWrapper">
                         <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">

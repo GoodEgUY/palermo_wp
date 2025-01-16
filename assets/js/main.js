@@ -81,7 +81,7 @@ $(document).ready(function () {
 function updatePaths() {
   const pathsLeftBottom = document.querySelectorAll(".leftBottom")
   pathsLeftBottom.forEach((path) => {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 1100) {
       path.setAttribute("d", "M24 0H0C13.2549 0 24 10.7451 24 24V0Z");
     } else {
       path.setAttribute("d", "M 40 40 c 0 -22 -18 -40 -40 -40 h 40 Z");
@@ -89,7 +89,7 @@ function updatePaths() {
   });
   const pathsTopRight = document.querySelectorAll(".topRight");
   pathsTopRight.forEach((path) => {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 1100) {
       path.setAttribute("d", "M0 24H24C10.7451 24 0 13.2549 0 0V24Z");
     } else {
       path.setAttribute("d", "M 0 0 c 0 22 18 40 40 40 h -40 Z");
@@ -97,15 +97,15 @@ function updatePaths() {
   });
   const pathsBottomRight = document.querySelectorAll(".bottomRight")
   pathsBottomRight.forEach((path) => {
-    if (window.innerWidth < 800) {
-      path.setAttribute("d", "M24 0H0C13.2549 0 24 10.7451 24 24V0Z");
+    if (window.innerWidth < 1100) {
+      path.setAttribute("d", "M24 0H0V24C0 10.7451 10.7451 0 24 0Z");
     } else {
       path.setAttribute("d", "M 40 0 c -22 0 -40 18 -40 40 v -40 Z");
     }
   });
   const pathsLeftTop = document.querySelectorAll(".leftTop");
   pathsLeftTop.forEach((path) => {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 1100) {
       path.setAttribute("d", "M24 24V0C24 13.2549 13.2549 24 0 24H24Z");
     } else {
       path.setAttribute("d", "M 0 40 c 22 0 40 -18 40 -40 v 40 Z");

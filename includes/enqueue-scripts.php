@@ -60,13 +60,7 @@ function lunare_enqueue_assets()
         true
     );
     // Подключение кастомного JS
-    wp_enqueue_script(
-        'main-js',
-        get_stylesheet_directory_uri() . '/assets/js/main.js',
-        ['jquery'],
-        '1.0',
-        true
-    );
+    
     wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), false);
     wp_enqueue_style('fancybox-style', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css', array(), false);
 
@@ -79,6 +73,13 @@ function lunare_enqueue_assets()
     // wp_localize_script('main-js', 'ajaxData', [
     //     'ajaxurl' => admin_url('admin-ajax.php'),
     // ]);
+    wp_enqueue_script(
+        'main-js',
+        get_stylesheet_directory_uri() . '/assets/js/main.js',
+        ['jquery'],
+        '1.0',
+        true
+    );
     wp_enqueue_style('aos-style', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), false);
 
     wp_enqueue_script('aos', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), null, false);

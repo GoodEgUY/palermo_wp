@@ -1,7 +1,9 @@
 <footer>
     <div class="footerWrapper wrapper">
         <div class="footerHeader">
+        <div class="footerColumn">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="" class="footerLogo">
+        </div>
             <div class="footerColumn">
                 <p>КАТАЛОГ</p>
                 <a href="">Агродрони</a>

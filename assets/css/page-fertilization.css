@@ -55,7 +55,7 @@
   position: relative;
 }
 .introText2 h1:nth-child(1) {
-  padding: 0 24px 0 0;
+  padding: 0 24px 6px 0;
   border-bottom-right-radius: var(--big-border-radius);
   max-width: 625px;
 }
@@ -65,6 +65,7 @@
   top: 0;
   width: 40px;
   height: 40px;
+  fill: var(--black);
 }
 
 .introText2 h1:nth-child(2) {
@@ -78,8 +79,16 @@
   top: 0;
   width: 40px;
   height: 40px;
+  fill: var(--black);
 }
-
+.introText2 .borderRadius2 {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  fill: var(--black);
+}
 .introIcons2 {
   position: absolute;
   right: 32px;
@@ -94,7 +103,7 @@
   bottom: 32px;
   color: var(--lightgrey);
   width: 100%;
-  max-width: 265px;
+  max-width: 260px;
 }
 .introProductBlock2 {
   position: absolute;
@@ -113,15 +122,19 @@
   position: absolute;
   right: 0;
   bottom: 100%;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
+  fill: var(--black);
+
+
 }
 .introProductBlock2 .borderRadius2 {
   position: absolute;
   right: 100%;
   bottom: 0;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
+  fill: var(--black);
 }
 
 .blackItemCard {
@@ -133,8 +146,21 @@
   background-color: var(--graycards);
   color: #fff;
 }
-.blackItemCard img {
+.intro2ItemCard .itemCard-image {
+  aspect-ratio: 181 / 99;
+  width: 181px;
+  position: relative;
+  background-color: #456276;
   border-radius: 8px;
+}
+.intro2ItemCard .itemCard-image img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: calc(100% - 8px);
+  max-width: 140px;
+  transform: translateY(-50%) translateX(-50%);
 }
 .blackItemCardInfo {
   display: flex;
@@ -179,6 +205,8 @@
 }
 .ratinItem p {
   color: var(--lightgrey);
+ width: 30%;
+  text-align: left;
 }
 
 .сhartsWrapper {
@@ -193,12 +221,13 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  width: 100%;
 }
 .chartDashboard {
   display: flex;
   align-items: flex-start;
   gap: 56px;
-  padding: 56px;
+  padding: 32px;
   border-radius: var(--big-border-radius);
   background-color: var(--graycards);
   width: 100%;
@@ -313,7 +342,13 @@
   gap: 80px;
 }
 .substancesListWrapper h2 {
-  max-width: 940px;
+  max-width: 640px;
+}
+.substancesListWrapper h2 img {
+  max-height: 1em;
+  vertical-align: middle;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 .substanceList {
   display: flex;
@@ -324,21 +359,29 @@
 .substanceListBlock {
   display: flex;
   align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.substanceListBlockFull {
+  display: none;
+  align-items: center;
   width: calc((100% - 20px) / 2);
   flex-wrap: wrap;
   gap: 20px;
 }
 .substanceListItem {
   flex-grow: 1;
-  width: calc((100% - 20px) / 2);
+  width: calc((100% - 60px) / 4);
   padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  aspect-ratio: 1 / 1;
   border-radius: var(--big-border-radius);
   
-  height: 315px;
-  max-height: 315px;
+  /* height: 315px;
+  max-height: 315px; */
   position: relative;
 }
 .substanceListItem.grey {
@@ -373,6 +416,68 @@
     gap: 30px;
   }
 }
+@media (max-width: 1250px) {
+  .substanceListItem p {
+    font-size: 14px;
+  }
+  .substanceListItem {
+    width: calc((100% - 40px) / 3);
+    flex-grow: unset;
+  }
+  .substanceListItem:nth-child(1) {
+    order: 1;
+  }
+  .substanceListItem:nth-child(2) {
+    order: 2;
+  }
+  .substanceListItem:nth-child(3) {
+    order: 3;
+  }
+  .substanceListItem:nth-child(4) {
+    order: 8;
+  }
+  .substanceListItem:nth-child(5) {
+    order: 4;
+  }
+  .substanceListItem:nth-child(6) {
+    order: 5;
+  }
+  .substanceListItem:nth-child(7) {
+    order: 6;
+  }
+  .substanceListItem:nth-child(8) {
+    order: 7;
+  }
+  /* .substanceListBlock:nth-child(2) .substanceListItem:nth-child(2),
+  .substanceListBlock:nth-child(2) .substanceListItem:nth-child(4) {
+    display: none;
+  }
+  .substanceListBlock:nth-child(1) {
+    width: calc((100% - 40px) / 3 * 2);
+  }
+  .substanceListBlock:nth-child(2) {
+    flex-direction: column;
+    width: calc((100% - 40px) / 3);
+  }
+  .substanceListBlock:nth-child(2) .substanceListItem {
+    width: 100%;
+  }
+  .substanceListBlockFull {
+    display: flex;
+    width: calc((100% - 20px) / 3 * 2);
+  }
+  .substanceListBlockFull .substanceListItem:nth-child(1) {
+    order: 2;
+  }
+  .substanceListBlockFull .substanceListItem:nth-child(2) {
+    order: 1;
+  } */
+  .substanceList {
+    flex-wrap: wrap;
+  }
+}
+
+
 @media (max-width: 1200px) {
   .chartItemColumn p {
     font-size: 14px;
@@ -389,27 +494,32 @@
   .introIcons2 img {
     width: 64px;
   }
-  .substanceList {
+  /* .substanceList {
     flex-direction: column;
-  }
-  .substanceListBlock{
+  } */
+  /* .substanceListBlock{
     width: 100%;
     max-width: 720px;
     height: fit-content;
-  }
-  .substanceListItem {
-    
+  } */
+  .ratinItem {
+    padding: 24px 0;
   }
 }
 @media (max-width: 1100px) {
   .chartsContentWrapper {
     flex-direction: row;
-    max-width: 900px;
+    gap: 12px;
+    
     align-items: center;
+  }
+  .сhartsWrapper {
+gap: 12px;
   }
   .chartDashboard {
     flex-direction: column;
     padding: 24px 16px;
+    border-radius: 32px;
   }
   .сhartsWrapper {
   }
@@ -422,30 +532,83 @@
     flex-wrap: wrap;
     padding: 16px;
     gap: 12px;
-    max-width: 900px;
+    border-radius: 32px;
+   
   }
   .benefitItem {
-    width: 49.1%;
+    width: calc((100% - 12px) / 2);
+    border-radius: 16px;
   }
-  .jobStepsWrapper {
+  /* .jobStepsWrapper {
     flex-direction: column;
-  }
-  .jobStepSwiperBlock {
+  } */
+  /* .jobStepSwiperBlock {
     order: 2;
   }
   .jobStepSvgAnimationBlock {
     order: 1;
+  } */
+  .introProductBlock2 {
+    border-top-left-radius: 36px!important;
+    padding: 16px 0  0 16px ;
+  }
+  .introParagraph2 {
+    left: 20px;
+    bottom: 20px;
+  }
+  .swiperJobsSteps {
+    max-width: 394px!important;
+  }
+  .swiperJobsSteps .swiperSlideContent {
+    padding: 20px 20px 90px 20px;
+  }
+  .jobStepSvgAnimationBlock {
+    padding: 20px;
+  }
+  .substancesListWrapper {
+    gap: 32px;
   }
 }
-
+@media (max-width: 950px) {
+  .substanceListItem {
+    width: calc((100% - 20px) / 2);
+    flex-grow: unset;
+  }
+  .substanceListItem:nth-child(1) {
+    order: 1;
+  }
+  .substanceListItem:nth-child(2) {
+    order: 2;
+  }
+  .substanceListItem:nth-child(3) {
+    order: 5;
+  }
+  .substanceListItem:nth-child(4) {
+    order: 6;
+  }
+  .substanceListItem:nth-child(5) {
+    order: 7;
+  }
+  .substanceListItem:nth-child(6) {
+    order: 4;
+  }
+  .substanceListItem:nth-child(7) {
+    order: 3;
+  }
+  .substanceListItem:nth-child(8) {
+    order: 8;
+  }
+}
 @media (max-width: 900px) {
   .introText2 {
     position: static;
     margin-bottom: 24px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   .introText2 h1 {
-    max-width: unset !important;
+    max-width: 390px !important;
     padding: 0 !important;
   }
   .introWrapper2 {
@@ -474,9 +637,11 @@
 @media (max-width: 800px) {
   .jobStepSvgAnimationBlock {
     padding: 16px;
+    order: 1;
   }
   .jobStepSwiperBlock {
-    padding: 16px;
+    padding: 0;
+    order: 2;
   }
  
     .blackItemCard {
@@ -486,10 +651,17 @@
     .blackItemCardInfo {
       gap: 16px;
     }
-  .substanceListItem {
-    height: 380px;
-  }
   
+  .jobStepsWrapper  {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .jobStepsWrapper h2 {
+margin-bottom: 20px;
+  }
+  .ratinItem p {
+    width: 100%;
+  }
 }
 @media (max-width: 670px) {
   .chartsContentWrapper {
@@ -498,9 +670,14 @@
   .aboutButtonGroup {
     flex-direction: column;
     width: 100%;
+    gap: 12px;
+    margin-bottom: 32px;
   }
   .aboutButtonGroup a {
     width: 100%;
+  }
+  .ratingElementsWrapper {
+    padding-bottom: 32px;
   }
 }
 @media(max-width:600px) {
@@ -519,9 +696,7 @@
   .substanceListItem .markedlistDefault {
     max-height: 100%;
   }
-  .jobStepSwiperBlock {
-    padding: 0;
-  }
+  
 }
 @media (max-width: 550px) {
   .introBackground2 {

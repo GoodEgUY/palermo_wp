@@ -343,7 +343,6 @@ Template Name: Single Product Agrodrone
             <h2></h2>
             <div class="mainSwiperContainer">
                 <div class="productsSwiper swiperProductsDashboard">
-
                     <div class="swiper-wrapper sliderWrapperDefault">
                         <div class="swiper-slide swiperSlideDefault">
                             <div class="swiperSlideProductContent">
@@ -358,12 +357,14 @@ Template Name: Single Product Agrodrone
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -389,12 +390,14 @@ Template Name: Single Product Agrodrone
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -420,12 +423,14 @@ Template Name: Single Product Agrodrone
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -451,12 +456,14 @@ Template Name: Single Product Agrodrone
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -482,12 +489,14 @@ Template Name: Single Product Agrodrone
                                     </p>
                                     <h1 class="decorBig">920 000 <small>Грн.</small></h1>
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">Дізнатись більше <svg width="16"
-                                                height="17" viewBox="0 0 16 17" fill="none"
+                                        <a href="" class="transparentButton">
+                                            Дізнатись більше
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
                                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg></a>
+                                            </svg>
+                                        </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path />
@@ -500,18 +509,15 @@ Template Name: Single Product Agrodrone
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
-
                 </div>
                 <div class="swiperNavigationDefault">
-                    <div class="swiperButtonPrev" id="swiperButtonPrev-productTechnology"><svg width="16" height="17"
-                            viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <div class="swiperButtonPrev" id="swiperButtonPrev-productTechnology">
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></div>
+                        </svg>
+                    </div>
                     <div class="swiperButtonNext " id="swiperButtonNext-productTechnology">
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -527,22 +533,6 @@ Template Name: Single Product Agrodrone
                         autoplay: {
                             delay: 5000,
                             disableOnInteraction: false,
-                        },
-                        breakpoints: {
-
-                            900: {
-                                slidesPerView: 3,
-                                spaceBetween: 20,
-                            },
-                            // 600px и меньше (например, 1 слайд для мобильных)
-                            600: {
-                                slidesPerView: 2,
-                                spaceBetween: 15,
-                            },
-                            0: {
-                                slidesPerView: 1,
-                                spaceBetween: 10,
-                            }
                         },
                         navigation: {
                             nextEl: '#swiperButtonNext-productTechnology',

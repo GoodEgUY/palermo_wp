@@ -7,9 +7,7 @@ Template Name:  Blog Small
 <?php if (have_rows('small_template')): ?>
     <?php while (have_rows('small_template')):
         the_row(); ?>
-        <script>
-  AOS.init();
-</script>
+      
         <div class="mainWrapper">
             <section>
                 <div class="smallTemplateWrapper wrapper">
