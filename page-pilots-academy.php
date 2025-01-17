@@ -44,10 +44,10 @@ Template Name: Pilots Academy
                     </div>
                 </div>
                 <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                    <path class="leftTop" />
+                    <path d="M0 20C11.0457 20 20 11.0457 20 0V20H0Z" />
                 </svg>
                 <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                    <path class="leftTop" />
+                    <path d="M0 20C11.0457 20 20 11.0457 20 0V20H0Z" />
                 </svg>
             </div>
             <div class="intro3LeftBlock">
@@ -78,20 +78,20 @@ Template Name: Pilots Academy
                             </svg>
                         </a>
                         <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                            <path class="leftTop" />
+                            <path d="M0 20C11.0457 20 20 11.0457 20 0V20H0Z"/>
                         </svg>
                         <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                            <path class="leftTop" />
+                            <path d="M0 20C11.0457 20 20 11.0457 20 0V20H0Z"/>
                         </svg>
                     </div>
                     <svg class="borderRadius3" xmlns="http://www.w3.org/2000/svg">
-                        <path class="leftBottom" />
+                        <path d="M0 0C11.0457 0 20 8.95431 20 20V0H0Z" />
                     </svg>
                     <svg class="borderRadius4" xmlns="http://www.w3.org/2000/svg">
-                        <path class="bottomRight" />
+                        <path d="M20 0C8.95431 0 0 8.95431 0 20V0H20Z"/>
                     </svg>
                     <svg class="borderRadius5" xmlns="http://www.w3.org/2000/svg">
-                        <path class="topRight" />
+                        <path d="M20 20C8.95431 20 0 11.0457 0 0V20H20Z" />
                     </svg>
                 </div>
             </div>

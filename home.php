@@ -31,8 +31,7 @@ get_header(); // Подключаем header
             <div class="section1IntroCards">
                 <div class="whiteItemCard introItemCard">
                     <div class="itemCard-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/droneT50.png"
-                            alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/droneT50.png" alt="">
                     </div>
                     <div class="whiteItemCardInfo">
                         <h3>DJI Agras T50</h3>
@@ -125,7 +124,7 @@ get_header(); // Подключаем header
         <div class="blogRecommendationWrapper wrapper">
             <div class="contentProductItem">
                 <div class="contentProductItem-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/contentCardImage.png"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/fertilization.png"
                         alt="">
                 </div>
                 <h3>Внесення пестицидів <br />та мікроелементів</h3>
@@ -171,7 +170,7 @@ get_header(); // Подключаем header
             </div>
             <div class="contentProductItem">
                 <div class="contentProductItem-image">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/contentCardImage.png"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/mixing-node.png"
                         alt="">
                 </div>
                 <h3>Виробництво сучасних<br /> вузлів змішування</h3>
@@ -200,6 +199,23 @@ get_header(); // Подключаем header
             </div>
             <div class="aboutTextContent">
                 <h2>Про нас</h2>
+                <p>
+                    Lunares - це команда професіоналів, що обʼєднує передові технології з агробізнесом. Ми
+                    спеціалізуємось на внесенні засобів захисту рослин агродронами, продажу обладнання та проводимо
+                    навчання
+                    пілотів
+                    <br />
+                    Наша місія – допомагати аграріям впроваджувати інновації для підвищення врожайності та оптимізації
+                    витрат. Спираючись на технології DJI Agriculture, ми створюємо майбутнє сільського господарства вже
+                    сьогодні.
+                </p>
+                <a href="" class="transparentButton">Зв’язатися з нами <svg width="16" height="17" viewBox="0 0 16 17"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></a>
+            </div>
+            <div class="aboutTextContent-mobile">
                 <p>
                     Lunares - це команда професіоналів, що обʼєднує передові технології з агробізнесом. Ми
                     спеціалізуємось на внесенні засобів захисту рослин агродронами, продажу обладнання та проводимо
@@ -315,12 +331,14 @@ get_header(); // Подключаем header
                         <p>ЕКІПАЖІВ ВНЕСЕННЯ ЗЗР</p>
                     </div>
                 </div>
-                <p class="blockTitle">Збільшуємо врожайність на 3-7%, за рахунок відсутності технологічної колії та технології
+                <p class="blockTitle">Збільшуємо врожайність на 3-7%, за рахунок відсутності технологічної колії та
+                    технології
                     ультрамалообʼємного обприскування.</p>
             </div>
             <div class="benefitBanner">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/benefitsImage.png" alt="">
-                <p class="imageText">Збільшуємо врожайність на 3-7%, за рахунок відсутності технологічної колії та технології
+                <p class="imageText">Збільшуємо врожайність на 3-7%, за рахунок відсутності технологічної колії та
+                    технології
                     ультрамалообʼємного обприскування.</p>
                 <div class="benefitBannerAdtitle">
                     <h3>Внесення пестицидів</h3>
@@ -337,8 +355,8 @@ get_header(); // Подключаем header
     <section>
         <div class="faqWrapper wrapper">
             <h2><span>Відповіді</span> на поширені питання</h2>
-            <div class="accordion" >
-                <div class="accordion__item"  data-aos-anchor-placement="bottom-bottom">
+            <div class="accordion">
+                <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Як відбувається процес внесення ЗЗР дроном?</h3>
@@ -360,7 +378,7 @@ get_header(); // Подключаем header
                             спеціальному змішувачі та приступає до обприскування.</p>
                     </div>
                 </div>
-                <div class="accordion__item"  data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Яку площу може обробити дрон за зміну?</h3>
@@ -382,7 +400,7 @@ get_header(); // Подключаем header
                             га.</p>
                     </div>
                 </div>
-                <div class="accordion__item"  data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Від чого залежить вартість внесення ЗЗР агродроном?</h3>
@@ -402,7 +420,7 @@ get_header(); // Подключаем header
                             ліній електропередач на полі.</p>
                     </div>
                 </div>
-                <div class="accordion__item"  data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Як проходить навчання для пілотів агродронів?</h3>

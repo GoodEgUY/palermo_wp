@@ -14,15 +14,21 @@
 
   overflow: hidden;
 }
-.introWrapper3 .borderRadius1,
-.introWrapper3 .borderRadius2,
-.introWrapper3 .borderRadius3,
-.introWrapper3 .borderRadius4,
-.introWrapper3 .borderRadius5 {
+.introWrapper3 .borderRadius1 {
   width: 40px;
   height: 40px;
   position: absolute;
 }
+
+.introWrapper3 .borderRadius2,
+.introWrapper3 .borderRadius3,
+.introWrapper3 .borderRadius4,
+.introWrapper3 .borderRadius5 {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+}
+
 
 .introWrapper3 .borderRadius1 path,
 .introWrapper3 .borderRadius2 path,
@@ -170,7 +176,7 @@
   right: 0;
   padding: 20px 0 0 20px;
   background-color: var(--black);
-  border-top-left-radius: var(--big-border-radius);
+  border-top-left-radius: 32px;
   color: #32d16c36;
 }
 
@@ -181,15 +187,15 @@
   position: absolute;
   right: 0;
   bottom: 100%;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
 }
 .introProductBlock3 .borderRadius2 {
   position: absolute;
   right: 100%;
   bottom: 0;
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
 }
 .introProductBlock3 .borderRadius1 path {
   fill: var(--black);
@@ -505,6 +511,7 @@ gap: 12px;
   .leftBlockRCcontrol{
     position: static;
     padding-right: 16px;
+    padding-top: 16px;
     aspect-ratio: 1/1;
     flex-grow: 1;
     padding-left: 0;
@@ -563,7 +570,7 @@ gap: 12px;
 
   }
   .intro3LeftBlock h1 {
-    max-width: 400px;
+    max-width: 310px;
   }
 
 }

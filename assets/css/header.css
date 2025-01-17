@@ -231,6 +231,9 @@ header {
   }
 }
 @media (max-width: 900px) {
+  .mainWrapper {
+    padding-top: 88px;
+  }
   .headerNav {
     display: none;
   }

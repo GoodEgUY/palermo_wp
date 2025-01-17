@@ -250,7 +250,7 @@
   align-items: center;
   gap: 56px;
   height: fit-content;
-  padding-bottom: 80px;
+  padding-bottom: var(--block-padding);
 }
 .aboutTextImage {
   position: relative;
@@ -279,6 +279,12 @@
 .aboutTextContent p {
   color: var(--lightgrey);
   margin-bottom: 8px;
+}
+.aboutTextContent-mobile {
+  display: none;
+}
+.aboutTextContent-mobile p {
+  color: var(--lightgrey);
 }
 .benefitsWrapper {
   display: flex;
@@ -467,6 +473,24 @@
   width: 100%;
   max-width: 426px;
 }
+@media (max-width: 1200px) {
+  .aboutTextWrapper {
+    gap: 32px;
+  }
+  .aboutTextImage {
+    aspect-ratio: 325/ 207;
+    max-height: unset;
+  }
+  .aboutTextImage img {
+    width: 100%;
+    transform: unset;
+    left: 0;
+    top: 0;
+  }
+  .aboutTextContent {
+    min-width: 360px;
+  }
+}
 @media (max-width: 1100px) {
   .blogRecommendationWrapper {
     gap: 16px;
@@ -512,7 +536,6 @@
   }
   .benefitsDashboard .blockTitle {
     display: none;
-
   }
   .benefitBanner .imageText {
     position: absolute;
@@ -525,6 +548,7 @@
   .benefitsDashboard {
     width: fit-content;
     max-width: 300px;
+    row-gap: 32px;
   }
 }
 @media (max-width: 1100px) {
@@ -594,13 +618,26 @@
     order: 2;
     min-width: unset;
     max-width: unset;
+    
+  }
+  .aboutTextContent {
+    width: 100%;
+  }
+  .aboutTextContent p,
+  .aboutTextContent a {
+    display: none;
+  }
+  .aboutTextContent-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    order: 3;
   }
   .aboutTextContent {
     order: 1;
   }
   .benefitsWrapper {
     flex-direction: column;
-
   }
   .benefitsDashboard {
     max-width: unset;
@@ -610,9 +647,15 @@
   }
   .benefitBanner {
     aspect-ratio: 307/227;
+    order: 1;
+  }
+  .benefitsDashboard {
+    order: 2;
+    align-items: flex-start;
+    row-gap: 20px;
   }
   .benefitBanner .imageText {
-display: none;
+    display: none;
   }
   .introText1 {
     position: static;
@@ -659,7 +702,7 @@ display: none;
     aspect-ratio: 151/82;
     max-width: 200px;
   }
-  
+
   .whiteItemCardInfo {
     gap: 16px;
   }
@@ -761,6 +804,21 @@ display: none;
     left: unset;
     right: -30px;
     top: 82px;
+  }
+  .section1IntroCards {
+    padding-top: 12px;
+    gap: 12px;
+  }
+  .introItemCard {
+    height: 100px;
+    flex: unset;
+    border-radius: 16px;
+  }
+  .introItemCard .itemCard-image {
+    aspect-ratio: unset;
+    width: 100%;
+    height: 100%;
+    max-width: 151px;
   }
 }
 @keyframes livitation {

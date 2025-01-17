@@ -15,7 +15,7 @@
                 <p>СТОРІНКИ</p>
                 <a href="">Каталог</a>
                 <a href="">Внесення ЗЗР</a>
-                <a href="">Академія пілотів</a>
+                <a href="">Центр пілотів</a>
                 <a href="">Блог</a>
             </div>
             <div class="footerColumn">

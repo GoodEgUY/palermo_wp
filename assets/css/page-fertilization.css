@@ -694,9 +694,32 @@ margin-bottom: 20px;
     
   }
   .substanceListItem .markedlistDefault {
-    max-height: 100%;
+    max-height: 300px;
+  }
+  .substanceListSwiper .swiperSlideContent{
+    padding-bottom: 50px;
+  }
+  .introProductBlock2 {
+    padding-top: 12px;
+  }
+  .intro2ItemCard {
+    height: 100px;
+   
   }
   
+  .intro2ItemCard .itemCard-image {
+    aspect-ratio: unset;
+    width: 100%;
+    height: 100%;
+    max-width: 140px;
+  }
+  .intro2ItemCard .itemCard-image img {
+max-width: 90%;
+width: 100%;
+  }
+  .intro2ItemCard {
+    border-radius: 16px;
+  }
 }
 @media (max-width: 550px) {
   .introBackground2 {
@@ -708,10 +731,7 @@ margin-bottom: 20px;
   .intro2Application {
     aspect-ratio: 388 /349;
   }
-  .intro2ItemCard img {
-    width: 30%;
-    min-width: 151px;
-  }
+  
 }
 @media (max-width: 500px) {
   .benefitItem {

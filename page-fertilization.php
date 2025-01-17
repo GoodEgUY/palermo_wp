@@ -580,14 +580,15 @@ Template Name: Fertilization
                                         // Начинаем наблюдать за каждым dashboardItem
                                         observer.observe(item);
                                     });
-                                }); document.addEventListener('DOMContentLoaded', () => {
+                                });
+                                document.addEventListener('DOMContentLoaded', () => {
                                     // Целевые элементы, при появлении которых запускаются анимации
                                     const waterElement = document.querySelector('.circleDiagrammeFillWater');
                                     const fuelElement = document.querySelector('.circleDiagrammeFillFuel');
 
                                     const options = {
                                         root: null,
-                                        threshold: 0.5 // Элемент считается видимым, когда 50% его высоты попало в зону видимости
+                                        threshold: 0.2 // Элемент считается видимым, когда 50% его высоты попало в зону видимости
                                     };
 
                                     // Функция-обработчик для Intersection Observer
