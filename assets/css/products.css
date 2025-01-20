@@ -249,7 +249,7 @@
   width: 50%;
 }
 
-.techAdventages-propertiesItem.value {
+.techAdventages-propertiesItem .value {
   color: var(--lightgrey);
 }
 /* OTHER PRODUCTS */

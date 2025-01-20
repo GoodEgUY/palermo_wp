@@ -208,7 +208,9 @@ header {
   color: var(--lightgrey);
   max-width: 500px;
 }
-
+.modalBody button {
+  width: 100%;
+}
 .modalCross {
   position: absolute;
   right: 12px;

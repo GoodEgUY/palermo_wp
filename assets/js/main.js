@@ -79,7 +79,7 @@ $(document).ready(function () {
   });
 });
 function updatePaths() {
-  const pathsLeftBottom = document.querySelectorAll(".leftBottom")
+  const pathsLeftBottom = document.querySelectorAll(".leftBottom");
   pathsLeftBottom.forEach((path) => {
     if (window.innerWidth < 1100) {
       path.setAttribute("d", "M24 0H0C13.2549 0 24 10.7451 24 24V0Z");
@@ -95,7 +95,7 @@ function updatePaths() {
       path.setAttribute("d", "M 0 0 c 0 22 18 40 40 40 h -40 Z");
     }
   });
-  const pathsBottomRight = document.querySelectorAll(".bottomRight")
+  const pathsBottomRight = document.querySelectorAll(".bottomRight");
   pathsBottomRight.forEach((path) => {
     if (window.innerWidth < 1100) {
       path.setAttribute("d", "M24 0H0V24C0 10.7451 10.7451 0 24 0Z");
@@ -118,7 +118,7 @@ window.addEventListener("resize", updatePaths);
 window.addEventListener("load", updatePaths);
 
 function validateContactFormLand(form) {
- console.log(form)
+  console.log(form);
   let target = "contact";
   let $nameInput = $(form).find('input[name="name"]');
   let $phoneInput = $(form).find('input[name="phone"]');
@@ -128,17 +128,17 @@ function validateContactFormLand(form) {
 
   let hasError = false;
 
-  // Если ошибок нет, отправляем форму
-  let fullPhone = "+" + phone; // Форматирование номера
+  let code = form.querySelector('.iti__selected-dial-code').innerHTML;
+  let fullPhone = code + phone; // Форматирование номера
   sendForm(fullPhone, name, target);
 }
 
 async function sendForm(phone, name, target) {
- 
   let phoneNumber = "";
   let clientName = "";
   if (phone) {
     phoneNumber = phone;
+   
   }
   if (name) {
     clientName = name;
@@ -166,9 +166,9 @@ async function sendForm(phone, name, target) {
     )
     .then((response) => {
       console.log("Сообщение отправлено", response);
-
-      $("#modalCallback").fadeOut("fast");
-      $("#modalCross2").fadeOut("fast");
+      jQuery('body').addClass('no-scroll');
+      $("#modalSuccess").fadeIn("fast");
+      $("#modalForm").fadeOut("fast");
 
       $("[name='name']").each(function () {
         $(this).val("");
@@ -208,7 +208,6 @@ $("form.contactForm").each(function () {
     },
 
     submitHandler: function (form) {
-     
       validateContactFormLand(form);
     },
   });
@@ -216,7 +215,6 @@ $("form.contactForm").each(function () {
 $(document).on("submit", "form.contactForm", function (event) {
   event.preventDefault(); // Блокируем стандартное поведение submit
 });
-
 
 $(document).ready(function () {
   var inputElements = document.querySelectorAll('input[type="tel"]');

@@ -32,8 +32,7 @@
 
                     <!-- Добавление активного класса на ссылку каталога -->
                     <a href="/product" class="headerItem <?php if (is_page('product'))
-                        echo 'active'; ?>"
-                        id="catalogLink">
+                        echo 'active'; ?>" id="catalogLink">
                         Каталог
                         <svg width="9" class="dropdown-arrow" height="5" viewBox="0 0 9 5" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -57,21 +56,17 @@
                             <a href="/mixing" class="<?php if (is_page('mixing'))
                                 echo 'active'; ?>">Вузли
                                 змішування</a>
-                            <a href="/generators"
-                                class="<?php if (is_page('generators'))
-                                    echo 'active'; ?>">Генератори</a>
-                            <a href="/components"
-                                class="<?php if (is_page('components'))
-                                    echo 'active'; ?>">Комплектуючі</a>
+                            <a href="/generators" class="<?php if (is_page('generators'))
+                                echo 'active'; ?>">Генератори</a>
+                            <a href="/components" class="<?php if (is_page('components'))
+                                echo 'active'; ?>">Комплектуючі</a>
                         </div>
                     </div>
                 </div>
-                <a href="<?php echo home_url('/fertilization/'); ?>"
-                    class="headerItem <?php if (is_page('fertilization'))
-                        echo 'active'; ?>">Внесення ЗЗР</a>
-                <a href="<?php echo home_url('/pilots-academy/'); ?>"
-                    class="headerItem <?php if (is_page('pilots-academy'))
-                        echo 'active'; ?>">Центр пілотів</a>
+                <a href="<?php echo home_url('/fertilization/'); ?>" class="headerItem <?php if (is_page('fertilization'))
+                       echo 'active'; ?>">Внесення ЗЗР</a>
+                <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem <?php if (is_page('pilots-academy'))
+                       echo 'active'; ?>">Центр пілотів</a>
                 <div class="headerItem <?php if (is_page('blog'))
                     echo 'active'; ?>">Блог</div>
             </div>
@@ -95,8 +90,7 @@
 
                     <!-- Добавление активного класса на ссылку каталога -->
                     <a href="/product" class="headerItem <?php if (is_page('product'))
-                        echo 'active'; ?>"
-                        id="catalogLink">
+                        echo 'active'; ?>" id="catalogLink">
                         Каталог
                         <svg width="9" class="dropdown-arrow" height="5" viewBox="0 0 9 5" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -120,21 +114,17 @@
                             <a href="/mixing" class="<?php if (is_page('mixing'))
                                 echo 'active'; ?>">Вузли
                                 змішування</a>
-                            <a href="/generators"
-                                class="<?php if (is_page('generators'))
-                                    echo 'active'; ?>">Генератори</a>
-                            <a href="/components"
-                                class="<?php if (is_page('components'))
-                                    echo 'active'; ?>">Комплектуючі</a>
+                            <a href="/generators" class="<?php if (is_page('generators'))
+                                echo 'active'; ?>">Генератори</a>
+                            <a href="/components" class="<?php if (is_page('components'))
+                                echo 'active'; ?>">Комплектуючі</a>
                         </div>
                     </div>
                 </div>
-                <a href="<?php echo home_url('/fertilization/'); ?>"
-                    class="headerItem <?php if (is_page('fertilization'))
-                        echo 'active'; ?>">Внесення ЗЗР</a>
-                <a href="<?php echo home_url('/pilots-academy/'); ?>"
-                    class="headerItem <?php if (is_page('pilots-academy'))
-                        echo 'active'; ?>">Центр пілотів</a>
+                <a href="<?php echo home_url('/fertilization/'); ?>" class="headerItem <?php if (is_page('fertilization'))
+                       echo 'active'; ?>">Внесення ЗЗР</a>
+                <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem <?php if (is_page('pilots-academy'))
+                       echo 'active'; ?>">Центр пілотів</a>
                 <div class="headerItem <?php if (is_page('blog'))
                     echo 'active'; ?>">Блог</div>
             </div>
@@ -144,13 +134,13 @@
                         stroke-linejoin="round" />
                 </svg></button>
         </div>
-        <div class="modalWrapper">
+        <div class="modalWrapper" id="modalForm">
             <div class="modalBody">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
                     class="modalCross">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" class="modalLogo" alt="">
                 <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
-                <form class="modalForm">
+                <form class="modalForm contactForm">
                     <div class="inputWrapper">
                         <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
                     </div>
@@ -164,6 +154,22 @@
                     <input type="hidden" value="" name="target">
 
                 </form>
+            </div>
+        </div>
+        <div class="modalWrapper" id="modalSuccess">
+            <div class="modalBody">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
+                    class="modalCross">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/success.svg"
+                    class="modalImageSucess" alt="">
+                <h2>Ваша заявка прийнята</h2>
+                <p>Ми отримали вашу заявку та вже працюємо над її обробкою. Наш менеджер зв’яжеться з вами найближчим
+                    часом, щоб уточнити деталі.</p>
+                <button class="greenButton modalCloseButton">Продовжити<svg width="16" height="17"
+                            viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
             </div>
         </div>
         <script>
@@ -204,23 +210,31 @@
                 jQuery('.openModalButton').click(function (e) {
                     e.stopPropagation();
                     const targetValue = jQuery(this).data('target');
-                    jQuery('.modalWrapper').fadeIn(100);
-                    jQuery('.modalWrapper').find('input[name="target"]').val(targetValue);
+                    jQuery('#modalForm').fadeIn(100);
+                    jQuery('#modalForm').find('input[name="target"]').val(targetValue);
                     jQuery('body').addClass('no-scroll');
 
                 });
-
-
-                jQuery('.modalCross').click(function () {
-                    jQuery('.modalWrapper').fadeOut(100);
-                    jQuery('body').removeClass('no-scroll');
+                $('.modalCloseButton').on('click', function () {
+                    // «this» — иконка-крестик, ищем ближайший контейнер-модалку
+                    $(this).closest('.modalWrapper').fadeOut(100);
+                    $('body').removeClass('no-scroll');
+                });
+          
+                // Закрытие по крестику внутри модалки
+                $('.modalCross').on('click', function () {
+                    // «this» — иконка-крестик, ищем ближайший контейнер-модалку
+                    $(this).closest('.modalWrapper').fadeOut(100);
+                    $('body').removeClass('no-scroll');
                 });
 
-
-                jQuery(document).click(function (e) {
-                    if (!jQuery(e.target).closest('.modalBody, .openModalButton').length) {
-                        jQuery('.modalWrapper').fadeOut(100);
-                        jQuery('body').removeClass('no-scroll');
+                // Закрытие по клику вне области модалки
+                $(document).on('click', function (e) {
+                    // Если кликнули не внутри .modalBody и не по кнопке .openModalButton,
+                    // значит, кликаем «вне» модалки, и все открытые модалки закрываются
+                    if (!$(e.target).closest('.modalBody, .openModalButton').length) {
+                        $('.modalWrapper:visible').fadeOut(100);
+                        $('body').removeClass('no-scroll');
                     }
                 });
             });

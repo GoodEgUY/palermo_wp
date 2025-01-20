@@ -555,7 +555,7 @@ Template Name: Single Product Agrodrone
         <div class="faqWrapper wrapper">
             <h2><span>Відповіді</span> на поширені питання</h2>
             <div class="accordion">
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item" >
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Як відбувається процес внесення ЗЗР дроном?</h3>
@@ -577,7 +577,7 @@ Template Name: Single Product Agrodrone
                             спеціальному змішувачі та приступає до обприскування.</p>
                     </div>
                 </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item" >
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Яку площу може обробити дрон за зміну?</h3>
@@ -599,7 +599,7 @@ Template Name: Single Product Agrodrone
                             га.</p>
                     </div>
                 </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item" >
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Від чого залежить вартість внесення ЗЗР агродроном?</h3>
@@ -619,7 +619,7 @@ Template Name: Single Product Agrodrone
                             ліній електропередач на полі.</p>
                     </div>
                 </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__item" >
                     <div class="accordion__title">
                         <span class="accordion__title-text">
                             <h3>Як проходить навчання для пілотів агродронів?</h3>
@@ -653,7 +653,16 @@ Template Name: Single Product Agrodrone
                 <h2 class="decorBig">Залишились питання?<br /> <span>Ми</span> завжди <span>на зв'язку!</span></h2>
                 <p>Заповніть форму, і наші спеціалісти зв'яжуться з вами найближчим часом, щоб відповісти на всі ваші
                     запитання. Або телефонуйте за номером:</p>
-                <h2 class="decorBig"><a href="tel:+380939694642"><i>+38 (093)969 46 42</i></a></h2>
+                <?php if (have_rows('phone_number', 'options')): ?>
+                    <?php while (have_rows('phone_number', 'options')):
+                        the_row(); ?>
+                        <h2 class="decorBig"><a href="tel:<?php if ($number = get_sub_field('number', 'options')): ?>
+   <?php echo esc_html($number); ?>
+   <?php endif; ?>"><i><?php if ($label = get_sub_field('label', 'options')): ?>
+                                        <?php echo esc_html($label); ?>
+                                    <?php endif; ?></i></a></h2>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
             <div class="contactBlockForm">
                 <form action="" class="defaultForm">

@@ -68,6 +68,7 @@
   color: var(--lightgrey);
   width: 100%;
   max-width: 265px;
+  text-align: right;
 }
 .intro3LeftBlock h1 {
   display: inline-block;
@@ -141,12 +142,29 @@
 .leftBlockRCcontrol .borderRadius1 {
   bottom: 0;
   right: 100%;
+  width: 20px;
+  height: 20px;
 }
 .leftBlockRCcontrol .borderRadius2 {
   bottom: 100%;
   right: 20px;
 }
+.intro3ItemCard .itemCard-image {
+  aspect-ratio: 181 / 99;
+  width: 181px;
+  position: relative;
+  background-color: #2C3348;
+  border-radius: 8px;
+}
+.intro3ItemCard .itemCard-image img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
 
+  width: calc(100% - 8px);
+  max-width: 140px;
+  transform: translateY(-50%) translateX(-50%);
+}
 
 
 .leftBlockRCcontrol img {
@@ -342,7 +360,7 @@ gap: 12px;
   display: flex;
   align-items: center;
   gap: 20px;
-  margin-top: 80px;
+  margin-top: var(--chapter-padding);
   margin-bottom: var(--chapter-padding);
 }
 
@@ -545,15 +563,48 @@ gap: 12px;
     width: 100%;
     height: auto;
   }
+ .pilotsContact .contactBackground {
+  width: 130% ;
+ }
+
 }
-@media (max-width: 1100px) {
+@media (max-width: 1100px) { 
+  .introParagraph3 {
+    top: 16px;
+    right: 16px;
+  }
 }
+@media (max-width: 1024px) {
+  .advantageTextContent h2 {
+    max-width: 200px;
+  }
+  .advantageWrapper {
+gap: 32px;
+  }
+  .sellaryWrapper {
+    gap: 32px;
+  }
+  .sallaryDashboard {
+    padding: 20px;
+  }
+  .learningPlanItem {
+    padding: 20px 20px 90px 20px;
+  }
+  .learningStepsWrapper {
+    gap: 32px;
+  }
+  .learningItem {
+    padding: 20px;
+  }
+
+}
+
 @media (max-width: 1000px) {
   .sallaryDashboard {
     min-width: 400px;
   }
   .learningPlanItem {
-    min-height: 300px;
+    min-height: 250px;
     width: 100%;
   }
   .learningPlans {
@@ -603,19 +654,19 @@ gap: 12px;
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 45%;
+  width: 50%;
   max-width: 270px;
   height: auto;
   aspect-ratio: 184/194;
   padding: 16px 0 0 16px;
   background-color: var(--black);
-  border-top-left-radius: var(--big-border-radius);
+  border-top-left-radius: 32px;
 }
 .leftBlockRCcontrol .borderRadius2 {
   display: block;
 }
 .leftBlockRCcontrol img {
-  border-radius: var(--big-border-radius);
+  border-radius: 16px;
 }
 .leftBlockRCcontrol a {
   width: calc(100% - 32px);
@@ -631,6 +682,28 @@ gap: 12px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+.intro3Application {
+  max-height: 400px;
+}
+.intro3Application img {
+  width: 100%;
+  height: auto;
+}
+.leftBlockBackground {
+  max-height: 500px;
+}
+.contactMarkedList {
+  align-items: center;
+}
+.contactMarkedList .markListItem {
+  width: 360px;
+}
+.advantageItem {
+  padding: 16px 0;
+}
+.learningStepsTable {
+  gap: 12px;
 }
 }
 @media (max-width: 800px) {
@@ -687,9 +760,9 @@ gap: 20px;
     gap: 20px;
   }
   .learningStepsImage h2 {
-    position: static;
+    /* position: static; */
     margin-bottom: 32px;
-    max-width: 180px;
+    max-width: 190px;
   }
   .learningStepsImage .borderRadius1,
   .learningStepsImage .borderRadius2 {
@@ -699,6 +772,24 @@ gap: 20px;
   margin-top: 24px;
  }
  
+}
+@media (max-width: 650px) {
+  .intro3Application{
+    max-height: unset;
+  }
+  .intro3Application img {
+    width: auto;
+    height: 100%;
+  }
+  .leftBlockBackground {
+    max-height: unset;
+  }
+  .unique .cell:nth-child(3) {
+    flex: 2;
+  }
+  .unique .cell:nth-child(3) p {
+    margin-left: 20px;
+  }
 }
 @media (max-width: 600px) {
   .sallaryDashboard{
@@ -714,6 +805,31 @@ gap: 20px;
   .learningTable p {
     font-size: 12px;
   }
+  .intro3ItemCard {
+    height: 100px;
+  }
+  .intro3ItemCard .itemCard-image {
+    width: 100%;
+    height: 100%;
+    max-width: 151px;
+    aspect-ratio: unset;
+  }
+  .intro3ItemCard .itemCard-image img {
+    width: 90%;
+  }
+  .introWrapper3 {
+    gap: 12px;
+  }
+  .intro3Heading {
+    margin-bottom: 12px;
+  }
+  .intro3ItemCard{
+    border-radius: 16px!important;
+  }
+  .learningTableRow .cell:nth-child(1) {
+    max-width: 140px;
+  }
+  
 }
 @keyframes textShadowFade {
   0% {

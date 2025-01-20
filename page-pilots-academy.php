@@ -28,9 +28,11 @@ Template Name: Pilots Academy
                 </p>
             </div>
             <div class="introProductBlock3">
-                <div class="blackItemCard">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone.png"
-                        alt="">
+                <div class="blackItemCard intro3ItemCard">
+                    <div class="itemCard-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone.png"
+                            alt="">
+                    </div>
                     <div class="blackItemCardInfo">
                         <h3>DJI Agras T40</h3>
                         <a href="" class="transparentButton">
@@ -78,17 +80,17 @@ Template Name: Pilots Academy
                             </svg>
                         </a>
                         <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 20C11.0457 20 20 11.0457 20 0V20H0Z"/>
+                            <path d="M0 20C11.0457 20 20 11.0457 20 0V20H0Z" />
                         </svg>
                         <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 20C11.0457 20 20 11.0457 20 0V20H0Z"/>
+                            <path d="M0 20C11.0457 20 20 11.0457 20 0V20H0Z" />
                         </svg>
                     </div>
                     <svg class="borderRadius3" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0C11.0457 0 20 8.95431 20 20V0H0Z" />
                     </svg>
                     <svg class="borderRadius4" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 0C8.95431 0 0 8.95431 0 20V0H20Z"/>
+                        <path d="M20 0C8.95431 0 0 8.95431 0 20V0H20Z" />
                     </svg>
                     <svg class="borderRadius5" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 20C8.95431 20 0 11.0457 0 0V20H20Z" />
@@ -96,7 +98,7 @@ Template Name: Pilots Academy
                 </div>
             </div>
 
-            
+
 
         </div>
     </section>
@@ -327,10 +329,10 @@ Template Name: Pilots Academy
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg></a>
                         <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight"/>
                         </svg>
                         <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight"/>
                         </svg>
                     </div>
                 </div>
@@ -348,10 +350,10 @@ Template Name: Pilots Academy
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg></a>
                         <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight"/>
                         </svg>
                         <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight"/>
                         </svg>
                     </div>
                 </div>
@@ -369,10 +371,10 @@ Template Name: Pilots Academy
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg></a>
                         <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight"/>
                         </svg>
                         <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight"/>
                         </svg>
                     </div>
                 </div>
@@ -420,7 +422,7 @@ Template Name: Pilots Academy
                         <p>від 1 до 2</p>
                     </div>
                 </div>
-                <div class="learningTableRow">
+                <div class="learningTableRow unique">
                     <div class="cell">
                         <p>Локація</p>
                     </div>
@@ -703,7 +705,7 @@ Template Name: Pilots Academy
     <section>
         <div class="learningStepsWrapper wrapper">
             <div class="learningStepsImage">
-                <h2>Як відбувається <span>навчання?</span></h2>
+                <h2>Як відбувається <br/><span>навчання?</span></h2>
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learningStepsImage.png"
                     alt="">
 
@@ -741,101 +743,50 @@ Template Name: Pilots Academy
             </div>
         </div>
     </section>
-    <section>
-        <div class="faqWrapper wrapper">
-            <h2><span>Відповіді</span> на поширені питання</h2>
-            <div class="accordion">
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Як відбувається процес внесення ЗЗР дроном?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
+    <?php if ( have_rows( 'faq' ) ) : ?>
+
+		
+	
+
+<section>
+    <div class="faqWrapper wrapper">
+        <h2><span>Відповіді</span> на поширені питання</h2>
+        <div class="accordion">
+        <?php while ( have_rows( 'faq' ) ) :
+    the_row(); ?>
+            <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__title">
+                    <span class="accordion__title-text">
+                    <?php if ( $question = get_sub_field( 'question' ) ) : ?>
+                        <h3><?php echo esc_html( $question ); ?></h3>
+<?php endif; ?>
+                        
+                    </span>
+                    <div class="accordion__arrow">
+                        <div class="accordion__arrow-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
                         </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>Першим кроком узгоджуються всі деталі замовлення. Далі наша команда виїжджає на визначену
-                            локацію та робить обмір полів. В залежності від площі, складності форми та площі обмір може
-                            відбуватись як пішки так і самим дроном. Наступним кроком команда замішує хімію в
-                            спеціальному змішувачі та приступає до обприскування.</p>
                     </div>
                 </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Яку площу може обробити дрон за зміну?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>В нашому дронопарку є різні дрони з різною продуктивністю. Dji Agras T30 може обробити до 120
-                            га за зміну, а новіші моделі T40 та T50 до 220 га за зміну. За потреби на одному полі може
-                            працювати декілька дронів одночасно, тому за одну зміну наша команда може виконати понад 500
-                            га.</p>
-                    </div>
-                </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Від чого залежить вартість внесення ЗЗР агродроном?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>Вартість внесення залежить від: площі, кількості полів, норми внесення, наявності перешкод та
-                            ліній електропередач на полі.</p>
-                    </div>
-                </div>
-                <div class="accordion__item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Як проходить навчання для пілотів агродронів?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>Навчання відбувається як в групах так і індивідуально. Курс триває 3 дні, складається з
-                            теорії та практики та включає в себе 12 блоків та 48 тем. У вартість входить оренда дрона та
-                            транспортні витрати. По завершенню курсу кожен студент отримує сертифікат який підтверджує
-                            кваліфікацію.</p>
-                    </div>
+                <div class="accordion__content">
+                <?php if ( $answer = get_sub_field( 'answer' ) ) : ?>
+                    <p><?php echo esc_html( $answer ); ?></p>
+<?php endif; ?>
+                    
                 </div>
             </div>
+            <?php endwhile; ?>
+            
         </div>
-    </section>
+    </div>
+</section>
+<?php endif; ?>
     <section class="contactSection">
-        <div class="contactWrapper wrapper">
+        <div class="contactWrapper pilotsContact wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/screen3contactBackground.png"
                 alt="" class="contactBackground">
             <div class="contactBlockText">
@@ -884,7 +835,7 @@ Template Name: Pilots Academy
             </div>
         </div>
     </section>
-    
+
 </div>
 <?php
 get_footer(); // Подключаем footer

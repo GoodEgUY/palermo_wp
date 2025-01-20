@@ -1,5 +1,8 @@
 <?php
 get_header(); // Подключаем header
+/*
+Template Name: Home
+*/
 ?>
 <div class="mainWrapper">
     <section>
@@ -352,14 +355,24 @@ get_header(); // Подключаем header
             </div>
         </div>
     </section>
+    <?php if ( have_rows( 'faq' ) ) : ?>
+
+		
+	
+
     <section>
         <div class="faqWrapper wrapper">
             <h2><span>Відповіді</span> на поширені питання</h2>
             <div class="accordion">
+            <?php while ( have_rows( 'faq' ) ) :
+		the_row(); ?>
                 <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
                     <div class="accordion__title">
                         <span class="accordion__title-text">
-                            <h3>Як відбувається процес внесення ЗЗР дроном?</h3>
+                        <?php if ( $question = get_sub_field( 'question' ) ) : ?>
+                            <h3><?php echo esc_html( $question ); ?></h3>
+<?php endif; ?>
+                            
                         </span>
                         <div class="accordion__arrow">
                             <div class="accordion__arrow-item">
@@ -372,79 +385,18 @@ get_header(); // Подключаем header
                         </div>
                     </div>
                     <div class="accordion__content">
-                        <p>Першим кроком узгоджуються всі деталі замовлення. Далі наша команда виїжджає на визначену
-                            локацію та робить обмір полів. В залежності від площі, складності форми та площі обмір може
-                            відбуватись як пішки так і самим дроном. Наступним кроком команда замішує хімію в
-                            спеціальному змішувачі та приступає до обприскування.</p>
+                    <?php if ( $answer = get_sub_field( 'answer' ) ) : ?>
+                        <p><?php echo esc_html( $answer ); ?></p>
+<?php endif; ?>
+                        
                     </div>
                 </div>
-                <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Яку площу може обробити дрон за зміну?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>В нашому дронопарку є різні дрони з різною продуктивністю. Dji Agras T30 може обробити до 120
-                            га за зміну, а новіші моделі T40 та T50 до 220 га за зміну. За потреби на одному полі може
-                            працювати декілька дронів одночасно, тому за одну зміну наша команда може виконати понад 500
-                            га.</p>
-                    </div>
-                </div>
-                <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Від чого залежить вартість внесення ЗЗР агродроном?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>Вартість внесення залежить від: площі, кількості полів, норми внесення, наявності перешкод та
-                            ліній електропередач на полі.</p>
-                    </div>
-                </div>
-                <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Як проходить навчання для пілотів агродронів?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>Навчання відбувається як в групах так і індивідуально. Курс триває 3 дні, складається з
-                            теорії та практики та включає в себе 12 блоків та 48 тем. У вартість входить оренда дрона та
-                            транспортні витрати. По завершенню курсу кожен студент отримує сертифікат який підтверджує
-                            кваліфікацію.</p>
-                    </div>
-                </div>
+                <?php endwhile; ?>
+                
             </div>
         </div>
     </section>
+    <?php endif; ?>
     <section class="contactSection">
         <div class="contactWrapper wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/screen1contactBackground.jpeg"
@@ -454,7 +406,16 @@ get_header(); // Подключаем header
                 <h2 class="decorBig">Залишились питання?<br /> <span>Ми</span> завжди <span>на зв'язку!</span></h2>
                 <p>Заповніть форму, і наші спеціалісти зв'яжуться з вами найближчим часом, щоб відповісти на всі ваші
                     запитання. Або телефонуйте за номером:</p>
-                <h2 class="decorBig"><a href="tel:+380939694642"><i>+38 (093)969 46 42</i></a></h2>
+                <?php if (have_rows('phone_number', 'options')): ?>
+                    <?php while (have_rows('phone_number', 'options')):
+                        the_row(); ?>
+                        <h2 class="decorBig"><a href="tel:<?php if ($number = get_sub_field('number', 'options')): ?>
+   <?php echo esc_html($number); ?>
+   <?php endif; ?>"><i><?php if ($label = get_sub_field('label', 'options')): ?>
+                                        <?php echo esc_html($label); ?>
+                                    <?php endif; ?></i></a></h2>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
             <div class="contactBlockForm">
                 <form class="defaultForm contactForm">
