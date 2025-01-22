@@ -22,7 +22,17 @@
 
 <body <?php body_class(); ?>>
     <header>
+        <?php
+        $is_product_section = false;
+        if (
+            is_post_type_archive('product')
+            || is_singular('product')
+            || is_tax('product_category')
+        ) {
+            $is_product_section = true;
+        }
 
+        ?>
         <div class="headerWrapper wrapper">
             <a href="<?php echo home_url('/'); ?>">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="" class="logo">
@@ -31,44 +41,69 @@
                 <div class="headerItem" id="dropdown-menu">
 
                     <!-- Добавление активного класса на ссылку каталога -->
-                    <a href="/product" class="headerItem <?php if (is_page('product'))
-                        echo 'active'; ?>" id="catalogLink">
+                    <a href="/product" class="headerItem <?php echo $is_product_section ? 'active' : ''; ?>"
+                        id="catalogLink">
                         Каталог
                         <svg width="9" class="dropdown-arrow" height="5" viewBox="0 0 9 5" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M4.5 4.5L8.5 0.5H0.5L4.5 4.5Z" />
                         </svg>
                     </a>
-                    <div class="categoryDropdownWrapper">
-                        <div class="categoryDropdown">
-                            <svg width="24" class="borderRadius1" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24 0H0C13.2549 0 24 10.7451 24 24V0Z" />
-                            </svg>
-                            <svg width="24" class="borderRadius2" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24 0H0V24C0 10.7451 10.7451 0 24 0Z" />
-                            </svg>
-                            <a href="/all" class="<?php if (is_page('all'))
-                                echo 'active'; ?>">Всі</a>
-                            <a href="/drones" class="<?php if (is_page('drones'))
-                                echo 'active'; ?>">Агродрони</a>
-                            <a href="/mixing" class="<?php if (is_page('mixing'))
-                                echo 'active'; ?>">Вузли
-                                змішування</a>
-                            <a href="/generators" class="<?php if (is_page('generators'))
-                                echo 'active'; ?>">Генератори</a>
-                            <a href="/components" class="<?php if (is_page('components'))
-                                echo 'active'; ?>">Комплектуючі</a>
+                    <?php
+                    // Получаем все термины таксономии 'product_category'
+                    $terms = get_terms(array(
+                        'taxonomy' => 'product_category',
+                        'hide_empty' => false, // или true, если нужно скрывать пустые категории
+                    ));
+
+                    if (!empty($terms) && !is_wp_error($terms)): ?>
+                        <div class="categoryDropdownWrapper">
+                            <div class="categoryDropdown">
+                                <svg width="24" class="borderRadius1" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 0H0C13.2549 0 24 10.7451 24 24V0Z" />
+                                </svg>
+                                <svg width="24" class="borderRadius2" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 0H0V24C0 10.7451 10.7451 0 24 0Z" />
+                                </svg>
+                                <a href="<?php echo get_post_type_archive_link('product'); ?>"
+                                    class="<?php if (is_post_type_archive('product'))
+                                        echo 'active'; ?>">
+                                    Всі
+                                </a>
+
+                                <?php foreach ($terms as $term):
+                                    // Ссылка на архив этой категории
+                                    $term_link = get_term_link($term);
+
+                                    // Проверяем, на странице ли мы этой категории
+                                    // Если страница – архив таксономии 'product_category' с тем же slug
+                                    $active_class = '';
+                                    if (is_tax('product_category', $term->slug)) {
+                                        $active_class = 'active';
+                                    }
+
+                                    global $wp;
+                                    $current_path = $wp->request;
+                                    ?>
+
+                                    <a href="<?php echo esc_url($term_link); ?>" class="<?php echo esc_attr($active_class); ?>">
+                                        <?php echo esc_html($term->name); ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
                 <a href="<?php echo home_url('/fertilization/'); ?>" class="headerItem <?php if (is_page('fertilization'))
                        echo 'active'; ?>">Внесення ЗЗР</a>
                 <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem <?php if (is_page('pilots-academy'))
                        echo 'active'; ?>">Центр пілотів</a>
-                <div class="headerItem <?php if (is_page('blog'))
-                    echo 'active'; ?>">Блог</div>
+                <a href="<?php echo home_url('/blogs/'); ?>"
+                    class="headerItem <?php if ($current_path === 'blogs') {
+                        echo 'active';
+                    } ?>">Блог</a>
             </div>
             <button class="transparentButton openModalButton" data-target="Хедер">Дізнатись більше <svg width="16"
                     height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -165,13 +200,88 @@
                 <h2>Ваша заявка прийнята</h2>
                 <p>Ми отримали вашу заявку та вже працюємо над її обробкою. Наш менеджер зв’яжеться з вами найближчим
                     часом, щоб уточнити деталі.</p>
-                <button class="greenButton modalCloseButton">Продовжити<svg width="16" height="17"
+                <button class="greenButton modalCloseButton">Продовжити<svg width="16" height="17" viewBox="0 0 16 17"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg></button>
+            </div>
+        </div>
+        <div class="modalWrapper" id="modalCookie">
+            <div class="modalBody">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
+                    class="modalCross">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cookie.svg"
+                    class="modalImageCookie" alt="">
+                <h2>Використання файлів cookie</h2>
+                <p>Ми використовуємо файли cookie для покращення вашого досвіду на нашому сайті. Продовжуючи перегляд,
+                    ви погоджуєтесь 
+
+                   
+                <div class="modalButtonGroup">
+                    <button class="greenButton" id="acceptCookie">Прийняти<svg width="16" height="17"
                             viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></button>
+                    <a href="" class="transparentButton">Читати більше<svg width="16" height="17" viewBox="0 0 16 17"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></a>
+                </div>
             </div>
         </div>
+        <script>
+            // Функция для установки cookie
+            function setCookie(name, value, days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + date.toUTCString();
+                document.cookie = name + "=" + value + ";" + expires + ";path=/";
+            }
+
+            // Функция для получения cookie
+            function getCookie(name) {
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var cookieArray = decodedCookie.split(';');
+                for (var i = 0; i < cookieArray.length; i++) {
+                    var c = cookieArray[i].trim();
+                    if (c.indexOf(name + "=") === 0) {
+                        return c.substring((name.length + 1), c.length);
+                    }
+                }
+                return "";
+            }
+
+            $(document).ready(function () {
+                var $modalCookie = $("#modalCookie");
+                var $acceptCookieBtn = $("#acceptCookie");
+                var $closeModal = $("#closeModal");
+
+                // Проверяем, был ли установлен cookie "acceptedCookies"
+                if (getCookie("acceptedCookies") === "true") {
+                    // Уже принят, не показываем окно
+                    $modalCookie.hide();
+                } else {
+                    jQuery('body').addClass('no-scroll');
+                    // Не принят, показываем модалку с анимацией fadeIn
+                    $modalCookie.fadeIn(100); // 300 = скорость анимации в мс
+                }
+
+                // Кнопка "Прийняти"
+                $acceptCookieBtn.on("click", function () {
+                    // Устанавливаем cookie на 365 дней
+                    setCookie("acceptedCookies", "true", 365);
+                    // Скрываем модалку с анимацией fadeOut
+                    $modalCookie.fadeOut(100);
+                    jQuery('body').removeClass('no-scroll');
+                });
+
+                // Можно добавить закрытие по клику на крестик
+                
+            });
+        </script>
         <script>
             jQuery(document).ready(function () {
                 const dropdown = jQuery('.categoryDropdownWrapper');
@@ -220,7 +330,7 @@
                     $(this).closest('.modalWrapper').fadeOut(100);
                     $('body').removeClass('no-scroll');
                 });
-          
+
                 // Закрытие по крестику внутри модалки
                 $('.modalCross').on('click', function () {
                     // «this» — иконка-крестик, ищем ближайший контейнер-модалку

@@ -7,80 +7,103 @@ Template Name: Single Product Agrodrone
 <div class="mainWrapper">
     <section>
         <div class="productMainInfoWrapper wrapper">
-            <div class="productGallery">
-                <a href="<?php echo get_template_directory_uri(); ?>/assets/images/drone-1.png"
-                    class="productGalleryBlack-big" data-fancybox="productMain">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/drone-1.png" alt="Генератор">
-                </a>
+        <div class="productGallery">
+                <!-- Основная фотография (первая из галереи) -->
+                <?php
+                $gallery = get_field('gallery'); // Получаем галерею из ACF
+                if ($gallery):
+                    // Получаем первую фотографию из галереи
+                    $first_image = $gallery[0];
+                    ?>
+                    <a href="<?php echo esc_url($first_image['url']); ?>" class="productGallery-big"
+                        data-fancybox="productOther">
+                        <img src="<?php echo esc_url($first_image['sizes']['large']); ?>"
+                            alt="<?php echo esc_attr($first_image['alt']); ?>">
+                    </a>
+                <?php endif; ?>
+
                 <!-- Галерея миниатюр -->
                 <div class="productGalleryThumbs">
-                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/drone-2.png"
-                        class="productGalleryBlack-small" data-fancybox="productMain">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/drone-2.png"
-                            alt="Генератор миниатюра">
-                    </a>
-                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/drone-3.png"
-                        class="productGalleryBlack-small" data-fancybox="productMain">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/drone-3.png"
-                            alt="Генератор миниатюра 2">
-                    </a>
+                    <?php if ($gallery): ?>
+                        <?php
+                        // Пропускаем первую фотографию для миниатюр
+                        foreach ($gallery as $index => $image):
+                            if ($index == 0)
+                                continue; // Пропускаем первую фотографию
+                            ?>
+                            <a href="<?php echo esc_url($image['url']); ?>" class="productGallery-small"
+                                data-fancybox="productOther">
+                                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>"
+                                    alt="<?php echo esc_attr($image['alt']); ?>" />
+                            </a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="productMain-info">
-                <h1>DJI AGRAS <span>T50</span></h1>
-                <p class="productMain-title">Успадкував потужну коаксіальну двороторну силову установку та стійку до
-                    крутного моменту конструкцію роздільного типу, що забезпечує новий рівень стабільності при
-                    перенесенні 40 кг обприскування або 50 кг розкидання корисного вантажу.</p>
+                <h1><?php the_title() ?></h1>
+                <?php if ( $title = get_field( 'title' ) ) : ?>
+                    <p class="productMain-title"><?php echo esc_html( $title ); ?></p>
+<?php endif; ?>
+               
                 <div class="productMain-mainProperties">
-                    <div class="mainPropertiesItem">
-                        <p class="propertieName">Продуктивність
-                        </p>
-                        <p class="propertieValue">21 га/год</p>
-                    </div>
-                    <div class="mainPropertiesItem">
-                        <p class="propertieName">Об’єм бака
-                        </p>
-                        <p class="propertieValue">40 л</p>
-                    </div>
-                    <div class="mainPropertiesItem">
-                        <p class="propertieName">Стабільність сигналу
-                        </p>
-                        <p class="propertieValue">Optional DJI Relay</p>
-                    </div>
+                    <?php if (have_rows('main_properties')): ?>
+                        <?php while (have_rows('main_properties')):
+                            the_row(); ?>
+                            <div class="mainPropertiesItem">
+                                <?php if ($name = get_sub_field('name')): ?>
+                                    <p class="propertieName">
+                                        <?php echo esc_html($name); ?>
+                                    </p>
+                                <?php endif; ?>
+                                <?php if ($value = get_sub_field('value')): ?>
+                                    <p class="propertieValue"><?php echo esc_html($value); ?></p>
+                                <?php endif; ?>
+                            </div>
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                    <!-- <div class="mainPropertiesItem">
+                  <p class="propertieName">Об’єм бака
+                  </p>
+                  <p class="propertieValue">400 л</p>
+                  </div>
+                  <div class="mainPropertiesItem">
+                  <p class="propertieName">Потужність
+                  </p>
+                  <p class="propertieValue">650w
+                  </p>
+                  </div> -->
                 </div>
-                <div class="productMain-advantages">
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Повністю автоматичне та ручне керування</p>
+                <?php if (have_rows('facts')): ?>
+                    <div class="productMain-advantages">
+                        <?php while (have_rows('facts')):
+                            the_row(); ?>
+                            <div class="markListItem">
+                                <div class="checkMarkIcon"></div>
+                                <?php if ($fact = get_sub_field('fact')): ?>
+                                    <p><?php echo esc_html($fact); ?></p>
+                                <?php endif; ?>
+                            </div>
+                        <?php endwhile; ?>
                     </div>
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Режим “Фруктовий сад”</p>
+                <?php endif; ?>
+                <?php if ($price = get_field('price')): ?>
+                    <div class="productMain-price">
+                        <h3>                        <?php echo number_format($price, 0, ',', ' ');?>
+                        <small>Грн.</small>
+                        </h3>
+                        <p>Ціна вказана з ПДВ. Вартість за комплект.</p>
                     </div>
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Застосування зі змінною нормою поливу</p>
-                    </div>
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Один дрон для обприскування та розкидання
-                        </p>
-                    </div>
-                </div>
-                <div class="productMain-price">
-                    <h3>1 200 000 <small>Грн.</small>
-                    </h3>
-                    <p>Ціна вказана з ПДВ. Вартість за комплект.</p>
-                </div>
+                <?php endif; ?>
                 <div class="productCardButtonGroup">
-                    <button class="greenButton">
+                    <button class="greenButton openModalButton" data-targer="<?php the_title(); ?>">
                         Замовити
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                    <a href="" class="transparentButton">
+                    <a href="" class="transparentButton" scroll="goToFeatures">
                         Характеристики
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -91,6 +114,13 @@ Template Name: Single Product Agrodrone
             </div>
         </div>
     </section>
+    <?php if (have_rows('features_and_benefits')):
+        $slides = get_field('features_and_benefits');
+
+
+        $total = count($slides);
+
+        ?>
     <section>
         <div class="productTechnologyWrapper wrapper">
             <h2 class="mobileChapter"> <span> Технології</span>, що підсилюють кожен етап <span>обробки полів</span>
@@ -102,33 +132,24 @@ Template Name: Single Product Agrodrone
                     <div class="swiperDefault swiperProductTechnology">
 
                         <div class="swiper-wrapper sliderWrapperDefault">
-                            <div class="swiper-slide swiperSlideDefault">
-                                <div class="swiperSlideContent">
-                                    <p class="steps"><span>Технологія 1/3</span></p>
-                                    <h3>Насос із магнітним приводом і робочим колесом</h3>
-                                    <p>Продуктивність подвійного насоса до 24 л/хв. Це на 100% більше порівняно з
-                                        попереднім поколінням, щоб закрити потреби полів, садів і високотемпературних
-                                        середовищ.</p>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiperSlideDefault">
-                                <div class="swiperSlideContent">
-                                    <p class="steps"><span>Технологія 2/3</span></p>
-                                    <h3>Центробіжні атомайзери з подвійним розпиленням для точного внесення ЗЗР</h3>
-                                    <p>Розмір крапель можна регулювати в діапазоні 50-500 мкм, залежно від
-                                        використовуваних хімічних речовин.</p>
-
-
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiperSlideDefault">
-                                <div class="swiperSlideContent">
-                                    <p class="steps"><span>Технологія 3/3</span></p>
-                                    <h3>Dji Relay (додатково)</h3>
-                                    <p>DJI Relay забезпечує безперебійну передачу відео в реальному часі для безпечних
-                                        польотів навіть у складних сценаріях роботи з перешкодами сигналу.</p>
-                                </div>
-                            </div>
+                        <?php
+                                $i = 1;
+                                while (have_rows('features_and_benefits')):
+                                    the_row(); ?>
+                                    <div class="swiper-slide swiperSlideDefault">
+                                        <div class="swiperSlideContent">
+                                            <p class="steps"><span>Технологія <?php echo $i; ?>/<?php echo $total; ?></span></p>
+                                            <?php if ($benefit_name = get_sub_field('benefit_name')): ?>
+                                                <h3><?php echo esc_html($benefit_name); ?></h3>
+                                            <?php endif; ?>
+                                            <?php if ($benefit_desc = get_sub_field('benefit_desc')): ?>
+                                                <p><?php echo esc_html($benefit_desc); ?>
+                                                </p>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <?php $i++; endwhile; ?>
+                            
 
 
                         </div>
@@ -149,10 +170,10 @@ Template Name: Single Product Agrodrone
                             </svg>
                         </div>
                         <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight"/>
                         </svg>
                         <svg class="borderRadius2" xmlns="http://www.w3.org/2000/svg">
-                            <path />
+                            <path class="topRight"/>
                         </svg>
                     </div>
                 </div>
@@ -160,10 +181,15 @@ Template Name: Single Product Agrodrone
                     window.addEventListener('load', function () {
                         function updateTechnologyPhoto(index) {
                             const photos = [
-                                '<?php echo get_template_directory_uri(); ?>/assets/images/technologyPhoto1.png',
-                                '<?php echo get_template_directory_uri(); ?>/assets/images/technologyPhoto2.png',
-                                '<?php echo get_template_directory_uri(); ?>/assets/images/technologyPhoto1.png',
-
+                                <?php
+                                while (have_rows('features_and_benefits')):
+                                    the_row();
+                                    $benefit_photo = get_sub_field('benefit_photo');
+                                    if ($benefit_photo):
+                                        echo "'" . esc_url($benefit_photo['url']) . "',";
+                                    endif;
+                                endwhile;
+                                ?>
                             ];
 
                             const photoWrapper = document.getElementById('technologyPhotoWrapper');
@@ -200,165 +226,226 @@ Template Name: Single Product Agrodrone
             <div class="technologyGallery" id="technologyPhotoWrapper"></div>
         </div>
     </section>
+    <?php endif; ?>
+    <?php if ( have_rows( 'technology_models' ) ) : ?>
+	
+		
+
+ <?php while ( have_rows( 'technology_models' ) ) :
+		the_row(); ?>
     <section>
-        <div class="textSeparator wrapper">
-            <h2>
-                <span>Бінокулярне</span> <br />виявлення перешкод із<br /> <span>подвійним <img
-                        src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/binocular.png"
-                        alt="Icon2">радаром</span>
+        <div class="textSeparator agrodroneTextSeparator wrapper">
+       
+        <?php if ( $heading = get_sub_field( 'heading' ) ) : ?>
+           
+            <?php echo $heading; ?>
 
 
-            </h2>
-            <p>DJI AGRAS T50 має передній і задній радари з подвоєною кількістю радіоканалів для точного виявлення. Вони
-                забезпечують багатовекторне уникнення перешкод, підвищуючи безпеку. Два комплекти бінокулярних датчиків
-                розпізнають рельєф і перешкоди для автоматичного обльоту та слідування рельєфу.</p>
+        
+<?php endif; ?>
+<?php if ( $p = get_sub_field( 'p' ) ) : ?>
+	<?php echo $p; ?>
+<?php endif; ?>
+
+            
+                
         </div>
     </section>
+    <?php endwhile; ?>
+    <?php endif; ?>
+    <?php
+$big_image = get_field( 'big_image' );
+if ( $big_image ) : ?>
+	
+
     <section>
         <div class="productBigPhotoWrapper wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/bigPhoto.png" alt="Icon 2">
+        <img src="<?php echo esc_url( $big_image['url'] ); ?>" alt="<?php echo esc_attr( $big_image['alt'] ); ?>" />
         </div>
     </section>
+    <?php endif; ?>
+    <?php if (have_rows('equipment')): ?>
+        <section>
+            <div class="productKitWrapper wrapper">
+                <div class="productKitInfo">
+                    <h2><span>Дрон-комплект<br/></span> <?php the_title(); ?></h2>
+                    <div class="productKit-list">
+                        <?php while (have_rows('equipment')):
+                            the_row(); ?>
+                            <?php if (have_rows('Component')): ?>
+                                <?php while (have_rows('Component')):
+                                    the_row(); ?>
+                                    <div class="markListItem">
+                                        <div class="checkMarkIcon"></div>
+                                        <?php if ($name = get_sub_field('name')): ?>
+                                            <p><?php echo esc_html($name); ?>
+                                            </p>
+                                        <?php endif; ?>
+                                    </div>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
+                        <?php endwhile; ?>
+                    </div>
+                    <button class="greenButton">
+                        Замовити
+                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="productKitGallery">
+                    <?php
+                    // Проверяем, есть ли строки в повторителе "equipment"
+                    if (have_rows('equipment')):
+                        while (have_rows('equipment')):
+                            the_row();
 
-    <section>
-        <div class="productKitWrapper wrapper">
-            <h2 class="mobileChapter"><span>Дрон-комплект</span> DJI AGRAS Т50</h2>
-            <div class="productKitInfo">
-                <h2><span>Дрон-комплект</span> DJI AGRAS Т50</h2>
-                <div class="productKit-list">
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Агродрон моделі DJI Agras T50
-                        </p>
-                    </div>
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Пульт керування RM700B
-                        </p>
-                    </div>
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Кейс для пульта
-                        </p>
-                    </div>
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>x3 інтелектуальні батареї BAX601
-
-                        </p>
-                    </div>
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Зарядний пристрій
-
-                        </p>
-                    </div>
-                    <div class="markListItem">
-                        <div class="checkMarkIcon"></div>
-                        <p>Кейс для охолодження батарей
-
-                        </p>
-                    </div>
-                </div>
-                <button class="greenButton">
-                    Замовити
-                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </button>
-            </div>
-            <div class="productKitGallery">
-                <div class="left-column">
-                    <div class="gallery-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/kitPhoto.png"
-                            alt="Контроллер">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/kitPhoto.png" alt="Дрон">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/kitPhoto.png" alt="Кейс">
-
-                    </div>
-                </div>
-                <div class="right-column">
-                    <div class="gallery-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/kitPhoto.png"
-                            alt="Зарядное устройство">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/kitPhoto.png"
-                            alt="Контейнер">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="productTechAdventagesWrapper wrapper">
-            <div class="productTechAdventages-name">
-                <h2>Технічні <span> характеристики</span> DJI Agras <span> T50</span></h2>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/14.png" alt="">
-            </div>
-            <div class="productTechAdventages-properties">
-                <div class="techAdventages-propertiesItem">
-                    <p class="property">Обприскування:</p>
-                    <p class="value">40 кг</p>
-                </div>
-                <div class="techAdventages-propertiesItem">
-                    <p class="property">Розкидання:</p>
-                    <p class="value">50 кг</p>
-                </div>
-                <div class="techAdventages-propertiesItem">
-                    <p class="property">Висока швидкість потоку:</p>
-                    <p class="value">розпилення: 16 л/хв, розкидання: 108 кг/хв</p>
-                </div>
-                <div class="techAdventages-propertiesItem">
-                    <p class="property">Стабільність сигналу:</p>
-                    <p class="value">офлайн-операції, передача ОЗ на 2 км, додаткове реле DJI</p>
-                </div>
-                <div class="techAdventages-propertiesItem">
-                    <p class="property">Адаптивність усіх сценаріїв:</p>
-                    <p class="value">повністю автоматична робота, режим «Фруктовий сад», застосування диференційного
-                        внесення</p>
-                </div>
-                <div class="techAdventages-propertiesItem">
-                    <p class="property">Багатоспрямоване запобігання перешкодам:</p>
-                    <div class="checkMarkIcon"></div>
-                </div>
-                <div class="techAdventages-propertiesItem">
-                    <p class="property">4-х спринклерне обприскування:</p>
-                    <p class="value">24 л/хв</p>
-                </div>
-                <div class="techAdventages-propertiesItem">
-                    <p class="property">Польові операції:</p>
-                    <p class="value">21 га на годину</p>
+                            // Получаем галерею (массив изображений)
+                            $gallery = get_sub_field('gallery');
+                            // $gallery будет массивом, каждая ячейка которого — это массив данных изображения ACF
+                            // Например: $gallery[0]['url'] — ссылка на полное изображение
+                            //           $gallery[0]['sizes']['thumbnail'] — ссылка на миниатюру
+                            //           $gallery[0]['alt'] — атрибут alt и т.д.
+                            ?>
+                            <div class="left-column">
+                                <!-- 1-я картинка -->
+                                <div class="gallery-item">
+                                    <?php if (!empty($gallery[0])): ?>
+                                        <img src="<?php echo esc_url($gallery[0]['url']); ?>"
+                                            alt="<?php echo esc_attr($gallery[0]['alt']); ?>">
+                                    <?php endif; ?>
+                                </div>
+                                <!-- 2-я картинка -->
+                                <div class="gallery-item">
+                                    <?php if (!empty($gallery[1])): ?>
+                                        <img src="<?php echo esc_url($gallery[1]['url']); ?>"
+                                            alt="<?php echo esc_attr($gallery[1]['alt']); ?>">
+                                    <?php endif; ?>
+                                </div>
+                                <!-- 3-я картинка -->
+                                <div class="gallery-item">
+                                    <?php if (!empty($gallery[2])): ?>
+                                        <img src="<?php echo esc_url($gallery[2]['url']); ?>"
+                                            alt="<?php echo esc_attr($gallery[2]['alt']); ?>">
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <!-- .left-column -->
+                            <div class="right-column">
+                                <!-- 4-я картинка -->
+                                <div class="gallery-item">
+                                    <?php if (!empty($gallery[3])): ?>
+                                        <img src="<?php echo esc_url($gallery[3]['url']); ?>"
+                                            alt="<?php echo esc_attr($gallery[3]['alt']); ?>">
+                                    <?php endif; ?>
+                                </div>
+                                <!-- 5-я картинка -->
+                                <div class="gallery-item">
+                                    <?php if (!empty($gallery[4])): ?>
+                                        <img src="<?php echo esc_url($gallery[4]['url']); ?>"
+                                            alt="<?php echo esc_attr($gallery[4]['alt']); ?>">
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                            <!-- .right-column -->
+                        <?php
+                        endwhile; // конец while ( have_rows('equipment') )
+                    endif; // конец if ( have_rows('equipment') )
+                    ?>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <?php endif; ?>
+    <?php if (have_rows('Specifications')): ?>
+      
+        <section id="specifications">
+            <div class="productTechAdventagesWrapper wrapper">
+                <div class="productTechAdventages-name">
+                    <h2>Технічні <span> характеристики</span> <?php the_title() ?></h2>
+                    <?php while ( have_rows( 'Specifications' ) ) :
+		the_row(); ?>
+                    <?php
+$item_photo = get_sub_field( 'item_photo' );
+if ( $item_photo ) : ?>
+	<img src="<?php echo esc_url( $item_photo['url'] ); ?>" alt="<?php echo esc_attr( $item_photo['alt'] ); ?>" />
+<?php endif; ?>
+<?php endwhile; ?>
+                </div>
+                <div class="productTechAdventages-properties">
+                    <?php while (have_rows('Specifications')):
+                        the_row(); ?>
+                        <?php if (have_rows('properties')): ?>
+                            <?php while (have_rows('properties')):
+                                the_row(); ?>
+                                <div class="techAdventages-propertiesItem">
+                                    <?php if ($name = get_sub_field('name')): ?>
+                                        <p class="property"><?php echo esc_html($name); ?></p>
+                                    <?php endif; ?>
+                                    <?php if (get_sub_field('true')): ?>
+                                        <div class="checkMarkIcon"></div>
+                                    <?php else: ?>
+                                        <?php if ($value = get_sub_field('value')): ?>
+                                            <p class="value"><?php echo esc_html($value); ?></p>
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
+                        
+                      
+                        
+                    <?php endwhile; ?>
+                </div>
+            </div>
+        </section>
+    <?php endif; ?>
+    <?php
+// Допустим, вы получили массив постов из поля ACF
+$additional_items = get_field('additional_items'); // или как там у вас называется поле
+
+if ( $additional_items ) :
+    // Перебираем каждый выбранный пост (товар)
+   ?>
     <section>
         <div class="productEquipmentWrapper wrapper">
-            <h2></h2>
+            <h2><span>Опційна</span> комплектація</h2>
             <div class="mainSwiperContainer">
                 <div class="productsSwiper swiperProductsDashboard">
                     <div class="swiper-wrapper sliderWrapperDefault">
+                        <?php  foreach ( $additional_items as $post ) :
+        setup_postdata( $post ); 
+        ?>
                         <div class="swiper-slide swiperSlideDefault">
                             <div class="swiperSlideProductContent">
                                 <div class="productCardItem">
+                                    
                                     <div class="productCardItemImage">
-                                        <img src="https://placehold.co/387x300/png" alt="">
+                                    <?php
+                                $gallery = get_field('gallery'); // Получаем галерею из ACF
+                                if ($gallery):
+                                    $first_image = $gallery[0];
+                                    ?>
+                                    <a href="<?php the_permalink(); ?>">
+                                        <img src="<?php echo esc_url($first_image['sizes']['medium']); ?>"
+                                            alt="<?php echo esc_attr($first_image['alt']); ?>">
+                                    </a>
+                                <?php endif; ?>
+                                        
                                     </div>
-                                    <h3>Насос потужністю до 150 л/хв
+                                    <h3><?php the_title()?>
                                     </h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Ipsum viverra morbi a ornare quam. Mi
-                                        blandit sed diam sit eget nulla euismod odio.
-                                    </p>
-                                    <h1 class="decorBig">920 000 <small>Грн.</small></h1>
+                                    <?php if ( $title = get_field( 'title' ) ) : ?>
+                    <p><?php echo esc_html( $title ); ?></p>
+<?php endif; ?>
+                                    <?php if ( $price = get_field( 'price' ) ) : ?>
+                                        <h1 class="decorBig">                        <?php echo number_format($price, 0, ',', ' ');?>
+                                        <small>Грн.</small></h1>
+<?php endif; ?>
+                                    
                                     <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">
-                                            Дізнатись більше
+                                        <a href="<?php the_permalink() ?>" class="transparentButton">
+                                        Детальніше
                                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
@@ -367,148 +454,22 @@ Template Name: Single Product Agrodrone
                                         </a>
                                         <svg class="productItemButton-wrapperFigure1"
                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path />
+                                            <path class="topRight"/>
                                         </svg>
                                         <svg class="productItemButton-wrapperFigure2"
                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path />
+                                            <path class="topRight"/>
                                         </svg>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide swiperSlideDefault">
-                            <div class="swiperSlideProductContent">
-                                <div class="productCardItem">
-                                    <div class="productCardItemImage">
-                                        <img src="https://placehold.co/387x300/png" alt="">
-                                    </div>
-                                    <h3>Насос потужністю до 150 л/хв
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Ipsum viverra morbi a ornare quam. Mi
-                                        blandit sed diam sit eget nulla euismod odio.
-                                    </p>
-                                    <h1 class="decorBig">920 000 <small>Грн.</small></h1>
-                                    <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">
-                                            Дізнатись більше
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                        <svg class="productItemButton-wrapperFigure1"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                        <svg class="productItemButton-wrapperFigure2"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide swiperSlideDefault">
-                            <div class="swiperSlideProductContent">
-                                <div class="productCardItem">
-                                    <div class="productCardItemImage">
-                                        <img src="https://placehold.co/387x300/png" alt="">
-                                    </div>
-                                    <h3>Насос потужністю до 150 л/хв
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Ipsum viverra morbi a ornare quam. Mi
-                                        blandit sed diam sit eget nulla euismod odio.
-                                    </p>
-                                    <h1 class="decorBig">920 000 <small>Грн.</small></h1>
-                                    <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">
-                                            Дізнатись більше
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                        <svg class="productItemButton-wrapperFigure1"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                        <svg class="productItemButton-wrapperFigure2"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide swiperSlideDefault">
-                            <div class="swiperSlideProductContent">
-                                <div class="productCardItem">
-                                    <div class="productCardItemImage">
-                                        <img src="https://placehold.co/387x300/png" alt="">
-                                    </div>
-                                    <h3>Насос потужністю до 150 л/хв
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Ipsum viverra morbi a ornare quam. Mi
-                                        blandit sed diam sit eget nulla euismod odio.
-                                    </p>
-                                    <h1 class="decorBig">920 000 <small>Грн.</small></h1>
-                                    <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">
-                                            Дізнатись більше
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                        <svg class="productItemButton-wrapperFigure1"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                        <svg class="productItemButton-wrapperFigure2"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide swiperSlideDefault">
-                            <div class="swiperSlideProductContent">
-                                <div class="productCardItem">
-                                    <div class="productCardItemImage">
-                                        <img src="https://placehold.co/387x300/png" alt="">
-                                    </div>
-                                    <h3>Насос потужністю до 150 л/хв
-                                    </h3>
-                                    <p>Lorem ipsum dolor sit amet consectetur. Ipsum viverra morbi a ornare quam. Mi
-                                        blandit sed diam sit eget nulla euismod odio.
-                                    </p>
-                                    <h1 class="decorBig">920 000 <small>Грн.</small></h1>
-                                    <div class="productItemButton-wrapper">
-                                        <a href="" class="transparentButton">
-                                            Дізнатись більше
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5"
-                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                        <svg class="productItemButton-wrapperFigure1"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                        <svg class="productItemButton-wrapperFigure2"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+    endforeach; 
+    wp_reset_postdata();?>
+                      
+                       
+                     
                     </div>
                 </div>
                 <div class="swiperNavigationDefault">
@@ -551,99 +512,50 @@ Template Name: Single Product Agrodrone
             </div>
         </div>
     </section>
-    <section>
-        <div class="faqWrapper wrapper">
-            <h2><span>Відповіді</span> на поширені питання</h2>
-            <div class="accordion">
-                <div class="accordion__item" >
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Як відбувається процес внесення ЗЗР дроном?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
+<?php endif;
+?>
+    <?php if ( have_rows( 'faq' ) ) : ?>
+
+		
+	
+
+<section>
+    <div class="faqWrapper wrapper">
+        <h2><span>Відповіді</span> на поширені питання</h2>
+        <div class="accordion">
+        <?php while ( have_rows( 'faq' ) ) :
+    the_row(); ?>
+            <div class="accordion__item" data-aos-anchor-placement="bottom-bottom">
+                <div class="accordion__title">
+                    <span class="accordion__title-text">
+                    <?php if ( $question = get_sub_field( 'question' ) ) : ?>
+                        <h3><?php echo esc_html( $question ); ?></h3>
+<?php endif; ?>
+                        
+                    </span>
+                    <div class="accordion__arrow">
+                        <div class="accordion__arrow-item">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
                         </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>Першим кроком узгоджуються всі деталі замовлення. Далі наша команда виїжджає на визначену
-                            локацію та робить обмір полів. В залежності від площі, складності форми та площі обмір може
-                            відбуватись як пішки так і самим дроном. Наступним кроком команда замішує хімію в
-                            спеціальному змішувачі та приступає до обприскування.</p>
                     </div>
                 </div>
-                <div class="accordion__item" >
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Яку площу може обробити дрон за зміну?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>В нашому дронопарку є різні дрони з різною продуктивністю. Dji Agras T30 може обробити до 120
-                            га за зміну, а новіші моделі T40 та T50 до 220 га за зміну. За потреби на одному полі може
-                            працювати декілька дронів одночасно, тому за одну зміну наша команда може виконати понад 500
-                            га.</p>
-                    </div>
-                </div>
-                <div class="accordion__item" >
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Від чого залежить вартість внесення ЗЗР агродроном?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>Вартість внесення залежить від: площі, кількості полів, норми внесення, наявності перешкод та
-                            ліній електропередач на полі.</p>
-                    </div>
-                </div>
-                <div class="accordion__item" >
-                    <div class="accordion__title">
-                        <span class="accordion__title-text">
-                            <h3>Як проходить навчання для пілотів агродронів?</h3>
-                        </span>
-                        <div class="accordion__arrow">
-                            <div class="accordion__arrow-item">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 10H10M19 10H10M10 10V1M10 10V19" stroke="#0E0E0E" stroke-width="2"
-                                        stroke-linecap="round" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion__content">
-                        <p>Навчання відбувається як в групах так і індивідуально. Курс триває 3 дні, складається з
-                            теорії та практики та включає в себе 12 блоків та 48 тем. У вартість входить оренда дрона та
-                            транспортні витрати. По завершенню курсу кожен студент отримує сертифікат який підтверджує
-                            кваліфікацію.</p>
-                    </div>
+                <div class="accordion__content">
+                <?php if ( $answer = get_sub_field( 'answer' ) ) : ?>
+                    <p><?php echo esc_html( $answer ); ?></p>
+<?php endif; ?>
+                    
                 </div>
             </div>
+            <?php endwhile; ?>
+            
         </div>
-    </section>
+    </div>
+</section>
+<?php endif; ?>
     <section>
         <div class="contactWrapper wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/screen1contactBackground.jpeg"
@@ -691,6 +603,17 @@ Template Name: Single Product Agrodrone
             }
         });
     </script>
+    <script>
+    document.querySelectorAll('[scroll="goToFeatures"]').forEach((link) => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector("#specifications").scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+            });
+        });
+    });
+</script>
 
 </div>
 <?php

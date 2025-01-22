@@ -42,15 +42,20 @@ Template Name: Single Product Other
             </div>
             <div class="productOtherInfo">
                 <h1><span><?php the_title(); ?></span></h1>
-                <p class="productOtherTitle"><?php the_content(); ?></p>
-                <h3 class="productOtherPrice"><?php if ($price = get_field('price')): ?>
-                        <?php echo esc_html($price); ?>
-                    <?php endif; ?><small><?php if ($currency = get_field('currency', 'options')): ?>
-                            <?php echo esc_html($currency); ?>
-                        <?php endif; ?></small>
-                </h3>
+                <?php if ( $title = get_field( 'title' ) ) : ?>
+	                <p class="productOtherTitle"><?php echo esc_html( $title ); ?></p>
+
+<?php endif; ?>
+                <?php if ($price = get_field('price')): ?>
+                    <div class="productMain-price">
+                        <h3>                        <?php echo number_format($price, 0, ',', ' ');?>
+                        <small>Грн.</small>
+                        </h3>
+                        <p>Ціна вказана з ПДВ. Вартість за комплект.</p>
+                    </div>
+                <?php endif; ?>
                 <div class="productCardButtonGroup">
-                    <button class="greenButton">Замовити<svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                    <button class="greenButton openModalButton" data-target="<?php the_title(); ?>">Замовити<svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />

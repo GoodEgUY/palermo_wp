@@ -59,7 +59,8 @@ Template Name: Archive Product
                             <h3><?php the_title(); ?></h3>
                             <p><?php the_content(); ?></p>
                             <h1 class="decorBig"><?php if ($price = get_field('price')): ?>
-                                    <?php echo esc_html($price); ?>
+                                <?php echo number_format($price, 0, ',', ' ');?>
+
                                 <?php endif; ?>
                                 <small>Грн.</small>
                             </h1>

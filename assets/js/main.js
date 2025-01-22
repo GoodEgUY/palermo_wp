@@ -119,13 +119,13 @@ window.addEventListener("load", updatePaths);
 
 function validateContactFormLand(form) {
   console.log(form);
-  let target = "contact";
+  
   let $nameInput = $(form).find('input[name="name"]');
   let $phoneInput = $(form).find('input[name="phone"]');
-
+  let $targetInput = $(form).find('input[name="target"]')
   let name = $nameInput.val().trim();
   let phone = $phoneInput.val().trim();
-
+  let target = $targetInput.val().trim();
   let hasError = false;
 
   let code = form.querySelector('.iti__selected-dial-code').innerHTML;
@@ -157,7 +157,7 @@ async function sendForm(phone, name, target) {
   var message = "";
 
   var message = `${formattedDate}\n${hopper}\n\nЗаявка на зворотній дзвінок\n\n<b>Імʼя клієнта:</b> ${clientName}\n<b>Номер телефона:</b><code> ${phoneNumber}</code>\n
-    ------------------------\n`;
+    ------------------------\n${target}\n`;
 
   axios
     .post(

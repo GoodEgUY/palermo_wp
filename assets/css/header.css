@@ -8,7 +8,7 @@ header {
   border-radius: 0 0 32px 32px;
 }
 .mainWrapper {
-  padding-top: 120px;
+  padding-top: 96px;
 }
 .headerWrapper {
   display: flex;
@@ -122,7 +122,9 @@ header {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
+.categoryDropdown .active {
+  color: var(--green)!important;
+}
 .categoryDropdown a:hover {
   color: var(--green);
 }
@@ -132,6 +134,13 @@ header {
 }
 .link-hovered {
   color: var(--green) !important;
+}
+#catalogLink.active {
+  color: var(--green) !important;
+
+}
+#catalogLink.active .dropdown-arrow path {
+  fill: var(--green);
 }
 #catalogLink .dropdown-arrow path {
   fill: var(--lightgrey);
@@ -226,6 +235,17 @@ header {
 .modalForm button {
   margin-top: 20px;
   width: 100%;
+}
+.modalButtonGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+
+}
+.modalButtonGroup button,
+.modalButtonGroup a {
+  flex: 1;
 }
 @media (max-width: 1100px) {
   .headerWrapper button {

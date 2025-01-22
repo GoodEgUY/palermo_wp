@@ -52,7 +52,7 @@ Template Name: Fertilization
                     </div>
                     <div class="blackItemCardInfo">
                         <h3>DJI Agras T50</h3>
-                        <a href="" class="transparentButton">
+                        <a href="<?php echo home_url('/product-category/agrodrones/'); ?>" class="transparentButton">
                             Перейти до каталогу
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@ Template Name: Fertilization
                             stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </a>
-                <a href="" class="greenButton">
+                <a href="#" class="greenButton openModalForm" data-target="Внесення ЗЗР">
                     Зв’язатись з нами
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -1262,7 +1262,7 @@ Template Name: Fertilization
                 <?php endif; ?>
             </div>
             <div class="contactBlockForm">
-                <form action="" class="defaultForm">
+                <form action="" class="defaultForm contactForm">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <div class="inputWrapper">

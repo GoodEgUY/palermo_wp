@@ -34,8 +34,8 @@ Template Name: Pilots Academy
                             alt="">
                     </div>
                     <div class="blackItemCardInfo">
-                        <h3>DJI Agras T40</h3>
-                        <a href="" class="transparentButton">
+                        <h3>DJI Agras T50</h3>
+                        <a href="<?php echo home_url('/product-category/agrodrones/'); ?>" class="transparentButton">
                             Перейти до каталогу
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -151,7 +151,7 @@ Template Name: Pilots Academy
                     <p>Курс створений відповідно до вимог та тенденцій агроіндустрії, що робить його практичним.</p>
                 </div>
             </div>
-            <button href="" class="transparentButton consultationButton">
+            <button href="" class="transparentButton consultationButton openModalButton" data-target="Сторінка Навчання Пілотів(Переваги)">
                 Безкоштовна консультація
                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
@@ -283,7 +283,7 @@ Template Name: Pilots Academy
                     </script>
                 </div>
             </div>
-            <button class="transparentButton sallaryButton">
+            <button class="transparentButton sallaryButton openModalButton" data-target="Сторінка Навчання Пілотів(Блок с Зарплатою)">
                 Безкоштовна консультація
                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
@@ -301,7 +301,7 @@ Template Name: Pilots Academy
                     роботу, але й зробити вагомий внесок у розвиток аграрного сектору. Подивіться, як змінювалися
                     перспективи пілотів із 2020 року!
                 </p>
-                <button class="transparentButton">
+                <button class="transparentButton openModalButton" data-target="Сторінка Навчання Пілотів(Загальний)">
                     Безкоштовна консультація
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -314,6 +314,9 @@ Template Name: Pilots Academy
     <section>
         <div class="learningWrapper wrapper">
             <h2><span>Формат навчання</span>,<br /> що враховує ваші цілі</h2>
+            <?php if ( have_rows( 'learning_prices' ) ) : ?>
+	<?php while ( have_rows( 'learning_prices' ) ) :
+		the_row(); ?>
             <div class="learningPlans">
                 <div class="learningPlanItem">
                     <div class="learningPlanName">
@@ -321,9 +324,12 @@ Template Name: Pilots Academy
                         <h3>Експресс</h3>
                     </div>
                     <p>Для тих, хто прагне швидко та ефективно опанувати основи професії.</p>
-                    <h1 class="decoBig">18 900 <small>Грн.</small></h1>
+                    <?php if ( $express = get_sub_field( 'express' ) ) : ?>
+                        <h1 class="decoBig"><?php echo number_format($express, 0, ',', ' ');?> <small>Грн.</small></h1>
+<?php endif; ?>
+                    
                     <div class="productItemButton-wrapper">
-                        <a href="" class="transparentButton">Дізнатись більше <svg width="16" height="17"
+                        <a href="" data-target="Курс Навчання(Експресс)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
                                 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -336,15 +342,21 @@ Template Name: Pilots Academy
                         </svg>
                     </div>
                 </div>
+               
+		
+	
                 <div class="learningPlanItem">
                     <div class="learningPlanName">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learn1.svg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learn2.svg" alt="">
                         <h3>Стандарт</h3>
                     </div>
                     <p>Для тих, хто бажає отримати комплексну підготовку з усіх основних аспектів роботи.</p>
-                    <h1 class="decoBig">27 900 <small>Грн.</small></h1>
+                    <?php if ( $standart = get_sub_field( 'standart' ) ) : ?>
+                        
+                        <h1 class="decoBig"><?php echo number_format($standart, 0, ',', ' ');?> <small>Грн.</small></h1>
+<?php endif; ?>
                     <div class="productItemButton-wrapper">
-                        <a href="" class="transparentButton">Дізнатись більше <svg width="16" height="17"
+                        <a href="" data-target="Курс Навчання(Стандартний)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
                                 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -359,13 +371,15 @@ Template Name: Pilots Academy
                 </div>
                 <div class="learningPlanItem">
                     <div class="learningPlanName">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learn1.svg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learn3.svg" alt="">
                         <h3>Продвинутий</h3>
                     </div>
                     <p>Для тих хто бажає отримати індивідуальний підхід та максимум знань.</p>
-                    <h1 class="decoBig">39 900 <small>Грн.</small></h1>
+                    <?php if ( $advanced = get_sub_field( 'advanced' ) ) : ?>
+                        <h1 class="decoBig"><?php echo number_format($advanced, 0, ',', ' '); ?> <small>Грн.</small></h1>
+<?php endif; ?>
                     <div class="productItemButton-wrapper">
-                        <a href="" class="transparentButton">Дізнатись більше <svg width="16" height="17"
+                        <a href="#" data-target="Курс Навчання(Продвинутий)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
                                 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -379,6 +393,8 @@ Template Name: Pilots Academy
                     </div>
                 </div>
             </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
             <div class="learningTable">
                 <div class="learningTableRow header">
                     <div class="cell">
@@ -694,7 +710,7 @@ Template Name: Pilots Academy
                     </div>
                 </div>
             </div>
-            <a href="" class="transparentButton" style="margin: 0 auto; width:fit-content;">Безкоштовна консультація
+            <a href="#" data-target="Блок навчання(Загальний)" class="transparentButton openModalButton" style="margin: 0 auto; width:fit-content;">Безкоштовна консультація
                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -817,7 +833,7 @@ Template Name: Pilots Academy
                 <?php endif; ?>
             </div>
             <div class="contactBlockForm">
-                <form action="" class="defaultForm">
+                <form action="" class="defaultForm contactForm">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <div class="inputWrapper">

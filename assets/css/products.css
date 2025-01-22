@@ -81,14 +81,14 @@
 }
 .productMain-title {
   color: var(--lightgrey);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .productMain-mainProperties {
   display: flex;
   align-items: center;
   gap: 20px;
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .mainPropertiesItem {
   padding: 12px;
@@ -112,14 +112,14 @@
   align-items: flex-start;
   width: 100%;
   gap: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
 }
 .productMain-price {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .productMain-price p {
   color: var(--lightgrey);
@@ -149,6 +149,9 @@
 .technologyGallery img {
   width: 100%;
 }
+.agrodroneTextSeparator p {
+  padding-left: 0!important;
+}
 .productBigPhotoWrapper {
   aspect-ratio: 22/13;
   width: 100%;
@@ -163,7 +166,7 @@
   border-radius: var(--big-border-radius);
   padding: 112px;
   display: flex;
-  gap: 56px;
+  gap: 80px;
   margin-bottom: var(--block-padding);
 }
 .productKitWrapper .mobileChapter {
@@ -189,7 +192,7 @@
 }
 .productKitGallery {
   display: flex;
-
+max-width: 700px;
   width: 100%;
   gap: 16px;
   aspect-ratio: 175/134;
@@ -204,7 +207,7 @@
   flex: 0 0 33%;
 }
 .right-column {
-  flex: 0 0 67%;
+  flex: 0 0 calc(67% - 16px );
 }
 .gallery-item {
   background-color: black;
@@ -222,7 +225,7 @@
 }
 .productTechAdventagesWrapper {
   display: flex;
-  gap: 56px;
+  gap: 80px;
   align-items: flex-start;
   padding-bottom: var(--block-padding);
 }
@@ -233,6 +236,9 @@
   flex-direction: column;
   gap: 48px;
   align-items: flex-start;
+}
+.productTechAdventages-name img {
+  width: 100%;
 }
 .productTechAdventages-properties {
   width: 100%;
@@ -263,6 +269,9 @@
   flex-direction: column;
   gap: 16px;
   align-items: flex-start;
+}
+.productOtherInfo p {
+  color: var(--lightgrey);
 }
 .productOtherTitle {
   color: var(--lightgrey);
@@ -307,6 +316,9 @@
 .productEquipmentWrapper {
   padding-bottom: var(--block-padding);
 }
+.productEquipmentWrapper h2 {
+  margin-bottom: var(--chapter-padding);
+}
 .productEquipmentWrapper .swiperNavigationDefault {
   position: static;
 }
@@ -316,7 +328,7 @@
 .productCardItem {
   width: 100%;
 
-  border-radius: var(--small-border-radius);
+  border-radius: var(--big-border-radius);
   padding: 20px 20px 90px 20px;
   background-color: var(--graycards);
   position: relative;
@@ -326,6 +338,7 @@
   gap: 12px;
 }
 .productCardItemImage {
+  position: relative;
   aspect-ratio: 129/100;
   margin-bottom: 12px;
   width: 100%;
@@ -335,15 +348,23 @@
   border-radius: var(--small-border-radius);
   overflow: hidden;
 }
-.productCardItemImage img {
+.productCardItemImage a {
+  position: relative;
+
+  height: 100%;
   width: 100%;
+}
+.productCardItemImage img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
 }
 .productCardItem p {
   color: var(--lightgrey);
 }
-.archiveProductWrapper {
-  padding-top: 48px;
-}
+
 .categoryHeadTitle {
   margin-bottom: 24px;
 }
@@ -385,7 +406,7 @@
   width: calc((100% - 40px) / 3) !important;
 }
 .productCardDashboard .contentProductItem img {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
   width: 100%;
   border-radius: var(--small-border-radius);
 }
@@ -629,6 +650,10 @@ margin-bottom: var(--block-padding);
   width: 100%;
   align-items: center;
   justify-content: space-between;
+}
+.totalPrice {
+  font-size: 20px;
+  color: var(--green);
 }
 @media (max-width: 1100px) {
   .productMain-mainProperties {

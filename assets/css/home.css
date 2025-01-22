@@ -187,7 +187,7 @@
   width: 100%;
 
   border-radius: var(--big-border-radius);
-  padding: 20px 20px 90px 20px;
+  padding: 20px 20px 98px 20px;
   background-color: var(--graycards);
   position: relative;
   display: flex;
@@ -221,7 +221,7 @@
   left: 0;
   border-top-right-radius: var(--big-border-radius);
   background-color: var(--black);
-  padding: 20px 20px 0 0;
+  padding: 24px 24px 0 0;
 }
 .productItemButton-wrapperFigure1 {
   position: absolute;

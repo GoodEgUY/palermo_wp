@@ -240,33 +240,49 @@ Template Name:  Blog Large
                                 </div>
                             </div>
                             <div class="recentArticlesWrapper">
-                                <div class="recentArticleItem">
-                                    <div class="recentArticleButton">
-                                        <a href="" class="swiperButtonPrev">
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                        <p>Попередня стаття</p>
-                                    </div>
-                                    <p>УКАБ Агротехнології 2024</p>
-                                </div>
-                                <div class="recentArticleItem">
-                                    <div class="recentArticleButton">
-                                        <p>Наступна стаття</p>
-                                        <a href="" class="swiperButtonNext">
-                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </a>
-                                    </div>
-                                    <p>Як українському аграрію потрапити в світовий ТОП по врожайності сої?</p>
-                                </div>
-                            </div>
+    <?php
+    // Получаем 2 случайные записи
+    $random_posts = new WP_Query([
+        'post_type'      => 'post',     // Тип записей
+        'posts_per_page' => 2,          // Количество записей
+        'orderby'        => 'rand',     // Случайный порядок
+    ]);
+
+    // Проверяем, есть ли записи
+    if ($random_posts->have_posts()) :
+        $count = 0;
+        while ($random_posts->have_posts()) : $random_posts->the_post();
+            $count++;
+            ?>
+            <div class="recentArticleItem">
+                <div class="recentArticleButton">
+                    <?php if ($count == 1): // Для первой статьи "Попередня стаття" ?>
+                        <a href="<?php the_permalink(); ?>" class="swiperButtonPrev">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <p>Попередня стаття</p>
+                    <?php else: // Для второй статьи "Наступна стаття" ?>
+                        <p>Наступна стаття</p>
+                        <a href="<?php the_permalink(); ?>" class="swiperButtonNext">
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    <?php endif; ?>
+                </div>
+                <p><?php the_title(); // Вывод названия статьи ?></p>
+            </div>
+        <?php
+        endwhile;
+        wp_reset_postdata(); // Сбрасываем данные
+    else : ?>
+        <p>Статті відсутні.</p>
+    <?php endif; ?>
+</div>
                         </div>
                     </div>
             </section>

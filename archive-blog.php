@@ -1,7 +1,7 @@
 <?php
 get_header(); // Подключаем header
 /*
-Template Name: Archive Blog 
+
 */
 ?>
   <script>

@@ -2,24 +2,37 @@
 <div class="mainWrapper">
     <section>
         <div class="productMainInfoWrapper wrapper">
-            <div class="productGallery">
-                <a href="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (1).png"
-                    class="productGalleryBlack-big" data-fancybox="productMain">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (1).png"
-                        alt="Генератор">
-                </a>
+        <div class="productGallery">
+                <!-- Основная фотография (первая из галереи) -->
+                <?php
+                $gallery = get_field('gallery'); // Получаем галерею из ACF
+                if ($gallery):
+                    // Получаем первую фотографию из галереи
+                    $first_image = $gallery[0];
+                    ?>
+                    <a href="<?php echo esc_url($first_image['url']); ?>" class="productGallery-big"
+                        data-fancybox="productOther">
+                        <img src="<?php echo esc_url($first_image['sizes']['large']); ?>"
+                            alt="<?php echo esc_attr($first_image['alt']); ?>">
+                    </a>
+                <?php endif; ?>
+
                 <!-- Галерея миниатюр -->
                 <div class="productGalleryThumbs">
-                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (2).png"
-                        class="productGalleryBlack-small" data-fancybox="productMain">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (2).png"
-                            alt="Генератор миниатюра">
-                    </a>
-                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (3).png"
-                        class="productGalleryBlack-small" data-fancybox="productMain">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/products/400Photo (3).png"
-                            alt="Генератор миниатюра 2">
-                    </a>
+                    <?php if ($gallery): ?>
+                        <?php
+                        // Пропускаем первую фотографию для миниатюр
+                        foreach ($gallery as $index => $image):
+                            if ($index == 0)
+                                continue; // Пропускаем первую фотографию
+                            ?>
+                            <a href="<?php echo esc_url($image['url']); ?>" class="productGallery-small"
+                                data-fancybox="productOther">
+                                <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>"
+                                    alt="<?php echo esc_attr($image['alt']); ?>" />
+                            </a>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="productMain-info">
@@ -69,20 +82,21 @@
                 <?php endif; ?>
                 <?php if ($price = get_field('price')): ?>
                     <div class="productMain-price">
-                        <h3><?php echo esc_html($price); ?><small>Грн.</small>
+                        <h3>                        <?php echo number_format($price, 0, ',', ' ');?>
+                        <small>Грн.</small>
                         </h3>
                         <p>Ціна вказана з ПДВ. Вартість за комплект.</p>
                     </div>
                 <?php endif; ?>
                 <div class="productCardButtonGroup">
-                    <button class="greenButton openModalButton" data-targer="<?php the_title(); ?>">
+                    <button class="greenButton openModalButton" data-target="<?php the_title(); ?>">
                         Замовити
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
-                    <a href="" class="transparentButton">
+                    <a href="" class="transparentButton" scroll="goToFeatures">
                         Характеристики
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -102,6 +116,8 @@
         ?>
         <section>
             <div class="productTechnologyWrapper wrapper">
+            <h2 class="mobileChapter"> Особливості та <span> переваги</span><br />нашого<span> змішувача</span>
+            </h2>
                 <div class="technologyList">
                     <h2>Особливості та <span> переваги</span><br />нашого<span> змішувача</span></h2>
                     <div class="mainSwiperContainer">
@@ -299,11 +315,16 @@
         </section>
     <?php endif; ?>
     <?php if (have_rows('Specifications')): ?>
-        <section>
+        <section id="specifications">
             <div class="productTechAdventagesWrapper wrapper">
                 <div class="productTechAdventages-name">
-                    <h2>Технічні <span> характеристики</span> DJI Agras <span> T50</span></h2>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/14.png" alt="">
+                    <h2>Технічні <span> характеристики</span> <?php the_title(); ?></h2>
+                    <?php
+$item_photo = get_sub_field( 'item_photo' );
+if ( $item_photo ) : ?>
+	<img src="<?php echo esc_url( $item_photo['url'] ); ?>" alt="<?php echo esc_attr( $item_photo['alt'] ); ?>" />
+<?php endif; ?>
+                    
                 </div>
                 <div class="productTechAdventages-properties">
                     <?php while (have_rows('Specifications')):
@@ -334,210 +355,245 @@
         </section>
     <?php endif; ?>
     <?php if (have_rows('additional_equipment')): ?>
-        <section>
-            <div class="additionalEquipmentWrapper wrapper">
-                <h2>Зробіть змішувач ще кращим — <span>обирайте додаткові опції</span></h2>
-                <div class="additionalEquipmentDashboard">
-                    <div class="additionalCategories">
-                        <?php while (have_rows('additional_equipment')):
-                            the_row(); ?>
-                            <div class="additionalCategoryItem">
-                                <?php if ($category_name = get_sub_field('category_name')): ?>
-                                    <h2><?php echo esc_html($category_name); ?></h2>
-                                <?php endif; ?>
-                                <div class="categoryItems">
-                                    <?php
-                                    // Если "few" = true -> это чекбоксы
-                                    // Если "few" = false (или не выставлено) -> это радио
-                                    if (get_sub_field('few')):
-                                        // CHECKBOX-GROUP
-                                        if (have_rows('item_included')):
-                                            while (have_rows('item_included')):
-                                                the_row(); ?>
-                                                <div class="categoryItem">
-                                                    <label class="checkbox-wrapper">
-                                                        <input type="checkbox" data-category="<?php echo esc_attr($category_name); ?>" />
-                                                        <div class="chckerWrapper"><span class="checkbox-checkmark"></span>
-                                                            <?php if ($name = get_sub_field('name')): ?>
-                                                                <span class="checkbox-label"><?php echo esc_html($name); ?></span>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <?php if ($price = get_sub_field('price')): ?>
-                                                            <p class="item-price"><?php echo esc_html($price); ?></p>
+    <section>
+        <div class="additionalEquipmentWrapper wrapper">
+            <h2>Зробіть змішувач ще кращим — <span>обирайте додаткові опції</span></h2>
+            <div class="additionalEquipmentDashboard">
+                <div class="additionalCategories">
+                    <?php while (have_rows('additional_equipment')):
+                        the_row(); ?>
+                        <div class="additionalCategoryItem">
+                            <?php if ($category_name = get_sub_field('category_name')): ?>
+                                <h2><?php echo esc_html($category_name); ?></h2>
+                            <?php endif; ?>
+                            <div class="categoryItems">
+                                <?php
+                                // Если "few" = true -> это чекбоксы
+                                // Если "few" = false (или не выставлено) -> это радио
+                                if (get_sub_field('few')):
+                                    // CHECKBOX-GROUP
+                                    if (have_rows('item_included')):
+                                        while (have_rows('item_included')):
+                                            the_row(); ?>
+                                            <div class="categoryItem">
+                                                <label class="checkbox-wrapper">
+                                                    <input type="checkbox"
+                                                           data-category="<?php echo esc_attr($category_name); ?>" />
+                                                    <div class="chckerWrapper">
+                                                        <span class="checkbox-checkmark"></span>
+                                                        <?php if ($name = get_sub_field('name')): ?>
+                                                            <span class="checkbox-label"><?php echo esc_html($name); ?></span>
                                                         <?php endif; ?>
-                                                    </label>
-                                                </div>
-                                            <?php endwhile;
-                                        endif;
-                                    else:
-                                        // RADIO-GROUP
-                                        if (have_rows('item_included')):
-                                            while (have_rows('item_included')):
-                                                the_row(); ?>
-                                                <div class="categoryItem">
-                                                    <label class="radio-wrapper">
-                                                        <!-- 
-                              ВАЖНО: в name="" подставляем уникальный идентификатор категории,
-                              чтобы каждая «radio-группа» была независима от других категорий 
-                              -->
-                                                        <input type="radio" name="<?php echo esc_attr(sanitize_title($category_name)); ?>"
-                                                            data-category="<?php echo esc_attr($category_name); ?>" />
-                                                        <div class="chckerWrapper"><span class="radio-checkmark"></span>
-                                                            <?php if ($name = get_sub_field('name')): ?>
-                                                                <span class="radio-label"><?php echo esc_html($name); ?></span>
-                                                            <?php endif; ?>
-                                                        </div>
-                                                        <?php if ($price = get_sub_field('price')): ?>
-                                                            <p class="item-price"><?php echo esc_html($price); ?></p>
+                                                    </div>
+                                                    <?php if ($price = get_sub_field('price')): ?>
+                                                        <p class="item-price"><?php echo esc_html($price); ?></p>
+                                                    <?php endif; ?>
+                                                </label>
+                                            </div>
+                                        <?php endwhile;
+                                    endif;
+                                else:
+                                    // RADIO-GROUP
+                                    if (have_rows('item_included')):
+                                        // Счётчик, чтобы пометить первый элемент как «базовый»
+                                        $radio_index = 0;
+                                        while (have_rows('item_included')):
+                                            the_row(); ?>
+                                            <div class="categoryItem">
+                                                <label class="radio-wrapper">
+                                                    <?php
+                                                    // Если это первый элемент, делаем его «базовым»: 
+                                                    // checked="checked" + data-base="true"
+                                                    $extra_attrs = '';
+                                                    if ($radio_index === 0) {
+                                                        $extra_attrs = ' checked="checked" data-base="true"';
+                                                    }
+                                                    ?>
+                                                    <input type="radio"
+                                                           name="<?php echo esc_attr(sanitize_title($category_name)); ?>"
+                                                           data-category="<?php echo esc_attr($category_name); ?>"
+                                                           <?php echo $extra_attrs; ?>
+                                                    />
+                                                    <div class="chckerWrapper">
+                                                        <span class="radio-checkmark"></span>
+                                                        <?php if ($name = get_sub_field('name')): ?>
+                                                            <span class="radio-label"><?php echo esc_html($name); ?></span>
                                                         <?php endif; ?>
-                                                    </label>
-                                                </div>
-                                            <?php endwhile;
-                                        endif;
-                                    endif; ?>
-                                </div>
+                                                    </div>
+                                                    <?php if ($price = get_sub_field('price')): ?>
+                                                        <p class="item-price"><?php echo esc_html($price); ?></p>
+                                                    <?php endif; ?>
+                                                </label>
+                                            </div>
+                                        <?php
+                                            $radio_index++;
+                                        endwhile;
+                                    endif;
+                                endif; ?>
                             </div>
-                        <?php endwhile; ?>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+                <!-- Блок для вывода выбранных позиций и суммы -->
+                <div class="additionalSummary">
+                    <div class="additionalSummaryBLock">
+                        <h3>Комплектація</h3>
+                        <p class="title">Lorem ipsum dolor sit amet consectetur. At arcu non sit nunc eget sed ac purus
+                            odio.
+                        </p>
+                        <div id="chosenExtras" class="choosenExtras"></div>
                     </div>
-                    <!-- Блок для вывода выбранных позиций и суммы -->
-                    <div class="additionalSummary">
-                        <div class="additionalSummaryBLock">
-                            <h3>Комплектація</h3>
-                            <p class="title">Lorem ipsum dolor sit amet consectetur. At arcu non sit nunc eget sed ac purus
-                                odio.
-                            </p>
-                            <div id="chosenExtras" class="choosenExtras"></div>
+                    <div class="additionalSummaryTotal">
+                        <div class="totalPriceRow">
+                            <h3>Загальна вартість</h3>
+                            <h3 class="totalPrice">
+                                <span id="totalPrice"></span> Грн.
+                            </h3>
                         </div>
-                        <div class="additionalSummaryTotal">
-                            <div class="totalPriceRow">
-                                <h3>Загальна вартість</h3>
-                                <h3 class="totalPrice">
-                                    <span id="totalPrice"></span> Грн.
-                                </h3>
-                            </div>
-                            <p>Lorem ipsum dolor sit amet consectetur. Mauris non eget ornare consectetur. Ipsum nisl
-                                malesuada nibh duis augue.
-                            </p>
-                            <button class="greenButton">
-                                Зв’язатись з менеджером
-                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </div>
+                        <p>Lorem ipsum dolor sit amet consectetur. Mauris non eget ornare consectetur. Ipsum nisl
+                            malesuada nibh duis augue.
+                        </p>
+                        <button class="greenButton openModalButton" id="additionalEquipmentButton">
+                            Зв’язатись з менеджером
+                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                      stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Передаём базовую стоимость PHP -> JS -->
-        <?php
-        $base_price_str = get_field('price');
-        $base_price_str = str_replace(' ', '', $base_price_str);
-        $base_price = (float) $base_price_str;
-        // если нет, то вернёт 0
-        ?>
-        <script>
-            // Сразу сохраним базовую стоимость в переменную
-            const basePrice = <?php echo $base_price ? $base_price : 0; ?>;
-        </script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const checkboxes = document.querySelectorAll('.checkbox-wrapper input[type="checkbox"]');
-                const radios = document.querySelectorAll('.radio-wrapper input[type="radio"]');
-                const totalPriceEl = document.getElementById('totalPrice');
-                const chosenExtrasEl = document.getElementById('chosenExtras');
+        </div>
+    </section>
+    <!-- Передаём базовую стоимость PHP -> JS -->
+    <?php
+    $base_price_str = get_field('price');
+    // Убираем пробелы, чтобы можно было делать (float)
+    $base_price_str = str_replace(' ', '', $base_price_str);
+    $base_price = (float) $base_price_str;
+    ?>
+    <script>
+        // Сразу сохраним базовую стоимость в переменную
+        const basePrice = <?php echo $base_price ? $base_price : 0; ?>;
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkboxes = document.querySelectorAll('.checkbox-wrapper input[type="checkbox"]');
+            const radios = document.querySelectorAll('.radio-wrapper input[type="radio"]');
+            const totalPriceEl = document.getElementById('totalPrice');
+            const chosenExtrasEl = document.getElementById('chosenExtras');
 
-                function updatePrice() {
-                    let newTotal = basePrice;
-                    let chosenItems = []; // массив объектов { name: "...", price: 0 }
 
-                    // Обрабатываем чекбоксы
-                    checkboxes.forEach(ch => {
-                        if (ch.checked) {
-                            const parentLabel = ch.closest('label');
-                            const nameEl = parentLabel.querySelector('.checkbox-label');
-                            const priceEl = parentLabel.querySelector('.item-price');
+            const managerButton = document.querySelector('#additionalEquipmentButton');
+            function updatePrice() {
+                let newTotal = basePrice;
+                let chosenItems = []; // массив объектов { name: "...", price: 0 }
+                let notBaseNames = [];
+                // Обрабатываем чекбоксы
+                checkboxes.forEach(ch => {
+                    if (ch.checked) {
+                        const parentLabel = ch.closest('label');
+                        const nameEl = parentLabel.querySelector('.checkbox-label');
+                        const priceEl = parentLabel.querySelector('.item-price');
 
-                            let priceValue = 0;
-                            if (priceEl) {
-                                priceValue = parseFloat(priceEl.textContent.replace(/\D+/g, '')) || 0;
-                                newTotal += priceValue;
-                            }
-
-                            if (nameEl) {
-                                const itemName = nameEl.textContent.trim();
-                                chosenItems.push({ name: itemName, price: priceValue });
-                            }
+                        let priceValue = 0;
+                        if (priceEl) {
+                            // При желании можно добавить логику про базовый элемент и тут
+                            priceValue = parseFloat(priceEl.textContent.replace(/\D+/g, '')) || 0;
+                            newTotal += priceValue;
                         }
-                    });
 
-                    // Обрабатываем радио
-                    radios.forEach(radio => {
-                        if (radio.checked) {
-                            const parentLabel = radio.closest('label');
-                            const nameEl = parentLabel.querySelector('.radio-label');
-                            const priceEl = parentLabel.querySelector('.item-price');
-
-                            let priceValue = 0;
-                            if (priceEl) {
-                                priceValue = parseFloat(priceEl.textContent.replace(/\D+/g, '')) || 0;
-                                newTotal += priceValue;
+                        if (nameEl) {
+                            const itemName = nameEl.textContent.trim();
+                            chosenItems.push({ name: itemName, price: priceValue });
+                            if (!isBase) {
+                                notBaseNames.push(itemName);
                             }
-
-                            if (nameEl) {
-                                const itemName = nameEl.textContent.trim();
-                                chosenItems.push({ name: itemName, price: priceValue });
-                            }
+                       
                         }
-                    });
-
-                    // Выводим итог
-                    if (totalPriceEl) {
-                        totalPriceEl.textContent = newTotal;
                     }
+                });
 
-                    // Формируем список выбранных опций: название и цена отдельно
-                    if (chosenExtrasEl) {
-                        chosenExtrasEl.innerHTML = ''; // очистим контейнер
+                // Обрабатываем radio
+                radios.forEach(radio => {
+                    if (radio.checked) {
+                        const parentLabel = radio.closest('label');
+                        const nameEl = parentLabel.querySelector('.radio-label');
+                        const priceEl = parentLabel.querySelector('.item-price');
+                        
+                        // Проверяем, является ли элемент "базовым" (data-base="true")
+                        const isBase = radio.hasAttribute('data-base');
 
-                        chosenItems.forEach(item => {
-                            // создаём блок для каждой опции
-                            const itemDiv = document.createElement('div');
-                            itemDiv.classList.add('chosen-item'); // класс на всякий случай
+                        let priceValue = 0;
+                        if (priceEl && !isBase) {
+                            // Если элемент базовый — не прибавляем цену
+                            priceValue = parseFloat(priceEl.textContent.replace(/\D+/g, '')) || 0;
+                            newTotal += priceValue;
+                        }
 
-                            // параграф с названием
-                            const nameP = document.createElement('p');
-                            nameP.textContent = item.name;
-
-                            // параграф с ценой (если 0, можно не выводить)
-                            const priceP = document.createElement('p');
-                            if (item.price > 0) {
-                                priceP.textContent = item.price + ' грн';
-                            } else {
-                                priceP.textContent = '—'; // или что-то вроде "включено", "0 грн", "не указана" и т.д.
-                            }
-
-                            // Добавляем всё в родительский div
-                            itemDiv.appendChild(nameP);
-                            itemDiv.appendChild(priceP);
-
-                            // И вставляем в chosenExtrasEl
-                            chosenExtrasEl.appendChild(itemDiv);
-                        });
+                        if (nameEl) {
+                            const itemName = nameEl.textContent.trim();
+                            chosenItems.push({ name: itemName, price: isBase ? 0 : priceValue });
+                            if (!isBase) {
+            notBaseNames.push(itemName);
+        }
+                        }
                     }
+                });
+
+                // Выводим итог
+                if (totalPriceEl) {
+                    totalPriceEl.textContent = newTotal.toLocaleString('ru-RU');
                 }
 
-                // Вешаем обработчики
-                checkboxes.forEach(ch => ch.addEventListener('change', updatePrice));
-                radios.forEach(rd => rd.addEventListener('change', updatePrice));
+                // Формируем список выбранных опций
+                if (chosenExtrasEl) {
+                    chosenExtrasEl.innerHTML = ''; // очистим контейнер
 
-                // Первый пересчёт
-                updatePrice();
-            });
-        </script>
-    <?php endif; ?>
+                    chosenItems.forEach(item => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add('chosen-item');
+
+                        const nameP = document.createElement('p');
+                        nameP.textContent = item.name;
+
+                        const priceP = document.createElement('p');
+                        // Если цена > 0, показываем её, иначе символ/текст о том, что бесплатно/включено
+                        if (item.price > 0) {
+                            priceP.textContent = item.price + ' грн';
+                        } else {
+                            priceP.textContent = '—'; 
+                            // Или "Включено", "0 грн" и т.п.
+                        }
+
+                        itemDiv.appendChild(nameP);
+                        itemDiv.appendChild(priceP);
+
+                        chosenExtrasEl.appendChild(itemDiv);
+                    });
+                }
+                // <-- Новая логика data-target для кнопки менеджера
+                // Превращаем массив не базовых опций в строку через запятую
+                const notBaseString = notBaseNames.join(', ');
+                // Присваиваем атрибут data-target
+                if (managerButton) {
+                    message = "Товар: <?php the_title() ?> c Додатковою комплектацією:" + notBaseString
+                    managerButton.setAttribute('data-target', message);
+                }
+            }
+
+            // Вешаем обработчики
+            checkboxes.forEach(ch => ch.addEventListener('change', updatePrice));
+            radios.forEach(rd => rd.addEventListener('change', updatePrice));
+
+            // Первый пересчёт
+            updatePrice();
+        });
+    </script>
+<?php endif; ?>
+
+    
     <?php if ( have_rows( 'faq' ) ) : ?>
 
 		
@@ -630,6 +686,17 @@
             }
         });
     </script>
+    <script>
+    document.querySelectorAll('[scroll="goToFeatures"]').forEach((link) => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector("#specifications").scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+            });
+        });
+    });
+</script>
 </div>
 <?php
 get_footer(); // Подключаем footer
