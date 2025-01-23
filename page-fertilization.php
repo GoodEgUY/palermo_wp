@@ -47,7 +47,7 @@ Template Name: Fertilization
             <div class="introProductBlock2">
                 <div class="blackItemCard intro2ItemCard">
                     <div class="itemCard-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone2.png"
                             alt="">
                     </div>
                     <div class="blackItemCardInfo">
