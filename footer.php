@@ -13,7 +13,7 @@
             </div>
             <div class="footerColumn">
                 <p>СТОРІНКИ</p>
-                /product/
+                
                 <a href="<?php echo home_url('/product/'); ?>">Каталог</a>
                 <a href="<?php echo home_url('/fertilization/'); ?>">Внесення ЗЗР</a>
                 <a href="<?php echo home_url('/pilots-academy/'); ?>">Центр пілотів</a>
