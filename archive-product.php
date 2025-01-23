@@ -4,28 +4,29 @@ get_header(); // Подключаем header
 Template Name: Archive Product
 */
 ?>
- <script>
-  AOS.init();
+<script>
+    AOS.init();
 </script>
 <div class="mainWrapper">
     <section>
         <div class="archiveProductWrapper wrapper">
             <h1 class="categoryHeadTitle">Каталог</h1>
             <div class="categoryHeader">
-            <div class="categoryHeaderItem activeCategory"><a href="<?php echo esc_url( home_url( '/product/' ) ); ?>">Всі</a></div>
+                <div class="categoryHeaderItem activeCategory"><a
+                        href="<?php echo esc_url(home_url('/product/')); ?>">Всі</a></div>
                 <?php
                 // Получаем все термины из таксономии 'product_category'
                 $terms = get_terms(array(
                     'taxonomy' => 'product_category',
                     'orderby' => 'name',
-                    'order'   => 'ASC',
+                    'order' => 'ASC',
                     'hide_empty' => true, // Только с товарами
                 ));
 
                 // Проверяем, есть ли категории
-                if ($terms && !is_wp_error($terms)) :
+                if ($terms && !is_wp_error($terms)):
                     // Выводим все категории
-                    foreach ($terms as $term) :
+                    foreach ($terms as $term):
                         ?>
                         <div class="categoryHeaderItem">
                             <a href="<?php echo get_term_link($term); ?>">
@@ -38,7 +39,7 @@ Template Name: Archive Product
             <div class="productCardDashboard">
                 <?php
                 // Проверяем, есть ли товары, и выводим их
-                if (have_posts()) :
+                if (have_posts()):
                     while (have_posts()):
                         the_post();
                         ?>
@@ -56,30 +57,33 @@ Template Name: Archive Product
                                 <?php endif; ?>
                             </div>
                             <h3><?php the_title(); ?></h3>
-                            <p><?php the_content(); ?></p>
+                            <?php if ($title = get_field('title')): ?>
+                                <p><?php echo esc_html($title); ?></p>
+                            <?php endif; ?>
                             <h1 class="decorBig"><?php if ($price = get_field('price')): ?>
-                                <?php echo number_format($price, 0, ',', ' ');?>
+                                    <?php echo number_format($price, 0, ',', ' '); ?>
 
                                 <?php endif; ?>
                                 <small>Грн.</small>
                             </h1>
                             <div class="productItemButton-wrapper">
-                                <a href="<?php the_permalink(); ?>" class="greenButton">Детальніше 
-                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <a href="<?php the_permalink(); ?>" class="greenButton">Детальніше
+                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                             stroke-linecap="round" stroke-linejoin="round" />
                                     </svg>
                                 </a>
                                 <svg class="productItemButton-wrapperFigure1" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="topRight"/>
+                                    <path class="topRight" />
                                 </svg>
                                 <svg class="productItemButton-wrapperFigure2" xmlns="http://www.w3.org/2000/svg">
-                                    <path class="topRight"/>
+                                    <path class="topRight" />
                                 </svg>
                             </div>
                         </div>
                     <?php endwhile;
-                else :
+                else:
                     echo '<p>Товари не знайдено.</p>';
                 endif;
                 ?>

@@ -51,13 +51,13 @@
         <div class="footerPolicy">
             <p class="copyright">©<?php echo date('Y'); ?> Всі права захищені</p>
             <div class="footerPolicyNav">
-                <a href="">
+                <a href="<?php echo home_url('/policy/'); ?>">
                     <p>Політика конфіденційності</p>
                 </a>
-                <a href="">
+                <a href="<?php echo home_url('/terms-of-use/'); ?>">
                     <p>Умови використання</p>
                 </a>
-                <a href="">
+                <a href="<?php echo home_url('/cookie-policy/'); ?>">
                     <p>Cookies</p>
                 </a>
             </div>

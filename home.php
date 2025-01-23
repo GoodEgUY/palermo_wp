@@ -48,7 +48,7 @@ Template Name: Home
                 <div class="introPilotTeaching">
                     <h3>Навчання пілотів агродронів</h3>
                     <p>Пройдіть курс і отримайте навички управління агродронами для ефективної роботи на полі.</p>
-                    <a href="" class="greenButton">Дізнатись більше <svg width="16" height="17" viewBox="0 0 16 17"
+                    <a href="<?php echo home_url('/pilots-academy/'); ?>" class="greenButton">Дізнатись більше <svg width="16" height="17" viewBox="0 0 16 17"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -432,6 +432,7 @@ Template Name: Home
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></button>
+                        <input type="hidden" value="Контакт Блок(Головна)" name="target">
 
                 </form>
             </div>

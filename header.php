@@ -67,9 +67,8 @@
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path d="M24 0H0V24C0 10.7451 10.7451 0 24 0Z" />
                                 </svg>
-                                <a href="<?php echo get_post_type_archive_link('product'); ?>"
-                                    class="<?php if (is_post_type_archive('product'))
-                                        echo 'active'; ?>">
+                                <a href="<?php echo get_post_type_archive_link('product'); ?>" class="<?php if (is_post_type_archive('product'))
+                                       echo 'active'; ?>">
                                     Всі
                                 </a>
 
@@ -100,10 +99,9 @@
                        echo 'active'; ?>">Внесення ЗЗР</a>
                 <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem <?php if (is_page('pilots-academy'))
                        echo 'active'; ?>">Центр пілотів</a>
-                <a href="<?php echo home_url('/blogs/'); ?>"
-                    class="headerItem <?php if ($current_path === 'blogs') {
-                        echo 'active';
-                    } ?>">Блог</a>
+                <a href="<?php echo home_url('/blogs/'); ?>" class="headerItem <?php if ($current_path === 'blogs') {
+                       echo 'active';
+                   } ?>">Блог</a>
             </div>
             <button class="transparentButton openModalButton" data-target="Хедер">Дізнатись більше <svg width="16"
                     height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -123,38 +121,54 @@
             <div class="burgerNav">
                 <div class="headerItem" id="dropdown-menu">
 
-                    <!-- Добавление активного класса на ссылку каталога -->
-                    <a href="/product" class="headerItem <?php if (is_page('product'))
-                        echo 'active'; ?>" id="catalogLink">
+                    <div class="mobileCatalogButton">
+                    <a href="/product" class="headerItem <?php echo $is_product_section ? 'active' : ''; ?>" id="catalogLink">
                         Каталог
-                        <svg width="9" class="dropdown-arrow" height="5" viewBox="0 0 9 5" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.5 4.5L8.5 0.5H0.5L4.5 4.5Z" />
-                        </svg>
+                       
                     </a>
-                    <div class="categoryDropdownWrapper">
-                        <div class="categoryDropdown">
-                            <svg width="24" class="borderRadius1" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24 0H0C13.2549 0 24 10.7451 24 24V0Z" />
-                            </svg>
-                            <svg width="24" class="borderRadius2" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M24 0H0V24C0 10.7451 10.7451 0 24 0Z" />
-                            </svg>
-                            <a href="/all" class="<?php if (is_page('all'))
-                                echo 'active'; ?>">Всі</a>
-                            <a href="/drones" class="<?php if (is_page('drones'))
-                                echo 'active'; ?>">Агродрони</a>
-                            <a href="/mixing" class="<?php if (is_page('mixing'))
-                                echo 'active'; ?>">Вузли
-                                змішування</a>
-                            <a href="/generators" class="<?php if (is_page('generators'))
-                                echo 'active'; ?>">Генератори</a>
-                            <a href="/components" class="<?php if (is_page('components'))
-                                echo 'active'; ?>">Комплектуючі</a>
-                        </div>
+                    <svg id="mobileCatalogArrow" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 15.5L18 7.5H2L10 15.5Z" fill=""/>
+</svg>
+
                     </div>
+                    <?php if (!empty($terms) && !is_wp_error($terms)): ?>
+                        <div class="categoryMobileDropdownWrapper">
+                            <div class="categoryDropdown">
+                                <svg width="24" class="borderRadius1" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 0H0C13.2549 0 24 10.7451 24 24V0Z" />
+                                </svg>
+                                <svg width="24" class="borderRadius2" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M24 0H0V24C0 10.7451 10.7451 0 24 0Z" />
+                                </svg>
+                                <a href="<?php echo get_post_type_archive_link('product'); ?>" class="<?php if (is_post_type_archive('product'))
+                                       echo 'active'; ?>">
+                                    Всі
+                                </a>
+
+                                <?php foreach ($terms as $term):
+                                    // Ссылка на архив этой категории
+                                    $term_link = get_term_link($term);
+
+                                    // Проверяем, на странице ли мы этой категории
+                                    // Если страница – архив таксономии 'product_category' с тем же slug
+                                    $active_class = '';
+                                    if (is_tax('product_category', $term->slug)) {
+                                        $active_class = 'active';
+                                    }
+
+                                    global $wp;
+                                    $current_path = $wp->request;
+                                    ?>
+
+                                    <a href="<?php echo esc_url($term_link); ?>" class="<?php echo esc_attr($active_class); ?>">
+                                        <?php echo esc_html($term->name); ?>
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </div>
                 <a href="<?php echo home_url('/fertilization/'); ?>" class="headerItem <?php if (is_page('fertilization'))
                        echo 'active'; ?>">Внесення ЗЗР</a>
@@ -215,17 +229,16 @@
                     class="modalImageCookie" alt="">
                 <h2>Використання файлів cookie</h2>
                 <p>Ми використовуємо файли cookie для покращення вашого досвіду на нашому сайті. Продовжуючи перегляд,
-                    ви погоджуєтесь 
+                    ви погоджуєтесь
 
-                   
                 <div class="modalButtonGroup">
                     <button class="greenButton" id="acceptCookie">Прийняти<svg width="16" height="17"
                             viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></button>
-                    <a href="" class="transparentButton">Читати більше<svg width="16" height="17" viewBox="0 0 16 17"
-                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="<?php echo home_url('/cookie-policy/'); ?>" class="transparentButton">Читати більше<svg
+                            width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a>
@@ -258,17 +271,19 @@
                 var $modalCookie = $("#modalCookie");
                 var $acceptCookieBtn = $("#acceptCookie");
                 var $closeModal = $("#closeModal");
+                <?php if (is_page('cookie-policy')) { ?>
 
-                // Проверяем, был ли установлен cookie "acceptedCookies"
-                if (getCookie("acceptedCookies") === "true") {
-                    // Уже принят, не показываем окно
-                    $modalCookie.hide();
-                } else {
-                    jQuery('body').addClass('no-scroll');
-                    // Не принят, показываем модалку с анимацией fadeIn
-                    $modalCookie.fadeIn(100); // 300 = скорость анимации в мс
-                }
-
+                <?php } else { ?>
+                    // Проверяем, был ли установлен cookie "acceptedCookies"
+                    if (getCookie("acceptedCookies") === "true") {
+                        // Уже принят, не показываем окно
+                        $modalCookie.hide();
+                    } else {
+                        jQuery('body').addClass('no-scroll');
+                        // Не принят, показываем модалку с анимацией fadeIn
+                        $modalCookie.fadeIn(100); // 300 = скорость анимации в мс
+                    }
+                <?php } ?>
                 // Кнопка "Прийняти"
                 $acceptCookieBtn.on("click", function () {
                     // Устанавливаем cookie на 365 дней
@@ -279,7 +294,7 @@
                 });
 
                 // Можно добавить закрытие по клику на крестик
-                
+
             });
         </script>
         <script>
@@ -313,6 +328,12 @@
                         jQuery('body').removeClass('no-scroll');
                     }
                 });
+                jQuery('#mobileCatalogArrow').click(function () {
+                    jQuery(this).toggleClass("mobileCatalogArrow-active");
+                    jQuery('.categoryMobileDropdownWrapper').slideToggle(100);
+                    jQuery('body').toggleClass('no-scroll');
+                });
+                
 
             });
             jQuery(document).ready(function () {

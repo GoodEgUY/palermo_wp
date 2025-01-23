@@ -57,7 +57,9 @@ Template Name: Archive Product
                                 <?php endif; ?>
                             </div>
                             <h3><?php the_title(); ?></h3>
-                            <p><?php the_content(); ?></p>
+                            <?php if ( $title = get_field( 'title' ) ) : ?>
+                    <p><?php echo esc_html( $title ); ?></p>
+<?php endif; ?>
                             <h1 class="decorBig"><?php if ($price = get_field('price')): ?>
                                 <?php echo number_format($price, 0, ',', ' ');?>
 

@@ -426,15 +426,25 @@ gap: 12px;
   width: 100%;
   max-width: 650px;
   position: relative;
+  overflow: hidden;
+  border-radius: 0 var(--big-border-radius) var(--big-border-radius) var(--big-border-radius);
 }
 .learningStepsImage img {
-  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .learningStepsImage h2 {
   position: absolute;
   left: 0;
   top: 0;
-  max-width: 400px;
+  max-width: 460px;
+  background-image: url(../images/icons/aboutAcademyFigure.svg);
+  background-size: cover;
+  padding-bottom: 50px;
+  padding-right: 50px;
+  z-index: 4;
 }
 .learningStepsTable {
   display: flex;
@@ -566,12 +576,22 @@ gap: 12px;
  .pilotsContact .contactBackground {
   width: 130% ;
  }
-
+ .learningStepsWrapper {
+  gap: 32px;
+ }
+ .learningStepsImage h2 {
+  padding-bottom: 30px;
+  padding-right: 35px;
+ }
+ 
 }
 @media (max-width: 1100px) { 
   .introParagraph3 {
     top: 16px;
     right: 16px;
+  }
+  .learningPlanItem {
+    padding: 16px 16px 79px 16px;
   }
 }
 @media (max-width: 1024px) {
@@ -689,6 +709,7 @@ gap: 32px;
 .intro3Application img {
   width: 100%;
   height: auto;
+ 
 }
 .leftBlockBackground {
   max-height: 500px;
@@ -704,6 +725,26 @@ gap: 32px;
 }
 .learningStepsTable {
   gap: 12px;
+}
+}
+@media (max-width: 900px) {
+.learningStepsWrapper {
+  flex-direction: column;
+}
+.learningStepsImage {
+  max-width: unset;
+  aspect-ratio: 3/2;
+  
+}
+.learningStepsImage img {
+  height: auto;
+  width: 100% ;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.learningItem {
+  max-width: unset;
 }
 }
 @media (max-width: 800px) {
@@ -762,7 +803,7 @@ gap: 20px;
   .learningStepsImage h2 {
     /* position: static; */
     margin-bottom: 32px;
-    max-width: 190px;
+    max-width: 240px;
   }
   .learningStepsImage .borderRadius1,
   .learningStepsImage .borderRadius2 {

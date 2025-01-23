@@ -230,6 +230,7 @@ footer {
   background-color: #fff;
   border: none;
   width: 100%;
+  transition: all .2s ease-in;
 }
 .defaultInput::placeholder {
   color: #3535357b;
@@ -395,6 +396,9 @@ footer {
 .error-input {
  
 }
+input.error {
+  border:1px solid crimson;
+}
 .inputWrapper label {
   position: absolute;
   top: 70%;
@@ -482,7 +486,7 @@ footer {
     padding-right: 16px;
   }
   footer {
-    margin-top: 48px;
+    margin-top: 56px;
   }
   .swiperSlideContent {
     padding: 16px 16px 90px 16px;

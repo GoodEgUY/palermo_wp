@@ -23,7 +23,7 @@
 }
 .productGallery-big img {
   width: 100%;
-  max-width: 409px;
+ 
 }
 .productGallery-small {
   aspect-ratio: 114/100;
@@ -34,6 +34,7 @@
   max-width: 114px;
   border-radius: var(--small-border-radius);
   background-color: var(--graycards);
+  overflow: hidden;
 }
 .productGallery-small img {
   max-width: 100px;
@@ -70,7 +71,7 @@
 .productMainInfoWrapper {
   display: flex;
   gap: 56px;
-  padding-top: 48px;
+  
   padding-bottom: var(--block-padding);
 }
 .productMain-info {
@@ -150,7 +151,7 @@
   width: 100%;
 }
 .agrodroneTextSeparator p {
-  padding-left: 0!important;
+  padding-left: 0 !important;
 }
 .productBigPhotoWrapper {
   aspect-ratio: 22/13;
@@ -179,6 +180,9 @@
   gap: 24px;
   max-width: 320px;
 }
+.productKitInfo h2 {
+  max-width: 250px;
+}
 .productKitInfo button {
   width: fit-content;
 }
@@ -192,7 +196,7 @@
 }
 .productKitGallery {
   display: flex;
-max-width: 700px;
+  max-width: 700px;
   width: 100%;
   gap: 16px;
   aspect-ratio: 175/134;
@@ -207,7 +211,7 @@ max-width: 700px;
   flex: 0 0 33%;
 }
 .right-column {
-  flex: 0 0 calc(67% - 16px );
+  flex: 0 0 calc(67% - 16px);
 }
 .gallery-item {
   background-color: black;
@@ -239,6 +243,7 @@ max-width: 700px;
 }
 .productTechAdventages-name img {
   width: 100%;
+  max-width: 267px;
 }
 .productTechAdventages-properties {
   width: 100%;
@@ -249,6 +254,7 @@ max-width: 700px;
   display: flex;
   align-items: center;
   padding: 16px 0;
+  gap: 10px;
   border-bottom: 1px solid var(--grey);
 }
 .techAdventages-propertiesItem p {
@@ -262,7 +268,7 @@ max-width: 700px;
 .productOtherWrapper {
   display: flex;
   gap: 56px;
-  padding-top: 48px;
+  
 }
 .productOtherInfo {
   display: flex;
@@ -305,6 +311,7 @@ max-width: 700px;
   border-bottom: 1px solid var(--grey);
   padding: 8px 0;
   width: 100%;
+  gap: 20px;
 }
 .productOtherPropertiesItem p {
   width: 50%;
@@ -323,7 +330,7 @@ max-width: 700px;
   position: static;
 }
 .swiperProductsDashboard {
-  padding-bottom: var(--block-padding);
+  padding-bottom: var(--chapter-padding);
 }
 .productCardItem {
   width: 100%;
@@ -347,6 +354,8 @@ max-width: 700px;
   justify-content: center;
   border-radius: var(--small-border-radius);
   overflow: hidden;
+  background: #010101;
+
 }
 .productCardItemImage a {
   position: relative;
@@ -356,10 +365,10 @@ max-width: 700px;
 }
 .productCardItemImage img {
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  height: 100%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 100%;
 }
 .productCardItem p {
   color: var(--lightgrey);
@@ -450,7 +459,7 @@ max-width: 700px;
 .radio-wrapper {
   display: flex;
   align-items: center;
-  
+
   cursor: pointer; /* чтобы было понятно, что это кликабельно */
 }
 
@@ -470,7 +479,7 @@ max-width: 700px;
 .radio-checkmark {
   width: 20px;
   height: 20px;
-  border: 2px solid var(--green); /* зелёная обводка */
+  border: 1px solid var(--green); /* зелёная обводка */
   border-radius: 50%;
   box-sizing: border-box;
   position: relative;
@@ -479,15 +488,18 @@ max-width: 700px;
 }
 
 /* Внутренний кружок, который появляется при :checked */
-.radio-wrapper input[type="radio"]:checked + .chckerWrapper .radio-checkmark::after {
+.radio-wrapper
+  input[type="radio"]:checked
+  + .chckerWrapper
+  .radio-checkmark::after {
   content: "";
   position: absolute;
   left: 5px;
-  
+
   top: 5px;
 
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   background: var(--green); /* зелёное заполнение */
   border-radius: 50%;
 }
@@ -518,21 +530,21 @@ max-width: 700px;
 
 /* Скрываем нативный чекбокс */
 .checkbox-wrapper input[type="checkbox"] {
-  appearance: none;        /* для современных браузеров */
-  -webkit-appearance: none;/* для Safari */
+  appearance: none; /* для современных браузеров */
+  -webkit-appearance: none; /* для Safari */
   width: 0;
   height: 0;
   margin: 0;
   padding: 0;
-  opacity: 0;              /* скрываем сам input */
-  position: absolute; 
+  opacity: 0; /* скрываем сам input */
+  position: absolute;
 }
 
 /* Кастомная «коробка» */
 .checkbox-checkmark {
   width: 20px;
   height: 20px;
-  border: 2px solid var(--green);
+  border: 1px solid var(--green);
   border-radius: 4px; /* небольший скруглённый угол, на вкус */
   box-sizing: border-box;
   position: relative;
@@ -541,11 +553,14 @@ max-width: 700px;
 }
 
 /* Сама «галочка» (или крестик) */
-.checkbox-wrapper input[type="checkbox"]:checked + .chckerWrapper .checkbox-checkmark::after {
+.checkbox-wrapper
+  input[type="checkbox"]:checked
+  + .chckerWrapper
+  .checkbox-checkmark::after {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 2px;
+  left: 5px;
+  top: 0;
   width: 6px;
   height: 10px;
   border-right: 2px solid var(--green);
@@ -562,28 +577,32 @@ max-width: 700px;
 
 /* Ховер-эффект при наведении мыши */
 .checkbox-wrapper:hover .checkbox-checkmark {
-  border-color: rgba(255,255,255, 0.8); /* или другой цвет при hover */
+  border-color: rgba(255, 255, 255, 0.8); /* или другой цвет при hover */
 }
 
 /* Подсветка при фокусе с клавиатуры */
-.checkbox-wrapper input[type="checkbox"]:focus + .chckerWrapper .checkbox-checkmark {
+.checkbox-wrapper
+  input[type="checkbox"]:focus
+  + .chckerWrapper
+  .checkbox-checkmark {
   outline: 2px solid rgba(57, 210, 125, 0.4);
   outline-offset: 2px;
 }
 .additionalEquipmentWrapper {
-margin-bottom: var(--block-padding);
+  margin-bottom: var(--block-padding);
 }
 .additionalEquipmentWrapper h2 {
   max-width: 650px;
-
 }
 .additionalEquipmentDashboard {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   padding-top: var(--chapter-padding);
+  gap: 32px;
 }
-.additionalCategoryItem h2{
+
+.additionalCategoryItem h2 {
   margin-bottom: 8px;
 }
 .additionalCategories {
@@ -604,7 +623,14 @@ margin-bottom: var(--block-padding);
   justify-content: space-between;
   width: 100%;
   padding: 16px 0;
+  gap: 10px;
   border-bottom: 1px solid var(--grey);
+}
+.item-price {
+  min-width: max-content;
+}
+.chosen-item {
+  gap: 10px;
 }
 .checkbox-wrapper {
   display: flex;
@@ -655,15 +681,46 @@ margin-bottom: var(--block-padding);
   font-size: 20px;
   color: var(--green);
 }
+.checkMarkIcon {
+  min-width: 16px;
+  width: 16px!important;
+  height: 16px!important;
+  
+}
+.markListItem {
+  min-width: fit-content;
+}
+.productKitWrapper .mobileHeading {
+  display: none;
+}
+@media (max-width: 1200px) {
+  .productMain-mainProperties {
+    gap: 8px;
+  }
+  .mainPropertiesItem {
+    border-radius: 12px;
+  }
+  .productKitWrapper {
+    gap: 32px;
+  }
+  .productKitInfo h2 {
+    max-width: 150px;
+  }
+}
 @media (max-width: 1100px) {
   .productMain-mainProperties {
     flex-direction: column;
+   
   }
   .mainPropertiesItem {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    border-radius: 12px;
+  }
+  .productCardItemImage {
+    border-radius: 8px;
   }
 }
 @media (max-width: 1000px) {
@@ -698,16 +755,31 @@ margin-bottom: var(--block-padding);
     width: calc((100% - 20px) / 2) !important;
   }
 }
+@media (max-width: 830px) {
+  .additionalEquipmentDashboard {
+    flex-direction: column;
+  }
+  .additionalCategories {
+    max-width: unset;
+  }
+  .additionalSummary {
+    max-width: unset;
+  }
+}
 @media (max-width: 800px) {
   .productMainInfoWrapper {
     flex-direction: column;
     align-items: center;
   }
   .productGallery {
-    max-width: 650px;
+    max-width: unset;
   }
   .productMain-mainProperties {
     gap: 8px;
+    margin-bottom: 12px;
+  }
+  .productMain-title {
+    margin-bottom: 12px;
   }
   .productTechnologyWrapper {
     flex-direction: column;
@@ -750,6 +822,10 @@ margin-bottom: var(--block-padding);
     align-items: center;
     max-width: unset;
   }
+  .productTechAdventages-name h2 {
+    width: 100%;
+    text-align: left;
+  }
   .productTechAdventages-name img {
     width: 100%;
     max-width: 400px;
@@ -759,6 +835,25 @@ margin-bottom: var(--block-padding);
   }
   .productCardDashboard {
     gap: 16px;
+  }
+  .productCardItem {
+    padding: 16px 16px 90px 16px;
+    gap: 8px;
+  }
+  .productCardItemImage {
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+  .productCardButtonGroup {
+    gap: 12px;
+  }
+  .productMain-price {
+    margin-bottom: 20px;
+  }
+  .productKitWrapper .mobileHeading {
+    display: inline;
+    max-width: 120px;
+    
   }
 }
 @media (max-width: 600px) {
@@ -773,6 +868,50 @@ margin-bottom: var(--block-padding);
   }
   .productCardItem {
     padding: 12px 12px 90px 12px;
+  }
+  .productCardItemImage {
+    border-radius: 12px;
+  }
+  .productMain-info {
+    gap: 12px;
+  }
+  .additionalCategories {
+    gap: 24px;
+  }
+  .radio-wrapper {
+    padding: 12px 0;
+  }
+  .radio-label {
+    font-size: 14px;
+  }
+  .checkbox-label {
+    font-size: 14px;
+  }
+  .checkbox-wrapper {
+padding: 12px 0;
+margin-bottom: 0;
+  }
+  .item-price {
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .choosenExtras div {
+    padding: 8px 0;
+  }
+  .additionalSummary {
+    padding: 16px;
+  }
+  .techAdventages-propertiesItem {
+    padding: 8px 0;
+  }
+  .productKitWrapper {
+    padding: 16px;
+  }
+  .productKitGallery {
+gap: 8px;
+  }
+  .left-column, .right-column {
+    gap: 8px;
   }
 }
 
@@ -793,7 +932,7 @@ margin-bottom: var(--block-padding);
     font-size: 12px;
     width: 48%;
   }
-  .productOtherPropertiesItem px {
+  .productOtherPropertiesItem p {
     font-size: 12px;
   }
 }

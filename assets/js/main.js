@@ -33,7 +33,7 @@ $(document).ready(function () {
     .off("click")
     .on("click", function (event) {
       // Отладка: выводим текст элемента
-      console.log("Клик по:", $(this).text());
+      
 
       // Предотвращаем всплытие
       event.stopPropagation();
@@ -44,7 +44,7 @@ $(document).ready(function () {
 
       // Проверяем видимость контента
       if (content.is(":visible")) {
-        console.log("Закрываем:", $(this).text());
+        
         content.slideUp();
         arrow.removeClass("accordion__arrow-active")
           .html(`<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +53,7 @@ $(document).ready(function () {
             `);
         $(this).removeClass("accordion__title-active");
       } else {
-        console.log("Открываем:", $(this).text());
+     
         // Закрываем другие аккордеоны
         $(".accordion__content").slideUp();
         $(".accordion__arrow-item").removeClass("accordion__arrow-active")
@@ -118,7 +118,7 @@ window.addEventListener("resize", updatePaths);
 window.addEventListener("load", updatePaths);
 
 function validateContactFormLand(form) {
-  console.log(form);
+  
   
   let $nameInput = $(form).find('input[name="name"]');
   let $phoneInput = $(form).find('input[name="phone"]');
@@ -153,19 +153,22 @@ async function sendForm(phone, name, target) {
     "default",
     { month: "long" }
   )} ${currentDate.getFullYear()}, ${currentDate.getHours()}:${currentDate.getMinutes()}:${currentDate.getSeconds()}`;
+  googlePhone = phoneNumber.replace("+", "").replace(" ", "")
 
+  rowData = {
+    data: [formattedDate, clientName, googlePhone, target, hopper],
+  };
   var message = "";
 
-  var message = `${formattedDate}\n${hopper}\n\nЗаявка на зворотній дзвінок\n\n<b>Імʼя клієнта:</b> ${clientName}\n<b>Номер телефона:</b><code> ${phoneNumber}</code>\n
-    ------------------------\n${target}\n`;
+  var message = `${formattedDate}\n${hopper}\n\nЗаявка на зворотній дзвінок\n\n<b>Імʼя клієнта:</b> ${clientName}\n<b>Номер телефона:</b>\n<code>${phoneNumber}</code>\n------------------------\n${target}\n`;
 
   axios
     .post(
-      `https://api.telegram.org/bot6503518772:AAE5XpqGjhfBpA504PG2otGol16hfOxBJEI/sendMessage`,
-      { chat_id: "1890236692", parse_mode: "html", text: message }
+      `https://api.telegram.org/bot8179073658:AAH-bQTmVvV3GV4IpgQ7b1HyT7f-vFox_4o/sendMessage`,
+      { chat_id: "-1002342298500", parse_mode: "html", text: message }
     )
     .then((response) => {
-      console.log("Сообщение отправлено", response);
+      
       jQuery('body').addClass('no-scroll');
       $("#modalSuccess").fadeIn("fast");
       $("#modalForm").fadeOut("fast");
@@ -178,10 +181,43 @@ async function sendForm(phone, name, target) {
       });
     })
     .catch((error) => {
-      console.error("Произошла ошибка при отправке сообщения", error);
-      alert("Произошла ошибка при отправке данных");
+    
+    });
+    
+    const webAppUrl =
+    "https://script.google.com/macros/s/AKfycbxTbgyFALHHXWwiwQzh3_pOE6QR0rxz8XsxQsgfSPCygvh0aCqdi_vgpeFkcgxN2IyjOw/exec";
+  fetch(webAppUrl, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(rowData),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok " + response.statusText);
+      }
+      return response.json();
+    })
+    .then((data) => {
+      
+    })
+    .catch((error) => {
+      console.error(
+        "Произошла ошибка при отправке данных в Google Sheets",
+        error
+      );
     });
 }
+$.validator.addMethod(
+  "alphanumeric",
+  function (value, element) {
+      return (
+          this.optional(element) ||
+          /^[a-zA-Zа-яА-ЯЁё\s]+$/.test(value.replace(/ +/g, " ").trim())
+      );
+  },
+  "Імʼя може містити лише букви"
+);
 $("form.contactForm").each(function () {
   $(this).validate({
     // Правила валидации для каждого поля
@@ -189,6 +225,7 @@ $("form.contactForm").each(function () {
       name: {
         required: true,
         minlength: 2,
+        alphanumeric: true,
       },
       phone: {
         required: true,
@@ -246,7 +283,7 @@ $(document).ready(function () {
         intlTelInputUtils.numberFormat.INTERNATIONAL
       );
       iti.setNumber("");
-      var mask = newPlaceholder.replace(/[1-9]/g, "0");
+      var mask = "00 000 0000";
       $(this).mask(mask);
     });
 

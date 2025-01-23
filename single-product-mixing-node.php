@@ -89,7 +89,7 @@
                     </div>
                 <?php endif; ?>
                 <div class="productCardButtonGroup">
-                    <button class="greenButton openModalButton" data-target="<?php the_title(); ?>">
+                    <button class="greenButton openModalButton" data-target="Замовлення: <?php the_title(); ?>">
                         Замовити
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -224,6 +224,7 @@
     <?php if (have_rows('equipment')): ?>
         <section>
             <div class="productKitWrapper wrapper">
+            <h2 class="mobileHeading"><span>Комплектація</span> <?php the_title(); ?></h2>
                 <div class="productKitInfo">
                     <h2><span>Комплектація</span> <?php the_title(); ?></h2>
                     <div class="productKit-list">
@@ -315,6 +316,8 @@
         </section>
     <?php endif; ?>
     <?php if (have_rows('Specifications')): ?>
+        <?php while (have_rows('Specifications')):
+                        the_row(); ?>
         <section id="specifications">
             <div class="productTechAdventagesWrapper wrapper">
                 <div class="productTechAdventages-name">
@@ -327,8 +330,7 @@ if ( $item_photo ) : ?>
                     
                 </div>
                 <div class="productTechAdventages-properties">
-                    <?php while (have_rows('Specifications')):
-                        the_row(); ?>
+                   
                         <?php if (have_rows('properties')): ?>
                             <?php while (have_rows('properties')):
                                 the_row(); ?>
@@ -349,10 +351,11 @@ if ( $item_photo ) : ?>
                         
                       
                         
-                    <?php endwhile; ?>
+                   
                 </div>
             </div>
         </section>
+        <?php endwhile; ?>
     <?php endif; ?>
     <?php if (have_rows('additional_equipment')): ?>
     <section>
@@ -496,7 +499,7 @@ if ( $item_photo ) : ?>
                         const parentLabel = ch.closest('label');
                         const nameEl = parentLabel.querySelector('.checkbox-label');
                         const priceEl = parentLabel.querySelector('.item-price');
-
+                        const isBase = ch.hasAttribute('data-base');
                         let priceValue = 0;
                         if (priceEl) {
                             // При желании можно добавить логику про базовый элемент и тут
@@ -659,7 +662,7 @@ if ( $item_photo ) : ?>
                 <?php endif; ?>
             </div>
             <div class="contactBlockForm">
-                <form action="" class="defaultForm">
+                <form action="" class="defaultForm contactForm">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <div class="inputWrapper">
@@ -675,6 +678,8 @@ if ( $item_photo ) : ?>
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
+                    <input type="hidden" value="Контакт Блок(<?php the_title(); ?>)" name="target">
+
                 </form>
             </div>
         </div>
@@ -698,6 +703,44 @@ if ( $item_photo ) : ?>
     });
 </script>
 </div>
+<?php if (get_post_type() === 'product') : ?>
+    <?php 
+    // Получаем галерею
+    $gallery = get_field('gallery');
+    $first_image_url = ''; // Переменная для первой картинки
+    if ($gallery) {
+        $first_image = $gallery[0]; // Первая картинка
+        $first_image_url = esc_url($first_image['sizes']['large']); // Получаем URL первой картинки
+    }
+
+
+    // Получаем цену
+    $price = get_field('price');
+    ?>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "<?php the_title(); ?>",
+          "image": "<?php echo $first_image_url; ?>",
+          "description": "<?php echo strip_tags(get_the_excerpt()); ?>",
+          "sku": "<?php echo get_post_meta(get_the_ID(), '_sku', true); ?>",
+          "offers": {
+            "@type": "Offer",
+            "url": "<?php the_permalink(); ?>",
+            "priceCurrency": "UAH", 
+            "price": "<?php echo esc_html($price); ?>",
+            "priceValidUntil": "2025-12-31",
+            "itemCondition": "https://schema.org/NewCondition",
+            "availability": "https://schema.org/InStock",
+            "seller": {
+              "@type": "Organization",
+              "name": "Lunares"
+            }
+          }
+        }
+    </script>
+<?php endif; ?>
 <?php
 get_footer(); // Подключаем footer
 ?>

@@ -55,18 +55,18 @@ Template Name: Single Product Other
                     </div>
                 <?php endif; ?>
                 <div class="productCardButtonGroup">
-                    <button class="greenButton openModalButton" data-target="<?php the_title(); ?>">Замовити<svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                    <button class="greenButton openModalButton" data-target="Замовлення: <?php the_title(); ?>">Замовити<svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></button>
-                    <a href="" class="transparentButton">Характеристики<svg width="16" height="17" viewBox="0 0 16 17"
+                    <button href="" class="transparentButton" scroll="goToFeatures">Характеристики<svg width="16" height="17" viewBox="0 0 16 17"
                             fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></a>
+                        </svg></button>
                 </div>
-                <div class="productOtherPropertiesTable">
+                <div class="productOtherPropertiesTable" id="specifications">
                     <h3>Розширені характеристики</h3>
                     <?php if (have_rows('main_properties')): ?>
                         <?php while (have_rows('main_properties')):
@@ -96,8 +96,19 @@ Template Name: Single Product Other
             }
         });
     </script>
-
+<script>
+        document.querySelectorAll('[scroll="goToFeatures"]').forEach((link) => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector("#specifications").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            });
+        });
+    </script>
 </div>
+
 <?php if (get_post_type() === 'product') : ?>
     <?php 
     // Получаем галерею
@@ -107,6 +118,7 @@ Template Name: Single Product Other
         $first_image = $gallery[0]; // Первая картинка
         $first_image_url = esc_url($first_image['sizes']['large']); // Получаем URL первой картинки
     }
+
 
     // Получаем цену
     $price = get_field('price');

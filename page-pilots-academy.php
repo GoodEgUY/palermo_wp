@@ -329,7 +329,7 @@ Template Name: Pilots Academy
 <?php endif; ?>
                     
                     <div class="productItemButton-wrapper">
-                        <a href="" data-target="Курс Навчання(Експресс)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
+                        <a href="javacript:void(0)" data-target="Курс Навчання(Експресс)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
                                 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -356,7 +356,7 @@ Template Name: Pilots Academy
                         <h1 class="decoBig"><?php echo number_format($standart, 0, ',', ' ');?> <small>Грн.</small></h1>
 <?php endif; ?>
                     <div class="productItemButton-wrapper">
-                        <a href="" data-target="Курс Навчання(Стандартний)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
+                        <a href="javacript:void(0)" data-target="Курс Навчання(Стандартний)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
                                 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -372,14 +372,14 @@ Template Name: Pilots Academy
                 <div class="learningPlanItem">
                     <div class="learningPlanName">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learn3.svg" alt="">
-                        <h3>Продвинутий</h3>
+                        <h3>Індивідуальний</h3>
                     </div>
                     <p>Для тих хто бажає отримати індивідуальний підхід та максимум знань.</p>
                     <?php if ( $advanced = get_sub_field( 'advanced' ) ) : ?>
                         <h1 class="decoBig"><?php echo number_format($advanced, 0, ',', ' '); ?> <small>Грн.</small></h1>
 <?php endif; ?>
                     <div class="productItemButton-wrapper">
-                        <a href="#" data-target="Курс Навчання(Продвинутий)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
+                        <a href="javacript:void(0)" data-target="Курс Навчання(Продвинутий)" class="transparentButton openModalButton">Дізнатись більше <svg width="16" height="17"
                                 viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -407,7 +407,7 @@ Template Name: Pilots Academy
                         <p>Стандарт</p>
                     </div>
                     <div class="cell">
-                        <p>Продвинутий</p>
+                        <p>Індивідуальний</p>
                     </div>
                 </div>
                 <div class="learningTableRow">
@@ -421,7 +421,7 @@ Template Name: Pilots Academy
                         <p>3-4 дні</p>
                     </div>
                     <div class="cell">
-                        <p>3-5 день</p>
+                        <p>3-5 дні</p>
                     </div>
                 </div>
                 <div class="learningTableRow">
@@ -847,6 +847,8 @@ Template Name: Pilots Academy
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></button>
+                        <input type="hidden" value="Контакт Блок(Академія Пілотів)" name="target">
+
                 </form>
             </div>
         </div>

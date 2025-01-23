@@ -79,14 +79,14 @@ Template Name: Fertilization
                 <span>добрив<br /></span>та <span>засобів захисту</span> рослин
             </h2>
             <div class="aboutButtonGroup pc">
-                <a href="" class="transparentButton">
+                <a href="javascript:void(0)" scroll="goToItems" class="transparentButton">
                     Список препаратів
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </a>
-                <a href="#" class="greenButton openModalForm" data-target="Внесення ЗЗР">
+                <a href="javascript:void(0)" class="greenButton openModalButton" data-target="Внесення ЗЗР">
                     Зв’язатись з нами
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -879,8 +879,8 @@ Template Name: Fertilization
             </script>
         </div>
     </section>
-    <section>
-        <div class="substancesListWrapper wrapper">
+    <section id="itemsList">
+        <div class="substancesListWrapper wrapper" >
             <h2>Список дієвих <span>препаратів</span>, які ми використовуємо. <span>Ефективність</span> кожного з них
                 <span>підтверджена</span><br/> нашим<img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/textBlockImage.png" alt="">практичним <span>досвідом.</span>
             </h2>
@@ -943,7 +943,7 @@ Template Name: Fertilization
                         <p>Ми протестували ефективність препаратів з різними діючими речовинами від багатьох виробників,
                             на
                             особистому досвіді.</p>
-                        <button class="transparentButton">Консультація<svg width="16" height="17" viewBox="0 0 16 17"
+                        <button class="transparentButton openModalButton" data-target="Консультація (Список дієвих препаратів)">Консультація<svg width="16" height="17" viewBox="0 0 16 17"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -1279,12 +1279,24 @@ Template Name: Fertilization
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
                     </button>
+                    <input type="hidden" value="Контакт Блок(Внесення ЗЗР)" name="target">
                 </form>
             </div>
         </div>
     </section>
 
 </div>
+<script>
+        document.querySelectorAll('[scroll="goToItems"]').forEach((link) => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector("#itemsList").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            });
+        });
+    </script>
 <?php
 get_footer(); // Подключаем footer
 ?>
