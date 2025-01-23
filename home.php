@@ -38,7 +38,7 @@ Template Name: Home
                     </div>
                     <div class="whiteItemCardInfo">
                         <h3>DJI Agras T50</h3>
-                        <a href="<?php echo home_url('/product-category/agrodrones/'); ?>" class="blackButton">Дізнатись більше <svg width="16" height="17" viewBox="0 0 16 17"
+                        <a href="<?php echo home_url('/product/dji-agras-t50/'); ?>" class="blackButton">Дізнатись більше <svg width="16" height="17" viewBox="0 0 16 17"
                                 fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
@@ -180,7 +180,7 @@ Template Name: Home
                 <p>Ми виробляємо надійні вузли змішування для стабільної та продуктивної роботи з агродронами.
                 </p>
                 <div class="productItemButton-wrapper">
-                    <a href="<?php echo home_url('/product-category/mixing-nodes/'); ?>" class="transparentButton">Дізнатись більше <svg width="16" height="17"
+                    <a href="<?php echo home_url('/product/tank-400/'); ?>" class="transparentButton">Дізнатись більше <svg width="16" height="17"
                             viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
@@ -212,7 +212,7 @@ Template Name: Home
                     витрат. Спираючись на технології DJI Agriculture, ми створюємо майбутнє сільського господарства вже
                     сьогодні.
                 </p>
-                <a href="" class="transparentButton">Зв’язатися з нами <svg width="16" height="17" viewBox="0 0 16 17"
+                <a href="" class="transparentButton openModalButton">Зв’язатися з нами <svg width="16" height="17" viewBox="0 0 16 17"
                         fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round" />

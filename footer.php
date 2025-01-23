@@ -6,17 +6,17 @@
         </div>
             <div class="footerColumn">
                 <p>КАТАЛОГ</p>
-                <a href="">Агродрони</a>
-                <a href="">Вузли змішування</a>
-                <a href="">Генератори</a>
-                <a href="">Комплектуючі</a>
+                <a href="<?php echo home_url('/product-category/agrodrones/'); ?>">Агродрони</a>
+                <a href="<?php echo home_url('/product-category/mixing-nodes/ '); ?>">Вузли змішування</a>
+                <a href="<?php echo home_url('/product-category/generators/'); ?>">Генератори</a>
+                <a href="<?php echo home_url('/product-category/accessories/'); ?>">Комплектуючі</a>
             </div>
             <div class="footerColumn">
                 <p>СТОРІНКИ</p>
                 <a href="">Каталог</a>
-                <a href="">Внесення ЗЗР</a>
-                <a href="">Центр пілотів</a>
-                <a href="">Блог</a>
+                <a href="<?php echo home_url('/fertilization/'); ?>">Внесення ЗЗР</a>
+                <a href="<?php echo home_url('/pilots-academy/'); ?>">Центр пілотів</a>
+                <a href="<?php echo home_url('/blogs/'); ?>">Блог</a>
             </div>
             <div class="footerColumn">
                 <p>Інформація</p>

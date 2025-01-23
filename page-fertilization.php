@@ -52,7 +52,7 @@ Template Name: Fertilization
                     </div>
                     <div class="blackItemCardInfo">
                         <h3>DJI Agras T50</h3>
-                        <a href="<?php echo home_url('/product-category/agrodrones/'); ?>" class="transparentButton">
+                        <a href="<?php echo home_url('/product/dji-agras-t50/'); ?>" class="transparentButton">
                             Перейти до каталогу
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
