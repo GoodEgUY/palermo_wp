@@ -582,44 +582,61 @@ Template Name: Fertilization
                                     });
                                 });
                                 document.addEventListener('DOMContentLoaded', () => {
-                                    // Целевые элементы, при появлении которых запускаются анимации
-                                    const waterElement = document.querySelector('.circleDiagrammeFillWater');
-                                    const fuelElement = document.querySelector('.circleDiagrammeFillFuel');
+    // Целевые элементы
+    const waterElement = document.querySelector('.circleDiagrammeFillWater');
+    const fuelElement = document.querySelector('.circleDiagrammeFillFuel');
 
-                                    const options = {
-                                        root: null,
-                                        threshold: 0.8 // Элемент считается видимым, когда 50% его высоты попало в зону видимости
-                                    };
+    // Функции анимации
+    function animateElementsWithoutObserver() {
+        if (waterElement) {
+            animateCounterWater();
+            waterElement.classList.add('animatedWaterElement');
+        }
+        if (fuelElement) {
+            animateCounterFuel();
+            fuelElement.classList.add('animatedFuelElement');
+        }
+    }
 
-                                    // Функция-обработчик для Intersection Observer
-                                    const callback = (entries, observer) => {
-                                        entries.forEach(entry => {
-                                            if (entry.isIntersecting) {
-                                                // Проверяем, какой из элементов стал видим
-                                                if (entry.target === waterElement) {
-                                                    animateCounterWater();
-                                                    waterElement.classList.add('animatedWaterElement')
-                                                    // Если нужно, чтобы анимация сработала один раз, снимаем наблюдение
-                                                    observer.unobserve(entry.target);
-                                                } else if (entry.target === fuelElement) {
-                                                    animateCounterFuel();
-                                                    fuelElement.classList.add('animatedFuelElement')
-                                                    observer.unobserve(entry.target);
-                                                }
-                                            }
-                                        });
-                                    };
-                                    
-                                    const observer = new IntersectionObserver(callback, options);
+    // Если ширина экрана меньше 900 пикселей
+    if (window.innerWidth < 900) {
+        animateElementsWithoutObserver();
+        return; // Остановим выполнение кода с IntersectionObserver
+    }
 
-                                    // Начинаем наблюдение за элементами
-                                    if (waterElement) {
-                                        observer.observe(waterElement);
-                                    }
-                                    if (fuelElement) {
-                                        observer.observe(fuelElement);
-                                    }
-                                });
+    // Настройки IntersectionObserver
+    const options = {
+        root: null,
+        threshold: 0.8 // Элемент считается видимым, когда 80% его высоты попало в зону видимости
+    };
+
+    // Функция-обработчик для Intersection Observer
+    const callback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target === waterElement) {
+                    animateCounterWater();
+                    waterElement.classList.add('animatedWaterElement');
+                    observer.unobserve(entry.target);
+                } else if (entry.target === fuelElement) {
+                    animateCounterFuel();
+                    fuelElement.classList.add('animatedFuelElement');
+                    observer.unobserve(entry.target);
+                }
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback, options);
+
+    // Начинаем наблюдение за элементами
+    if (waterElement) {
+        observer.observe(waterElement);
+    }
+    if (fuelElement) {
+        observer.observe(fuelElement);
+    }
+});
                             </script>
                         </div>
                     </div>
