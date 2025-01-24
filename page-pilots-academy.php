@@ -722,7 +722,7 @@ Template Name: Pilots Academy
         <div class="learningStepsWrapper wrapper">
             <div class="learningStepsImage">
                 <h2>Як відбувається <br/><span>навчання?</span></h2>
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learningStepsImage.png"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/learningStepsImage-latest.png"
                     alt="">
 
             </div>
