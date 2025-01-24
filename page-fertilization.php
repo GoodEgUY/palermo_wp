@@ -588,7 +588,7 @@ Template Name: Fertilization
 
                                     const options = {
                                         root: null,
-                                        threshold: 0.2 // Элемент считается видимым, когда 50% его высоты попало в зону видимости
+                                        threshold: 0.8 // Элемент считается видимым, когда 50% его высоты попало в зону видимости
                                     };
 
                                     // Функция-обработчик для Intersection Observer
@@ -609,8 +609,7 @@ Template Name: Fertilization
                                             }
                                         });
                                     };
-                                    animateCounterWater();
-                                    animateCounterFuel();
+                                    
                                     const observer = new IntersectionObserver(callback, options);
 
                                     // Начинаем наблюдение за элементами
