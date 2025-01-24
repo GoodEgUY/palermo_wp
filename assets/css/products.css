@@ -155,10 +155,7 @@ background-color: #010101;
   display: none;
   margin-bottom: 12px;
 }
-.technologyList {
-  width: 50%;
-  min-width: 420px;
-}
+
 .technologyList h2 {
   width: 100%;
   margin-bottom: var(--chapter-padding);
@@ -726,7 +723,10 @@ background-color: #010101;
   .productKitWrapper {
     gap: 32px;
   }
-  
+  .technologyList {
+    width: 50%;
+    min-width: 420px;
+  }
 }
 @media (max-width: 1100px) {
   .productMain-mainProperties {
