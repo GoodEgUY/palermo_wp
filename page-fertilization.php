@@ -122,7 +122,7 @@ Template Name: Fertilization
         </div>
     </section>
     <section class="aboutButtonGroupSection">
-        <div class="textSeparator wrapper">
+        <div class="textSeparator buttonSeparator wrapper">
 
             <div class="aboutButtonGroup">
                 <a href="" class="transparentButton">

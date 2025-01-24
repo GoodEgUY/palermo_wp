@@ -211,7 +211,9 @@
  width: 30%;
   text-align: left;
 }
-
+.buttonSeparator {
+  padding-bottom: var(--block-padding)!important;
+}
 .сhartsWrapper {
   display: flex;
   flex-direction: column;
