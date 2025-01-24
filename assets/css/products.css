@@ -350,7 +350,7 @@ background-color: #010101;
   position: static;
 }
 .swiperProductsDashboard {
-  padding-bottom: var(--chapter-padding);
+  padding-bottom: 16px;
 }
 .productCardItem {
   width: 100%;
@@ -707,9 +707,7 @@ background-color: #010101;
   height: 16px!important;
   
 }
-.markListItem {
-  min-width: fit-content;
-}
+
 .productKitWrapper .mobileHeading {
   display: none;
 }
@@ -743,7 +741,9 @@ background-color: #010101;
   .productCardItemImage {
     border-radius: 8px;
   }
-  
+  .swiperProductsDashboard {
+    padding-bottom: 8px;
+  }
   
 }
 @media (max-width: 1000px) {

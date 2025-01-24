@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');* {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+* {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -20,8 +21,7 @@
   --big-border-radius: 40px;
   --small-border-radius: 20px;
 }
-html
-body {
+html body {
   background-color: var(--black);
   color: #fff;
   font-family: "Roboto", serif;
@@ -230,7 +230,7 @@ footer {
   background-color: #fff;
   border: none;
   width: 100%;
-  transition: all .2s ease-in;
+  transition: all 0.2s ease-in;
 }
 .defaultInput::placeholder {
   color: #3535357b;
@@ -324,11 +324,9 @@ footer {
 }
 .swiperNavigationDefault .borderRadius1 path {
   fill: var(--black);
- 
 }
 .swiperNavigationDefault .borderRadius2 path {
   fill: var(--black);
-  
 }
 .swiperButtonPrev,
 .swiperButtonNext {
@@ -394,10 +392,9 @@ footer {
   width: 100%;
 }
 .error-input {
- 
 }
 input.error {
-  border:1px solid crimson;
+  border: 1px solid crimson;
 }
 .inputWrapper label {
   position: absolute;
@@ -413,16 +410,16 @@ input.error {
   border-bottom-right-radius: 8px;
 }
 .FourZeroFourWrapper {
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 .headingBLock {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 4px;
 }
 .applicationBlock {
   aspect-ratio: 495 / 428;
@@ -443,39 +440,39 @@ gap: 24px;
   z-index: 5;
 }
 
-        .orbit-container {
-            position: relative;
-            width: 428px;
-            height: 428px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.orbit-container {
+  position: relative;
+  width: 428px;
+  height: 428px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-        .planet {
-            transform-origin: 244px 244px; /* Центр вращения совпадает с центром орбиты */
-            animation: orbit 5s linear infinite;
-        }
-        .planet-circle {
-          fill: #0E0E0E;
-          stroke: #353535;
-          stroke-width: 2;
-          stroke-dasharray: 2 2;
-      }
+.planet {
+  transform-origin: 244px 244px; /* Центр вращения совпадает с центром орбиты */
+  animation: orbit 5s linear infinite;
+}
+.planet-circle {
+  fill: #0e0e0e;
+  stroke: #353535;
+  stroke-width: 2;
+  stroke-dasharray: 2 2;
+}
 
-      .planet-inner {
-          fill: #353535;
-      }
+.planet-inner {
+  fill: #353535;
+}
 
-        @keyframes orbit {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media (max-width: 1400px) {
   section,
   header,
@@ -514,12 +511,10 @@ gap: 24px;
     padding: 12px 24px;
   }
   .swiperNavigationDefault .borderRadius1 {
-   
     width: 24px;
     height: 24px;
   }
   .swiperNavigationDefault .borderRadius2 {
-  
     width: 24px;
     height: 24px;
   }
@@ -529,7 +524,7 @@ gap: 24px;
     width: 100%;
   }
   .swiperDefault {
-    max-width: 100%!important;
+    max-width: 100% !important;
   }
   .pc {
     display: none;
@@ -564,7 +559,7 @@ gap: 24px;
   .defaultForm {
     padding: 16px 20px 20px 20px;
   }
-/*   
+  /*   
   .borderRadius1,
   .borderRadius2 {
     width: 24px!important;
