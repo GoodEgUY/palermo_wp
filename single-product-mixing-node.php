@@ -3,20 +3,21 @@
     <section>
         <div class="productMainInfoWrapper wrapper">
         <div class="productGallery">
-                <!-- Основная фотография (первая из галереи) -->
-                <?php
-                $gallery = get_field('gallery'); // Получаем галерею из ACF
-                if ($gallery):
-                    // Получаем первую фотографию из галереи
-                    $first_image = $gallery[0];
-                    ?>
-                    <a href="<?php echo esc_url($first_image['url']); ?>" class="productGallery-big"
-                        data-fancybox="productOther">
-                        <img src="<?php echo esc_url($first_image['sizes']['large']); ?>"
-                            alt="<?php echo esc_attr($first_image['alt']); ?>">
-                    </a>
-                <?php endif; ?>
-
+                <div class="productGallery-big">
+                    <!-- Основная фотография (первая из галереи) -->
+                    <?php
+                    $gallery = get_field('gallery'); // Получаем галерею из ACF
+                    if ($gallery):
+                        // Получаем первую фотографию из галереи
+                        $first_image = $gallery[0];
+                        ?>
+                        <a href="<?php echo esc_url($first_image['url']); ?>" class="productGallery-bigLink"
+                            data-fancybox="productOther">
+                            <img src="<?php echo esc_url($first_image['sizes']['large']); ?>"
+                                alt="<?php echo esc_attr($first_image['alt']); ?>">
+                        </a>
+                    <?php endif; ?>
+                </div>
                 <!-- Галерея миниатюр -->
                 <div class="productGalleryThumbs">
                     <?php if ($gallery): ?>
@@ -26,11 +27,13 @@
                             if ($index == 0)
                                 continue; // Пропускаем первую фотографию
                             ?>
-                            <a href="<?php echo esc_url($image['url']); ?>" class="productGallery-small"
+                            <div class="productGallery-small">
+                            <a href="<?php echo esc_url($image['url']); ?>" class="productGallery-smallLink"
                                 data-fancybox="productOther">
                                 <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>"
                                     alt="<?php echo esc_attr($image['alt']); ?>" />
                             </a>
+                            </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
@@ -224,9 +227,9 @@
     <?php if (have_rows('equipment')): ?>
         <section>
             <div class="productKitWrapper wrapper">
-            <h2 class="mobileHeading"><span>Комплектація</span> <?php the_title(); ?></h2>
+            <h2 class="mobileHeading"><span>Комплектація</span><br/><?php the_title(); ?></h2>
                 <div class="productKitInfo">
-                    <h2><span>Комплектація</span> <?php the_title(); ?></h2>
+                    <h2><span>Комплектація</span><br/><?php the_title(); ?></h2>
                     <div class="productKit-list">
                         <?php while (have_rows('equipment')):
                             the_row(); ?>
@@ -244,7 +247,7 @@
                             <?php endif; ?>
                         <?php endwhile; ?>
                     </div>
-                    <button class="greenButton">
+                    <button class="greenButton openModalButton" data-target="Замовлення:(<?php the_title() ?>)">
                         Замовити
                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"

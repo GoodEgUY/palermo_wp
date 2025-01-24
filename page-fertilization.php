@@ -15,7 +15,7 @@ Template Name: Fertilization
                     </svg>
                 </h1>
                 <h1>
-                    <span>Dji Agras</span> T30, T40, T50
+                    <span>Dji Agras</span><i> T30, T40, T50</i>
                     <svg class="borderRadius1" xmlns="http://www.w3.org/2000/svg">
                         <path class="bottomRight" />
                     </svg>
@@ -121,7 +121,7 @@ Template Name: Fertilization
             </div>
         </div>
     </section>
-    <section class="mobile">
+    <section class="aboutButtonGroupSection">
         <div class="textSeparator wrapper">
 
             <div class="aboutButtonGroup">

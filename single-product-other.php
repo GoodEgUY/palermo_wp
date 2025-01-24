@@ -7,21 +7,22 @@ Template Name: Single Product Other
 <div class="mainWrapper">
     <section>
         <div class="productOtherWrapper wrapper">
-            <div class="productGallery">
-                <!-- Основная фотография (первая из галереи) -->
-                <?php
-                $gallery = get_field('gallery'); // Получаем галерею из ACF
-                if ($gallery):
-                    // Получаем первую фотографию из галереи
-                    $first_image = $gallery[0];
-                    ?>
-                    <a href="<?php echo esc_url($first_image['url']); ?>" class="productGallery-big"
-                        data-fancybox="productOther">
-                        <img src="<?php echo esc_url($first_image['sizes']['large']); ?>"
-                            alt="<?php echo esc_attr($first_image['alt']); ?>">
-                    </a>
-                <?php endif; ?>
-
+        <div class="productGallery">
+                <div class="productGallery-big">
+                    <!-- Основная фотография (первая из галереи) -->
+                    <?php
+                    $gallery = get_field('gallery'); // Получаем галерею из ACF
+                    if ($gallery):
+                        // Получаем первую фотографию из галереи
+                        $first_image = $gallery[0];
+                        ?>
+                        <a href="<?php echo esc_url($first_image['url']); ?>" class="productGallery-bigLink"
+                            data-fancybox="productOther">
+                            <img src="<?php echo esc_url($first_image['sizes']['large']); ?>"
+                                alt="<?php echo esc_attr($first_image['alt']); ?>">
+                        </a>
+                    <?php endif; ?>
+                </div>
                 <!-- Галерея миниатюр -->
                 <div class="productGalleryThumbs">
                     <?php if ($gallery): ?>
@@ -31,11 +32,13 @@ Template Name: Single Product Other
                             if ($index == 0)
                                 continue; // Пропускаем первую фотографию
                             ?>
-                            <a href="<?php echo esc_url($image['url']); ?>" class="productGallery-small"
+                            <div class="productGallery-small">
+                            <a href="<?php echo esc_url($image['url']); ?>" class="productGallery-smallLink"
                                 data-fancybox="productOther">
                                 <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>"
                                     alt="<?php echo esc_attr($image['alt']); ?>" />
                             </a>
+                            </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>

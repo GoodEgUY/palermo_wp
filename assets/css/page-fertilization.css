@@ -172,6 +172,9 @@
   display: flex;
   gap: 16px;
 }
+.aboutButtonGroupSection {
+  display: none;
+}
 .ratingElementsWrapper {
   display: flex;
   flex-direction: column;
@@ -568,6 +571,7 @@ gap: 12px;
   .substancesListWrapper {
     gap: 32px;
   }
+  
 }
 @media (max-width: 950px) {
   .substanceListItem {
@@ -632,6 +636,16 @@ gap: 12px;
   }
   .ratinItem div h1 {
     width: auto;
+  }
+.aboutButtonGroup.pc {
+  display:none ;
+}
+  .aboutButtonGroupSection {
+    display: block;
+    
+  }
+  .ratingElementsWrapper {
+    padding-bottom: 32px;
   }
 }
 @media (max-width: 800px) {

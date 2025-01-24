@@ -174,10 +174,11 @@
                        echo 'active'; ?>">Внесення ЗЗР</a>
                 <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem <?php if (is_page('pilots-academy'))
                        echo 'active'; ?>">Центр пілотів</a>
-                <div class="headerItem <?php if (is_page('blog'))
-                    echo 'active'; ?>">Блог</div>
+                <a href="<?php echo home_url('/blogs/'); ?>" class="headerItem <?php if ($current_path === 'blogs') {
+                       echo 'active';
+                   } ?>">Блог</a>
             </div>
-            <button class="transparentButton burgerMenuButton">Зв’язатись з нами <svg width="16" height="17"
+            <button class="transparentButton burgerMenuButton openModalButton" data-target="Бургер Меню Кнопка">Зв’язатись з нами <svg width="16" height="17"
                     viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />

@@ -55,7 +55,7 @@
                 <a href="<?php echo home_url('/policy/'); ?>">
                     <p>Політика конфіденційності</p>
                 </a>
-                <a href="<?php echo home_url('/terms-of-use/'); ?>">
+                <a href="<?php echo home_url('/terms/'); ?>">
                     <p>Умови використання</p>
                 </a>
                 <a href="<?php echo home_url('/cookie-policy/'); ?>">

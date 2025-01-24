@@ -525,7 +525,7 @@ gap: 8px;
   }
   .benefitsItem {
     width: 100%;
-    min-width: 230px;
+    min-width: 270px;
   }
   .benefitBanner {
     height: 100%;
@@ -591,8 +591,13 @@ gap: 8px;
   .introPilotTeaching {
     flex: 1;
     max-width: unset;
-    padding: 16px;
+    padding: 12px;
     height: 172px;
+  }
+  .arcv1,
+  .arcg1 {
+    width: 24px;
+    height: 24px;
   }
   .productItemButton-wrapperFigure1,
   .productItemButton-wrapperFigure2 {
@@ -769,6 +774,18 @@ gap: 8px;
     left: unset;
     right: 0;
   }
+  .introDrone {
+    width: 300px;
+    left: unset;
+    right: 20%;
+    top: 30%;
+  }
+  .aboutTextWrapper {
+    gap: 16px;
+  }
+  .aboutTextImage {
+    margin-bottom: 16px;
+  }
 }
 @media (max-width: 600px) {
   .blogRecommendationWrapper {
@@ -794,6 +811,12 @@ gap: 8px;
     left: unset;
     right: 0;
   }
+  .introDrone {
+    width: 300px;
+    left: unset;
+    right: -30px;
+    top: 82px;
+  }
 }
 @media (max-width: 600px) {
   .benefitBanner {
@@ -813,12 +836,7 @@ gap: 8px;
     top: 16px;
     left: 16px;
   }
-  .introDrone {
-    width: 300px;
-    left: unset;
-    right: -30px;
-    top: 82px;
-  }
+ 
   .section1IntroCards {
     padding-top: 12px;
     gap: 12px;

@@ -8,7 +8,7 @@ Template Name: Pilots Academy
     <section>
         <div class="introWrapper3 wrapper">
             <h1 class="intro3Heading">
-                Навчайтеся <span>керувати</span> дронами <span>DJI Agras</span> та відкривайте нові
+                Навчайтеся <i><span>керувати</span> дронами</i> <span>DJI Agras</span> та відкривайте нові
                 <span>можливості</span><img
                     src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introTextIcon1.svg" alt="">
                 агроіндустрії
@@ -30,7 +30,7 @@ Template Name: Pilots Academy
             <div class="introProductBlock3">
                 <div class="blackItemCard intro3ItemCard">
                     <div class="itemCard-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone2.png"
                             alt="">
                     </div>
                     <div class="blackItemCardInfo">
@@ -54,7 +54,7 @@ Template Name: Pilots Academy
             </div>
             <div class="intro3LeftBlock">
                 <h1>
-                    Навчайтеся <span>керувати</span> дронами <span>DJI Agras</span> та відкривайте нові
+                    Навчайтеся  <i><span>керувати</span> дронами </i><span>DJI Agras</span> та відкривайте нові
                     <span>можливості</span><img
                         src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/introTextIcon1.svg"
                         alt=""> агроіндустрії
@@ -71,7 +71,7 @@ Template Name: Pilots Academy
                     <div class="leftBlockRCcontrol">
                         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen3/rcControlPhoto.png"
                             alt="">
-                        <a href="" class="transparentButton">
+                        <a href="javascript:void(0)" class="transparentButton openModalButton" data-target="Стати Пілотом(Академія Пілотів)">
                             Стати пілотом
                             <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -109,7 +109,7 @@ Template Name: Pilots Academy
                 <p> Професія пілота агродрона стала однією з найбільш затребуваних у сучасному агробізнесі. Попит на
                     спеціалістів, які вміють керувати передовими технологіями, зростає з кожним роком.
                 </p>
-                <button href="" class="transparentButton">
+                <button class="transparentButton openModalButton" data-target="Блок(Чому обирають нашу Академію?)">
                     Безкоштовна консультація
                     <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
@@ -710,7 +710,7 @@ Template Name: Pilots Academy
                     </div>
                 </div>
             </div>
-            <a href="#" data-target="Блок навчання(Загальний)" class="transparentButton openModalButton" style="margin: 0 auto; width:fit-content;">Безкоштовна консультація
+            <a href="javascript:void(0)" data-target="Блок навчання(Загальний)" class="transparentButton openModalButton" style="margin: 0 auto; width:fit-content;">Безкоштовна консультація
                 <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
