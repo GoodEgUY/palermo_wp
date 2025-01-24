@@ -609,7 +609,8 @@ Template Name: Fertilization
                                             }
                                         });
                                     };
-
+                                    animateCounterWater();
+                                    animateCounterFuel();
                                     const observer = new IntersectionObserver(callback, options);
 
                                     // Начинаем наблюдение за элементами
