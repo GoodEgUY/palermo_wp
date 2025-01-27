@@ -1,1 +1,0 @@
-// Placeholder content for content-blog-1.php
