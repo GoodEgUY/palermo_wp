@@ -22,7 +22,7 @@ Template Name: Home
             </div>
             <div class="introApplication">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/moon-and-field.png"
-                    class="introBackground" alt="">
+                    class="introBackground" alt="Купити агродрон">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/drone1.png"
                     class="introDrone" alt="">
 
@@ -34,7 +34,7 @@ Template Name: Home
             <div class="section1IntroCards">
                 <div class="whiteItemCard introItemCard">
                     <div class="itemCard-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/droneT50.png" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/droneT50.png" alt="Агродрон DJI AGRAS T50">
                     </div>
                     <div class="whiteItemCardInfo">
                         <h3>DJI Agras T50</h3>
@@ -68,12 +68,12 @@ Template Name: Home
                     </svg>
                     Ми присвятили себе трансформації
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/aboutIcon1.png"
-                        alt="Icon 2">
+                        alt="Агродрон">
                     <span class="highlight">агробізнесу,</span> надаючи
                     <span class="highlight"> інноваційні рішення</span>
                     для підвищення
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/aboutIcon2.png"
-                        alt="Icon 2">
+                        alt="Що таке агродрон?">
                     ефективності та сталості.
                     <span class="highlight">Наша мета</span> — зробити ваше
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +128,7 @@ Template Name: Home
             <div class="contentProductItem">
                 <div class="contentProductItem-image">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/fertilization.png"
-                        alt="">
+                        alt="Купити дрон для внесення пестецидів">
                 </div>
                 <h3>Внесення пестицидів <br />та мікроелементів</h3>
                 <p>Швидке і точне внесення пестицидів та мікроелементів агродронами для захисту врожаю та зменшення
@@ -151,7 +151,7 @@ Template Name: Home
             <div class="contentProductItem">
                 <div class="contentProductItem-image">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/contentCardImage.png"
-                        alt="">
+                        alt="Школа операторів агродронів">
                 </div>
                 <h3>Професійне навчання<br /> операторів агродронів</h3>
                 <p>Швидке і точне внесення пестицидів та мікроелементів агродронами для захисту врожаю та зменшення
@@ -174,7 +174,7 @@ Template Name: Home
             <div class="contentProductItem">
                 <div class="contentProductItem-image">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/mixing-node.png"
-                        alt="">
+                        alt="Купити бак для змішування пестецидів">
                 </div>
                 <h3>Виробництво сучасних<br /> вузлів змішування</h3>
                 <p>Ми виробляємо надійні вузли змішування для стабільної та продуктивної роботи з агродронами.
@@ -400,7 +400,7 @@ Template Name: Home
     <section class="contactSection">
         <div class="contactWrapper wrapper">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/screen1contactBackground.jpeg"
-                alt="" class="contactBackground">
+                alt="Консультація з питання про агродрони" class="contactBackground">
 
             <div class="contactBlockText">
                 <h2 class="decorBig">Залишились питання?<br /> <span>Ми</span> завжди <span>на зв'язку!</span></h2>
@@ -419,7 +419,7 @@ Template Name: Home
             </div>
             <div class="contactBlockForm">
                 <form class="defaultForm contactForm">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="Lunares - Купити агродрони">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <div class="inputWrapper">
                         <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">

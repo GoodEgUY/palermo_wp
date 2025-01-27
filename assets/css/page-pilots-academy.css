@@ -459,7 +459,7 @@ gap: 12px;
   flex-direction: column;
   gap: 12px;
   width: 100%;
-  max-width: 614px;
+  
   background-color: var(--graycards);
 }
 .learningItemName {

@@ -1,14 +1,5 @@
 <?php
 
-
-
-
-
-
-
-
-
-
 // function remove_default_post_fields()
 // {
 //     remove_post_type_support('post', 'title'); // Убираем поле "Имя"
@@ -25,4 +16,3 @@ include get_template_directory() . '/includes/taxonomyes.php';
 include get_template_directory() . '/includes/templates.php';
 include get_template_directory() . '/includes/theme-options.php';
 
-?>

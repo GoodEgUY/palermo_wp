@@ -652,11 +652,15 @@ background-color: #010101;
 .chosen-item {
   gap: 10px;
 }
+.chosen-item p:nth-child(2) {
+  min-width: max-content;
+}
 .checkbox-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 10px;
   padding: 16px 0;
   border-bottom: 1px solid var(--grey);
 }

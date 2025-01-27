@@ -84,7 +84,7 @@ get_header(); // Подключаем header
                         <?php
                     endwhile;
                 else:
-                    echo '<p>Немає постів для отображения.</p>';
+                    echo '<p>Немає постів для відображення.</p>';
                 endif;
                 ?>
             </div>
