@@ -1,4 +1,3 @@
-
 <?php
 // Реєстрація кастомного типу запису "Товари"
 function register_product_post_type()
