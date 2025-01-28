@@ -26,7 +26,7 @@
             <?php if ( have_rows( 'phone_number', 'options' ) ) : ?>
             <?php while ( have_rows( 'phone_number', 'options' ) ) :
                the_row(); ?>
-            <a href="<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
+            <a href="tel:<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
                <?php echo esc_html( $number ); ?>
                <?php endif; ?>"><?php if ( $label = get_sub_field( 'label', 'options' ) ) : ?>
             <?php echo esc_html( $label ); ?>
@@ -38,7 +38,7 @@
             <?php if ( have_rows( 'phone_number_2', 'options' ) ) : ?>
             <?php while ( have_rows( 'phone_number_2', 'options' ) ) :
                the_row(); ?>
-            <a href="<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
+            <a href="tel:<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
                <?php echo esc_html( $number ); ?>
                <?php endif; ?>"><?php if ( $label = get_sub_field( 'label', 'options' ) ) : ?>
             <?php echo esc_html( $label ); ?>
