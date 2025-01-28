@@ -94,7 +94,9 @@ Template Name: Single Product Agrodrone
                         <h3> <?php echo number_format($price, 0, ',', ' '); ?>
                             <small>Грн.</small>
                         </h3>
-                        <p>Ціна вказана з ПДВ. Вартість за комплект.</p>
+                        <?php if ( $price_title = get_field( 'price_title' ) ) : ?>
+                            <p><?php echo esc_html( $price_title ); ?></p>
+<?php endif; ?>
                     </div>
                 <?php endif; ?>
                 <div class="productCardButtonGroup">
