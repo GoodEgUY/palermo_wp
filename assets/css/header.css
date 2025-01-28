@@ -269,6 +269,14 @@ header {
 .modalButtonGroup a {
   flex: 1;
 }
+.modalButtonGroupVertical {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.modalButtonGroupVertical a {
+  width: 100%;
+}
 @media (max-width: 1100px) {
   .headerNav {
     padding: 0 20px;
@@ -317,6 +325,9 @@ header {
   .burgerMenuButton {
     width: 100%;
     max-width: 800px;
+  }
+  .modalButtonGroupVertical {
+    gap: 8px;
   }
 }
 @media(max-width:500px) {

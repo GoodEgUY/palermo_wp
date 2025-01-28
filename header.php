@@ -260,8 +260,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="modalBody">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
                     class="modalCross">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cookie.svg"
-                    class="modalImageCookie" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" class="modalLogo" alt="">
+
                 
                 <p>Ми завжди поруч, щоб допомогти! Оберіть зручний номер для зв’язку, і ми з радістю відповімо на всі ваші запитання.
 

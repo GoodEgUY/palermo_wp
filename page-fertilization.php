@@ -25,16 +25,16 @@ Template Name: Fertilization
                 </svg>
             </div>
             <div class="intro2Application">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/moonAndDrone.png" alt="Зображення: Moonanddrone — Кампанія Lunares, внесення ЗЗР агродронами." 
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/moonAndDrone.png" alt="Агродрони Moonanddrone від Lunares для точного внесення пестицидів." 
                     class="introBackground2" alt="">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introDrone.png" alt="Зображення: Introdrone — Кампанія Lunares, внесення ЗЗР агродронами." 
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introDrone.png" alt="Introdrone — інноваційне рішення для внесення ЗЗР, доступне у кампанії Lunares." 
                     class="introDrone2" alt="">
                 <div class="introIcons2">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/recycleIcons.svg" alt="Зображення: Recycleicons — Кампанія Lunares, внесення ЗЗР агродронами." 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/recycleIcons.svg" alt="Ефективне внесення пестицидів за допомогою Recycleicons від Lunares." 
                         alt="">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/savewaterIcons.svg" alt="Зображення: Savewatericons — Кампанія Lunares, внесення ЗЗР агродронами." 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/savewaterIcons.svg" alt="Savewatericons — інноваційне рішення для внесення ЗЗР, доступне у кампанії Lunares." 
                         alt="">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/leavesIcons.svg" alt="Зображення: Leavesicons — Кампанія Lunares, внесення ЗЗР агродронами."  alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/leavesIcons.svg" alt="Ефективне внесення пестицидів за допомогою Leavesicons від Lunares."  alt="">
 
                 </div>
                 <p class="introParagraph2">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
@@ -47,7 +47,7 @@ Template Name: Fertilization
             <div class="introProductBlock2">
                 <div class="blackItemCard intro2ItemCard">
                     <div class="itemCard-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone2.png" alt="Зображення: Introproductdrone2 — Кампанія Lunares, внесення ЗЗР агродронами." 
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone2.png" alt="Introproductdrone2 — інноваційне рішення для внесення ЗЗР, доступне у кампанії Lunares." 
                             alt="">
                     </div>
                     <div class="blackItemCardInfo">
@@ -75,7 +75,7 @@ Template Name: Fertilization
         <div class="textSeparator wrapper">
             <h2>
                 Ефективне<br /> внесення <img
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/aboutIcon1.png" alt="Зображення: Abouticon1 — Кампанія Lunares, внесення ЗЗР агродронами."  alt="Icon 2">
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/aboutIcon1.png" alt="Ефективне внесення пестицидів за допомогою Abouticon1 від Lunares."  alt="Icon 2">
                 <span>добрив<br /></span>та <span>засобів захисту</span> рослин
             </h2>
             <div class="aboutButtonGroup pc">
@@ -147,11 +147,11 @@ Template Name: Fertilization
             <h2>
                 <span>Економія</span> ресурсів <br />завдяки контролю
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon2.svg" alt="Зображення: Economyicon2 — Кампанія Lunares, внесення ЗЗР агродронами." 
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon2.svg" alt="Агродрони Economyicon2 від Lunares для точного внесення пестицидів." 
                     alt="Icon 2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon1.svg" alt="Зображення: Economyicon1 — Кампанія Lunares, внесення ЗЗР агродронами." 
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon1.svg" alt="Ефективне внесення пестицидів за допомогою Economyicon1 від Lunares." 
                     alt="Icon 2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon3.svg" alt="Зображення: Economyicon3 — Кампанія Lunares, внесення ЗЗР агродронами." 
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon3.svg" alt="Economyicon3 — Купуйте агродрони для внесення ЗЗР у кампанії Lunares." 
                     alt="Icon 2">
                 <br />
                 витрат <span>води, коштів</span> і <span>пального</span>
@@ -644,22 +644,22 @@ Template Name: Fertilization
             </div>
             <div class="benefitsContent">
                 <div class="benefitItem">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon1.svg" alt="Зображення: Benefiticon1 — Кампанія Lunares, внесення ЗЗР агродронами." 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon1.svg" alt="Benefiticon1 — інноваційне рішення для внесення ЗЗР, доступне у кампанії Lunares." 
                         alt="">
                     <p>Здадність обробки<br /> до 21 га за годину</p>
                 </div>
                 <div class="benefitItem">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon2.svg" alt="Зображення: Benefiticon2 — Кампанія Lunares, внесення ЗЗР агродронами." 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon2.svg" alt="Benefiticon2 — Купуйте агродрони для внесення ЗЗР у кампанії Lunares." 
                         alt="">
                     <p>Ширина захвату<br /> до 11 метрів</p>
                 </div>
                 <div class="benefitItem">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon3.svg" alt="Зображення: Benefiticon3 — Кампанія Lunares, внесення ЗЗР агродронами." 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon3.svg" alt="Benefiticon3 — Купуйте агродрони для внесення ЗЗР у кампанії Lunares." 
                         alt="">
                     <p>Точність внесення<br /> до 2 см</p>
                 </div>
                 <div class="benefitItem">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon4.svg" alt="Зображення: Benefiticon4 — Кампанія Lunares, внесення ЗЗР агродронами." 
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon4.svg" alt="Benefiticon4 — Купуйте агродрони для внесення ЗЗР у кампанії Lunares." 
                         alt="">
                     <p> Об’єм баку 40 літрів </p>
                 </div>
@@ -899,7 +899,7 @@ Template Name: Fertilization
     <section id="itemsList">
         <div class="substancesListWrapper wrapper" >
             <h2>Список дієвих <span>препаратів</span>, які ми використовуємо. <span>Ефективність</span> кожного з них
-                <span>підтверджена</span><br/> нашим<img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/textBlockImage.png" alt="Зображення: Textblockimage — Кампанія Lunares, внесення ЗЗР агродронами."  alt="">практичним <span>досвідом.</span>
+                <span>підтверджена</span><br/> нашим<img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/textBlockImage.png" alt="Textblockimage — Купуйте агродрони для внесення ЗЗР у кампанії Lunares."  alt="">практичним <span>досвідом.</span>
             </h2>
             <div class="substanceList">
                 <div class="substanceListBlock">
@@ -1280,7 +1280,7 @@ Template Name: Fertilization
             </div>
             <div class="contactBlockForm">
                 <form action="" class="defaultForm contactForm">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="Зображення: Logo small — Кампанія Lunares, внесення ЗЗР агродронами."  alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="Logo small — Купуйте агродрони для внесення ЗЗР у кампанії Lunares."  alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <div class="inputWrapper">
                         <input type="text" name="name" placeholder="Ім'я " class="defaultInput"
