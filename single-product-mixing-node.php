@@ -444,8 +444,7 @@ if ( $item_photo ) : ?>
                 <div class="additionalSummary">
                     <div class="additionalSummaryBLock">
                         <h3>Комплектація</h3>
-                        <p class="title">Lorem ipsum dolor sit amet consectetur. At arcu non sit nunc eget sed ac purus
-                            odio.
+                        <p class="title">Список обраних опцій та загальна вартість вашого змішувача:
                         </p>
                         <div id="chosenExtras" class="choosenExtras"></div>
                     </div>
@@ -456,8 +455,7 @@ if ( $item_photo ) : ?>
                                 <span id="totalPrice"></span> Грн.
                             </h3>
                         </div>
-                        <p>Lorem ipsum dolor sit amet consectetur. Mauris non eget ornare consectetur. Ipsum nisl
-                            malesuada nibh duis augue.
+                        <p>Для завершення замовлення зв’яжіться з нашим менеджером.
                         </p>
                         <button class="greenButton openModalButton" id="additionalEquipmentButton">
                             Зв’язатись з менеджером

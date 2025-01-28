@@ -273,6 +273,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 100%;
 }
 .modalButtonGroupVertical a {
   width: 100%;
