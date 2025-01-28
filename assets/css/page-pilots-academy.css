@@ -831,6 +831,9 @@ gap: 20px;
   .unique .cell:nth-child(3) p {
     margin-left: 20px;
   }
+  .leftBlockRCcontrol {
+    min-width: 195px;
+  }
 }
 @media (max-width: 600px) {
   .sallaryDashboard{
