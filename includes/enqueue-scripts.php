@@ -128,5 +128,4 @@ function lunare_enqueue_assets()
         <?php
     });
 }
-
 ?>

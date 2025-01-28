@@ -113,7 +113,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                        echo 'active';
                    } ?>">Блог</a>
             </div>
-            <button class="transparentButton openModalButton" data-target="Хедер">Дізнатись більше <svg width="16"
+            <button class="transparentButton openModalPhoneButton" data-target="Хедер">Зв’язатись з нами  <svg width="16"
                     height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -188,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                        echo 'active';
                    } ?>">Блог</a>
             </div>
-            <button class="transparentButton burgerMenuButton openModalButton" data-target="Бургер Меню Кнопка">Зв’язатись з нами <svg width="16" height="17"
+            <button class="transparentButton burgerMenuButton openModalPhoneButton" data-target="Бургер Меню Кнопка">Зв’язатись з нами <svg width="16" height="17"
                     viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -253,6 +253,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg></a>
+                </div>
+            </div>
+        </div>
+        <div class="modalWrapper" id="modalPhone">
+            <div class="modalBody">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
+                    class="modalCross">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cookie.svg"
+                    class="modalImageCookie" alt="">
+                
+                <p>Ми завжди поруч, щоб допомогти! Оберіть зручний номер для зв’язку, і ми з радістю відповімо на всі ваші запитання.
+
+                <div class="modalButtonGroupVertical">
+                <?php if ( have_rows( 'phone_number', 'options' ) ) : ?>
+            <?php while ( have_rows( 'phone_number', 'options' ) ) :
+               the_row(); ?>
+            <a href="<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
+               <?php echo esc_html( $number ); ?>
+               <?php endif; ?>" class="greenButton"><?php if ( $label = get_sub_field( 'label', 'options' ) ) : ?>
+            <?php echo esc_html( $label ); ?>
+            
+            <?php endif; ?><svg width="16"
+                    height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></a>
+            
+            <?php endwhile; ?>
+            <?php endif; ?>
+            <?php if ( have_rows( 'phone_number_2', 'options' ) ) : ?>
+            <?php while ( have_rows( 'phone_number_2', 'options' ) ) :
+               the_row(); ?>
+            <a href="<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
+               <?php echo esc_html( $number ); ?>
+               <?php endif; ?>" class="greenButton"><?php if ( $label = get_sub_field( 'label', 'options' ) ) : ?>
+            <?php echo esc_html( $label ); ?>
+            
+            <?php endif; ?><svg width="16"
+                    height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg></a>
+            
+            <?php endwhile; ?>
+            <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -354,6 +399,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     const targetValue = jQuery(this).data('target');
                     jQuery('#modalForm').fadeIn(100);
                     jQuery('#modalForm').find('input[name="target"]').val(targetValue);
+                    jQuery('body').addClass('no-scroll');
+
+                });
+                jQuery('.openModalPhoneButton').click(function (e) {
+                    e.stopPropagation();
+                    const targetValue = jQuery(this).data('target');
+                    jQuery('#modalPhone').fadeIn(100);
                     jQuery('body').addClass('no-scroll');
 
                 });

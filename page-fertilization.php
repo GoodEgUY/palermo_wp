@@ -25,16 +25,16 @@ Template Name: Fertilization
                 </svg>
             </div>
             <div class="intro2Application">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/moonAndDrone.png"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/moonAndDrone.png" alt="Зображення: Moonanddrone — Кампанія Lunares, внесення ЗЗР агродронами." 
                     class="introBackground2" alt="">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introDrone.png"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introDrone.png" alt="Зображення: Introdrone — Кампанія Lunares, внесення ЗЗР агродронами." 
                     class="introDrone2" alt="">
                 <div class="introIcons2">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/recycleIcons.svg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/recycleIcons.svg" alt="Зображення: Recycleicons — Кампанія Lunares, внесення ЗЗР агродронами." 
                         alt="">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/savewaterIcons.svg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/savewaterIcons.svg" alt="Зображення: Savewatericons — Кампанія Lunares, внесення ЗЗР агродронами." 
                         alt="">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/leavesIcons.svg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/leavesIcons.svg" alt="Зображення: Leavesicons — Кампанія Lunares, внесення ЗЗР агродронами."  alt="">
 
                 </div>
                 <p class="introParagraph2">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
@@ -47,7 +47,7 @@ Template Name: Fertilization
             <div class="introProductBlock2">
                 <div class="blackItemCard intro2ItemCard">
                     <div class="itemCard-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone2.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/introProductDrone2.png" alt="Зображення: Introproductdrone2 — Кампанія Lunares, внесення ЗЗР агродронами." 
                             alt="">
                     </div>
                     <div class="blackItemCardInfo">
@@ -75,7 +75,7 @@ Template Name: Fertilization
         <div class="textSeparator wrapper">
             <h2>
                 Ефективне<br /> внесення <img
-                    src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/aboutIcon1.png" alt="Icon 2">
+                    src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/aboutIcon1.png" alt="Зображення: Abouticon1 — Кампанія Lunares, внесення ЗЗР агродронами."  alt="Icon 2">
                 <span>добрив<br /></span>та <span>засобів захисту</span> рослин
             </h2>
             <div class="aboutButtonGroup pc">
@@ -147,11 +147,11 @@ Template Name: Fertilization
             <h2>
                 <span>Економія</span> ресурсів <br />завдяки контролю
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon2.svg"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon2.svg" alt="Зображення: Economyicon2 — Кампанія Lunares, внесення ЗЗР агродронами." 
                     alt="Icon 2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon1.svg"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon1.svg" alt="Зображення: Economyicon1 — Кампанія Lunares, внесення ЗЗР агродронами." 
                     alt="Icon 2">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon3.svg"
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/economyIcon3.svg" alt="Зображення: Economyicon3 — Кампанія Lunares, внесення ЗЗР агродронами." 
                     alt="Icon 2">
                 <br />
                 витрат <span>води, коштів</span> і <span>пального</span>
@@ -644,22 +644,22 @@ Template Name: Fertilization
             </div>
             <div class="benefitsContent">
                 <div class="benefitItem">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon1.svg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon1.svg" alt="Зображення: Benefiticon1 — Кампанія Lunares, внесення ЗЗР агродронами." 
                         alt="">
                     <p>Здадність обробки<br /> до 21 га за годину</p>
                 </div>
                 <div class="benefitItem">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon2.svg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon2.svg" alt="Зображення: Benefiticon2 — Кампанія Lunares, внесення ЗЗР агродронами." 
                         alt="">
                     <p>Ширина захвату<br /> до 11 метрів</p>
                 </div>
                 <div class="benefitItem">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon3.svg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon3.svg" alt="Зображення: Benefiticon3 — Кампанія Lunares, внесення ЗЗР агродронами." 
                         alt="">
                     <p>Точність внесення<br /> до 2 см</p>
                 </div>
                 <div class="benefitItem">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon4.svg"
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/benefitIcon4.svg" alt="Зображення: Benefiticon4 — Кампанія Lunares, внесення ЗЗР агродронами." 
                         alt="">
                     <p> Об’єм баку 40 літрів </p>
                 </div>
@@ -899,7 +899,7 @@ Template Name: Fertilization
     <section id="itemsList">
         <div class="substancesListWrapper wrapper" >
             <h2>Список дієвих <span>препаратів</span>, які ми використовуємо. <span>Ефективність</span> кожного з них
-                <span>підтверджена</span><br/> нашим<img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/textBlockImage.png" alt="">практичним <span>досвідом.</span>
+                <span>підтверджена</span><br/> нашим<img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen2/textBlockImage.png" alt="Зображення: Textblockimage — Кампанія Lunares, внесення ЗЗР агродронами."  alt="">практичним <span>досвідом.</span>
             </h2>
             <div class="substanceList">
                 <div class="substanceListBlock">
@@ -1259,7 +1259,7 @@ Template Name: Fertilization
 <?php endif; ?>
     <section class="contactSection">
         <div class="contactWrapper wrapper">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/screen1contactBackground.jpeg"
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/screen1/screen1contactBackground.jpeg" alt="Зображення: Screen1contactbackground — Кампанія Lunares, внесення ЗЗР агродронами." 
                 alt="" class="contactBackground">
             <div class="contactBlockText">
                 <h2 class="decorBig">Залишились питання?<br /> <span>Ми</span> завжди <span>на зв'язку!</span></h2>
@@ -1280,7 +1280,7 @@ Template Name: Fertilization
             </div>
             <div class="contactBlockForm">
                 <form action="" class="defaultForm contactForm">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/logo-small.svg" alt="Зображення: Logo small — Кампанія Lunares, внесення ЗЗР агродронами."  alt="">
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <div class="inputWrapper">
                         <input type="text" name="name" placeholder="Ім'я " class="defaultInput"
