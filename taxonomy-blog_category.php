@@ -84,7 +84,7 @@ Template Name: Archive Blog
                         <?php
                     endwhile;
                 else:
-                    echo '<p>Немає постів для отображения.</p>';
+                    echo '<p>Немає постів для відображення.</p>';
                 endif;
                 ?>
             </div>
