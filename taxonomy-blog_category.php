@@ -57,7 +57,7 @@ Template Name: Archive Blog
                             <?php
                             $preview_image = get_field('preview_image');
                             if ($preview_image): ?>
-                                <img src="<?php echo esc_url($preview_image['sizes']['medium']); ?>"
+                                <img src="<?php echo esc_url($preview_image['sizes']['large']); ?>"
                                     alt="<?php echo esc_attr($preview_image['alt']); ?>" />
                             <?php endif; ?>
                             <div class="contentProductItem-category">
