@@ -2,13 +2,16 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5LJCNR69');</script>
-<!-- End Google Tag Manager -->
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-5LJCNR69');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); // Подключение стилей, скриптов и других хуков ?>
@@ -23,14 +26,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
  -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Lunares",
+  "url": "https://lunares.com.ua"
+}
+</script>
 
 </head>
+<?php generate_breadcrumbs_json_ld(); ?>
 
 <body <?php body_class(); ?>>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LJCNR69"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LJCNR69" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
         <?php
         $is_product_section = false;
@@ -113,7 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                        echo 'active';
                    } ?>">Блог</a>
             </div>
-            <button class="transparentButton openModalPhoneButton" data-target="Хедер">Зв’язатись з нами  <svg width="16"
+            <button class="transparentButton openModalPhoneButton" data-target="Хедер">Зв’язатись з нами <svg width="16"
                     height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -132,13 +144,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="headerItem" id="dropdown-menu">
 
                     <div class="mobileCatalogButton">
-                    <a href="/product" class="headerItem <?php echo $is_product_section ? 'active' : ''; ?>" id="catalogLink">
-                        Каталог
-                       
-                    </a>
-                    <svg id="mobileCatalogArrow" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10 15.5L18 7.5H2L10 15.5Z" fill=""/>
-</svg>
+                        <a href="/product" class="headerItem <?php echo $is_product_section ? 'active' : ''; ?>"
+                            id="catalogLink">
+                            Каталог
+
+                        </a>
+                        <svg id="mobileCatalogArrow" width="20" height="21" viewBox="0 0 20 21" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 15.5L18 7.5H2L10 15.5Z" fill="" />
+                        </svg>
 
                     </div>
                     <?php if (!empty($terms) && !is_wp_error($terms)): ?>
@@ -188,8 +202,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                        echo 'active';
                    } ?>">Блог</a>
             </div>
-            <button class="transparentButton burgerMenuButton openModalPhoneButton" data-target="Бургер Меню Кнопка">Зв’язатись з нами <svg width="16" height="17"
-                    viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <button class="transparentButton burgerMenuButton openModalPhoneButton"
+                data-target="Бургер Меню Кнопка">Зв’язатись з нами <svg width="16" height="17" viewBox="0 0 16 17"
+                    fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round" />
                 </svg></button>
@@ -260,44 +275,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="modalBody">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
                     class="modalCross">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" class="modalLogo" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" class="modalLogo" alt="">
 
-                
-                <p>Ми завжди поруч, щоб допомогти! Оберіть зручний номер для зв’язку, і ми з радістю відповімо на всі ваші запитання.
+
+                <p>Ми завжди поруч, щоб допомогти! Оберіть зручний номер для зв’язку, і ми з радістю відповімо на всі
+                    ваші запитання.
 
                 <div class="modalButtonGroupVertical">
-                <?php if ( have_rows( 'phone_number', 'options' ) ) : ?>
-            <?php while ( have_rows( 'phone_number', 'options' ) ) :
-               the_row(); ?>
-            <a href="tel:<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
-               <?php echo esc_html( $number ); ?>
-               <?php endif; ?>" class="greenButton"><?php if ( $label = get_sub_field( 'label', 'options' ) ) : ?>
-            <?php echo esc_html( $label ); ?>
-            
-            <?php endif; ?><svg width="16"
-                    height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg></a>
-            
-            <?php endwhile; ?>
-            <?php endif; ?>
-            <?php if ( have_rows( 'phone_number_2', 'options' ) ) : ?>
-            <?php while ( have_rows( 'phone_number_2', 'options' ) ) :
-               the_row(); ?>
-            <a href="tel:<?php if ( $number = get_sub_field( 'number', 'options' ) ) : ?>
-               <?php echo esc_html( $number ); ?>
-               <?php endif; ?>" class="greenButton"><?php if ( $label = get_sub_field( 'label', 'options' ) ) : ?>
-            <?php echo esc_html( $label ); ?>
-            
-            <?php endif; ?><svg width="16"
-                    height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg></a>
-            
-            <?php endwhile; ?>
-            <?php endif; ?>
+                    <?php if (have_rows('phone_number', 'options')): ?>
+                        <?php while (have_rows('phone_number', 'options')):
+                            the_row(); ?>
+                            <a href="tel:<?php if ($number = get_sub_field('number', 'options')): ?>
+               <?php echo esc_html($number); ?>
+               <?php endif; ?>" class="greenButton"><?php if ($label = get_sub_field('label', 'options')): ?>
+                                    <?php echo esc_html($label); ?>
+
+                                <?php endif; ?><svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></a>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
+                    <?php if (have_rows('phone_number_2', 'options')): ?>
+                        <?php while (have_rows('phone_number_2', 'options')):
+                            the_row(); ?>
+                            <a href="tel:<?php if ($number = get_sub_field('number', 'options')): ?>
+               <?php echo esc_html($number); ?>
+               <?php endif; ?>" class="greenButton"><?php if ($label = get_sub_field('label', 'options')): ?>
+                                    <?php echo esc_html($label); ?>
+
+                                <?php endif; ?><svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg></a>
+
+                        <?php endwhile; ?>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -389,7 +405,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     jQuery('.categoryMobileDropdownWrapper').slideToggle(100);
                     jQuery('body').toggleClass('no-scroll');
                 });
-                
+
 
             });
             jQuery(document).ready(function () {
@@ -460,6 +476,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             });
 
         </script>
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "http://agronix.com.ua"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Каталог",
+      "item": "http://agronix.com.ua/catalog"
+    }
+  ]
+}
+</script>
 
 
     </header>
