@@ -51,7 +51,7 @@ Template Name: Fertilization
                     </div>
                     <div class="blackItemCardInfo">
                         <h3>DJI Agras T50</h3>
-                        <a class="transparentButton" href="<?php echo home_url('/product/dji-agras-t50/'); >">
+                        <a class="transparentButton" href="<?php echo home_url('/product/dji-agras-t50/'); ?>">
                             Перейти до каталогу
                             <svg fill="none" height="17" viewbox="0 0 16 17" width="16"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -1264,7 +1264,7 @@ Template Name: Fertilization
                     <?php while (have_rows('phone_number', 'options')):
                         the_row(); ?>
                         <h2 class="decorBig"><a href="tel:<?php if ($number = get_sub_field('number', 'options')): >
-   <?php echo esc_html($number); >
+   <?php echo esc_html($number); ?>
    <?php endif; >"><i><?php if ($label = get_sub_field('label', 'options')): ?>
                                         <?php echo esc_html($label); ?>
                                     <?php endif; ?></i></a></h2>
