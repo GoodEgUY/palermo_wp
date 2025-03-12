@@ -1263,7 +1263,7 @@ Template Name: Fertilization
                 <?php if (have_rows('phone_number', 'options')): ?>
                     <?php while (have_rows('phone_number', 'options')):
                         the_row(); ?>
-                        <h2 class="decorBig"><a href="tel:<?php if ($number = get_sub_field('number', 'options')): >
+                        <h2 class="decorBig"><a href="tel:<?php if ($number = get_sub_field('number', 'options')): ?>
    <?php echo esc_html($number); ?>
    <?php endif; >"><i><?php if ($label = get_sub_field('label', 'options')): ?>
                                         <?php echo esc_html($label); ?>
