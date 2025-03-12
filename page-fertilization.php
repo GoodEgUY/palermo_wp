@@ -1265,7 +1265,7 @@ Template Name: Fertilization
                         the_row(); ?>
                         <h2 class="decorBig"><a href="tel:<?php if ($number = get_sub_field('number', 'options')): ?>
    <?php echo esc_html($number); ?>
-   <?php endif; >"><i><?php if ($label = get_sub_field('label', 'options')): ?>
+   <?php endif; ?>"><i><?php if ($label = get_sub_field('label', 'options')): ?>
                                         <?php echo esc_html($label); ?>
                                     <?php endif; ?></i></a></h2>
                     <?php endwhile; ?>
