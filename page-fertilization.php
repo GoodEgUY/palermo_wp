@@ -27,17 +27,17 @@ Template Name: Fertilization
             <div class="intro2Application">
                 <img alt="Внесення ЗЗР, мінеральних добрив, мікроелементів за допомогою дронів Dji Agras T30, T40, T50. Внесення ЗЗР дронами, десикація."
                     class="introBackground2"
-                    src="<?php echo get_template_directory_uri(); >/assets/images/screen2/moonAndDrone.png" />
+                    src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/moonAndDrone.png" />
                 <img alt="Обприскування полів агроронами. Внесення ЗЗР, мінеральних добрив, мікроелементів, десикація за допомогою дронів Dji Agras T30, T40, T50."
                     class="introDrone2"
-                    src="<?php echo get_template_directory_uri(); >/assets/images/screen2/introDrone.png" />
+                    src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/introDrone.png" />
                 <div class="introIcons2">
                     <img alt="Замовити послуги агродронів. Швидке та точне обприскування полів за допомогою дронів Dji Agras T30, T40, T50. Економія води та відсутність витоптування."
-                        src="<?php echo get_template_directory_uri(); >/assets/images/screen2/recycleIcons.svg" />
+                        src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/recycleIcons.svg" />
                     <img alt="Внесення ЗЗР, мінеральних добрив, мікроелементів за допомогою дронів Dji Agras T30, T40, T50. Внесення ЗЗР дронами, десикація."
-                        src="<?php echo get_template_directory_uri(); >/assets/images/screen2/savewaterIcons.svg" />
+                        src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/savewaterIcons.svg" />
                     <img alt="Обприскування полів агроронами. Внесення ЗЗР, мінеральних добрив, мікроелементів, десикація за допомогою дронів Dji Agras T30, T40, T50."
-                        src="<?php echo get_template_directory_uri(); >/assets/images/screen2/leavesIcons.svg" />
+                        src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/leavesIcons.svg" />
                 </div>
                 <p class="introParagraph2">Використовуємо агродрони для внесення ЗЗР, навчаємо пілотів та постачаємо
                     флагманські моделі DJI Agriculture.
@@ -47,7 +47,7 @@ Template Name: Fertilization
                 <div class="blackItemCard intro2ItemCard">
                     <div class="itemCard-image">
                         <img alt="Замовити послуги агродронів. Швидке та точне обприскування полів за допомогою дронів Dji Agras T30, T40, T50. Економія води та відсутність витоптування."
-                            src="<?php echo get_template_directory_uri(); >/assets/images/screen2/introProductDrone2.png" />
+                            src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/introProductDrone2.png" />
                     </div>
                     <div class="blackItemCardInfo">
                         <h3>DJI Agras T50</h3>
@@ -75,7 +75,7 @@ Template Name: Fertilization
             <h2>
                 Ефективне<br /> внесення <img
                     alt="Внесення ЗЗР, мінеральних добрив, мікроелементів за допомогою дронів Dji Agras T30, T40, T50. Внесення ЗЗР дронами, десикація."
-                    src="<?php echo get_template_directory_uri(); >/assets/images/screen2/aboutIcon1.png" />
+                    src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/aboutIcon1.png" />
                 <span>добрив<br /></span>та <span>засобів захисту</span> рослин
             </h2>
             <div class="aboutButtonGroup pc">
@@ -147,11 +147,11 @@ Template Name: Fertilization
                 <span>Економія</span> ресурсів <br />завдяки контролю
 
                 <img alt="Обприскування полів агроронами. Внесення ЗЗР, мінеральних добрив, мікроелементів, десикація за допомогою дронів Dji Agras T30, T40, T50."
-                    src="<?php echo get_template_directory_uri(); >/assets/images/screen2/economyIcon2.svg" />
+                    src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/economyIcon2.svg" />
                 <img alt="Замовити послуги агродронів. Швидке та точне обприскування полів за допомогою дронів Dji Agras T30, T40, T50. Економія води та відсутність витоптування."
-                    src="<?php echo get_template_directory_uri(); >/assets/images/screen2/economyIcon1.svg" />
+                    src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/economyIcon1.svg" />
                 <img alt="Внесення ЗЗР, мінеральних добрив, мікроелементів за допомогою дронів Dji Agras T30, T40, T50. Внесення ЗЗР дронами, десикація."
-                    src="<?php echo get_template_directory_uri(); >/assets/images/screen2/economyIcon3.svg" />
+                    src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/economyIcon3.svg" />
                 <br />
                 витрат <span>води, коштів</span> і <span>пального</span>
             </h2>
@@ -648,22 +648,22 @@ Template Name: Fertilization
             <div class="benefitsContent">
                 <div class="benefitItem">
                     <img alt="Обприскування полів агроронами. Внесення ЗЗР, мінеральних добрив, мікроелементів, десикація за допомогою дронів Dji Agras T30, T40, T50."
-                        src="<?php echo get_template_directory_uri(); >/assets/images/screen2/benefitIcon1.svg" />
+                        src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/benefitIcon1.svg" />
                     <p>Здадність обробки<br /> до 21 га за годину</p>
                 </div>
                 <div class="benefitItem">
                     <img alt="Замовити послуги агродронів. Швидке та точне обприскування полів за допомогою дронів Dji Agras T30, T40, T50. Економія води та відсутність витоптування."
-                        src="<?php echo get_template_directory_uri(); >/assets/images/screen2/benefitIcon2.svg" />
+                        src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/benefitIcon2.svg" />
                     <p>Ширина захвату<br /> до 11 метрів</p>
                 </div>
                 <div class="benefitItem">
                     <img alt="Внесення ЗЗР, мінеральних добрив, мікроелементів за допомогою дронів Dji Agras T30, T40, T50. Внесення ЗЗР дронами, десикація."
-                        src="<?php echo get_template_directory_uri(); >/assets/images/screen2/benefitIcon3.svg" />
+                        src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/benefitIcon3.svg" />
                     <p>Точність внесення<br /> до 2 см</p>
                 </div>
                 <div class="benefitItem">
                     <img alt="Обприскування полів агроронами. Внесення ЗЗР, мінеральних добрив, мікроелементів, десикація за допомогою дронів Dji Agras T30, T40, T50."
-                        src="<?php echo get_template_directory_uri(); >/assets/images/screen2/benefitIcon4.svg" />
+                        src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/benefitIcon4.svg" />
                     <p> Об’єм баку 40 літрів </p>
                 </div>
             </div>
@@ -905,7 +905,7 @@ Template Name: Fertilization
             <h2>Список дієвих <span>препаратів</span>, які ми використовуємо. <span>Ефективність</span> кожного з них
                 <span>підтверджена</span><br /> нашим<img
                     alt="Замовити послуги агродронів. Швидке та точне обприскування полів за допомогою дронів Dji Agras T30, T40, T50. Економія води та відсутність витоптування."
-                    src="<?php echo get_template_directory_uri(); >/assets/images/screen2/textBlockImage.png" />практичним
+                    src="<?php echo get_template_directory_uri(); ?> /assets/images/screen2/textBlockImage.png" />практичним
                 <span>досвідом.</span>
             </h2>
             <div class="substanceList">
@@ -1254,7 +1254,7 @@ Template Name: Fertilization
         <div class="contactWrapper wrapper">
             <img alt="Внесення ЗЗР, мінеральних добрив, мікроелементів за допомогою дронів Dji Agras T30, T40, T50. Внесення ЗЗР дронами, десикація."
                 class="contactBackground"
-                src="<?php echo get_template_directory_uri(); >/assets/images/screen1/screen1contactBackground.jpeg" />
+                src="<?php echo get_template_directory_uri(); ?> /assets/images/screen1/screen1contactBackground.jpeg" />
             <div class="contactBlockText">
                 <h2 class="decorBig">Залишились питання?<br /> <span>Ми</span> завжди <span>на зв'язку!</span></h2>
                 <p>Заповніть форму, і наші спеціалісти зв'яжуться з вами найближчим часом, щоб відповісти на всі ваші
@@ -1274,7 +1274,7 @@ Template Name: Fertilization
             <div class="contactBlockForm">
                 <form action="" class="defaultForm contactForm">
                     <img alt="Обприскування полів агроронами. Внесення ЗЗР, мінеральних добрив, мікроелементів, десикація за допомогою дронів Dji Agras T30, T40, T50."
-                        src="<?php echo get_template_directory_uri(); >/assets/images/icons/logo-small.svg" />
+                        src="<?php echo get_template_directory_uri(); ?> /assets/images/icons/logo-small.svg" />
                     <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
                     <div class="inputWrapper">
                         <input class="defaultInput" id="" name="name" placeholder="Ім'я " type="text" />
