@@ -14,8 +14,8 @@ Template Name: Home
                         кава-брейки та виїзні вечері з бездоганним сервісом і смачними стравами.
                     </p>
                     <div class="introButtonGroup">
-                        <a href="" class="orange-default-button">Зателефонувати</a>
-                        <a href="" class="transparent-default-button">Переглянути меню</a>
+                        <a href="" class="orange-default-button openModalPhoneButton">Зателефонувати</a>
+                        <a href="" class="transparent-default-button" scroll="goToMenu">Переглянути меню</a>
                     </div>
                 </div>
                 <?php
@@ -152,7 +152,7 @@ Template Name: Home
                         });
                     });
                 </script>
-                <a href="" class="orange-default-button">Зателефонувати</a>
+                <a href="" class="orange-default-button openModalPhoneButton">Зателефонувати</a>
             </div>
         </section>
         <?php
@@ -310,7 +310,7 @@ Template Name: Home
                 
                     ?>
                 </div>
-                <a href="" class="orange-default-button">Зателефонувати</a>
+                <a href="" class="orange-default-button openModalPhoneButton">Зателефонувати</a>
             </div>
         </section>
         <?php
@@ -561,7 +561,7 @@ Template Name: Home
             <p>Зв’яжіться з нами зручним способом — телефонуйте або пишіть у месенджері. Ми завжди на зв’язку та готові
                 допомогти!
             </p>
-            <button class="orange-default-button">Зателефонувати</button>
+            <button class="orange-default-button openModalPhoneButton">Зателефонувати</button>
         </div>
     </section>
 </div>

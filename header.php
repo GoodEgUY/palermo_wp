@@ -2,16 +2,8 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || []; w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            }); var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-5LJCNR69');</script>
-    <!-- End Google Tag Manager -->
+   
+   
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); // Подключение стилей, скриптов и других хуков ?>
@@ -31,7 +23,7 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Palermo",
-  "url": "https://lunares.com.ua"
+  "url": "https://keitering-palermo7.com.ua"
 }
 </script>
 
@@ -129,30 +121,7 @@
                     </svg></button>
             </div>
         </div>
-        <div class="modalWrapper" id="modalCookie">
-            <div class="modalBody">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
-                    class="modalCross">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cookie.svg"
-                    class="modalImageCookie" alt="">
-                <h2>Використання файлів cookie</h2>
-                <p>Ми використовуємо файли cookie для покращення вашого досвіду на нашому сайті. Продовжуючи перегляд,
-                    ви погоджуєтесь
-
-                <div class="modalButtonGroup">
-                    <button class="greenButton" id="acceptCookie">Прийняти<svg width="16" height="17"
-                            viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></button>
-                    <a href="<?php echo home_url('/cookie-policy/'); ?>" class="transparentButton">Читати більше<svg
-                            width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></a>
-                </div>
-            </div>
-        </div>
+        
         <div class="modalWrapper" id="modalPhone">
             <div class="modalBody">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
@@ -199,58 +168,7 @@
                 </div>
             </div>
         </div>
-        <script>
-            // Функция для установки cookie
-            function setCookie(name, value, days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                var expires = "expires=" + date.toUTCString();
-                document.cookie = name + "=" + value + ";" + expires + ";path=/";
-            }
-
-            // Функция для получения cookie
-            function getCookie(name) {
-                var decodedCookie = decodeURIComponent(document.cookie);
-                var cookieArray = decodedCookie.split(';');
-                for (var i = 0; i < cookieArray.length; i++) {
-                    var c = cookieArray[i].trim();
-                    if (c.indexOf(name + "=") === 0) {
-                        return c.substring((name.length + 1), c.length);
-                    }
-                }
-                return "";
-            }
-
-            $(document).ready(function () {
-                var $modalCookie = $("#modalCookie");
-                var $acceptCookieBtn = $("#acceptCookie");
-                var $closeModal = $("#closeModal");
-                <?php if (is_page('cookie-policy')) { ?>
-
-                <?php } else { ?>
-                    // Проверяем, был ли установлен cookie "acceptedCookies"
-                    if (getCookie("acceptedCookies") === "true") {
-                        // Уже принят, не показываем окно
-                        $modalCookie.hide();
-                    } else {
-                        jQuery('body').addClass('no-scroll');
-                        // Не принят, показываем модалку с анимацией fadeIn
-                        $modalCookie.fadeIn(100); // 300 = скорость анимации в мс
-                    }
-                <?php } ?>
-                // Кнопка "Прийняти"
-                $acceptCookieBtn.on("click", function () {
-                    // Устанавливаем cookie на 365 дней
-                    setCookie("acceptedCookies", "true", 365);
-                    // Скрываем модалку с анимацией fadeOut
-                    $modalCookie.fadeOut(100);
-                    jQuery('body').removeClass('no-scroll');
-                });
-
-                // Можно добавить закрытие по клику на крестик
-
-            });
-        </script>
+       
         <script>
             jQuery(document).ready(function () {
                 const dropdown = jQuery('.categoryDropdownWrapper');
