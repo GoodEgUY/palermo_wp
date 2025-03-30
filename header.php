@@ -26,7 +26,11 @@
   "url": "https://keitering-palermo7.com.ua"
 }
 </script>
+    <script>
 
+        AOS.init();
+
+    </script>
 </head>
 <?php generate_breadcrumbs_json_ld(); ?>
 
@@ -83,14 +87,14 @@
             </div>
 
         </div>
-        
-        
+
+
 
         <div class="modalWrapper" id="modalPhone">
             <div class="modalBody">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
                     class="modalCross">
-               
+
 
                 <p>Ми завжди поруч, щоб допомогти! Оберіть зручний номер для зв’язку, і ми з радістю відповімо на всі
                     ваші запитання.

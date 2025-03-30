@@ -63,7 +63,7 @@ Template Name: Home
                         $serviceQuery->the_post();
 
                         ?>
-                        <div class="servicesItem">
+                        <div class="servicesItem" data-aos="fade-up">
                             <?php
                             $image = get_field('image');
                             if ($image): ?>
