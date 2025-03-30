@@ -8,10 +8,8 @@ function lunare_enqueue_assets()
         'header' => '/assets/css/header.css',
         'footer' => '/assets/css/footer.css',
         'home' => '/assets/css/home.css',
-        'page-pilots-academy' => '/assets/css/page-pilots-academy.css',
-        'page-single-product-other' => '/assets/css/products.css',
-        'page-single-small-template' => '/assets/css/blog.css',
-        'page-fertilization' => '/assets/css/page-fertilization.css',
+
+
         'ui' => '/assets/css/ui-styles.css',
     ];
 
