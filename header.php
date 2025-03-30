@@ -219,6 +219,7 @@
 
                 });
                 jQuery('.openModalPhoneButton').click(function (e) {
+                    e.preventDefault();
                     e.stopPropagation();
                     const targetValue = jQuery(this).data('target');
                     jQuery('#modalPhone').fadeIn(100);
