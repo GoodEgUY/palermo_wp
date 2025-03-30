@@ -83,51 +83,14 @@
             </div>
 
         </div>
-        <div class="modalWrapper" id="modalForm">
-            <div class="modalBody">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
-                    class="modalCross">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" class="modalLogo" alt="">
-                <p>Заповніть форму нижче, і наші спеціалісти зв'яжуться з вами найближчим часом</p>
-                <form class="modalForm contactForm">
-                    <div class="inputWrapper">
-                        <input type="text" name="name" placeholder="Ім'я " class="defaultInput" id="">
-                    </div>
-                    <div class="inputWrapper">
-                        <input type="tel" name="phone" placeholder="Телефон" class="defaultInput" id="">
-                    </div> <button type="submit" class="greenButton">Надіслати<svg width="16" height="17"
-                            viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg></button>
-                    <input type="hidden" value="" name="target">
-
-                </form>
-            </div>
-        </div>
-        <div class="modalWrapper" id="modalSuccess">
-            <div class="modalBody">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
-                    class="modalCross">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/success.svg"
-                    class="modalImageSucess" alt="">
-                <h2>Ваша заявка прийнята</h2>
-                <p>Ми отримали вашу заявку та вже працюємо над її обробкою. Наш менеджер зв’яжеться з вами найближчим
-                    часом, щоб уточнити деталі.</p>
-                <button class="greenButton modalCloseButton">Продовжити<svg width="16" height="17" viewBox="0 0 16 17"
-                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg></button>
-            </div>
-        </div>
+        
+        
 
         <div class="modalWrapper" id="modalPhone">
             <div class="modalBody">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
                     class="modalCross">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" class="modalLogo" alt="">
-
+               
 
                 <p>Ми завжди поруч, щоб допомогти! Оберіть зручний номер для зв’язку, і ми з радістю відповімо на всі
                     ваші запитання.
