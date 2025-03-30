@@ -28,7 +28,9 @@
 </script>
     <script>
 
-        AOS.init();
+        document.addEventListener("DOMContentLoaded", function () {
+            AOS.init();
+        });
 
     </script>
 </head>
