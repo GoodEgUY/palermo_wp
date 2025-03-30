@@ -1,18 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  --green: #32d16d;
+  --orange: #e56117;
   --greenHover: #22e76b;
   --greenFocus: #25b059;
   --transperent-green: #32d16c2d;
-  --lightgrey: #cccccc;
+  --lightgrey: #9d9d9d;
   --lightgreyHover: #cccccc2b;
   --lightgreyFocus: #ffffffb1;
   --grey: #353535;
-  --graycards: #222222;
-  --black: #0e0e0e;
+  --graycards: #152131;
+  --background: #0e1621;
   --purple: #a832d1;
   --blue: #23aaeb;
   --decor-font-size: 48px;
@@ -22,37 +22,40 @@
   --small-border-radius: 20px;
 }
 html body {
-  background-color: var(--black);
+  background-color: var(--background);
   color: #fff;
-  font-family: "Roboto", serif;
 }
 h1 {
   font-size: 42px;
   line-height: 140%;
   font-weight: 400;
+  font-family: "Playfair Display", serif;
 }
 h1 span,
 h2 span {
-  color: var(--green);
+  color: var(--orange);
 }
 h2 {
   font-size: 40px;
   font-weight: 500;
   line-height: 130%;
+  font-family: "Playfair Display", serif;
 }
 
 h3 {
   font-size: 24px;
+  font-family: "Playfair Display", serif;
 }
 h3 small {
   font-size: 16px;
 }
 p {
   font-size: 16px;
-  line-height: 130%;
+  line-height: normal;
+  font-family: "PT Sans", sans-serif;
 }
 p span {
-  color: var(--green);
+  color: var(--orange);
 }
 .decorBig {
   font-size: var(--decor-font-size);
@@ -61,7 +64,7 @@ p span {
   line-height: 67px;
 }
 .decorBig span {
-  color: var(--green);
+  color: var(--orange);
 }
 .decoBig small {
   font-size: 16px;
@@ -71,7 +74,10 @@ p span {
   flex-direction: column;
   align-items: center;
 }
-
+.logo {
+  font-family: "Instrument Serif", serif;
+  font-size: 48px;
+}
 section,
 header,
 footer {
@@ -91,7 +97,11 @@ footer {
   max-width: 1600px;
   width: 100%;
 }
-.greenButton {
+.blockName {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+.orange-default-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,105 +110,92 @@ footer {
   border-radius: 16px;
   border: none;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 14px 32px;
-  background-color: var(--green);
-  color: var(--black);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.greenButton svg {
-  transition: all 0.2s ease-in-out;
-}
-.greenButton svg path {
-  stroke: var(--black);
-}
-.greenButton:hover {
-  background-color: var(--greenHover);
-}
-.greenButton:focus {
-  background-color: var(--greenFocus);
-}
-.greenButton:hover > svg {
-  transform: rotate(45deg);
-}
-.blackButton {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  text-decoration: none;
-  border-radius: 16px;
-  border: none;
-  font-weight: 500;
-  padding: 14px 32px;
-  background-color: var(--graycards);
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
   color: #fff;
+
   cursor: pointer;
   transition: all 0.2s ease;
-  min-width: max-content;
 }
-.blackButton svg {
-  transition: all 0.2s ease-in-out;
-}
-.blackButton svg path {
-  stroke: #fff;
-}
-.blackButton:hover {
-  color: var(--green);
-}
-.blackButton:focus {
-  color: var(--greenFocus);
-}
-.blackButton:hover > svg {
-  transform: rotate(45deg);
-}
-.blackButton:hover > svg path {
-  stroke: var(--green);
-}
-.blackButton:focus > svg {
-  transform: rotate(45deg);
-}
-.blackButton:focus > svg path {
-  stroke: var(--greenFocus);
-}
-.transparentButton {
+
+.orange-rounded-button {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   text-decoration: none;
-  border-radius: 16px;
-  border: 1.5px solid var(--lightgrey);
+  border-radius: 50%;
+  border: none;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 14px 14px;
+  background-color: var(--orange);
+  border: 1px solid var(--orange);
+  color: var(--background);
 
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.transparent-default-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  text-decoration: none;
+  border-radius: 16px;
+  border: none;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 14px 32px;
   background-color: transparent;
+  border: 1px solid var(--orange);
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s ease;
+  min-width: max-content;
+  
+}
+
+.transparent-default-button:hover {
+  background-color: #e562178d;
+}
+.transparent-rounded-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+  border-radius: 50%;
+  border: none;
+  font-weight: 500;
+  padding: 14px 14px;
+  background-color: transparent;
+  border: 1px solid var(--orange);
   color: #fff;
   cursor: pointer;
   transition: all 0.2s ease;
   min-width: max-content;
 }
-.transparentButton:hover {
-  background-color: var(--lightgreyHover);
+.swiperNavigation {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: fit-content;
+  margin-top: 40px;
 }
-.transparentButton:focus {
-  color: var(--lightgreyFocus);
-  border-color: var(--lightgreyFocus);
+.swiper-pagination-bullet {
+  background-color: var(--graycards) !important;
+  height: 8px;
+  width: 8px;
 }
-.transparentButton svg {
-  transition: all 0.2s ease-in-out;
-}
-.transparentButton svg path {
-  stroke: #fff;
-}
-.transparentButton:hover > svg {
-  transform: rotate(45deg);
-}
-
-.transparentButton:focus > svg path {
-  stroke: var(--lightgreyFocus);
+.swiper-pagination-bullet-active {
+  background-color: var(--orange) !important;
 }
 .defaultForm {
   display: flex;
@@ -275,7 +272,7 @@ footer {
   margin-bottom: 12px;
 }
 .swiperSlideContent .steps span {
-  color: var(--green);
+  color: var(--orange);
 }
 .swiperSlideContent p {
   color: var(--lightgrey);
@@ -291,7 +288,7 @@ footer {
   margin-bottom: 12px;
 }
 .swiperSlideProductContent .steps span {
-  color: var(--green);
+  color: var(--orange);
 }
 .swiperSlideProductContent p {
   color: var(--lightgrey);
@@ -301,7 +298,7 @@ footer {
   bottom: 0;
   left: 0;
   border-top-right-radius: var(--big-border-radius);
-  background-color: var(--black);
+  background-color: var(--background);
   display: flex;
   gap: 16px;
   padding: 24px 24px 0 0;
@@ -323,10 +320,10 @@ footer {
   height: 40px;
 }
 .swiperNavigationDefault .borderRadius1 path {
-  fill: var(--black);
+  fill: var(--background);
 }
 .swiperNavigationDefault .borderRadius2 path {
-  fill: var(--black);
+  fill: var(--background);
 }
 .swiperButtonPrev,
 .swiperButtonNext {
@@ -351,7 +348,7 @@ footer {
 }
 .swiperButtonPrev:hover svg path,
 .swiperButtonNext:hover svg path {
-  stroke: var(--green);
+  stroke: var(--orange);
 }
 .markedlistDefault {
   display: flex;
@@ -382,10 +379,10 @@ footer {
   width: 100%;
 }
 .iti__selected-dial-code {
-  color: var(--black);
+  color: var(--background);
 }
 .iti__country-name {
-  color: var(--black);
+  color: var(--background);
 }
 .inputWrapper {
   position: relative;
@@ -518,6 +515,10 @@ input.error {
     width: 24px;
     height: 24px;
   }
+
+  .blockName {
+    font-size: 36px;
+  }
 }
 @media (max-width: 800px) {
   .jobStepSwiperBlock {
@@ -565,4 +566,8 @@ input.error {
     width: 24px!important;
     height: 24px!important;
   } */
+  .blockName {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
 }

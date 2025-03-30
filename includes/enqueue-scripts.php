@@ -60,7 +60,7 @@ function lunare_enqueue_assets()
         true
     );
     // Подключение кастомного JS
-    
+
     wp_enqueue_style('swiper-style', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), false);
     wp_enqueue_style('fancybox-style', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css', array(), false);
 
@@ -125,6 +125,8 @@ function lunare_enqueue_assets()
                 });
             });
         </script>
+        <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
+        <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
         <?php
     });
 }

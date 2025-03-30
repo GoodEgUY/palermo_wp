@@ -30,7 +30,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Lunares",
+  "name": "Palermo",
   "url": "https://lunares.com.ua"
 }
 </script>
@@ -39,97 +39,27 @@
 <?php generate_breadcrumbs_json_ld(); ?>
 
 <body <?php body_class(); ?>>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5LJCNR69" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+
     <header>
-        <?php
-        $is_product_section = false;
-        if (
-            is_post_type_archive('product')
-            || is_singular('product')
-            || is_tax('product_category')
-        ) {
-            $is_product_section = true;
-        }
 
-        ?>
         <div class="headerWrapper wrapper">
-            <a href="<?php echo home_url('/'); ?>">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="" class="logo">
-            </a>
             <div class="headerNav">
-                <div class="headerItem" id="dropdown-menu">
-
-                    <!-- Добавление активного класса на ссылку каталога -->
-                    <a href="/product" class="headerItem <?php echo $is_product_section ? 'active' : ''; ?>"
-                        id="catalogLink">
-                        Каталог
-                        <svg width="9" class="dropdown-arrow" height="5" viewBox="0 0 9 5" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.5 4.5L8.5 0.5H0.5L4.5 4.5Z" />
-                        </svg>
-                    </a>
-                    <?php
-                    // Получаем все термины таксономии 'product_category'
-                    $terms = get_terms(array(
-                        'taxonomy' => 'product_category',
-                        'hide_empty' => false, // или true, если нужно скрывать пустые категории
-                    ));
-
-                    if (!empty($terms) && !is_wp_error($terms)): ?>
-                        <div class="categoryDropdownWrapper">
-                            <div class="categoryDropdown">
-                                <svg width="24" class="borderRadius1" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M24 0H0C13.2549 0 24 10.7451 24 24V0Z" />
-                                </svg>
-                                <svg width="24" class="borderRadius2" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M24 0H0V24C0 10.7451 10.7451 0 24 0Z" />
-                                </svg>
-                                <a href="<?php echo get_post_type_archive_link('product'); ?>" class="<?php if (is_post_type_archive('product'))
-                                       echo 'active'; ?>">
-                                    Всі
-                                </a>
-
-                                <?php foreach ($terms as $term):
-                                    // Ссылка на архив этой категории
-                                    $term_link = get_term_link($term);
-
-                                    // Проверяем, на странице ли мы этой категории
-                                    // Если страница – архив таксономии 'product_category' с тем же slug
-                                    $active_class = '';
-                                    if (is_tax('product_category', $term->slug)) {
-                                        $active_class = 'active';
-                                    }
-
-                                    global $wp;
-                                    $current_path = $wp->request;
-                                    ?>
-
-                                    <a href="<?php echo esc_url($term_link); ?>" class="<?php echo esc_attr($active_class); ?>">
-                                        <?php echo esc_html($term->name); ?>
-                                    </a>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </div>
-                <a href="<?php echo home_url('/fertilization/'); ?>" class="headerItem <?php if (is_page('fertilization'))
-                       echo 'active'; ?>">Внесення ЗЗР</a>
-                <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem <?php if (is_page('pilots-academy'))
-                       echo 'active'; ?>">Центр пілотів</a>
-                <a href="<?php echo home_url('/blogs/'); ?>" class="headerItem <?php if ($current_path === 'blogs') {
-                       echo 'active';
-                   } ?>">Блог</a>
+                <a href="" scroll="goToServices" class="headerItem">Послуги</a>
+                <a href="" scroll="goToMenu" class="headerItem">Меню</a>
+                <a href="" scroll="goToSteps" class="headerItem">Етапи співпраці</a>
             </div>
-            <button class="transparentButton openModalPhoneButton" data-target="Хедер">Зв’язатись з нами <svg width="16"
-                    height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg></button>
+            <h2 class="logo">Palermo</h2>
+            <div class="headerSocials">
+                <a href="https://www.tiktok.com/@lunares_agro?_t=ZM-8tHR0SgR78o&_r=1"><img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/telegram.svg" alt=""></a>
+
+                <a href="https://t.me/lunares_agro"><img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/instagram.svg" alt=""></a>
+                <a href="https://www.instagram.com/lunares_agro"><img
+                        src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/phone.svg"
+                        alt="">+380934094191</a>
+            </div>
+
             <div class="burger" id="burgerButton">
                 <svg class="burger-icon" width="32" height="32" viewBox="0 0 32 32" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
@@ -141,73 +71,25 @@
         </div>
         <div class="burgerWrapper" id="burgerMenu">
             <div class="burgerNav">
-                <div class="headerItem" id="dropdown-menu">
 
-                    <div class="mobileCatalogButton">
-                        <a href="/product" class="headerItem <?php echo $is_product_section ? 'active' : ''; ?>"
-                            id="catalogLink">
-                            Каталог
+                <a href="" class="headerItem" scroll="goToServices">Послуги</a>
+                <a href="" class="headerItem" scroll="goToMenu">Меню</a>
+                <a href="" class="headerItem" scroll="goToSteps">Етапи співпраці</a>
+                <div class="separator"></div>
+                <div class="headerSocials">
+                    <a href="https://www.tiktok.com/@lunares_agro?_t=ZM-8tHR0SgR78o&_r=1"><img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/telegram.svg"
+                            alt="">Telegram</a>
 
-                        </a>
-                        <svg id="mobileCatalogArrow" width="20" height="21" viewBox="0 0 20 21" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 15.5L18 7.5H2L10 15.5Z" fill="" />
-                        </svg>
-
-                    </div>
-                    <?php if (!empty($terms) && !is_wp_error($terms)): ?>
-                        <div class="categoryMobileDropdownWrapper">
-                            <div class="categoryDropdown">
-                                <svg width="24" class="borderRadius1" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M24 0H0C13.2549 0 24 10.7451 24 24V0Z" />
-                                </svg>
-                                <svg width="24" class="borderRadius2" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M24 0H0V24C0 10.7451 10.7451 0 24 0Z" />
-                                </svg>
-                                <a href="<?php echo get_post_type_archive_link('product'); ?>" class="<?php if (is_post_type_archive('product'))
-                                       echo 'active'; ?>">
-                                    Всі
-                                </a>
-
-                                <?php foreach ($terms as $term):
-                                    // Ссылка на архив этой категории
-                                    $term_link = get_term_link($term);
-
-                                    // Проверяем, на странице ли мы этой категории
-                                    // Если страница – архив таксономии 'product_category' с тем же slug
-                                    $active_class = '';
-                                    if (is_tax('product_category', $term->slug)) {
-                                        $active_class = 'active';
-                                    }
-
-                                    global $wp;
-                                    $current_path = $wp->request;
-                                    ?>
-
-                                    <a href="<?php echo esc_url($term_link); ?>" class="<?php echo esc_attr($active_class); ?>">
-                                        <?php echo esc_html($term->name); ?>
-                                    </a>
-                                <?php endforeach; ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
+                    <a href="https://t.me/lunares_agro"><img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/instagram.svg"
+                            alt="">Instagram</a>
+                    <a href="https://www.instagram.com/lunares_agro"><img
+                            src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/phone.svg"
+                            alt="">+380934094191</a>
                 </div>
-                <a href="<?php echo home_url('/fertilization/'); ?>" class="headerItem <?php if (is_page('fertilization'))
-                       echo 'active'; ?>">Внесення ЗЗР</a>
-                <a href="<?php echo home_url('/pilots-academy/'); ?>" class="headerItem <?php if (is_page('pilots-academy'))
-                       echo 'active'; ?>">Центр пілотів</a>
-                <a href="<?php echo home_url('/blogs/'); ?>" class="headerItem <?php if ($current_path === 'blogs') {
-                       echo 'active';
-                   } ?>">Блог</a>
             </div>
-            <button class="transparentButton burgerMenuButton openModalPhoneButton"
-                data-target="Бургер Меню Кнопка">Зв’язатись з нами <svg width="16" height="17" viewBox="0 0 16 17"
-                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 13.5L12.4444 4.05556M13 12.3889V3.5L4.11111 3.5" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg></button>
+
         </div>
         <div class="modalWrapper" id="modalForm">
             <div class="modalBody">

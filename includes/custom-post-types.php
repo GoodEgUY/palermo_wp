@@ -3,17 +3,17 @@
 function register_product_post_type()
 {
     $labels = array(
-        'name' => 'Товари',
-        'singular_name' => 'Товар',
-        'menu_name' => 'Товари',
-        'add_new' => 'Додати новий',
-        'add_new_item' => 'Додати новий товар',
-        'edit_item' => 'Редагувати товар',
-        'new_item' => 'Новий товар',
-        'view_item' => 'Переглянути товар',
-        'search_items' => 'Шукати товари',
-        'not_found' => 'Товари не знайдено',
-        'not_found_in_trash' => 'У кошику товари не знайдено',
+        'name' => 'Блюда',
+        'singular_name' => 'Блюдо',
+        'menu_name' => 'Блюда',
+        'add_new' => 'Додати нове',
+        'add_new_item' => 'Додати нове блюдо',
+        'edit_item' => 'Редагувати Блюдо',
+        'new_item' => 'Нове Блюдо',
+        'view_item' => 'Переглянути блюдо',
+        'search_items' => 'Шукати блюда',
+        'not_found' => 'Блюда не знайдено',
+        'not_found_in_trash' => 'У кошику блюда не знайдено',
     );
 
     $args = array(
@@ -32,6 +32,76 @@ function register_product_post_type()
     register_post_type('product', $args);
 }
 add_action('init', 'register_product_post_type');
+
+function register_service_post_type()
+{
+    $labels = array(
+        'name' => 'Послуги',
+        'singular_name' => 'Послуга',
+        'menu_name' => 'Послуги',
+        'add_new' => 'Додати нову',
+        'add_new_item' => 'Додати нову послугу',
+        'edit_item' => 'Редагувати Послугу',
+        'new_item' => 'Нова Послуга',
+        'view_item' => 'Переглянути послугу',
+        'search_items' => 'Шукати послуги',
+        'not_found' => 'Послуги не знайдено',
+        'not_found_in_trash' => 'У кошику послуг не знайдено',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-cart', // Іконка у вигляді кошика
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'service'),// URL для записів
+        'show_in_rest' => true, // Для підтримки редактора Gutenberg
+    );
+
+    register_post_type('service', $args);
+}
+add_action('init', 'register_service_post_type');
+
+
+
+
+function register_addservice_post_type()
+{
+    $labels = array(
+        'name' => 'Додаткова Послуга',
+        'singular_name' => 'Додаткова Послуга',
+        'menu_name' => 'Додаткові Послуги',
+        'add_new' => 'Додати нову',
+        'add_new_item' => 'Додати нову послугу',
+        'edit_item' => 'Редагувати Послугу',
+        'new_item' => 'Нова Послуга',
+        'view_item' => 'Переглянути послугу',
+        'search_items' => 'Шукати послуги',
+        'not_found' => 'Послуги не знайдено',
+        'not_found_in_trash' => 'У кошику послуг не знайдено',
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'menu_position' => 6,
+        'menu_icon' => 'dashicons-cart', // Іконка у вигляді кошика
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'has_archive' => true,
+        'rewrite' => array('slug' => 'addservice'),// URL для записів
+        'show_in_rest' => true, // Для підтримки редактора Gutenberg
+    );
+
+    register_post_type('addservice', $args);
+}
+add_action('init', 'register_addservice_post_type');
+
 
 
 // Реєстрація кастомного типу запису "Блоги"

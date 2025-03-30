@@ -1,17 +1,224 @@
 .introWrapper {
-  width: 100%;
-  aspect-ratio: 440/217;
-  position: relative;
-
-  margin-bottom: var(--block-padding);
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  align-items: center;
 }
 .introApplication {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+}
+.introApplication-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.introApplication-image {
+  border-radius: 20px;
+  width: 50%;
+  max-width: 600px;
+  flex: 1;
+}
+.introApplication-text h1 {
+  font-size: 72px;
+}
+.introButtonGroup {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+}
+.introFacts {
+  display: flex;
+  align-items: center;
+  gap: 32px;
   width: 100%;
-  aspect-ratio: 440/217;
+  justify-content: space-between;
+}
+.introFact-item {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+.introFact-item h2 {
+  font-size: 32px;
+}
+ .separator {
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+}
+.servicesWrapper {
+  padding: 80px 0;
+}
+.servicesWrapper .orange-default-button {
+  margin: 40px auto 0 auto;
+  width: fit-content;
+}
+.servicesDashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.servicesItem {
+  display: flex;
+  align-items: stretch;
+  gap: 32px;
+}
+.servicesItemText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background-color: var(--graycards);
+  border-radius: 20px;
+  padding: 24px;
+  flex: 3;
+}
+.servicesItemText button {
+  width: fit-content;
+  margin-top: 16px;
+}
+.serviceItemImage {
   position: relative;
-  border-radius: var(--big-border-radius);
+
+  flex: 1;
+  border-radius: 20px;
   overflow: hidden;
 }
+.serviceItemImage img {
+  position: absolute;
+  /* width: 100%; */
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.servicesItemText .title {
+  color: var(--lightgrey);
+}
+.serviceItem-properties {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.serviceItem-properties p {
+  font-size: 16px;
+}
+.serviceItem-properties p span {
+  color: var(--lightgrey);
+}
+.menuSwiper {
+  overflow: hidden;
+  position: relative;
+}
+.menuSlide {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.menuSlideItem {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+
+  aspect-ratio: 302/294;
+}
+.menuSlideItem img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menuSlideItem-name {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--graycards);
+}
+.menuSlideItem-name h3 {
+  font-weight: 700px;
+  font-size: 20px;
+}
+.stepsTable {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.stepsItem {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  border-radius: 20px;
+  background-color: var(--graycards);
+  flex: 1;
+  min-width: 260px;
+}
+.stepsItem .number {
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  width: 56px;
+  border-radius: 50%;
+  background-color: var(--orange);
+  margin-bottom: 16px;
+}
+.photoGalleryWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 0;
+}
+.photoSwiper {
+  width: 100%;
+}
+/* .photoSwiper .swiper-slide {
+  width: fit-content;
+} */
+.photoSwiper .swiper-slide {
+  width: 600px; /* или под твой размер */
+}
+.photoSlide {
+  aspect-ratio: 1/1;
+  width: 600px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.photoSlide img {
+  width: 100%;
+}
+.videoGalleryWrapper {
+  padding: 0 0 80px 0;
+}
+.videoSwiper .swiper-slide {
+  width: fit-content;
+}
+.videoSwiper .swiper-wrapper {
+  width: 100%;
+}
+.videoSlide {
+  height: 561px; /* или любая нужная высота */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.videoSlide .video-js {
+  height: 100%; /* растягивается по высоте */
+  width: auto; /* ширина считается по пропорциям */
+  max-width: none; /* не ограничивается родителем */
+  aspect-ratio: unset; /* снимаем ограничение от Video.js */
+  background: black;
+  border-radius: 12px;
+}
+.videoSlide video {
+  position: static !important;
+}
+/* NULLLLLLLLLLĻLLLLSLSLSDOEKFOWKEOKO */
 .introBackground {
   position: absolute;
   width: 100%;
@@ -28,10 +235,6 @@
   transition: all 0.2s ease;
 }
 
-.introWrapper:hover .introDrone {
-  /* animation: livitation ease-in-out infinite 5s; */
-  transform: scale(1.1);
-}
 .introText1 {
   position: absolute;
   z-index: 3;
@@ -263,178 +466,28 @@
   min-width: 500px;
   aspect-ratio: 325/147;
 }
-.aboutTextImage img {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.aboutTextContent {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-}
-.aboutTextContent p {
-  color: var(--lightgrey);
-  margin-bottom: 8px;
-}
-.aboutTextContent-mobile {
-  display: none;
-}
-.aboutTextContent-mobile p {
-  color: var(--lightgrey);
-}
-.benefitsWrapper {
-  display: flex;
-  gap: 56px;
-  align-items: center;
-  padding-bottom: var(--block-padding);
-}
-.benefitsDashboard {
-  display: flex;
-  flex-wrap: wrap;
-  row-gap: 56px;
-  column-gap: 20px;
-  align-items: center;
-  width: 100%;
-  max-width: 650px;
-}
-.benefitsDashboard p {
-  color: var(--lightgrey);
-}
-.benefitsItem {
-  width: calc((100% - 20px) / 2);
-  max-width: 290px;
-  display: flex;
-
-  gap: 16px;
-  align-items: flex-start;
-}
-.benefitsItemText {
-  display: flex;
-  flex-direction: column;
-}
-.benefitsItem p {
-  font-weight: 500;
-  color: #fff;
-}
-.benefitsItem p span {
-  font-size: 48px;
-}
-.benefitBanner {
-  width: 100%;
-
-  aspect-ratio: 307/227;
-  position: relative;
-  border-radius: var(--big-border-radius);
-  position: relative;
-  overflow: hidden;
-}
-.benefitBanner img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.benefitBannerAdtitle {
-  background-color: var(--graycards);
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 20px;
-  width: 100%;
-  max-width: 319px;
-  border-radius: var(--small-border-radius);
-}
-.benefitBannerAdtitle p {
-  color: var(--lightgrey);
-  margin-bottom: 12px;
-}
-.faqWrapper {
-  padding: 0 0 120px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-.accordion {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-.accordion__item {
-  border-radius: var(--small-border-radius);
-  background: var(--graycards);
-  width: 100%;
-}
-.accordion__title {
-  color: #fff;
-  padding: 26px 20px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-gap: 8px;
-  transition: all 0.2s ease;
-}
-.accordion__title-text {
-}
-
-.accordion__arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  min-width: 36px;
-  min-height: 36px;
-  background: var(--lightgrey);
-
-  border-radius: 50%;
-
-  font-weight: 700;
-  transition: all 0.3s ease;
-}
-.accordion__arrow-item {
-  color: var(--black);
-  height: 20px;
-  width: 20px;
-}
-.accordion__arrow-active {
-  background: var(--lightgrey);
-  width: 100%;
-  height: 100%;
-  color: var(--black);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-.accordion__content {
-  display: none;
-  color: var(--lightgrey);
-  padding: 0px 20px 24px 20px;
-}
 .contactWrapper {
   display: flex;
   align-items: center;
-  padding: 112px;
-  gap: 20px;
+  flex-direction: column;
+  padding: 200px 0 180px 0;
+  gap: 30px;
   position: relative;
   justify-content: space-between;
   overflow: hidden;
-  border-radius: var(--big-border-radius);
-}
 
+  text-align: center;
+}
+.contactWrapper h1 {
+  font-size: 48px;
+}
+.contactWrapper p {
+  color: #fff;
+  margin-bottom: 12px;
+}
+.contactWrapper button {
+  width: fit-content;
+}
 .contactBackground {
   position: absolute;
   top: 50%;
@@ -452,6 +505,9 @@ gap: 8px;
   width: 100%;
   height: 800px;
   z-index: -1;
+}
+.contactSection {
+  padding: 0;
 }
 .contactBlockText {
   display: flex;
@@ -484,377 +540,138 @@ gap: 8px;
   margin-bottom: 20px;
 }
 @media (max-width: 1200px) {
-  .aboutTextWrapper {
-    gap: 32px;
-  }
-  .aboutTextImage {
-    aspect-ratio: 325/ 207;
-    max-height: unset;
-  }
-  .aboutTextImage img {
-    height: 100%;
-    transform: unset;
-    left: 0;
-    top: 0;
-  }
-  .aboutTextContent {
-    min-width: 360px;
-  }
- 
-}
-@media (max-width: 1100px) {
-  .blogRecommendationWrapper {
-    gap: 16px;
+  .introApplication-text h1 {
+    font-size: 32px;
   }
 
-  .blogRecommendationWrapper .contentProductItem {
-    padding: 12px 12px 90px 12px;
-  }
-
-  .p1 {
-    position: absolute;
-    z-index: 6;
-    /* right: 16px; */
-    top: 20px;
-    max-width: 580px;
-    color: var(--black);
-    left: 20px;
-  }
-  .benefitsDashboard {
-    flex-direction: column;
-  }
-  .benefitsItem {
-    width: 100%;
-    min-width: 270px;
-  }
-  .benefitBanner {
-    height: 100%;
-    width: 100%;
-    aspect-ratio: unset;
-    position: relative;
-    border-radius: var(--big-border-radius);
-    position: relative;
-    overflow: hidden;
-  }
-  .benefitBanner img {
-    position: absolute;
-    top: 0;
-    left: unset;
-    /* transform: translateX(-50%) translateY(-50%); */
-    right: 0;
-    width: 100%;
-    transform: unset;
-  }
-  .benefitsDashboard .blockTitle {
-    display: none;
-  }
-  .benefitBanner .imageText {
-    position: absolute;
-    display: inline;
-    left: 16px;
-    top: 16px;
-    color: var(--black);
-    z-index: 5;
-  }
-  .benefitsDashboard {
-    width: fit-content;
-    max-width: 300px;
-    row-gap: 32px;
+  .introButtonGroup {
+    gap: 8px;
   }
 }
 @media (max-width: 1100px) {
-  .section1IntroCards {
-    position: static;
-    padding: 16px 0 0 0;
-
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .introText1 {
-    max-width: 500px;
-  }
-  .introItemCard {
-    flex: 1;
-    height: 100%;
-    width: 50%;
-    align-items: flex-start;
-    height: 172px;
-  }
-  .introItemCard .itemCard-image {
-    height: 100%;
-    aspect-ratio: unset;
+  .introApplication-image {
     width: 45%;
   }
-  .whiteItemCardInfo {
-    gap: 16px;
-  }
-  .introPilotTeaching {
-    flex: 1;
-    max-width: unset;
+  .servicesItem {
+    background-color: var(--graycards);
     padding: 12px;
-    height: 172px;
-  }
-  .arcv1,
-  .arcg1 {
-    width: 24px;
-    height: 24px;
-  }
-  .productItemButton-wrapperFigure1,
-  .productItemButton-wrapperFigure2 {
-    width: 24px;
-    height: 24px;
-  }
-  .contactWrapper {
-    padding: 112px 64px;
-  }
-  .productItemButton-wrapper {
-    padding:16px 16px 0  0;
-  }
-}
-@media (max-width: 1000px) {
-  .blogRecommendationWrapper {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  .blogRecommendationWrapper .contentProductItem {
-    flex: unset;
-    width: calc(50% - 8px);
-    height: unset;
-  }
-  .contentProductItem .contentProductItem-image {
-    aspect-ratio: unset;
-    width: 100%;
-    height: 191px;
-    overflow: hidden;
-    border-radius: var(--small-border-radius);
-  }
-}
-@media (max-width: 900px) {
-  .aboutTextWrapper {
-    flex-direction: column;
-  }
-  .aboutTextImage {
-    order: 2;
-    min-width: unset;
-    max-width: unset;
-    aspect-ratio: 780 / 353;
-    
-  }
-  .aboutTextContent {
-    width: 100%;
-  }
-  .aboutTextContent p,
-  .aboutTextContent a {
-    display: none;
-  }
-  .aboutTextContent-mobile {
-    display: flex;
-    flex-direction: column;
+    border-radius: 20px;
     gap: 16px;
-    order: 3;
   }
-  .aboutTextContent {
-    order: 1;
-  }
-  .benefitsWrapper {
-    flex-direction: column;
-  }
-  .benefitsDashboard {
-    max-width: unset;
-  }
-  .benefitsDashboard .blockTitle {
-    display: inline;
-  }
-  .benefitBanner {
-    aspect-ratio: 307/227;
-    order: 1;
-  }
-  .benefitsDashboard {
-    order: 2;
-    align-items: flex-start;
-    row-gap: 20px;
-  }
-  .benefitBanner .imageText {
-    display: none;
-  }
-  .introText1 {
-    position: static;
-  }
-  .textSeparator {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .textSeparator p {
-    max-width: unset;
-    padding-left: 0;
-  }
-  .contactSection {
+  .servicesItemText {
+    padding: none;
+    flex: 2;
     padding: 0;
   }
-  .contactWrapper {
+  .servicesItem img {
+    border-radius: 8px;
+    flex: 1;
+  }
+  .servicesDashboard {
+    gap: 16px;
+  }
+}
+@media (max-width: 970px) {
+  .introApplication-image {
+    width: 30%;
+  }
+}
+
+@media (max-width: 970px) {
+  .introApplication-image {
+    width: 30%;
+  }
+  .introApplication {
     flex-direction: column;
-    gap: 48px;
-    padding: 56px 16px;
-    border-radius: 0 !important;
+  }
+  .introApplication-text {
+    order: 2;
+  }
+  .introApplication-image {
+    width: 100%;
+    max-width: none;
+    order: 1;
+  }
+  .introFacts {
+    flex-direction: column;
+  }
+  .contactWrapper {
+    padding: 200px 16px;
+    gap: 20px;
+    
   }
   .contactBackground {
+    position: absolute;
     height: 100%;
+    left: 50%;
     width: auto;
-  }
-  .contactBlockText {
-    align-items: center;
-  }
-  .contactBlockText p {
-    text-align: center;
-    margin-bottom: 0;
+    top: 0;
+    transform: translateX(-50%);
   }
 }
-@media (max-width: 850px) {
-  .section1IntroCards {
+@media (max-width: 700px) {
+  .servicesItem {
     flex-direction: column;
   }
-  .whiteItemCard {
-    gap: 12px;
-    padding: 8px;
+  .serviceItemImage {
+    aspect-ratio: 360/270;
+  }
+  .serviceItemImage img {
     width: 100%;
   }
-  .whiteItemCard .itemCard-image {
-    aspect-ratio: 151/82;
-    max-width: 200px;
+  .servicesWrapper .orange-default-button {
+    margin: 24px auto 0 auto;
   }
-
-  .whiteItemCardInfo {
-    gap: 16px;
+  .introButtonGroup {
+    flex-direction: column;
   }
-}
-@media (max-width: 800px) {
   .introWrapper {
-    aspect-ratio: unset;
+    gap: 48px;
   }
-
-  .introApplication {
-    aspect-ratio: 388/349;
+  .introFact-item h2 {
+    font-size: 24px;
   }
-  .introBackground {
-    height: 100%;
-    width: auto;
+  .introFact-item {
+    width: 100%;
+    gap: 8px;
   }
-  .introText1 {
-    padding: 0 0 24px 0;
+  .servicesWrapper {
+    padding: 48px 0;
   }
-
-  .productItemButton-wrapperFigure2 {
-    width: 24px;
-    height: 24px;
+  .serviceItemImage {
+    border-radius: 8px;
   }
-  .accordion__title {
-    padding: 16px;
+  .servicesItemText button {
+    margin-top: 8px;
   }
-  .accordion__content {
-    padding: 0 0 16px 16px;
+  .photoSlide {
+    height: 300px;
+    aspect-ratio: 1/1;
+    position: relative;
+    width: fit-content;
   }
-  .benefitsWrapper {
-    gap: 32px;
-  }
-  .benefitsDashboard {
-    row-gap: 20px;
-  }
-  .benefitsItem {
-    align-items: flex-start;
-  }
-  .benefitsItem svg {
-    width: 32px;
-    height: 32px;
-  }
-  .faqWrapper {
-    padding-bottom: 80px;
-  }
-  .contentProductItem .contentProductItem-image img {
-    width: auto;
-    height: 100%;
-    left: unset;
-    right: 0;
-  }
-  .introDrone {
-    width: 300px;
-    left: unset;
-    right: 20%;
-    top: 30%;
-  }
-  .aboutTextWrapper {
-    gap: 16px;
-  }
-  .aboutTextImage {
-    margin-bottom: 16px;
-  }
-}
-@media (max-width: 600px) {
-  .blogRecommendationWrapper {
-    flex-direction: column;
-  }
-
-  .blogRecommendationWrapper .contentProductItem {
+  .photoSlide img {
+    width: 100%;
+    position: absolute;
     width: 100%;
   }
-  .contentProductItem .contentProductItem-image {
-    aspect-ratio: 536/311;
-    height: unset;
-  }
-  .contentProductItem .contentProductItem-image img {
-    width: 110%;
-    height: auto;
-    left: 0;
-    right: unset;
-  }
-  .contentProductItem:nth-child(2) .contentProductItem-image img {
-    width: 110%;
-    height: auto;
-    left: unset;
-    right: 0;
-  }
-  .introDrone {
-    width: 300px;
-    left: unset;
-    right: -30px;
-    top: 82px;
-  }
-}
-@media (max-width: 600px) {
-  .benefitBanner {
-    aspect-ratio: 97/106;
-  }
-  .benefitBanner img {
-    height: 100%;
+  .photoSwiper .swiper-slide {
     width: auto;
   }
-  .benefitBannerAdtitle {
-    left: 12px;
-    bottom: 12px;
-    width: calc(100% - 24px);
-    max-width: unset;
+  .videoSlide {
+    height: 300px;
   }
-  .introParagraph {
-    top: 16px;
-    left: 16px;
+}
+@media (max-width: 480px) {
+  .menuSlideItem {
+    width: 300px;
+    height: 354px;
   }
- 
-  .section1IntroCards {
-    padding-top: 12px;
-    gap: 12px;
+  .menuSwiper .swiper-slide {
+    width: fit-content;
   }
-  .introItemCard {
-    height: 100px;
-    flex: unset;
-    border-radius: 16px;
-  }
-  .introItemCard .itemCard-image {
-    aspect-ratio: unset;
+  .servicesWrapper .orange-default-button {
     width: 100%;
-    height: 100%;
-    max-width: 151px;
-  }
-  .aboutTextContent {
-    min-width: unset;
   }
 }
 @keyframes livitation {
