@@ -2,8 +2,8 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-   
-   
+
+
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php wp_head(); // Подключение стилей, скриптов и других хуков ?>
@@ -121,7 +121,7 @@
                     </svg></button>
             </div>
         </div>
-        
+
         <div class="modalWrapper" id="modalPhone">
             <div class="modalBody">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg" alt=""
@@ -138,7 +138,7 @@
                             the_row(); ?>
                             <a href="tel:<?php if ($number = get_sub_field('number', 'options')): ?>
                <?php echo esc_html($number); ?>
-               <?php endif; ?>" class="greenButton"><?php if ($label = get_sub_field('label', 'options')): ?>
+               <?php endif; ?>" class="orange-default-button"><?php if ($label = get_sub_field('label', 'options')): ?>
                                     <?php echo esc_html($label); ?>
 
                                 <?php endif; ?><svg width="16" height="17" viewBox="0 0 16 17" fill="none"
@@ -168,7 +168,7 @@
                 </div>
             </div>
         </div>
-       
+
         <script>
             jQuery(document).ready(function () {
                 const dropdown = jQuery('.categoryDropdownWrapper');
@@ -286,14 +286,9 @@
       "@type": "ListItem",
       "position": 1,
       "name": "Главная",
-      "item": "http://agronix.com.ua"
+      "item": "https://keitering-palermo7.com.ua"
     },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Каталог",
-      "item": "http://agronix.com.ua/catalog"
-    }
+   
   ]
 }
 </script>
