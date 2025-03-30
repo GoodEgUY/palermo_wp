@@ -4,12 +4,12 @@
       <h1 class="smalllogo">Palermo</h1>
       <p>©2023 Palermo. All right reserved</p>
       <div class="headerSocials">
-         <a href="https://www.tiktok.com/@lunares_agro?_t=ZM-8tHR0SgR78o&_r=1"><img
+         <a href="https://t.me/Anton_Buriakov"><img
                src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/telegram.svg" alt=""></a>
 
-         <a href="https://t.me/lunares_agro"><img
+         <a href="https://www.instagram.com/palermo.kids.planet"><img
                src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/instagram.svg" alt=""></a>
-         <a href="https://www.instagram.com/lunares_agro"><img
+         <a href="tel:+380934094191"><img
                src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/phone.svg" alt="">+380934094191</a>
       </div>
    </div>
