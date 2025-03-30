@@ -30,19 +30,9 @@ function register_product_categories_taxonomy()
     // Прив'язуємо таксономію до типу запису "Товари"
     register_taxonomy('product_category', array('product'), $args);
 
-    // Додаємо категорії за замовчуванням
-    $default_categories = array(
-        'Агродрони',
-        'Вузли змішування',
-        'Генератори',
-        'Комплектуючі',
-    );
+   
 
-    foreach ($default_categories as $category) {
-        if (!term_exists($category, 'product_category')) {
-            wp_insert_term($category, 'product_category');
-        }
-    }
+    
 }
 add_action('init', 'register_product_categories_taxonomy');
 function disable_gutenberg_for_product($is_enabled, $post_type)
