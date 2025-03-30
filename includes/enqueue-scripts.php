@@ -88,42 +88,42 @@ function lunare_enqueue_assets()
     add_action('wp_footer', function () {
         ?>
         <script>
-            jQuery(document).ready(function ($) {
-                var inputElements = document.querySelectorAll("input[type='tel']");
+            // jQuery(document).ready(function ($) {
+            //     var inputElements = document.querySelectorAll("input[type='tel']");
 
-                inputElements.forEach(function (input) {
-                    var iti = window.intlTelInput(input, {
-                        autoPlaceholder: "aggressive",
-                        geoIpLookup: function (callback) {
-                            $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
-                                var countryCode = resp && resp.country ? resp.country : "";
-                                callback(countryCode);
-                            });
-                        },
-                        hiddenInput: "phone_number",
-                        onlyCountries: ["UA"],
-                        preferredCountries: ["UA"],
-                        separateDialCode: true,
-                        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.14/js/utils.js",
-                    });
+            //     inputElements.forEach(function (input) {
+            //         var iti = window.intlTelInput(input, {
+            //             autoPlaceholder: "aggressive",
+            //             geoIpLookup: function (callback) {
+            //                 $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
+            //                     var countryCode = resp && resp.country ? resp.country : "";
+            //                     callback(countryCode);
+            //                 });
+            //             },
+            //             hiddenInput: "phone_number",
+            //             onlyCountries: ["UA"],
+            //             preferredCountries: ["UA"],
+            //             separateDialCode: true,
+            //             utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.14/js/utils.js",
+            //         });
 
-                    $(input).on("countrychange", function () {
-                        var selectedCountryData = iti.getSelectedCountryData();
-                        var newPlaceholder = intlTelInputUtils.getExampleNumber(
-                            selectedCountryData.iso2,
-                            true,
-                            intlTelInputUtils.numberFormat.INTERNATIONAL
-                        );
-                        iti.setNumber("");
-                        var mask = newPlaceholder.replace(/[1-9]/g, "0");
-                        $(this).mask(mask);
-                    });
+            //         $(input).on("countrychange", function () {
+            //             var selectedCountryData = iti.getSelectedCountryData();
+            //             var newPlaceholder = intlTelInputUtils.getExampleNumber(
+            //                 selectedCountryData.iso2,
+            //                 true,
+            //                 intlTelInputUtils.numberFormat.INTERNATIONAL
+            //             );
+            //             iti.setNumber("");
+            //             var mask = newPlaceholder.replace(/[1-9]/g, "0");
+            //             $(this).mask(mask);
+            //         });
 
-                    iti.promise.then(function () {
-                        $(input).trigger("countrychange");
-                    });
-                });
-            });
+            //         iti.promise.then(function () {
+            //             $(input).trigger("countrychange");
+            //         });
+            //     });
+            // });
         </script>
         <link href="https://vjs.zencdn.net/8.10.0/video-js.css" rel="stylesheet" />
         <script src="https://vjs.zencdn.net/8.10.0/video.min.js"></script>
