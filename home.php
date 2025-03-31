@@ -48,7 +48,7 @@ Template Name: Home
     $services = array(
         'post_type' => 'service', // Убедись, что здесь указан правильный тип поста
         'posts_per_page' => -1, // Вывести все товары
-        'order' => 'DESC'
+        'order' => 'ASC'
     );
     $serviceQuery = new WP_Query($services);
     if ($serviceQuery->have_posts()):
@@ -162,7 +162,7 @@ Template Name: Home
     $dishes = array(
         'post_type' => 'product',
         'posts_per_page' => -1,
-        'order' => 'DESC'
+        'order' => 'ASC'
     );
     $dishesQuery = new WP_Query($dishes);
     ?>
@@ -260,7 +260,7 @@ Template Name: Home
     $addServices = array(
         'post_type' => 'addservice', // Убедись, что здесь указан правильный тип поста
         'posts_per_page' => -1, // Вывести все товары
-        'order' => 'DESC'
+        'order' => 'ASC'
     );
     $addServiceQuery = new WP_Query($addServices);
     if ($addServiceQuery->have_posts()):
