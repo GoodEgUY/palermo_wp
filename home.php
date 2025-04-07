@@ -63,7 +63,7 @@ Template Name: Home
                         $serviceQuery->the_post();
 
                         ?>
-                        <div class="servicesItem" data-aos="fade-up">
+                        <div class="servicesItem" >
                             <?php
                             $image = get_field('image');
                             if ($image): ?>
@@ -270,6 +270,7 @@ Template Name: Home
                 <h2 class="blockName">Додаткові послуги</h2>
                 <div class="servicesDashboard">
                     <?php
+                    $ii = 1; // счётчик модалок
                     while ($addServiceQuery->have_posts()):
                         $addServiceQuery->the_post();
 
@@ -301,14 +302,58 @@ Template Name: Home
                                         <?php endwhile; ?>
                                     </div>
                                 <?php endif; ?>
-                                <button class="transparent-default-button">Переглянути меню</button>
+                                <button class="transparent-default-button openModalMenu"
+                                    data-target="modal-add-<?php echo $ii; ?>">Переглянути меню</button>
+                            </div>
+                            <div class="modalWrapper" id="modal-add-<?php echo $ii; ?>" style="display: none;">
+                                <div class="modalMenuBody">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg"
+                                        class="modalCross" alt="Закрити">
+                                    <h1 class="menuName">МЕНЮ</h1>
+                                    <?php if ($title = get_sub_field('title')): ?>
+                                        <p class="menuTitle"><?php echo esc_html($title); ?></p>
+                                    <?php endif; ?>
+                                    <div class="menuListWrapper">
+                                        <?php if ($info_menu = get_sub_field('info_menu')): ?>
+                                            <?php echo $info_menu; ?>
+                                        <?php endif; ?>
+                                    </div>
+
+                                </div>
                             </div>
                         </div>
                         <?php
+                        $ii++;
                     endwhile;
                     wp_reset_postdata(); // Важно сбросить запрос
                 
                     ?>
+                    <script>
+                        jQuery(document).ready(function () {
+                            // Открытие модалки
+                            jQuery('.openModalMenu').on('click', function (e) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                const target = jQuery(this).data('target');
+                                jQuery('#' + target).fadeIn(200);
+                                jQuery('body').addClass('no-scroll');
+                            });
+
+                            // Закрытие модалки
+                            jQuery(document).on('click', '.modalCross', function () {
+                                jQuery(this).closest('.modalWrapper').fadeOut(200);
+                                jQuery('body').removeClass('no-scroll');
+                            });
+
+                            // Клик вне тела модалки — закрытие
+                            jQuery(document).on('click', '.modalWrapper', function (e) {
+                                if (jQuery(e.target).is('.modalWrapper')) {
+                                    jQuery(this).fadeOut(200);
+                                    jQuery('body').removeClass('no-scroll');
+                                }
+                            });
+                        });
+                    </script>
                 </div>
                 <a href="" class="orange-default-button openModalPhoneButton">Зателефонувати</a>
             </div>
