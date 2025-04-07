@@ -63,7 +63,7 @@ Template Name: Home
                         $serviceQuery->the_post();
 
                         ?>
-                        <div class="servicesItem" >
+                        <div class="servicesItem">
                             <?php
                             $image = get_field('image');
                             if ($image): ?>
@@ -305,22 +305,27 @@ Template Name: Home
                                 <button class="transparent-default-button openModalMenu"
                                     data-target="modal-add-<?php echo $ii; ?>">Переглянути меню</button>
                             </div>
-                            <div class="modalWrapper" id="modal-add-<?php echo $ii; ?>" style="display: none;">
-                                <div class="modalMenuBody">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg"
-                                        class="modalCross" alt="Закрити">
-                                    <h1 class="menuName">МЕНЮ</h1>
-                                    <?php if ($title = get_sub_field('title')): ?>
-                                        <p class="menuTitle"><?php echo esc_html($title); ?></p>
-                                    <?php endif; ?>
-                                    <div class="menuListWrapper">
-                                        <?php if ($info_menu = get_sub_field('info_menu')): ?>
-                                            <?php echo $info_menu; ?>
-                                        <?php endif; ?>
-                                    </div>
+                            <?php if (have_rows('service_menu')): ?>
+                                <?php while (have_rows('service_menu')):
+                                    the_row(); ?>
+                                    <div class="modalWrapper" id="modal-add-<?php echo $ii; ?>" style="display: none;">
+                                        <div class="modalMenuBody">
+                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/cross.svg"
+                                                class="modalCross" alt="Закрити">
+                                            <h1 class="menuName">МЕНЮ</h1>
+                                            <?php if ($title = get_sub_field('title')): ?>
+                                                <p class="menuTitle"><?php echo esc_html($title); ?></p>
+                                            <?php endif; ?>
+                                            <div class="menuListWrapper">
+                                                <?php if ($info_menu = get_sub_field('info_menu')): ?>
+                                                    <?php echo $info_menu; ?>
+                                                <?php endif; ?>
+                                            </div>
 
-                                </div>
-                            </div>
+                                        </div>
+                                    </div>
+                                <?php endwhile; ?>
+                            <?php endif; ?>
                         </div>
                         <?php
                         $ii++;
