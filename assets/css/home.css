@@ -652,9 +652,13 @@
     width: fit-content;
   }
   .photoSlide img {
-    width: 100%;
+    width: auto;
     position: absolute;
-    width: 100%;
+    height: 100%;
+  }
+  .menuSlideItem img {
+    width: auto;
+    height: 100%;
   }
   .photoSwiper .swiper-slide {
     width: auto;
