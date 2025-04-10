@@ -652,9 +652,9 @@
     width: fit-content;
   }
   .photoSlide img {
-    width: auto;
+    width: 110%;
     position: absolute;
-    height: 100%;
+    
   }
   .menuSlideItem img {
     width: auto;
