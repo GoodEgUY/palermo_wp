@@ -407,7 +407,7 @@ Template Name: Home
                             <div class="swiper-slide">
                                 <div class="photoSlide">
                                     <a href="<?php echo esc_url($image['url']); ?>">
-                                        <img src="<?php echo esc_url($image['sizes']['thumbnail']); ?>"
+                                        <img src="<?php echo esc_url($image['sizes']['large']); ?>"
                                             alt="<?php echo esc_attr($image['alt']); ?>" />
                                     </a>
                                 </div>
