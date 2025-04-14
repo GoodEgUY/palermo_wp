@@ -657,8 +657,8 @@
     
   }
   .menuSlideItem img {
-    width: auto;
-    height: 100%;
+    width: 125%;
+    
   }
   .photoSwiper .swiper-slide {
     width: auto;
