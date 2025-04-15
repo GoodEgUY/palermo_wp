@@ -605,7 +605,7 @@ Template Name: Home
     <?php endif; ?>
     <section class="contactSection">
         <div class="contactWrapper wrapper">
-            <img src="https://placehold.co/1440x700" alt="Консультація з питання про агродрони"
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/contactBackground.png" alt="Консультація з питання про агродрони"
                 class="contactBackground">
             <h1>Зворотній зв’язок</h1>
             <p>Зв’яжіться з нами зручним способом — телефонуйте або пишіть у месенджері. Ми завжди на зв’язку та готові
